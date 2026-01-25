@@ -3,9 +3,7 @@ import json
 import asyncio
 import hashlib
 import time
-
-import requests  # <--- Добавили requests для обхода защиты
-import feedparser
+import requests
 from aiogram import Bot
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
@@ -16,20 +14,27 @@ from openai import OpenAI
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TARGET_CHANNEL_ID = os.getenv("CHANNEL_ID")
+# Автоматический токен от GitHub Actions
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN") 
 
 STATE_FILE = "scout_history.json"
 
-# Заголовки, чтобы GitHub не блокировал нас
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Accept": "application/atom+xml,application/xml,text/xml"
+# Заголовки для авторизации в API
+API_HEADERS = {
+    "Authorization": f"Bearer {GITHUB_TOKEN}",
+    "Accept": "application/vnd.github.v3+json"
 }
 
-GITHUB_SEARCHES = [
-    {"name": "DPI Bypass", "url": "https://github.com/search?o=desc&q=topic:dpi+topic:circumvention+sort:updated&type=Repositories.atom"},
-    {"name": "Next-Gen VPN", "url": "https://github.com/search?o=desc&q=vless+reality+hysteria2+sing-box+sort:updated&type=Repositories.atom"},
-    {"name": "Routing Lists", "url": "https://github.com/search?o=desc&q=antizapret+russia+whitelist+geoip+sort:updated&type=Repositories.atom"},
-    {"name": "Tunneling", "url": "https://github.com/search?o=desc&q=tunnel+obfuscation+sort:updated&type=Repositories.atom"},
+# Что ищем (API запросы)
+SEARCH_QUERIES = [
+    # 1. DPI и цензура
+    {"name": "DPI Bypass", "query": "topic:dpi topic:circumvention"},
+    # 2. Новые протоколы
+    {"name": "Next-Gen VPN", "query": "vless reality hysteria2 sing-box"},
+    # 3. Списки маршрутизации
+    {"name": "Routing Lists", "query": "antizapret russia whitelist geoip"},
+    # 4. Туннели
+    {"name": "Tunneling", "query": "tunnel obfuscation vpn"},
 ]
 
 bot = Bot(token=TELEGRAM_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
@@ -46,84 +51,104 @@ def load_state():
 
 def save_state(posted_ids):
     with open(STATE_FILE, "w") as f:
-        json.dump(posted_ids[-300:], f)
+        json.dump(posted_ids[-400:], f)
 
-async def analyze_repo(entry):
-    prompt = """Ты эксперт по обходу интернет-цензуры.
-Я ищу ТОЛЬКО новые технические инструменты (VPN, DPI bypass, Routing lists).
-Перед тобой репозиторий с GitHub.
+async def analyze_repo(item):
+    """GPT оценивает репозиторий из API"""
+    
+    # Собираем инфо из JSON
+    title = item.get('name', '')
+    desc = item.get('description', 'No description')
+    url = item.get('html_url', '')
+    lang = item.get('language', 'Unknown')
+    stars = item.get('stargazers_count', 0)
+    
+    prompt = f"""Ты эксперт по обходу интернет-цензуры.
+Я ищу ТОЛЬКО новые технические инструменты (VPN, DPI bypass).
+Перед тобой данные о репозитории GitHub.
 
 Твоя задача:
 1. Понять, что это.
-2. Если это мусор, старый форк, домашка студента или просто список прокси — ответь SKIP.
-3. Если это реальный инструмент, скрипт или полезный список доменов — напиши короткий отчет.
+2. Если это мусор, просто список прокси, старый форк или не имеет отношения к обходу блокировок — ответь SKIP.
+3. Если это реальный инструмент — напиши отчет.
 
-Формат:
+Входные данные:
+Name: {title}
+Desc: {desc}
+Lang: {lang}
+Stars: {stars}
+
+Формат ответа:
 📦 [Название]
-🛠 Технологии: [Протоколы/Язык]
-💡 Суть: [Что делает и зачем нужно в 2025 году]"""
-
-    text = f"Title: {entry.title}\nDesc: {entry.get('summary', '')}\nLink: {entry.link}"
+⭐ Звезд: {stars} | Язык: {lang}
+💡 Суть: [Что делает и зачем нужно]"""
 
     try:
         resp = openai_client.chat.completions.create(
             model="gpt-4o-mini",
-            messages=[{"role": "system", "content": prompt}, {"role": "user", "content": text}]
+            messages=[{"role": "user", "content": prompt}]
         )
         answer = resp.choices[0].message.content.strip()
         
         if "SKIP" in answer or len(answer) < 20: return None
-        return answer + f"\n\n🔗 <a href='{entry.link}'>Открыть на GitHub</a>"
+        return answer + f"\n\n🔗 <a href='{url}'>Открыть на GitHub</a>"
     except: return None
 
 async def main():
-    print("🕵️‍♂️ Scout Radar starting...")
+    print("🕵️‍♂️ Scout Radar starting (API Mode)...")
     posted_ids = load_state()
     
-    for source in GITHUB_SEARCHES:
-        print(f"📡 Scanning: {source['name']}")
+    for category in SEARCH_QUERIES:
+        print(f"📡 API Search: {category['name']}")
+        
+        # Формируем URL для поиска: сортировка по обновлению, порядок убывающий
+        url = f"https://api.github.com/search/repositories?q={category['query']}&sort=updated&order=desc&per_page=5"
+        
         try:
-            # --- ИЗМЕНЕНИЕ: Скачиваем через Requests с заголовками ---
-            response = requests.get(source['url'], headers=HEADERS, timeout=15)
+            response = requests.get(url, headers=API_HEADERS, timeout=10)
             
             if response.status_code != 200:
-                print(f"   ⚠️ Ошибка доступа к GitHub: {response.status_code}")
+                print(f"   ⚠️ API Error: {response.status_code} - {response.text}")
                 continue
                 
-            feed = feedparser.parse(response.content)
+            data = response.json()
+            items = data.get('items', [])
             
-            if not feed.entries:
-                print("   ⚠️ Лента пустая (или GitHub изменил формат).")
+            if not items:
+                print("   ⚠️ Ничего не найдено.")
                 continue
 
-            for entry in feed.entries[:3]:
-                uid = hashlib.md5(entry.link.encode()).hexdigest()
+            # Берем топ-3 самых свежих
+            for item in items[:3]:
+                # Уникальный ID = ID репозитория в базе GitHub
+                repo_id = str(item.get('id'))
                 
-                if uid in posted_ids: 
-                    # print("   Уже видели") 
+                if repo_id in posted_ids: 
+                    # print(f"   Skip seen: {item['name']}")
                     continue
                 
-                print(f"   🔍 Analyzing: {entry.title}")
-                report = await analyze_repo(entry)
+                print(f"   🔍 Analyzing: {item['name']}")
+                report = await analyze_repo(item)
                 
                 if report:
-                    print("   🚨 HIT! Sending to channel.")
+                    print("   🚨 HIT! Sending...")
                     try:
                         await bot.send_message(
                             TARGET_CHANNEL_ID, 
-                            text=f"🛡 <b>GITHUB RADAR: {source['name']}</b>\n\n{report}",
+                            text=f"🛡 <b>GITHUB RADAR: {category['name']}</b>\n\n{report}",
                             disable_web_page_preview=True
                         )
-                        posted_ids.append(uid)
+                        posted_ids.append(repo_id)
                         await asyncio.sleep(3)
                     except Exception as e:
                         print(f"Telegram Error: {e}")
                 else:
-                    print("   ⏩ Skip (мусор)")
-                    posted_ids.append(uid)
+                    print("   ⏩ Skip (GPT rejected)")
+                    posted_ids.append(repo_id)
                 
         except Exception as e:
-            print(f"Feed Error: {e}")
+            print(f"Request Error: {e}")
+            time.sleep(5) # Пауза при ошибке
 
     save_state(posted_ids)
     await bot.session.close()
