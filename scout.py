@@ -1,7 +1,6 @@
 import os
 import json
 import asyncio
-import hashlib
 import time
 import requests
 from aiogram import Bot
@@ -14,27 +13,32 @@ from openai import OpenAI
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TARGET_CHANNEL_ID = os.getenv("CHANNEL_ID")
-# Автоматический токен от GitHub Actions
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN") 
 
 STATE_FILE = "scout_history.json"
 
-# Заголовки для авторизации в API
 API_HEADERS = {
     "Authorization": f"Bearer {GITHUB_TOKEN}",
     "Accept": "application/vnd.github.v3+json"
 }
 
-# Что ищем (API запросы)
+# ============ ТОЧНЫЕ ЗАПРОСЫ (Hardcore Mode) ============
 SEARCH_QUERIES = [
-    # 1. DPI и цензура
-    {"name": "DPI Bypass", "query": "topic:dpi topic:circumvention"},
-    # 2. Новые протоколы
-    {"name": "Next-Gen VPN", "query": "vless reality hysteria2 sing-box"},
-    # 3. Списки маршрутизации
-    {"name": "Routing Lists", "query": "antizapret russia whitelist geoip"},
-    # 4. Туннели
-    {"name": "Tunneling", "query": "tunnel obfuscation vpn"},
+    # 1. Современные протоколы (VLESS, Reality, Hysteria, Tuic)
+    # Ищем упоминание конкретных технологий маскировки
+    {"name": "Xray & Sing-box Configs", "query": "vless reality hysteria2 tuic juicity sing-box config"},
+    
+    # 2. Списки маршрутизации (Белые списки, GeoSite, Rule-sets)
+    # Это нужно для настройки Split Tunneling (Ютуб через VPN, Госуслуги напрямую)
+    {"name": "Routing & Whitelists", "query": "antizapret geosite-russia whitelist rule-set moschina"},
+    
+    # 3. Обход DPI (Deep Packet Inspection)
+    # Инструменты, которые дурят оборудование провайдера (Zapret, GoodbyeDPI)
+    {"name": "DPI Bypass Tools", "query": "dpi-bypass zapret goodbyedpi kyber spoofing"},
+    
+    # 4. Клиенты и Панели (Настройка своих серверов)
+    # Панели управления (3x-ui, Marzban) и клиенты (NekoBox, Hiddify)
+    {"name": "Server & Clients", "query": "marzban 3x-ui nekobox hiddify amnezia setup"},
 ]
 
 bot = Bot(token=TELEGRAM_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
@@ -54,34 +58,38 @@ def save_state(posted_ids):
         json.dump(posted_ids[-400:], f)
 
 async def analyze_repo(item):
-    """GPT оценивает репозиторий из API"""
+    """
+    GPT фильтрует находки.
+    Критерий: Это должно быть полезно для настройки ОБХОДА БЛОКИРОВОК.
+    """
     
-    # Собираем инфо из JSON
     title = item.get('name', '')
     desc = item.get('description', 'No description')
     url = item.get('html_url', '')
     lang = item.get('language', 'Unknown')
-    stars = item.get('stargazers_count', 0)
+    topics = ", ".join(item.get('topics', []))
     
-    prompt = f"""Ты эксперт по обходу интернет-цензуры.
-Я ищу ТОЛЬКО новые технические инструменты (VPN, DPI bypass).
-Перед тобой данные о репозитории GitHub.
+    prompt = f"""Ты инженер по обходу интернет-цензуры.
+Я ищу СТРОГО технические вещи:
+1. Конфигурации для VLESS / Reality / Hysteria.
+2. Списки маршрутизации (Rule-sets, Geosite) для раздельного туннелирования.
+3. Скрипты для обхода DPI (Zapret, Spoofing).
+4. Инструкции по настройке клиентов (Sing-box, NekoBox).
 
-Твоя задача:
-1. Понять, что это.
-2. Если это мусор, просто список прокси, старый форк или не имеет отношения к обходу блокировок — ответь SKIP.
-3. Если это реальный инструмент — напиши отчет.
+Перед тобой репозиторий с GitHub.
+Если это просто "очередной VPN на OpenVPN" или мусор — ответь SKIP.
+Если это ПОЛЕЗНЫЙ инструмент, конфиг или список — напиши отчет.
 
 Входные данные:
-Name: {title}
-Desc: {desc}
-Lang: {lang}
-Stars: {stars}
+Название: {title}
+Описание: {desc}
+Теги: {topics}
+Язык: {lang}
 
-Формат ответа:
+Формат отчета:
 📦 [Название]
-⭐ Звезд: {stars} | Язык: {lang}
-💡 Суть: [Что делает и зачем нужно]"""
+🛠 Тип: [Например: Конфиг VLESS / Список доменов / Утилита DPI]
+💡 Суть: [Чем именно это полезно для обхода]"""
 
     try:
         resp = openai_client.chat.completions.create(
@@ -95,37 +103,30 @@ Stars: {stars}
     except: return None
 
 async def main():
-    print("🕵️‍♂️ Scout Radar starting (API Mode)...")
+    print("🕵️‍♂️ Scout Radar (VLESS/DPI Edition) starting...")
     posted_ids = load_state()
     
     for category in SEARCH_QUERIES:
         print(f"📡 API Search: {category['name']}")
         
-        # Формируем URL для поиска: сортировка по обновлению, порядок убывающий
+        # Сортировка по обновлению (самое свежее)
         url = f"https://api.github.com/search/repositories?q={category['query']}&sort=updated&order=desc&per_page=5"
         
         try:
             response = requests.get(url, headers=API_HEADERS, timeout=10)
             
             if response.status_code != 200:
-                print(f"   ⚠️ API Error: {response.status_code} - {response.text}")
+                print(f"   ⚠️ API Error: {response.status_code}")
                 continue
                 
-            data = response.json()
-            items = data.get('items', [])
+            items = response.json().get('items', [])
             
-            if not items:
-                print("   ⚠️ Ничего не найдено.")
-                continue
+            if not items: continue
 
-            # Берем топ-3 самых свежих
             for item in items[:3]:
-                # Уникальный ID = ID репозитория в базе GitHub
                 repo_id = str(item.get('id'))
                 
-                if repo_id in posted_ids: 
-                    # print(f"   Skip seen: {item['name']}")
-                    continue
+                if repo_id in posted_ids: continue
                 
                 print(f"   🔍 Analyzing: {item['name']}")
                 report = await analyze_repo(item)
@@ -148,7 +149,7 @@ async def main():
                 
         except Exception as e:
             print(f"Request Error: {e}")
-            time.sleep(5) # Пауза при ошибке
+            time.sleep(5)
 
     save_state(posted_ids)
     await bot.session.close()
