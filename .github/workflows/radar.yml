@@ -26,6 +26,8 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+          # 👇 ВОТ ЭТА СТРОКА ОБЯЗАТЕЛЬНА ДЛЯ API 👇
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scout.py
       
       - name: Save History
