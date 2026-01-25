@@ -1,0 +1,36 @@
+name: GITHUB RADAR SCOUT
+
+on:
+  schedule:
+    # Запускаем каждые 4 часа
+    - cron: '0 */4 * * *'
+  workflow_dispatch: # Кнопка для ручного запуска
+
+permissions:
+  contents: write
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install libs
+        run: pip install -r requirements.txt
+      
+      - name: Run Scout
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+        run: python scout.py
+      
+      - name: Save History
+        run: |
+          git config --local user.email "radar@bot.com"
+          git config --local user.name "Radar Bot"
+          git add scout_history.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update radar history" && git push)
