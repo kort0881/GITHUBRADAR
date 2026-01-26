@@ -17,6 +17,7 @@ TARGET_CHANNEL_ID = os.getenv("CHANNEL_ID")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
 STATE_FILE = "scout_history.json"
+MAX_AGE_DAYS = 3  # ⚡ Максимальный возраст — 3 дня
 
 API_HEADERS = {
     "Authorization": f"Bearer {GITHUB_TOKEN}",
@@ -26,9 +27,8 @@ API_HEADERS = {
 bot = Bot(token=TELEGRAM_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 openai_client = OpenAI(api_key=OPENAI_API_KEY)
 
-# ============ ТРИ ТИПА ПОИСКА ============
+# ============ ПОИСКОВЫЕ ЗАПРОСЫ ============
 
-# 1. ПОИСК ПО РЕПОЗИТОРИЯМ
 REPO_SEARCHES = [
     {"name": "🇷🇺 AntiZapret", "query": "antizapret"},
     {"name": "🇷🇺 Antifilter", "query": "antifilter"},
@@ -40,9 +40,10 @@ REPO_SEARCHES = [
     {"name": "🔧 Marzban", "query": "marzban"},
     {"name": "🔧 3X-UI", "query": "3x-ui"},
     {"name": "🔧 Hiddify", "query": "hiddify-next"},
+    {"name": "🔧 Sing-box", "query": "sing-box+config"},
+    {"name": "🔧 Xray Reality", "query": "xray+reality"},
 ]
 
-# 2. ПОИСК ПО КОДУ
 CODE_SEARCHES = [
     {"name": "📄 VLESS Configs", "query": "vless://+extension:txt"},
     {"name": "📄 Hysteria2 Configs", "query": "hysteria2://+extension:txt"},
@@ -50,7 +51,6 @@ CODE_SEARCHES = [
     {"name": "📄 Reality Configs", "query": "reality+pbk+extension:txt"},
 ]
 
-# 3. ИЗВЕСТНЫЕ АГРЕГАТОРЫ
 KNOWN_AGGREGATORS = [
     {"owner": "yebekhe", "repo": "TelegramV2rayCollector", "name": "🔥 Yebekhe Collector"},
     {"owner": "mahdibland", "repo": "V2RayAggregator", "name": "🔥 MahdiBland Aggregator"},
@@ -66,46 +66,66 @@ KNOWN_AGGREGATORS = [
 
 # ============ FUNCTIONS ============
 
+def get_age_days(date_string):
+    """Вычислить возраст в днях"""
+    try:
+        if not date_string:
+            return 9999
+        
+        # Парсим дату
+        if date_string.endswith('Z'):
+            dt = datetime.fromisoformat(date_string.replace('Z', '+00:00'))
+        else:
+            dt = datetime.fromisoformat(date_string)
+        
+        now = datetime.now(timezone.utc)
+        age = now - dt
+        return age.days
+    except:
+        return 9999
+
+def get_freshness_emoji(days):
+    """Эмодзи в зависимости от свежести"""
+    if days == 0:
+        return "🔥 Сегодня"
+    elif days == 1:
+        return "✅ Вчера"
+    elif days <= 3:
+        return f"✅ {days} дн. назад"
+    else:
+        return f"⚠️ {days} дн. назад"
+
+def is_fresh(date_string, max_days=MAX_AGE_DAYS):
+    """Проверка: обновлялось ли за последние N дней"""
+    return get_age_days(date_string) <= max_days
+
 def load_state():
-    """Загрузка состояния с миграцией старого формата"""
+    """Загрузка состояния"""
     if os.path.exists(STATE_FILE):
         try:
             with open(STATE_FILE, "r") as f:
                 data = json.load(f)
-                
-            # Миграция: если это старый формат (список)
-            if isinstance(data, list):
-                print("   ⚠️ Миграция старого формата...")
-                return {
-                    "posted": data,
-                    "aggregator_commits": {}
-                }
             
-            # Новый формат (словарь)
+            if isinstance(data, list):
+                return {"posted": data, "aggregator_commits": {}}
+            
             if isinstance(data, dict):
                 return {
                     "posted": data.get("posted", []),
                     "aggregator_commits": data.get("aggregator_commits", {})
                 }
-        except Exception as e:
-            print(f"   ⚠️ Ошибка загрузки: {e}")
+        except:
+            pass
     
-    # По умолчанию
-    return {
-        "posted": [],
-        "aggregator_commits": {}
-    }
+    return {"posted": [], "aggregator_commits": {}}
 
 def save_state(state):
     """Сохранение состояния"""
-    try:
-        with open(STATE_FILE, "w") as f:
-            json.dump(state, f, indent=2)
-    except Exception as e:
-        print(f"   ⚠️ Ошибка сохранения: {e}")
+    with open(STATE_FILE, "w") as f:
+        json.dump(state, f, indent=2)
 
 def get_repo_last_commit(owner, repo):
-    """Получить время последнего коммита"""
+    """Получить последний коммит"""
     url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=1"
     try:
         resp = requests.get(url, headers=API_HEADERS, timeout=10)
@@ -118,38 +138,52 @@ def get_repo_last_commit(owner, repo):
                     "message": commits[0]['commit']['message'].split('\n')[0][:50],
                     "url": commits[0]['html_url']
                 }
-    except Exception as e:
-        print(f"      Error: {e}")
+    except:
+        pass
     return None
 
+def search_repos_fresh(query):
+    """Поиск репозиториев с фильтром по дате"""
+    # Добавляем pushed:> для фильтрации на уровне API
+    date_filter = (datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)).strftime('%Y-%m-%d')
+    full_query = f"{query}+pushed:>{date_filter}"
+    
+    url = f"https://api.github.com/search/repositories?q={full_query}&sort=updated&order=desc&per_page=10"
+    
+    try:
+        resp = requests.get(url, headers=API_HEADERS, timeout=15)
+        if resp.status_code == 200:
+            return resp.json().get('items', [])
+    except:
+        pass
+    return []
+
 def search_code(query):
-    """Поиск по содержимому файлов"""
+    """Поиск по коду"""
     url = f"https://api.github.com/search/code?q={query}&per_page=10"
     try:
         resp = requests.get(url, headers=API_HEADERS, timeout=15)
         if resp.status_code == 200:
             return resp.json().get('items', [])
-        elif resp.status_code == 403:
-            print(f"      ⚠️ Rate limit на code search")
-    except Exception as e:
-        print(f"      Error: {e}")
+    except:
+        pass
     return []
 
-def search_repos(query):
-    """Поиск репозиториев"""
-    url = f"https://api.github.com/search/repositories?q={query}&sort=updated&order=desc&per_page=5"
+def get_repo_info(owner, repo):
+    """Получить инфо о репозитории (для проверки свежести)"""
+    url = f"https://api.github.com/repos/{owner}/{repo}"
     try:
-        resp = requests.get(url, headers=API_HEADERS, timeout=15)
+        resp = requests.get(url, headers=API_HEADERS, timeout=10)
         if resp.status_code == 200:
-            return resp.json().get('items', [])
-    except Exception as e:
-        print(f"      Error: {e}")
-    return []
+            return resp.json()
+    except:
+        pass
+    return None
 
 async def analyze_with_gpt(title, desc, topics, context):
     """GPT анализ"""
     prompt = f"""Ты эксперт по обходу цензуры.
-    
+
 Контекст: {context}
 
 Репозиторий:
@@ -172,57 +206,48 @@ async def analyze_with_gpt(title, desc, topics, context):
         if "SKIP" in answer.upper():
             return None
         return answer
-    except Exception as e:
-        print(f"      GPT Error: {e}")
+    except:
         return None
 
 async def main():
     print("=" * 50)
-    print("🕵️ SCOUT RADAR v3.0 — Smart Search")
+    print("🕵️ SCOUT RADAR v3.1 — Fresh Only (≤3 дней)")
     print("=" * 50)
     
-    # Загрузка состояния
     state = load_state()
     posted_ids = state["posted"]
     aggregator_commits = state["aggregator_commits"]
     
-    print(f"\n📊 Загружено: {len(posted_ids)} постов, {len(aggregator_commits)} агрегаторов\n")
+    print(f"\n📊 История: {len(posted_ids)} постов")
+    print(f"⏰ Фильтр: только обновления за {MAX_AGE_DAYS} дня\n")
     
-    # ============ 1. ПРОВЕРКА ИЗВЕСТНЫХ АГРЕГАТОРОВ ============
+    # ============ 1. АГРЕГАТОРЫ ============
     print("=" * 50)
-    print("📦 ЧАСТЬ 1: Проверка агрегаторов конфигов")
+    print("📦 ЧАСТЬ 1: Агрегаторы конфигов")
     print("=" * 50)
     
     for agg in KNOWN_AGGREGATORS:
         key = f"{agg['owner']}/{agg['repo']}"
-        print(f"\n🔍 {agg['name']} ({key})")
+        print(f"\n🔍 {agg['name']}")
         
         commit = get_repo_last_commit(agg['owner'], agg['repo'])
         
         if not commit:
-            print(f"   ❌ Не удалось получить данные")
+            print(f"   ❌ Нет данных")
+            continue
+        
+        age_days = get_age_days(commit['date'])
+        freshness = get_freshness_emoji(age_days)
+        
+        # Проверяем свежесть
+        if age_days > MAX_AGE_DAYS:
+            print(f"   ⏭ Пропуск: {freshness} (>{MAX_AGE_DAYS} дней)")
             continue
         
         last_known = aggregator_commits.get(key)
         
         if last_known != commit['sha']:
-            print(f"   🆕 Новый коммит: {commit['sha']}")
-            print(f"   📝 {commit['message']}")
-            
-            # Вычисляем возраст коммита
-            try:
-                commit_time = datetime.fromisoformat(commit['date'].replace('Z', '+00:00'))
-                now = datetime.now(timezone.utc)
-                age = now - commit_time
-                
-                if age < timedelta(hours=1):
-                    freshness = "🔥 < 1 часа назад"
-                elif age < timedelta(hours=24):
-                    freshness = f"✅ {int(age.total_seconds() // 3600)} ч. назад"
-                else:
-                    freshness = f"📅 {age.days} дн. назад"
-            except:
-                freshness = "📅 Недавно"
+            print(f"   🆕 Новый коммит: {commit['sha']} | {freshness}")
             
             try:
                 msg = (
@@ -240,7 +265,7 @@ async def main():
             except Exception as e:
                 print(f"   TG Error: {e}")
         else:
-            print(f"   ⏸ Без изменений (sha: {commit['sha']})")
+            print(f"   ⏸ Без изменений | {freshness}")
         
         await asyncio.sleep(1)
     
@@ -257,22 +282,40 @@ async def main():
         if not items:
             print(f"   Ничего не найдено")
             continue
-            
+        
         unique_repos = {}
         for item in items:
             repo = item.get('repository', {})
             repo_id = str(repo.get('id', ''))
+            repo_full_name = repo.get('full_name', '')
+            
             if repo_id and repo_id not in posted_ids and repo_id not in unique_repos:
-                unique_repos[repo_id] = repo
+                # Получаем полную инфу для проверки свежести
+                if '/' in repo_full_name:
+                    owner, name = repo_full_name.split('/', 1)
+                    full_info = get_repo_info(owner, name)
+                    if full_info:
+                        unique_repos[repo_id] = full_info
+                        await asyncio.sleep(0.5)
         
         print(f"   Найдено уникальных: {len(unique_repos)}")
         
-        for repo_id, repo in list(unique_repos.items())[:2]:
+        for repo_id, repo in list(unique_repos.items())[:3]:
             name = repo.get('full_name', '')
             desc = repo.get('description', '') or ''
             url = repo.get('html_url', '')
+            pushed_at = repo.get('pushed_at', '')
             
-            print(f"   📦 {name}")
+            age_days = get_age_days(pushed_at)
+            freshness = get_freshness_emoji(age_days)
+            
+            # ⚡ ФИЛЬТР СВЕЖЕСТИ
+            if age_days > MAX_AGE_DAYS:
+                print(f"   ⏭ {name}: {freshness} (слишком старый)")
+                posted_ids.append(repo_id)  # Чтобы не проверять повторно
+                continue
+            
+            print(f"   📦 {name} | {freshness}")
             
             analysis = await analyze_with_gpt(name, desc, "", search['name'])
             
@@ -281,6 +324,7 @@ async def main():
                     msg = (
                         f"📄 <b>{search['name']}</b>\n\n"
                         f"📦 <code>{name}</code>\n"
+                        f"⏰ {freshness}\n"
                         f"💡 {analysis}\n\n"
                         f"🔗 <a href='{url}'>Открыть</a>"
                     )
@@ -294,23 +338,26 @@ async def main():
                 print(f"      ⏩ GPT отклонил")
                 posted_ids.append(repo_id)
         
-        await asyncio.sleep(3)
+        await asyncio.sleep(2)
     
-    # ============ 3. ПОИСК ПО РЕПОЗИТОРИЯМ ============
+    # ============ 3. ПОИСК РЕПОЗИТОРИЕВ ============
     print("\n" + "=" * 50)
-    print("🔧 ЧАСТЬ 3: Поиск инструментов и белых списков")
+    print("🔧 ЧАСТЬ 3: Инструменты и белые списки")
     print("=" * 50)
     
     for search in REPO_SEARCHES:
         print(f"\n🔍 {search['name']}")
         
-        items = search_repos(search['query'])
+        # ⚡ Используем поиск с фильтром по дате
+        items = search_repos_fresh(search['query'])
         
         if not items:
-            print(f"   Ничего не найдено")
+            print(f"   Ничего свежего не найдено")
             continue
         
-        for item in items[:2]:
+        print(f"   Найдено свежих: {len(items)}")
+        
+        for item in items[:3]:
             repo_id = str(item.get('id', ''))
             
             if repo_id in posted_ids:
@@ -321,8 +368,17 @@ async def main():
             url = item.get('html_url', '')
             stars = item.get('stargazers_count', 0)
             topics = ", ".join(item.get('topics', []))
+            pushed_at = item.get('pushed_at', '')
             
-            print(f"   📦 {name} (⭐{stars})")
+            age_days = get_age_days(pushed_at)
+            freshness = get_freshness_emoji(age_days)
+            
+            # ⚡ ДВОЙНАЯ ПРОВЕРКА СВЕЖЕСТИ
+            if age_days > MAX_AGE_DAYS:
+                print(f"   ⏭ {name}: {freshness}")
+                continue
+            
+            print(f"   📦 {name} | ⭐{stars} | {freshness}")
             
             analysis = await analyze_with_gpt(name, desc, topics, search['name'])
             
@@ -331,7 +387,7 @@ async def main():
                     msg = (
                         f"🛠 <b>{search['name']}</b>\n\n"
                         f"📦 <code>{name}</code>\n"
-                        f"⭐ {stars}\n"
+                        f"⭐ {stars} | ⏰ {freshness}\n"
                         f"💡 {analysis}\n\n"
                         f"🔗 <a href='{url}'>GitHub</a>"
                     )
