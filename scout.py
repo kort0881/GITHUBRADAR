@@ -1,23 +1,22 @@
 import os
 import json
 import asyncio
-import time
 import requests
 from datetime import datetime, timedelta, timezone
 from aiogram import Bot
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
-from openai import OpenAI
+from groq import Groq
 
 # ============ CONFIG ============
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TARGET_CHANNEL_ID = os.getenv("CHANNEL_ID")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
 STATE_FILE = "scout_history.json"
-MAX_AGE_DAYS = 3  # ⚡ Максимальный возраст — 3 дня
+MAX_AGE_DAYS = 3
 
 API_HEADERS = {
     "Authorization": f"Bearer {GITHUB_TOKEN}",
@@ -25,7 +24,7 @@ API_HEADERS = {
 }
 
 bot = Bot(token=TELEGRAM_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
-openai_client = OpenAI(api_key=OPENAI_API_KEY)
+groq_client = Groq(api_key=GROQ_API_KEY)
 
 # ============ ПОИСКОВЫЕ ЗАПРОСЫ ============
 
@@ -67,17 +66,13 @@ KNOWN_AGGREGATORS = [
 # ============ FUNCTIONS ============
 
 def get_age_days(date_string):
-    """Вычислить возраст в днях"""
     try:
         if not date_string:
             return 9999
-        
-        # Парсим дату
         if date_string.endswith('Z'):
             dt = datetime.fromisoformat(date_string.replace('Z', '+00:00'))
         else:
             dt = datetime.fromisoformat(date_string)
-        
         now = datetime.now(timezone.utc)
         age = now - dt
         return age.days
@@ -85,7 +80,6 @@ def get_age_days(date_string):
         return 9999
 
 def get_freshness_emoji(days):
-    """Эмодзи в зависимости от свежести"""
     if days == 0:
         return "🔥 Сегодня"
     elif days == 1:
@@ -95,20 +89,13 @@ def get_freshness_emoji(days):
     else:
         return f"⚠️ {days} дн. назад"
 
-def is_fresh(date_string, max_days=MAX_AGE_DAYS):
-    """Проверка: обновлялось ли за последние N дней"""
-    return get_age_days(date_string) <= max_days
-
 def load_state():
-    """Загрузка состояния"""
     if os.path.exists(STATE_FILE):
         try:
             with open(STATE_FILE, "r") as f:
                 data = json.load(f)
-            
             if isinstance(data, list):
                 return {"posted": data, "aggregator_commits": {}}
-            
             if isinstance(data, dict):
                 return {
                     "posted": data.get("posted", []),
@@ -116,16 +103,13 @@ def load_state():
                 }
         except:
             pass
-    
     return {"posted": [], "aggregator_commits": {}}
 
 def save_state(state):
-    """Сохранение состояния"""
     with open(STATE_FILE, "w") as f:
         json.dump(state, f, indent=2)
 
 def get_repo_last_commit(owner, repo):
-    """Получить последний коммит"""
     url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=1"
     try:
         resp = requests.get(url, headers=API_HEADERS, timeout=10)
@@ -143,13 +127,9 @@ def get_repo_last_commit(owner, repo):
     return None
 
 def search_repos_fresh(query):
-    """Поиск репозиториев с фильтром по дате"""
-    # Добавляем pushed:> для фильтрации на уровне API
     date_filter = (datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)).strftime('%Y-%m-%d')
     full_query = f"{query}+pushed:>{date_filter}"
-    
     url = f"https://api.github.com/search/repositories?q={full_query}&sort=updated&order=desc&per_page=10"
-    
     try:
         resp = requests.get(url, headers=API_HEADERS, timeout=15)
         if resp.status_code == 200:
@@ -159,7 +139,6 @@ def search_repos_fresh(query):
     return []
 
 def search_code(query):
-    """Поиск по коду"""
     url = f"https://api.github.com/search/code?q={query}&per_page=10"
     try:
         resp = requests.get(url, headers=API_HEADERS, timeout=15)
@@ -170,7 +149,6 @@ def search_code(query):
     return []
 
 def get_repo_info(owner, repo):
-    """Получить инфо о репозитории (для проверки свежести)"""
     url = f"https://api.github.com/repos/{owner}/{repo}"
     try:
         resp = requests.get(url, headers=API_HEADERS, timeout=10)
@@ -180,8 +158,7 @@ def get_repo_info(owner, repo):
         pass
     return None
 
-async def analyze_with_gpt(title, desc, topics, context):
-    """GPT анализ"""
+async def analyze_with_groq(title, desc, topics, context):
     prompt = f"""Ты эксперт по обходу цензуры.
 
 Контекст: {context}
@@ -197,8 +174,8 @@ async def analyze_with_gpt(title, desc, topics, context):
 Если полезно — кратко (2-3 предложения)."""
 
     try:
-        resp = openai_client.chat.completions.create(
-            model="gpt-4o-mini",
+        resp = groq_client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
             messages=[{"role": "user", "content": prompt}],
             max_tokens=150
         )
@@ -206,12 +183,13 @@ async def analyze_with_gpt(title, desc, topics, context):
         if "SKIP" in answer.upper():
             return None
         return answer
-    except:
+    except Exception as e:
+        print(f"   Groq error: {e}")
         return None
 
 async def main():
     print("=" * 50)
-    print("🕵️ SCOUT RADAR v3.1 — Fresh Only (≤3 дней)")
+    print("🕵️ SCOUT RADAR v3.1 — Groq Edition")
     print("=" * 50)
     
     state = load_state()
@@ -239,9 +217,8 @@ async def main():
         age_days = get_age_days(commit['date'])
         freshness = get_freshness_emoji(age_days)
         
-        # Проверяем свежесть
         if age_days > MAX_AGE_DAYS:
-            print(f"   ⏭ Пропуск: {freshness} (>{MAX_AGE_DAYS} дней)")
+            print(f"   ⏭ Пропуск: {freshness}")
             continue
         
         last_known = aggregator_commits.get(key)
@@ -290,7 +267,6 @@ async def main():
             repo_full_name = repo.get('full_name', '')
             
             if repo_id and repo_id not in posted_ids and repo_id not in unique_repos:
-                # Получаем полную инфу для проверки свежести
                 if '/' in repo_full_name:
                     owner, name = repo_full_name.split('/', 1)
                     full_info = get_repo_info(owner, name)
@@ -309,15 +285,14 @@ async def main():
             age_days = get_age_days(pushed_at)
             freshness = get_freshness_emoji(age_days)
             
-            # ⚡ ФИЛЬТР СВЕЖЕСТИ
             if age_days > MAX_AGE_DAYS:
-                print(f"   ⏭ {name}: {freshness} (слишком старый)")
-                posted_ids.append(repo_id)  # Чтобы не проверять повторно
+                print(f"   ⏭ {name}: {freshness}")
+                posted_ids.append(repo_id)
                 continue
             
             print(f"   📦 {name} | {freshness}")
             
-            analysis = await analyze_with_gpt(name, desc, "", search['name'])
+            analysis = await analyze_with_groq(name, desc, "", search['name'])
             
             if analysis:
                 try:
@@ -335,7 +310,7 @@ async def main():
                 except Exception as e:
                     print(f"      TG Error: {e}")
             else:
-                print(f"      ⏩ GPT отклонил")
+                print(f"      ⏩ Groq отклонил")
                 posted_ids.append(repo_id)
         
         await asyncio.sleep(2)
@@ -348,7 +323,6 @@ async def main():
     for search in REPO_SEARCHES:
         print(f"\n🔍 {search['name']}")
         
-        # ⚡ Используем поиск с фильтром по дате
         items = search_repos_fresh(search['query'])
         
         if not items:
@@ -373,14 +347,13 @@ async def main():
             age_days = get_age_days(pushed_at)
             freshness = get_freshness_emoji(age_days)
             
-            # ⚡ ДВОЙНАЯ ПРОВЕРКА СВЕЖЕСТИ
             if age_days > MAX_AGE_DAYS:
                 print(f"   ⏭ {name}: {freshness}")
                 continue
             
             print(f"   📦 {name} | ⭐{stars} | {freshness}")
             
-            analysis = await analyze_with_gpt(name, desc, topics, search['name'])
+            analysis = await analyze_with_groq(name, desc, topics, search['name'])
             
             if analysis:
                 try:
@@ -398,7 +371,7 @@ async def main():
                 except Exception as e:
                     print(f"      TG Error: {e}")
             else:
-                print(f"      ⏩ GPT отклонил")
+                print(f"      ⏩ Groq отклонил")
                 posted_ids.append(repo_id)
         
         await asyncio.sleep(2)
