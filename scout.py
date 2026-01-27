@@ -17,10 +17,9 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
 STATE_FILE = "scout_history.json"
 
-# ⚡ НАСТРОЙКИ СВЕЖЕСТИ
-MAX_AGE_DAYS = 3              # Максимум 3 дня с последнего обновления
-MAX_POSTS_PER_RUN = 15        # Лимит постов за запуск
-GROQ_DELAY = 2                # Пауза между запросами к Groq
+MAX_AGE_DAYS = 3
+MAX_POSTS_PER_RUN = 15
+GROQ_DELAY = 2
 
 API_HEADERS = {
     "Authorization": f"Bearer {GITHUB_TOKEN}",
@@ -30,7 +29,7 @@ API_HEADERS = {
 bot = Bot(token=TELEGRAM_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 groq_client = Groq(api_key=GROQ_API_KEY)
 
-# ============ АГРЕГАТОРЫ (проверяем каждый коммит) ============
+# ============ АГРЕГАТОРЫ ============
 
 KNOWN_AGGREGATORS = [
     {"owner": "mahdibland", "repo": "V2RayAggregator", "name": "🔥 V2RayAggregator"},
@@ -43,38 +42,36 @@ KNOWN_AGGREGATORS = [
     {"owner": "Leon406", "repo": "SubCrawler", "name": "🔥 SubCrawler"},
 ]
 
-# ============ ПОИСК СВЕЖИХ РЕПО ============
+# ============ ПОИСК ============
 
 FRESH_SEARCHES = [
-    # Белые списки и маршрутизация
     {"name": "🇷🇺 AntiZapret", "query": "antizapret"},
     {"name": "🇷🇺 Antifilter", "query": "antifilter"},
     {"name": "🇷🇺 Geosite Russia", "query": "geosite-russia"},
     {"name": "🇷🇺 Белые списки", "query": "russia+whitelist"},
     {"name": "🇷🇺 Rule-set RU", "query": "ruleset+russia"},
-    
-    # DPI Bypass
     {"name": "🔧 Zapret", "query": "zapret"},
     {"name": "🔧 ByeDPI", "query": "byedpi"},
     {"name": "🔧 GoodbyeDPI", "query": "goodbyedpi"},
     {"name": "🔧 DPI Tunnel", "query": "dpi+tunnel"},
-    
-    # Конфиги и клиенты
     {"name": "📦 VLESS Reality", "query": "vless+reality"},
     {"name": "📦 Hysteria2", "query": "hysteria2+config"},
     {"name": "📦 Sing-box Config", "query": "sing-box+config"},
     {"name": "📦 Xray Config", "query": "xray+config"},
-    
-    # Панели
     {"name": "🛠 Marzban", "query": "marzban"},
     {"name": "🛠 3X-UI", "query": "3x-ui"},
     {"name": "🛠 Hiddify", "query": "hiddify"},
 ]
 
-# ============ FUNCTIONS ============
+# ============ HELPERS ============
+
+def safe_desc(desc, max_len=100):
+    """Безопасное получение описания"""
+    if desc is None:
+        return "Нет описания"
+    return str(desc)[:max_len]
 
 def get_age_days(date_string):
-    """Возраст в днях"""
     try:
         if not date_string:
             return 9999
@@ -84,7 +81,6 @@ def get_age_days(date_string):
         return 9999
 
 def get_age_hours(date_string):
-    """Возраст в часах (для более точной сортировки)"""
     try:
         if not date_string:
             return 9999
@@ -95,15 +91,13 @@ def get_age_hours(date_string):
         return 9999
 
 def get_freshness(date_string):
-    """Красивое отображение свежести"""
     hours = get_age_hours(date_string)
-    
     if hours < 1:
         return "🔥 Только что"
     elif hours < 6:
         return f"🔥 {int(hours)}ч назад"
     elif hours < 24:
-        return f"🔥 Сегодня"
+        return "🔥 Сегодня"
     elif hours < 48:
         return "✅ Вчера"
     elif hours < 72:
@@ -112,7 +106,6 @@ def get_freshness(date_string):
         return f"📅 {int(hours/24)}д назад"
 
 def is_fresh(date_string):
-    """Проверка свежести"""
     return get_age_days(date_string) <= MAX_AGE_DAYS
 
 def load_state():
@@ -135,7 +128,6 @@ def save_state(state):
         json.dump(state, f, indent=2)
 
 def get_last_commit(owner, repo):
-    """Получить последний коммит"""
     url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=1"
     try:
         resp = requests.get(url, headers=API_HEADERS, timeout=10)
@@ -152,62 +144,53 @@ def get_last_commit(owner, repo):
     return None
 
 def search_fresh_repos(query):
-    """Поиск ТОЛЬКО свежих репо (обновлены за MAX_AGE_DAYS)"""
     date_filter = (datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)).strftime('%Y-%m-%d')
-    
-    # Сортировка по дате обновления (самые свежие первые)
     url = (
         f"https://api.github.com/search/repositories"
         f"?q={query}+pushed:>{date_filter}"
         f"&sort=updated&order=desc&per_page=10"
     )
-    
     try:
         resp = requests.get(url, headers=API_HEADERS, timeout=15)
         if resp.status_code == 200:
             items = resp.json().get('items', [])
-            # Дополнительная фильтрация по свежести
             return [i for i in items if is_fresh(i.get('pushed_at'))]
     except:
         pass
     return []
 
 def quick_filter(name, desc):
-    """Быстрый фильтр мусора БЕЗ API"""
     text = f"{name} {desc or ''}".lower()
-    
-    # Явный мусор
-    trash = ['homework', 'assignment', 'tutorial', 'example', 'template', 
+    trash = ['homework', 'assignment', 'tutorial', 'example', 'template',
              'learning', 'practice', 'study', 'course', 'lesson']
-    if any(t in text for t in trash):
-        return False
-    
-    return True
+    return not any(t in text for t in trash)
 
 async def analyze_batch(repos, context):
-    """Пакетный анализ — 1 запрос Groq на несколько репо"""
+    """Пакетный анализ с защитой от None"""
     if not repos:
         return {}
     
-    text = "\n".join([
-        f"{i+1}. {r['full_name']}\n   Описание: {r.get('description', 'нет')[:100]}\n   Обновлён: {get_freshness(r.get('pushed_at'))}"
-        for i, r in enumerate(repos)
-    ])
+    # Безопасное формирование текста
+    lines = []
+    for i, r in enumerate(repos, 1):
+        name = r.get('full_name', 'unknown')
+        desc = safe_desc(r.get('description'), 100)
+        fresh = get_freshness(r.get('pushed_at'))
+        lines.append(f"{i}. {name}\n   Описание: {desc}\n   Обновлён: {fresh}")
+    
+    text = "\n".join(lines)
     
     prompt = f"""Ты эксперт по обходу интернет-блокировок в России.
 
-Контекст поиска: {context}
+Контекст: {context}
 
 Оцени репозитории. Нужны ТОЛЬКО:
-- Рабочие конфиги VPN (VLESS, Reality, Hysteria, Trojan)
+- Рабочие конфиги VPN (VLESS, Reality, Hysteria)
 - Белые списки доменов РФ
-- Инструменты обхода DPI (Zapret, ByeDPI)
-- Актуальные панели управления
+- Инструменты обхода DPI
+- Актуальные панели
 
-НЕ нужны:
-- Форки без изменений
-- Устаревшие проекты
-- Учебные репозитории
+НЕ нужны: форки, учебные проекты, устаревшее.
 
 {text}
 
@@ -236,12 +219,11 @@ async def analyze_batch(repos, context):
         return results
     except Exception as e:
         print(f"   ⚠️ Groq error: {e}")
-        # При ошибке — пропускаем все
-        return {i+1: True for i in range(len(repos))}
+        return {}
 
 async def main():
     print("=" * 50)
-    print("🕵️ SCOUT RADAR v3.3 — Fresh Hunter")
+    print("🕵️ SCOUT RADAR v3.4 — Fresh Hunter")
     print("=" * 50)
     
     state = load_state()
@@ -251,12 +233,12 @@ async def main():
     groq_calls = 0
     
     print(f"\n📊 История: {len(posted)} постов")
-    print(f"⏰ Ищем только: ≤{MAX_AGE_DAYS} дней")
-    print(f"📬 Лимит: {MAX_POSTS_PER_RUN} постов\n")
+    print(f"⏰ Ищем: ≤{MAX_AGE_DAYS} дней")
+    print(f"📬 Лимит: {MAX_POSTS_PER_RUN}\n")
     
-    # ============ 1. АГРЕГАТОРЫ (самое важное, без Groq) ============
+    # ============ 1. АГРЕГАТОРЫ ============
     print("=" * 50)
-    print("📦 ЧАСТЬ 1: Агрегаторы конфигов")
+    print("📦 ЧАСТЬ 1: Агрегаторы")
     print("=" * 50)
     
     for agg in KNOWN_AGGREGATORS:
@@ -272,14 +254,12 @@ async def main():
         
         freshness = get_freshness(commit['date'])
         
-        # Проверка свежести
         if not is_fresh(commit['date']):
-            print(f"\n⏭ {agg['name']}: {freshness} (старый)")
+            print(f"\n⏭ {agg['name']}: {freshness}")
             continue
         
-        # Проверка: новый коммит?
         if commits.get(key) == commit['sha']:
-            print(f"\n⏸ {agg['name']}: {freshness} (уже видели)")
+            print(f"\n⏸ {agg['name']}: {freshness} (видели)")
             continue
         
         print(f"\n🆕 {agg['name']}")
@@ -301,14 +281,14 @@ async def main():
         
         await asyncio.sleep(1)
     
-    # ============ 2. ПОИСК СВЕЖИХ РЕПО ============
+    # ============ 2. ПОИСК ============
     print("\n" + "=" * 50)
-    print(f"🔍 ЧАСТЬ 2: Поиск свежего (≤{MAX_AGE_DAYS}д)")
+    print(f"🔍 ЧАСТЬ 2: Свежие репо")
     print("=" * 50)
     
     for search in FRESH_SEARCHES:
         if posts_sent >= MAX_POSTS_PER_RUN:
-            print(f"\n⚠️ Лимит достигнут!")
+            print(f"\n⚠️ Лимит!")
             break
         
         print(f"\n🔍 {search['name']}")
@@ -319,29 +299,23 @@ async def main():
             print(f"   Нет свежих")
             continue
         
-        # Убираем уже опубликованные
         new_items = [i for i in items if str(i['id']) not in posted]
         
         if not new_items:
-            print(f"   Всё уже видели")
+            print(f"   Всё видели")
             continue
         
-        # Быстрый фильтр
-        filtered = [i for i in new_items if quick_filter(i['name'], i.get('description'))]
+        filtered = [i for i in new_items if quick_filter(i.get('name', ''), i.get('description'))]
         
         if not filtered:
             print(f"   Отфильтровано")
             continue
         
-        # Сортируем по свежести (самые новые первые)
         filtered.sort(key=lambda x: get_age_hours(x.get('pushed_at', '')))
         
-        # Берём топ-3 для batch анализа
         batch = filtered[:3]
-        
         print(f"   Найдено {len(filtered)}, анализ {len(batch)}...")
         
-        # Один запрос Groq на всю пачку
         results = await analyze_batch(batch, search['name'])
         groq_calls += 1
         
@@ -352,7 +326,7 @@ async def main():
                 break
             
             repo_id = str(item['id'])
-            name = item['full_name']
+            name = item.get('full_name', 'unknown')
             freshness = get_freshness(item.get('pushed_at'))
             stars = item.get('stargazers_count', 0)
             
@@ -364,13 +338,13 @@ async def main():
             print(f"   ✅ {name} | {freshness}")
             
             try:
-                desc = item.get('description', '') or 'Нет описания'
+                desc = safe_desc(item.get('description'), 200)
                 msg = (
                     f"🆕 <b>{search['name']}</b>\n\n"
                     f"📦 <code>{name}</code>\n"
                     f"⏰ {freshness} | ⭐ {stars}\n"
-                    f"💡 {desc[:200]}\n\n"
-                    f"🔗 <a href='{item['html_url']}'>GitHub</a>"
+                    f"💡 {desc}\n\n"
+                    f"🔗 <a href='{item.get('html_url', '')}'>GitHub</a>"
                 )
                 await bot.send_message(TARGET_CHANNEL_ID, msg, disable_web_page_preview=True)
                 posted.append(repo_id)
@@ -392,9 +366,7 @@ async def main():
     await bot.session.close()
     
     print("\n" + "=" * 50)
-    print(f"✅ Готово!")
-    print(f"📬 Отправлено: {posts_sent}")
-    print(f"🤖 Groq вызовов: {groq_calls}")
+    print(f"✅ Готово! Постов: {posts_sent} | Groq: {groq_calls}")
     print("=" * 50)
 
 if __name__ == "__main__":
