@@ -2,8 +2,9 @@ name: GITHUB RADAR SCOUT
 
 on:
   schedule:
-    - cron: '0 */4 * * *'
-  workflow_dispatch:
+    # Раз в 3 дня в 12:00 UTC
+    - cron: '0 12 */3 * *'
+  workflow_dispatch:  # Ручной запуск
 
 permissions:
   contents: write
@@ -13,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
