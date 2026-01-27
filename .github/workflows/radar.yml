@@ -2,9 +2,8 @@ name: GITHUB RADAR SCOUT
 
 on:
   schedule:
-    # Запускаем каждые 4 часа
     - cron: '0 */4 * * *'
-  workflow_dispatch: # Кнопка для ручного запуска
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -23,10 +22,9 @@ jobs:
       
       - name: Run Scout
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
-          # 👇 ВОТ ЭТА СТРОКА ОБЯЗАТЕЛЬНА ДЛЯ API 👇
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scout.py
       
