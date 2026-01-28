@@ -42,25 +42,59 @@ KNOWN_AGGREGATORS = [
     {"owner": "Leon406", "repo": "SubCrawler", "name": "🔥 SubCrawler"},
 ]
 
-# ============ ПОИСК ============
+# ============ ПОИСК (УЛУЧШЕННЫЙ) ============
 
 FRESH_SEARCHES = [
-    {"name": "🇷🇺 AntiZapret", "query": "antizapret"},
-    {"name": "🇷🇺 Antifilter", "query": "antifilter"},
-    {"name": "🇷🇺 Geosite Russia", "query": "geosite-russia"},
-    {"name": "🇷🇺 Белые списки", "query": "russia+whitelist"},
-    {"name": "🇷🇺 Rule-set RU", "query": "ruleset+russia"},
-    {"name": "🔧 Zapret", "query": "zapret"},
+    # Блокировки и белые списки РФ
+    {"name": "🇷🇺 AntiZapret", "query": "antizapret OR anti-zapret"},
+    {"name": "🇷🇺 Antifilter", "query": "antifilter russia"},
+    {"name": "🇷🇺 Geosite Russia", "query": "geosite russia OR geoip russia"},
+    {"name": "🇷🇺 Белые списки", "query": "russia whitelist OR russian whitelist"},
+    {"name": "🇷🇺 Rule-set RU", "query": "ruleset russia OR russia routing"},
+    {"name": "🇷🇺 РКН обход", "query": "rkn bypass OR roskomnadzor"},
+    {"name": "🇷🇺 Список блокировок", "query": "russia blocklist OR russian censorship"},
+
+    # DPI обход (актуально для РФ)
+    {"name": "🔧 Zapret", "query": "zapret dpi"},
     {"name": "🔧 ByeDPI", "query": "byedpi"},
-    {"name": "🔧 GoodbyeDPI", "query": "goodbyedpi"},
-    {"name": "🔧 DPI Tunnel", "query": "dpi+tunnel"},
-    {"name": "📦 VLESS Reality", "query": "vless+reality"},
-    {"name": "📦 Hysteria2", "query": "hysteria2+config"},
-    {"name": "📦 Sing-box Config", "query": "sing-box+config"},
-    {"name": "📦 Xray Config", "query": "xray+config"},
-    {"name": "🛠 Marzban", "query": "marzban"},
-    {"name": "🛠 3X-UI", "query": "3x-ui"},
-    {"name": "🛠 Hiddify", "query": "hiddify"},
+    {"name": "🔧 GoodbyeDPI", "query": "goodbyedpi russia OR goodbyedpi"},
+    {"name": "🔧 DPI Tunnel", "query": "dpi tunnel russia"},
+    {"name": "🔧 SpoofDPI", "query": "spoofdpi"},
+
+    # Протоколы VLESS/Reality
+    {"name": "📦 VLESS Reality", "query": "vless reality config"},
+    {"name": "📦 VLESS Russia", "query": "vless russia OR vless russian"},
+    {"name": "📦 Xray Reality", "query": "xray reality setup"},
+
+    # Hysteria и новые протоколы
+    {"name": "📦 Hysteria2", "query": "hysteria2 config OR hysteria2 server"},
+    {"name": "📦 Tuic", "query": "tuic protocol OR tuic v5"},
+    {"name": "📦 Shadowsocks 2022", "query": "shadowsocks-2022 OR ss2022"},
+
+    # Конфиги и клиенты
+    {"name": "📦 Sing-box", "query": "sing-box config russia OR singbox"},
+    {"name": "📦 Xray Config", "query": "xray config subscription"},
+    {"name": "📦 V2Ray Europe", "query": "v2ray europe servers"},
+    {"name": "📦 Clash Meta", "query": "clash meta russia OR clash-meta"},
+
+    # Панели управления
+    {"name": "🛠 Marzban", "query": "marzban panel OR marzban xray"},
+    {"name": "🛠 3X-UI", "query": "3x-ui OR x-ui panel"},
+    {"name": "🛠 Hiddify", "query": "hiddify manager OR hiddify panel"},
+    {"name": "🛠 V2Board", "query": "v2board"},
+
+    # Telegram боты и инструменты
+    {"name": "🤖 VPN Боты", "query": "telegram vpn bot russia"},
+    {"name": "🤖 Proxy Checker", "query": "proxy checker vless OR vmess checker"},
+    {"name": "🤖 Config Parser", "query": "vpn config parser telegram"},
+
+    # WireGuard (популярен в Европе)
+    {"name": "🔐 WireGuard", "query": "wireguard setup russia OR wg-easy"},
+    {"name": "🔐 Amnezia", "query": "amnezia vpn OR amneziawg"},
+
+    # Europeanские сервера и роутинг
+    {"name": "🇪🇺 EU Servers", "query": "vpn europe servers OR eu proxy"},
+    {"name": "🇪🇺 Netherlands VPN", "query": "netherlands vpn OR amsterdam servers"},
 ]
 
 # ============ HELPERS ============
@@ -107,6 +141,59 @@ def get_freshness(date_string):
 
 def is_fresh(date_string):
     return get_age_days(date_string) <= MAX_AGE_DAYS
+
+def quick_filter(name, desc):
+    """Фильтр с исключением Китая и нерелевантных репо"""
+    text = f"{name} {desc or ''}".lower()
+
+    # Исключаем Китай и Азию (кроме России)
+    china_keywords = [
+        'china', 'chinese', '中国', 'cn-', 'gfw',
+        'great firewall', 'beijing', 'shanghai',
+        'iran', 'iranian', 'turkey', 'vietnam',
+        'indonesia', 'malaysia', 'singapore'
+    ]
+
+    # Исключаем мусор
+    trash_keywords = [
+        'homework', 'assignment', 'tutorial', 'example', 
+        'template', 'learning', 'practice', 'study', 
+        'course', 'lesson', 'test', 'demo', 'sample',
+        'fork of', 'archived', 'deprecated', 'old',
+        'experiment', 'playground'
+    ]
+
+    # Проверяем исключения
+    if any(keyword in text for keyword in china_keywords):
+        # Исключение: если явно упоминается Россия, пропускаем
+        if not any(ru in text for ru in ['russia', 'russian', 'рф', 'ркн', 'antizapret']):
+            return False
+
+    if any(keyword in text for keyword in trash_keywords):
+        return False
+
+    return True
+
+def is_relevant_region(name, desc):
+    """Проверка релевантности для России/Европы"""
+    text = f"{name} {desc or ''}".lower()
+
+    # Приоритетные ключевые слова
+    priority_keywords = [
+        # Россия
+        'russia', 'russian', 'rkn', 'roskomnadzor', 'антизапрет',
+        'antizapret', 'antifilter', 'zapret', 'рф', 'ркн',
+
+        # Европа
+        'europe', 'european', 'eu', 'netherlands', 'amsterdam',
+        'germany', 'france', 'uk', 'london', 'poland',
+
+        # Универсальные (но актуальные)
+        'vless', 'reality', 'hysteria', 'xray', 'sing-box',
+        'dpi', 'bypass', 'whitelist', 'routing', 'amnezia'
+    ]
+
+    return any(keyword in text for keyword in priority_keywords)
 
 def load_state():
     if os.path.exists(STATE_FILE):
@@ -159,42 +246,44 @@ def search_fresh_repos(query):
         pass
     return []
 
-def quick_filter(name, desc):
-    text = f"{name} {desc or ''}".lower()
-    trash = ['homework', 'assignment', 'tutorial', 'example', 'template',
-             'learning', 'practice', 'study', 'course', 'lesson']
-    return not any(t in text for t in trash)
-
 async def analyze_batch(repos, context):
-    """Пакетный анализ с защитой от None"""
+    """Пакетный анализ с фокусом на Россию/Европу"""
     if not repos:
         return {}
-    
-    # Безопасное формирование текста
+
     lines = []
     for i, r in enumerate(repos, 1):
         name = r.get('full_name', 'unknown')
         desc = safe_desc(r.get('description'), 100)
         fresh = get_freshness(r.get('pushed_at'))
         lines.append(f"{i}. {name}\n   Описание: {desc}\n   Обновлён: {fresh}")
-    
+
     text = "\n".join(lines)
-    
-    prompt = f"""Ты эксперт по обходу интернет-блокировок в России.
+
+    prompt = f"""Ты эксперт по обходу блокировок в России и Европе.
 
 Контекст: {context}
 
-Оцени репозитории. Нужны ТОЛЬКО:
-- Рабочие конфиги VPN (VLESS, Reality, Hysteria)
-- Белые списки доменов РФ
-- Инструменты обхода DPI
-- Актуальные панели
+НУЖНЫ ТОЛЬКО:
+✅ Рабочие конфиги VPN для РФ/Европы (VLESS, Reality, Hysteria, WireGuard)
+✅ Белые списки доменов для России (AntiZapret, Antifilter)
+✅ Инструменты обхода DPI (Zapret, GoodbyeDPI, ByeDPI)
+✅ Панели управления VPN (Marzban, 3X-UI, Hiddify)
+✅ Telegram боты для VPN/прокси
+✅ Routing rules для России/Европы
+✅ Европейские VPN сервера
 
-НЕ нужны: форки, учебные проекты, устаревшее.
+НЕ НУЖНЫ:
+❌ Китайские инструменты (GFW, China-specific)
+❌ Форки без изменений
+❌ Учебные проекты (tutorial, example, homework)
+❌ Устаревшие репозитории
+❌ Азиатские сервисы (кроме универсальных)
 
+Репозитории:
 {text}
 
-Ответь кратко:
+Ответь ТОЛЬКО цифрами и GOOD/SKIP:
 1: GOOD или SKIP
 2: GOOD или SKIP
 ..."""
@@ -203,11 +292,11 @@ async def analyze_batch(repos, context):
         resp = groq_client.chat.completions.create(
             model="llama-3.1-8b-instant",
             messages=[{"role": "user", "content": prompt}],
-            max_tokens=80,
+            max_tokens=100,
             temperature=0
         )
         answer = resp.choices[0].message.content
-        
+
         results = {}
         for line in answer.split('\n'):
             if ':' in line:
@@ -223,48 +312,49 @@ async def analyze_batch(repos, context):
 
 async def main():
     print("=" * 50)
-    print("🕵️ SCOUT RADAR v3.4 — Fresh Hunter")
+    print("🕵️ SCOUT RADAR v4.0 — RU/EU Focus")
     print("=" * 50)
-    
+
     state = load_state()
     posted = state["posted"]
     commits = state["commits"]
     posts_sent = 0
     groq_calls = 0
-    
+
     print(f"\n📊 История: {len(posted)} постов")
     print(f"⏰ Ищем: ≤{MAX_AGE_DAYS} дней")
+    print(f"🎯 Фокус: Россия + Европа")
     print(f"📬 Лимит: {MAX_POSTS_PER_RUN}\n")
-    
+
     # ============ 1. АГРЕГАТОРЫ ============
     print("=" * 50)
     print("📦 ЧАСТЬ 1: Агрегаторы")
     print("=" * 50)
-    
+
     for agg in KNOWN_AGGREGATORS:
         if posts_sent >= MAX_POSTS_PER_RUN:
             break
-        
+
         key = f"{agg['owner']}/{agg['repo']}"
         commit = get_last_commit(agg['owner'], agg['repo'])
-        
+
         if not commit:
             print(f"\n❌ {agg['name']}: недоступен")
             continue
-        
+
         freshness = get_freshness(commit['date'])
-        
+
         if not is_fresh(commit['date']):
             print(f"\n⏭ {agg['name']}: {freshness}")
             continue
-        
+
         if commits.get(key) == commit['sha']:
             print(f"\n⏸ {agg['name']}: {freshness} (видели)")
             continue
-        
+
         print(f"\n🆕 {agg['name']}")
         print(f"   {freshness} | {commit['sha']}")
-        
+
         try:
             msg = (
                 f"🔄 <b>{agg['name']}</b>\n\n"
@@ -278,65 +368,72 @@ async def main():
             print(f"   ✅ [{posts_sent}/{MAX_POSTS_PER_RUN}]")
         except Exception as e:
             print(f"   ❌ TG: {e}")
-        
+
         await asyncio.sleep(1)
-    
+
     # ============ 2. ПОИСК ============
     print("\n" + "=" * 50)
-    print(f"🔍 ЧАСТЬ 2: Свежие репо")
+    print(f"🔍 ЧАСТЬ 2: Свежие репо (RU/EU)")
     print("=" * 50)
-    
+
     for search in FRESH_SEARCHES:
         if posts_sent >= MAX_POSTS_PER_RUN:
             print(f"\n⚠️ Лимит!")
             break
-        
+
         print(f"\n🔍 {search['name']}")
-        
+
         items = search_fresh_repos(search['query'])
-        
+
         if not items:
             print(f"   Нет свежих")
             continue
-        
+
         new_items = [i for i in items if str(i['id']) not in posted]
-        
+
         if not new_items:
             print(f"   Всё видели")
             continue
-        
+
+        # Применяем двойную фильтрацию
         filtered = [i for i in new_items if quick_filter(i.get('name', ''), i.get('description'))]
-        
+
         if not filtered:
-            print(f"   Отфильтровано")
+            print(f"   Отфильтровано (мусор/Китай)")
             continue
-        
+
         filtered.sort(key=lambda x: get_age_hours(x.get('pushed_at', '')))
-        
+
         batch = filtered[:3]
         print(f"   Найдено {len(filtered)}, анализ {len(batch)}...")
-        
+
         results = await analyze_batch(batch, search['name'])
         groq_calls += 1
-        
+
         await asyncio.sleep(GROQ_DELAY)
-        
+
         for idx, item in enumerate(batch, 1):
             if posts_sent >= MAX_POSTS_PER_RUN:
                 break
-            
+
             repo_id = str(item['id'])
             name = item.get('full_name', 'unknown')
             freshness = get_freshness(item.get('pushed_at'))
             stars = item.get('stargazers_count', 0)
-            
+
             if not results.get(idx, False):
                 print(f"   ⏩ {name}: skip")
                 posted.append(repo_id)
                 continue
-            
+
+            # Финальная проверка региона
+            if not is_relevant_region(name, item.get('description')):
+                print(f"   🌏 {name}: не РФ/ЕС")
+                posted.append(repo_id)
+                continue
+
             print(f"   ✅ {name} | {freshness}")
-            
+
             try:
                 desc = safe_desc(item.get('description'), 200)
                 msg = (
@@ -352,22 +449,24 @@ async def main():
                 print(f"      📬 [{posts_sent}/{MAX_POSTS_PER_RUN}]")
             except Exception as e:
                 print(f"      ❌ TG: {e}")
-            
+
             await asyncio.sleep(1)
-        
+
         await asyncio.sleep(1)
-    
+
     # ============ СОХРАНЕНИЕ ============
     save_state({
         "posted": posted[-500:],
         "commits": commits
     })
-    
+
     await bot.session.close()
-    
+
     print("\n" + "=" * 50)
     print(f"✅ Готово! Постов: {posts_sent} | Groq: {groq_calls}")
+    print(f"🎯 Фокус: Россия + Европа (Китай исключён)")
     print("=" * 50)
 
 if __name__ == "__main__":
     asyncio.run(main())
+
