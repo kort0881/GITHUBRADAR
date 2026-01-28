@@ -2,9 +2,8 @@ name: GITHUB RADAR SCOUT
 
 on:
   schedule:
-    # Раз в 3 дня в 12:00 UTC
-    - cron: '0 12 */3 * *'
-  workflow_dispatch:  # Ручной запуск
+    - cron: '0 12 * * *'   # каждый день 12:00 UTC
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -14,25 +13,43 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
+      - name: Guard (run only every 72h)
+        id: guard
+        shell: bash
+        run: |
+          last=$(git log -1 --format=%ct -- scout_history.json 2>/dev/null || echo 0)
+          now=$(date +%s)
+          if [ $((now-last)) -lt $((72*3600)) ]; then
+            echo "run=false" >> $GITHUB_OUTPUT
+            echo "Skip: last run was < 72h ago"
+          else
+            echo "run=true" >> $GITHUB_OUTPUT
+          fi
+
       - uses: actions/setup-python@v5
+        if: steps.guard.outputs.run == 'true'
         with:
           python-version: '3.11'
-      
+
       - name: Install libs
+        if: steps.guard.outputs.run == 'true'
         run: pip install -r requirements.txt
-      
+
       - name: Run Scout
+        if: steps.guard.outputs.run == 'true'
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scout.py
-      
+
       - name: Save History
+        if: steps.guard.outputs.run == 'true'
         run: |
           git config --local user.email "radar@bot.com"
           git config --local user.name "Radar Bot"
           git add scout_history.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update radar history" && git push)
+
