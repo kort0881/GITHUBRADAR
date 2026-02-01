@@ -3,6 +3,7 @@ import json
 import asyncio
 import requests
 import html
+import re
 from datetime import datetime, timedelta, timezone
 from aiogram import Bot
 from aiogram.client.default import DefaultBotProperties
@@ -30,15 +31,10 @@ API_HEADERS = {
 bot = Bot(token=TELEGRAM_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 groq_client = Groq(api_key=GROQ_API_KEY)
 
-# ============ АГРЕГАТОРЫ (База) ============
+# ============ АГРЕГАТОРЫ (БЕЗ КИТАЙСКИХ) ============
 KNOWN_AGGREGATORS = [
     {"owner": "mahdibland", "repo": "V2RayAggregator", "name": "V2RayAggregator"},
     {"owner": "Epodonios", "repo": "v2ray-configs", "name": "Epodonios"},
-    {"owner": "Pawdroid", "repo": "Free-servers", "name": "Pawdroid"},
-    {"owner": "peasoft", "repo": "NoMoreWalls", "name": "NoMoreWalls"},
-    {"owner": "ermaozi", "repo": "get_subscribe", "name": "Ermaozi"},
-    {"owner": "aiboboxx", "repo": "v2rayfree", "name": "V2RayFree"},
-    {"owner": "mfuu", "repo": "v2ray", "name": "MFUU"},
     {"owner": "Leon406", "repo": "SubCrawler", "name": "SubCrawler"},
 ]
 
@@ -79,6 +75,18 @@ FRESH_SEARCHES = [
 
 # ============ HELPERS ============
 
+def has_non_latin(text):
+    """Проверка на китайские, японские, арабские, персидские символы"""
+    if not text: 
+        return False
+    # Китайские (CJK)
+    if re.search(r'[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff]', text):
+        return True
+    # Арабские и персидские
+    if re.search(r'[\u0600-\u06ff\u0750-\u077f\uFB50-\uFDFF\uFE70-\uFEFF]', text):
+        return True
+    return False
+
 def safe_desc(desc, max_len=100):
     if desc is None:
         return ""
@@ -103,11 +111,15 @@ def is_fresh(date_string):
     return get_age_hours(date_string) <= (MAX_AGE_DAYS * 24)
 
 def quick_filter(name, desc):
-    """Фильтр с исключением Китая, но ЖЕСТКИМ пропуском тем РФ"""
+    """Фильтр с исключением Китая/Ирана/Арабских стран"""
     text = f"{name} {desc or ''}".lower()
+    full_text = f"{name} {desc or ''}"
 
-    # 1. Сначала ищем явные маркеры РФ (Белый список)
-    # Если они есть - пропускаем СРАЗУ, игнорируя фильтры Китая/мусора
+    # 1. Проверка на не-латинские символы
+    if has_non_latin(full_text):
+        return False
+
+    # 2. Белый список РФ (приоритет)
     ru_whitelist = [
         'russia', 'russian', 'ru-block', 'roskomnadzor', 'rkn', 'mintsifry', 
         'gosuslugi', 'antizapret', 'antifilter', 'zapret', 'рф', 'ркн', 
@@ -116,12 +128,13 @@ def quick_filter(name, desc):
     if any(w in text for w in ru_whitelist):
         return True
 
-    # 2. Если маркеров РФ нет, включаем фильтры
-    china_keywords = ['china', 'chinese', '中国', 'cn-', 'gfw', 'iran', 'vietnam']
-    trash_keywords = ['homework', 'tutorial', 'example', 'template', 'study', 'deprecated']
-
-    if any(k in text for k in china_keywords): return False
-    if any(k in text for k in trash_keywords): return False
+    # 3. Черный список стран и мусора
+    blacklist = [
+        'china', 'chinese', 'cn-', 'gfw', 'iran', 'vietnam', 'persian',
+        'homework', 'tutorial', 'example', 'template', 'study', 'deprecated'
+    ]
+    if any(k in text for k in blacklist):
+        return False
 
     return True
 
@@ -237,18 +250,25 @@ async def generate_desc(name, desc):
     except: return desc or "Репозиторий по теме обхода блокировок"
 
 async def main():
-    print("="*40 + "\n🕵️ SCOUT RADAR v5.0 (MAX COVERAGE)\n" + "="*40)
+    print("="*40 + "\n🕵️ SCOUT RADAR v5.1 (NO CHINA/ARAB)\n" + "="*40)
 
     state = load_state()
     posted = state.get("posted", [])
     commits = state.get("commits", {})
     count = 0
 
-    # 1. Агрегаторы
+    # 1. Агрегаторы (с фильтром не-латинских символов)
     for agg in KNOWN_AGGREGATORS:
         if count >= MAX_POSTS_PER_RUN: break
         key = f"{agg['owner']}/{agg['repo']}"
         c = get_last_commit(agg['owner'], agg['repo'])
+        
+        # Пропускаем коммиты с китайскими/арабскими символами
+        if c and has_non_latin(c['msg']):
+            print(f"⏭ SKIP (non-Latin): {agg['name']}")
+            commits[key] = c['sha']
+            continue
+        
         if c and is_fresh(c['date']) and commits.get(key) != c['sha']:
             print(f"🆕 AGG: {agg['name']}")
             await bot.send_message(TARGET_CHANNEL_ID, 
