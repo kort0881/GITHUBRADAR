@@ -70,6 +70,48 @@ FRESH_SEARCHES = [
     {"name": "Marzban", "title": "🎛 Marzban", "query": "marzban panel OR marzban-node", "priority": 8},
     {"name": "3X-UI", "title": "🎛 3X-UI / X-UI", "query": "3x-ui OR x-ui panel", "priority": 7},
     {"name": "Geosite RU", "title": "🗺 Geosite / GeoIP RU", "query": "geosite russia OR geoip russia", "priority": 7},
+        # ============ ЦЕНЗУРА И МОНИТОРИНГ (Priority 9-10) ============
+        {"name": "Whitelist RU", "title": "✅ Белые списки РФ", "query": "russia whitelist OR russian-whitelist OR domestic-whitelist OR gosuslugi-whitelist", "priority": 10},
+        
+    # ============ DPI ОБХОД (Priority 8-10) ============
+    {"name": "NoDPI", "title": "🛠 NoDPI", "query": "nodpi python OR dpi-bypass-python", "priority": 8},
+    {"name": "Cloak", "title": "🎭 Cloak", "query": "cloak censorship OR cbeuw-cloak", "priority": 8},
+    
+    # ============ VPN ПРОТОКОЛЫ (Priority 7-9) ============
+    {"name": "TrustTunnel", "title": "🔒 TrustTunnel", "query": "trusttunnel OR adguard-vpn-protocol", "priority": 8},
+    {"name": "Trojan-Go", "title": "🐴 Trojan-Go", "query": "trojan-go russia OR trojan-gfw", "priority": 7},
+    {"name": "Outline VPN", "title": "📡 Outline VPN", "query": "outline vpn OR outline-server russia", "priority": 8},
+    
+    # ============ ПАНЕЛИ УПРАВЛЕНИЯ (Priority 7-8) ============
+    {"name": "Hiddify", "title": "🎛 Hiddify Manager", "query": "hiddify manager OR hiddify-next", "priority": 8},
+    {"name": "V2Board", "title": "🎛 V2Board", "query": "v2board russia OR v2ray-panel", "priority": 7},
+        
+    # ============ СПИСКИ И БАЗЫ (Priority 7-9) ============
+    {"name": "Domain Lists", "title": "📋 Списки доменов РФ", "query": "russia domain-list OR ru-domain-routing", "priority": 8},
+    {"name": "IP Lists RU", "title": "🌐 IP списки РФ", "query": "russia ip-list OR russian-networks OR ru-cidr", "priority": 7},
+    {"name": "Routing Rules", "title": "🧶 Правила маршрутизации", "query": "russia routing-rules OR split-routing russia", "priority": 8},
+    
+    # ============ КЛИЕНТЫ И УТИЛИТЫ (Priority 6-8) ============
+    {"name": "Nekoray", "title": "🐱 Nekoray / V2RayN", "query": "nekoray OR v2rayn russia", "priority": 7},
+    {"name": "Clash Meta", "title": "⚔️ Clash Meta", "query": "clash-meta russia OR clash-verge", "priority": 7},
+    {"name": "Sing-Box", "title": "📦 Sing-Box", "query": "sing-box russia OR sing-box-subscribe", "priority": 8},
+    {"name": "BypassHub", "title": "🔗 BypassHub", "query": "bypasshub OR censorship-abstraction", "priority": 7},
+    
+    # ============ ОБФУСКАЦИЯ И СТЕЛьС (Priority 7-8) ============
+    {"name": "SNI Proxy", "title": "🎏 SNI Proxy", "query": "sni-proxy russia OR sni-routing", "priority": 7},
+    {"name": "XTLS Reality", "title": "🌜 XTLS Reality", "query": "xtls-reality OR reality-protocol", "priority": 8},
+    {"name": "Obfuscation", "title": "🌥 Обфускация трафика", "query": "traffic-obfuscation russia OR vpn-obfuscation", "priority": 7},
+    {"name": "CDN Fronting", "title": "☁️ CDN Fronting", "query": "cdn-fronting russia OR domain-fronting cloudflare", "priority": 7},
+    
+    # ============ DNS И ШИФРОВАНИЕ (Priority 7-8) ============
+    {"name": "DNS-over-HTTPS", "title": "🔐 DNS-over-HTTPS", "query": "doh russia OR dns-over-https bypass", "priority": 7},
+    {"name": "DNS-over-TLS", "title": "🔐 DNS-over-TLS", "query": "dot russia OR dns-over-tls", "priority": 7},
+    {"name": "Encrypted SNI", "title": "🔒 Encrypted SNI", "query": "esni russia OR encrypted-client-hello", "priority": 7},
+    
+    # ============ АВТОМАТИЗАЦИЯ И СКРИПТЫ (Priority 6-7) ============
+    {"name": "Config Generators", "title": "⚙️ Генераторы конфигов", "query": "v2ray-config-generator russia OR subscription-converter", "priority": 7},
+    {"name": "Auto Subscribe", "title": "📡 Автоподписки", "query": "v2ray-subscription OR proxy-subscription russia", "priority": 6},
+    {"name": "Speed Test", "title": "⚡️ Тестирование VPN", "query": "vpn-speed-test russia OR proxy-checker", "priority": 6},
 ]
 
 FRESH_SEARCHES.sort(key=lambda x: x.get('priority', 5), reverse=True)
