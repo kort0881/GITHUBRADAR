@@ -14,17 +14,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Guard (run only every 72h)
+      - name: Guard (run only every ~3 days)
         id: guard
         shell: bash
         run: |
           last=$(git log -1 --format=%ct -- scout_history.json 2>/dev/null || echo 0)
           now=$(date +%s)
-          if [ $((now-last)) -lt $((72*3600)) ]; then
+          if [ $((now-last)) -lt $((70*3600)) ]; then
             echo "run=false" >> $GITHUB_OUTPUT
-            echo "Skip: last run was < 72h ago"
+            echo "⏸️ Skip: last run was < 70h ago"
           else
             echo "run=true" >> $GITHUB_OUTPUT
+            echo "✅ Time to run!"
           fi
 
       - uses: actions/setup-python@v5
@@ -52,4 +53,3 @@ jobs:
           git config --local user.name "Radar Bot"
           git add scout_history.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update radar history" && git push)
-
