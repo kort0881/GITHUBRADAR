@@ -13,19 +13,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # ВАЖНО: нужно для доступа к истории git log
 
       - name: Guard (run only every ~3 days)
         id: guard
         shell: bash
         run: |
+          # Получаем timestamp последнего изменения файла
           last=$(git log -1 --format=%ct -- scout_history.json 2>/dev/null || echo 0)
           now=$(date +%s)
-          if [ $((now-last)) -lt $((70*3600)) ]; then
+          
+          # Считаем разницу в часах для отладки
+          diff_sec=$((now - last))
+          diff_hours=$((diff_sec / 3600))
+          
+          echo "Debug: Now=$now, Last=$last, DiffSec=$diff_sec, DiffHours=$diff_hours"
+          
+          # 70 часов = 252000 секунд
+          if [ $diff_sec -lt 252000 ]; then
             echo "run=false" >> $GITHUB_OUTPUT
-            echo "⏸️ Skip: last run was < 70h ago"
+            echo "⏸️ Skip: last run was ${diff_hours}h ago (need > 70h)"
           else
             echo "run=true" >> $GITHUB_OUTPUT
-            echo "✅ Time to run!"
+            echo "✅ Time to run! (${diff_hours}h passed)"
           fi
 
       - uses: actions/setup-python@v5
