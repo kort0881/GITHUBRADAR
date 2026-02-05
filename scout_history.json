@@ -86,16 +86,28 @@
     "637090253",
     "1146622909",
     "840851250",
-    "1141262984"
+    "1141262984",
+    "1150441041",
+    "1133282414",
+    "1150586125",
+    "1146385825",
+    "1140690445",
+    "1086881379",
+    "1149722186",
+    "1032791135",
+    "1088631733",
+    "984777000",
+    "960777273",
+    "1150269106"
   ],
   "commits": {
-    "mahdibland/V2RayAggregator": "d2458b0",
-    "Epodonios/v2ray-configs": "75be417",
+    "mahdibland/V2RayAggregator": "192c4a8",
+    "Epodonios/v2ray-configs": "8e48c8b",
     "Pawdroid/Free-servers": "945ca8b",
     "mfuu/v2ray": "dc7ece9",
     "ermaozi/get_subscribe": "ec83f67",
     "aiboboxx/v2rayfree": "d36c340",
     "peasoft/NoMoreWalls": "b6ae762",
-    "Leon406/SubCrawler": "c15bedc"
+    "Leon406/SubCrawler": "37ae596"
   }
 }
