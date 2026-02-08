@@ -2,8 +2,8 @@ name: GITHUB RADAR SCOUT
 
 on:
   schedule:
-    - cron: '0 12 * * *'   # каждый день 12:00 UTC
-  workflow_dispatch:
+    - cron: '0 12 * * *'   # каждый день 12:00 UTC (проверка раз в день)
+  workflow_dispatch:        # ручной запуск
 
 permissions:
   contents: write
@@ -14,23 +14,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # ВАЖНО: нужно для доступа к истории git log
+          fetch-depth: 0
 
-      - name: Guard (run only every ~3 days)
+      - name: Guard (run every ~3 days, manual always)
         id: guard
         shell: bash
         run: |
-          # Получаем timestamp последнего изменения файла
+          # ✅ Ручной запуск — ВСЕГДА выполняем
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "run=true" >> $GITHUB_OUTPUT
+            echo "🚀 Manual trigger — running immediately!"
+            exit 0
+          fi
+          
+          # ⏰ Автоматический (schedule) — проверяем 3 дня
           last=$(git log -1 --format=%ct -- scout_history.json 2>/dev/null || echo 0)
           now=$(date +%s)
-          
-          # Считаем разницу в часах для отладки
           diff_sec=$((now - last))
           diff_hours=$((diff_sec / 3600))
           
-          echo "Debug: Now=$now, Last=$last, DiffSec=$diff_sec, DiffHours=$diff_hours"
+          echo "📊 Debug: Now=$now, Last=$last, DiffSec=$diff_sec, DiffHours=$diff_hours"
           
-          # 70 часов = 252000 секунд
+          # 70 часов = ~3 дня = 252000 секунд
           if [ $diff_sec -lt 252000 ]; then
             echo "run=false" >> $GITHUB_OUTPUT
             echo "⏸️ Skip: last run was ${diff_hours}h ago (need > 70h)"
@@ -62,5 +67,5 @@ jobs:
         run: |
           git config --local user.email "radar@bot.com"
           git config --local user.name "Radar Bot"
-          git add scout_history.json
+          git add scout_history.json scout_radar.log 2>/dev/null || true
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update radar history" && git push)
