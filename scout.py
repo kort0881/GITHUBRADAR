@@ -14,7 +14,7 @@ from groq import Groq
 # ============ LOGGING ============
 
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,  # ← ИЗМЕНЕНО: DEBUG для диагностики
     format='%(asctime)s | %(levelname)s | %(message)s',
     handlers=[
         logging.FileHandler('scout_radar.log', encoding='utf-8'),
@@ -102,7 +102,6 @@ FRESH_SEARCHES.sort(key=lambda x: x.get('priority', 5), reverse=True)
 # ============ VALIDATION ============
 
 def validate_env():
-    """✅ Проверка обязательных переменных окружения"""
     required = {
         "GROQ_API_KEY": GROQ_API_KEY,
         "TELEGRAM_BOT_TOKEN": TELEGRAM_BOT_TOKEN,
@@ -122,7 +121,6 @@ def validate_env():
 # ============ GITHUB API RATE LIMIT ============
 
 def check_rate_limit():
-    """✅ Проверка оставшихся запросов к GitHub API"""
     try:
         resp = requests.get("https://api.github.com/rate_limit", headers=API_HEADERS, timeout=10)
         if resp.status_code == 200:
@@ -134,54 +132,60 @@ def check_rate_limit():
             logger.info(f"📊 GitHub API: {remaining}/{limit} calls remaining")
             
             if remaining < MIN_API_CALLS_REMAINING:
-                wait_seconds = (reset_time - datetime.now(timezone.utc)).total_seconds()
                 logger.warning(f"⚠️ API limit low ({remaining} left). Reset at {reset_time.strftime('%H:%M:%S UTC')}")
                 
                 if remaining < 10:
-                    logger.error(f"⏸ Critical: Only {remaining} calls left. Stopping to avoid rate limit.")
+                    logger.error(f"⏸ Critical: Only {remaining} calls left. Stopping.")
                     return False
             
             return True
     except Exception as e:
-        logger.warning(f"⚠️ Could not check rate limit: {e}. Continuing anyway...")
+        logger.warning(f"⚠️ Could not check rate limit: {e}")
         return True
 
 # ============ HELPERS ============
 
 def has_non_latin(text):
-    """✅ Проверка на иероглифы (Китай, Иран, Африка, Азия)"""
     if not text: 
         return False
     
     patterns = [
-        r'[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff\uac00-\ud7af]',  # CJK (исправлено)
-        r'[\u0600-\u06ff\u0750-\u077f\uFB50-\uFDFF\uFE70-\uFEFF]',  # Арабские/Персидские
-        r'[\u0e00-\u0e7f\u1780-\u17ff]',  # Тайский/Кхмерский
+        r'[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff\uac00-\ud7af]',
+        r'[\u0600-\u06ff\u0750-\u077f\uFB50-\uFDFF\uFE70-\uFEFF]',
+        r'[\u0e00-\u0e7f\u1780-\u17ff]',
     ]
     
     return any(re.search(p, text) for p in patterns)
 
 def is_repo_empty(owner, repo, cache):
-    """✅ Проверка на пустой репозиторий (с кэшированием)"""
+    """✅ ИСПРАВЛЕНО: Уменьшен TTL кэша до 6 часов"""
     key = f"{owner}/{repo}"
     
     if key in cache:
-        cached_time = datetime.fromisoformat(cache[key]['checked_at'])
-        if (datetime.now(timezone.utc) - cached_time).total_seconds() < 86400:
-            return cache[key]['is_empty']
+        try:
+            cached_time = datetime.fromisoformat(cache[key]['checked_at'])
+            # ✅ ИЗМЕНЕНО: 6 часов вместо 24
+            if (datetime.now(timezone.utc) - cached_time).total_seconds() < 21600:
+                logger.debug(f"   📦 Cache hit for {key}: empty={cache[key]['is_empty']}")
+                return cache[key]['is_empty']
+        except:
+            pass
     
     try:
         url = f"https://api.github.com/repos/{owner}/{repo}"
         resp = requests.get(url, headers=API_HEADERS, timeout=10)
         
         if resp.status_code != 200:
+            logger.debug(f"   ⚠️ Repo check failed for {key}: status {resp.status_code}")
             result = True
         else:
             data = resp.json()
-            result = (
-                data.get('size', 0) < 5 or
-                (data.get('open_issues_count', 0) == 0 and data.get('stargazers_count', 0) == 0)
-            )
+            size = data.get('size', 0)
+            issues = data.get('open_issues_count', 0)
+            stars = data.get('stargazers_count', 0)
+            
+            result = size < 5 or (issues == 0 and stars == 0 and size < 50)
+            logger.debug(f"   📦 Repo {key}: size={size}, stars={stars}, issues={issues}, empty={result}")
         
         cache[key] = {
             'is_empty': result,
@@ -191,10 +195,9 @@ def is_repo_empty(owner, repo, cache):
         return result
     except Exception as e:
         logger.debug(f"Error checking {key}: {e}")
-        return True
+        return False  # ✅ ИЗМЕНЕНО: При ошибке НЕ считаем пустым
 
 def is_likely_fork_spam(item):
-    """✅ Определение спам-форков"""
     if not item.get('fork'):
         return False
     
@@ -215,7 +218,6 @@ def is_likely_fork_spam(item):
     return False
 
 def safe_desc(desc, max_len=120):
-    """✅ Безопасное описание с очисткой"""
     if desc is None:
         return ""
     
@@ -226,7 +228,8 @@ def safe_desc(desc, max_len=120):
 
 def get_age_hours(date_string):
     try:
-        if not date_string: return 9999
+        if not date_string: 
+            return 9999
         dt = datetime.fromisoformat(date_string.replace('Z', '+00:00'))
         return (datetime.now(timezone.utc) - dt).total_seconds() / 3600
     except: 
@@ -241,52 +244,63 @@ def get_freshness(date_string):
     else: return f"📅 {int(hours/24)}д назад"
 
 def is_fresh(date_string):
-    return get_age_hours(date_string) <= (MAX_AGE_DAYS * 24)
+    """✅ ИСПРАВЛЕНО: Добавлено логирование"""
+    hours = get_age_hours(date_string)
+    max_hours = MAX_AGE_DAYS * 24
+    is_ok = hours <= max_hours
+    if not is_ok:
+        logger.debug(f"   ⏰ Not fresh: {hours:.1f}h > {max_hours}h limit")
+    return is_ok
 
 def quick_filter(name, desc, stars=0):
-    """✅ Быстрый фильтр (без API запросов)"""
+    """✅ ИСПРАВЛЕНО: Добавлено логирование причин отклонения"""
     text = f"{name} {desc or ''}".lower()
     full_text = f"{name} {desc or ''}"
 
-    # 1. Иероглифы - ЖЁСТКИЙ БЛОК
     if has_non_latin(full_text):
+        logger.debug(f"   ❌ FILTER: hieroglyphs in {name}")
         return False
 
-    # 2. Минимум звёзд
     if stars < MIN_STARS:
+        logger.debug(f"   ❌ FILTER: stars={stars} < {MIN_STARS} for {name}")
         return False
 
-    # 3. Белый список (приоритет)
     whitelist = [
         'russia', 'russian', 'ru-block', 'roskomnadzor', 'rkn', 'antizapret',
         'zapret', 'mintsifry', 'tspu', 'sorm', 'роскомнадзор', 'рф',
-        'amnezia', 'hysteria', 'reality', 'marzban', 'xray-core'
+        'amnezia', 'hysteria', 'reality', 'marzban', 'xray-core',
+        'v2ray', 'vless', 'trojan', 'shadowsocks', 'clash', 'sing-box',
+        'bypass', 'proxy', 'vpn', 'dpi', 'gfw'  # ✅ ДОБАВЛЕНО: больше ключевых слов
     ]
     if any(w in text for w in whitelist):
+        logger.debug(f"   ✅ FILTER: whitelist match for {name}")
         return True
 
-    # 4. Черный список
     blacklist = [
-        'china', 'chinese', 'cn-', 'gfw', 'iran', 'persian', 'vietnam',
+        'china', 'chinese', 'cn-', 'iran', 'persian', 'vietnam',
         'homework', 'tutorial', 'example-', 'template', 'deprecated',
         'test-repo', 'demo-', 'practice', 'learning'
     ]
-    if any(k in text for k in blacklist):
-        return False
+    for kw in blacklist:
+        if kw in text:
+            logger.debug(f"   ❌ FILTER: blacklist '{kw}' in {name}")
+            return False
 
-    # 5. Проверка на "шум" в названии
     noise_patterns = [
         r'\d{4,}',
         r'[A-Z]{8,}',
         r'[-_]{3,}',
     ]
-    if any(re.search(p, name) for p in noise_patterns):
-        return False
+    for p in noise_patterns:
+        if re.search(p, name):
+            logger.debug(f"   ❌ FILTER: noise pattern in {name}")
+            return False
 
+    # ✅ ИЗМЕНЕНО: По умолчанию ПРОПУСКАЕМ, а не блокируем
+    logger.debug(f"   ⚠️ FILTER: no match, allowing {name}")
     return True
 
 def build_post(title, repo_full_name, stars, freshness, description, url):
-    """✅ Формат поста"""
     return (
         f"<b>{title}</b>\n\n"
         f"📦 <code>{html.escape(repo_full_name)}</code>\n"
@@ -299,7 +313,9 @@ def load_state():
     if os.path.exists(STATE_FILE):
         try:
             with open(STATE_FILE, "r", encoding='utf-8') as f:
-                return json.load(f)
+                data = json.load(f)
+                logger.info(f"📂 Loaded state: {len(data.get('posted', []))} posted, {len(data.get('commits', {}))} commits tracked")
+                return data
         except Exception as e:
             logger.warning(f"Could not load state: {e}")
     return {"posted": [], "commits": {}, "repo_cache": {}, "last_run": None}
@@ -314,53 +330,146 @@ def save_state(state):
         logger.error(f"❌ Could not save state: {e}")
 
 def get_last_commit(owner, repo):
-    """✅ Получение последнего коммита с ПРОВЕРКОЙ НА ИЕРОГЛИФЫ"""
-    url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=1"
+    """✅ ИСПРАВЛЕНО: Проверка нескольких коммитов"""
+    url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=5"
     try:
         resp = requests.get(url, headers=API_HEADERS, timeout=10)
         if resp.status_code == 200 and resp.json():
-            c = resp.json()[0]
-            msg = c['commit']['message'].split('\n')[0][:60]
+            for c in resp.json():
+                msg = c['commit']['message'].split('\n')[0][:60]
+                
+                if has_non_latin(msg):
+                    logger.debug(f"   ⏭ SKIP commit (hieroglyphs): {owner}/{repo}")
+                    continue
+                
+                commit_date = c['commit']['committer']['date']
+                
+                # ✅ ДОБАВЛЕНО: Проверка свежести коммита
+                if not is_fresh(commit_date):
+                    logger.debug(f"   ⏭ SKIP commit (old): {owner}/{repo} - {commit_date}")
+                    continue
+                
+                return {
+                    "sha": c['sha'][:7],
+                    "date": commit_date,
+                    "msg": msg,
+                    "url": c['html_url']
+                }
             
-            # ✅ БЛОКИРОВКА ИЕРОГЛИФОВ В КОММИТАХ
-            if has_non_latin(msg):
-                logger.debug(f"   ⏭ SKIP commit (hieroglyphs): {owner}/{repo}")
-                return None
-            
-            return {
-                "sha": c['sha'][:7],
-                "date": c['commit']['committer']['date'],
-                "msg": msg,
-                "url": c['html_url']
-            }
+            logger.debug(f"   ⚠️ No valid fresh commits for {owner}/{repo}")
     except Exception as e:
         logger.debug(f"Error getting commit for {owner}/{repo}: {e}")
     return None
 
-def search_fresh_repos(query, per_page=30):
-    """✅ Поиск свежих репозиториев"""
-    date_filter = (datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)).strftime('%Y-%m-%d')
-    url = (
-        f"https://api.github.com/search/repositories"
-        f"?q={query}+pushed:>{date_filter}"
-        f"&sort=updated&order=desc&per_page={per_page}"
-    )
+def get_recent_commits(owner, repo, since_sha=None):
+    """✅ НОВАЯ ФУНКЦИЯ: Получение всех новых коммитов после определённого SHA"""
+    url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=20"
     try:
-        resp = requests.get(url, headers=API_HEADERS, timeout=15)
-        if resp.status_code == 200:
-            return [i for i in resp.json().get('items', []) if is_fresh(i.get('pushed_at'))]
-        elif resp.status_code == 403:
-            logger.warning("⚠️ GitHub API rate limit hit!")
+        resp = requests.get(url, headers=API_HEADERS, timeout=10)
+        if resp.status_code != 200:
             return []
-        else:
-            logger.warning(f"⚠️ Search failed with status {resp.status_code}")
-            return []
+        
+        commits = []
+        for c in resp.json():
+            sha = c['sha'][:7]
+            
+            if since_sha and sha == since_sha:
+                break
+            
+            msg = c['commit']['message'].split('\n')[0][:60]
+            
+            if has_non_latin(msg):
+                continue
+            
+            commit_date = c['commit']['committer']['date']
+            if not is_fresh(commit_date):
+                break
+            
+            commits.append({
+                "sha": sha,
+                "date": commit_date,
+                "msg": msg,
+                "url": c['html_url']
+            })
+        
+        return commits
     except Exception as e:
-        logger.warning(f"⚠️ Search error: {e}")
+        logger.debug(f"Error getting commits for {owner}/{repo}: {e}")
     return []
 
+def search_fresh_repos(query, per_page=50):  # ✅ ИЗМЕНЕНО: 50 вместо 30
+    """✅ ИСПРАВЛЕНО: Улучшенный поиск с несколькими стратегиями"""
+    results = []
+    
+    # Стратегия 1: pushed:>date
+    date_filter = (datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)).strftime('%Y-%m-%d')
+    
+    strategies = [
+        f"{query}+pushed:>{date_filter}",
+        f"{query}+created:>{date_filter}",  # ✅ ДОБАВЛЕНО: новые репо
+    ]
+    
+    seen_ids = set()
+    
+    for strategy in strategies:
+        url = (
+            f"https://api.github.com/search/repositories"
+            f"?q={strategy}"
+            f"&sort=updated&order=desc&per_page={per_page}"
+        )
+        
+        try:
+            resp = requests.get(url, headers=API_HEADERS, timeout=15)
+            
+            if resp.status_code == 200:
+                items = resp.json().get('items', [])
+                logger.debug(f"   🔍 Strategy '{strategy[:50]}...': found {len(items)} repos")
+                
+                for item in items:
+                    if item['id'] not in seen_ids:
+                        seen_ids.add(item['id'])
+                        
+                        # ✅ ИСПРАВЛЕНО: Проверяем И pushed_at И updated_at
+                        pushed_at = item.get('pushed_at')
+                        updated_at = item.get('updated_at')
+                        
+                        if is_fresh(pushed_at) or is_fresh(updated_at):
+                            results.append(item)
+                        else:
+                            logger.debug(f"   ⏰ Skip {item['full_name']}: pushed={pushed_at}, updated={updated_at}")
+                            
+            elif resp.status_code == 403:
+                logger.warning("⚠️ GitHub API rate limit hit!")
+                break
+            else:
+                logger.warning(f"⚠️ Search failed with status {resp.status_code}")
+                
+        except Exception as e:
+            logger.warning(f"⚠️ Search error: {e}")
+    
+    logger.info(f"   📊 Total unique fresh repos found: {len(results)}")
+    return results
+
+def check_repo_activity(owner, repo):
+    """✅ НОВАЯ ФУНКЦИЯ: Проверка реальной активности репозитория"""
+    url = f"https://api.github.com/repos/{owner}/{repo}/events?per_page=10"
+    try:
+        resp = requests.get(url, headers=API_HEADERS, timeout=10)
+        if resp.status_code == 200:
+            events = resp.json()
+            for event in events:
+                event_date = event.get('created_at')
+                if event_date and is_fresh(event_date):
+                    event_type = event.get('type', 'Unknown')
+                    logger.debug(f"   ✅ Fresh activity: {event_type} at {event_date}")
+                    return True
+            logger.debug(f"   ⚠️ No fresh events for {owner}/{repo}")
+        return False
+    except Exception as e:
+        logger.debug(f"Error checking activity for {owner}/{repo}: {e}")
+        return False
+
 async def analyze_relevance(repos):
-    """✅ AI анализ релевантности"""
     if not repos: 
         return {}
 
@@ -375,7 +484,9 @@ async def analyze_relevance(repos):
 - VPN, прокси, DPI-обход (Zapret, ByeDPI, AntiZapret, Amnezia)
 - Цензура в РФ (РКН, ТСПУ, Минцифры, Роскомнадзор)
 - Полезные конфиги, списки IP/доменов для России и Европы
-- Панели управления (Marzban, 3X-UI)
+- Панели управления (Marzban, 3X-UI, Hiddify)
+- Протоколы: VLESS, Hysteria, Trojan, Shadowsocks, WireGuard
+- Клиенты: Nekoray, Clash, Sing-Box, V2RayN
 
 Список репозиториев:
 {text}
@@ -384,16 +495,17 @@ async def analyze_relevance(repos):
 
 GOOD если:
 ✅ Реально полезный инструмент/конфиг для обхода блокировок
-✅ Связан с РКН/ТСПУ/интернет-цензурой в РФ
-✅ Актуальные списки/базы для РФ или Европы
+✅ Связан с интернет-цензурой (не только РФ, но и полезный для РФ)
+✅ Актуальные списки/базы/конфиги
+✅ Форк с реальными улучшениями
 
 SKIP если:
-❌ Учебные примеры, домашка, устаревший проект
-❌ Китайский/Иранский софт БЕЗ связи с РФ
+❌ Учебные примеры, домашка, явно устаревший проект
 ❌ Пустой форк без изменений
 ❌ Мусор, спам, реклама
+❌ Не связан с VPN/прокси/цензурой вообще
 
-Формат ответа:
+Формат ответа (СТРОГО):
 1: GOOD
 2: SKIP
 ..."""
@@ -402,25 +514,31 @@ SKIP если:
         resp = groq_client.chat.completions.create(
             model="llama-3.1-8b-instant",
             messages=[{"role": "user", "content": prompt}],
-            max_tokens=200,
+            max_tokens=300,
             temperature=0.1
         )
         
+        response_text = resp.choices[0].message.content
+        logger.debug(f"   🤖 AI response:\n{response_text}")
+        
         res = {}
-        for line in resp.choices[0].message.content.split('\n'):
+        for line in response_text.split('\n'):
             if ':' in line:
                 try:
                     idx, verdict = line.split(':', 1)
-                    res[int(idx.strip())] = 'GOOD' in verdict.upper()
+                    idx = int(idx.strip().replace('.', ''))
+                    is_good = 'GOOD' in verdict.upper()
+                    res[idx] = is_good
+                    logger.debug(f"   🤖 Repo #{idx}: {'GOOD' if is_good else 'SKIP'}")
                 except: 
                     pass
         return res
     except Exception as e:
         logger.warning(f"⚠️ AI error: {e}")
-        return {}
+        # ✅ ИЗМЕНЕНО: При ошибке AI - пропускаем всё (а не блокируем)
+        return {i: True for i in range(1, len(repos) + 1)}
 
 async def generate_desc(name, desc):
-    """✅ Генерация описания через AI с ЗАЩИТОЙ ОТ ИЕРОГЛИФОВ"""
     if desc and len(desc) > 25 and not has_non_latin(desc): 
         return desc
 
@@ -443,11 +561,8 @@ async def generate_desc(name, desc):
             )
             generated = resp.choices[0].message.content.strip()
             
-            # ✅ ПРОВЕРКА РЕЗУЛЬТАТА НА ИЕРОГЛИФЫ
             if generated and not has_non_latin(generated):
                 return generated
-            else:
-                logger.debug(f"AI generated text with hieroglyphs, retrying...")
                 
         except Exception as e:
             logger.debug(f"AI description attempt {attempt+1} failed: {e}")
@@ -456,8 +571,6 @@ async def generate_desc(name, desc):
     return "Инструмент для обхода блокировок"
 
 async def send_message_safe(chat_id, text):
-    """✅ Безопасная отправка с ФИНАЛЬНОЙ ПРОВЕРКОЙ"""
-    # ✅ ПОСЛЕДНЯЯ ЛИНИЯ ЗАЩИТЫ - НЕ ШЛЁМ ИЕРОГЛИФЫ
     if has_non_latin(text):
         logger.warning("⚠️ Blocked message with hieroglyphs from sending!")
         return False
@@ -472,9 +585,9 @@ async def send_message_safe(chat_id, text):
     return False
 
 async def main():
-    logger.info("=" * 50)
-    logger.info("🕵️  SCOUT RADAR v7.0 (3-day cycle)")
-    logger.info("=" * 50)
+    logger.info("=" * 60)
+    logger.info("🕵️  SCOUT RADAR v7.1 (improved detection)")
+    logger.info("=" * 60)
 
     if not validate_env():
         return
@@ -484,38 +597,57 @@ async def main():
         return
 
     state = load_state()
-    posted = state.get("posted", [])
+    posted = set(state.get("posted", []))  # ✅ ИЗМЕНЕНО: set для O(1) lookup
     commits = state.get("commits", {})
     repo_cache = state.get("repo_cache", {})
     count = 0
+    
+    # ✅ ДОБАВЛЕНО: Статистика для отладки
+    stats = {
+        "total_found": 0,
+        "skipped_posted": 0,
+        "skipped_filter": 0,
+        "skipped_fork": 0,
+        "skipped_empty": 0,
+        "skipped_ai": 0,
+        "posted": 0
+    }
 
-    # 1. Проверка агрегаторов
+    # 1. Проверка агрегаторов (улучшенная)
     logger.info("\n📦 Checking aggregators...")
     for agg in KNOWN_AGGREGATORS:
         if count >= MAX_POSTS_PER_RUN: 
             break
         
         key = f"{agg['owner']}/{agg['repo']}"
-        c = get_last_commit(agg['owner'], agg['repo'])
+        last_known_sha = commits.get(key)
         
-        if not c:
+        # ✅ ИСПРАВЛЕНО: Получаем ВСЕ новые коммиты
+        new_commits = get_recent_commits(agg['owner'], agg['repo'], last_known_sha)
+        
+        if not new_commits:
+            logger.info(f"   ℹ️ {agg['name']}: no new commits")
             continue
         
-        if is_fresh(c['date']) and commits.get(key) != c['sha']:
-            logger.info(f"   🆕 {agg['name']}")
-            
-            success = await send_message_safe(
-                TARGET_CHANNEL_ID,
-                f"🔄 <b>{agg['name']}</b>\n\n"
-                f"⏰ {get_freshness(c['date'])}\n"
-                f"📝 <code>{html.escape(c['msg'])}</code>\n\n"
-                f"🔗 <a href='{c['url']}'>Посмотреть коммит</a>"
-            )
-            
-            if success:
-                commits[key] = c['sha']
-                count += 1
-                await asyncio.sleep(MESSAGE_DELAY)
+        logger.info(f"   🆕 {agg['name']}: {len(new_commits)} new commit(s)")
+        
+        # Постим только последний (чтобы не спамить)
+        c = new_commits[0]
+        
+        success = await send_message_safe(
+            TARGET_CHANNEL_ID,
+            f"🔄 <b>{agg['name']}</b>\n\n"
+            f"⏰ {get_freshness(c['date'])}\n"
+            f"📝 <code>{html.escape(c['msg'])}</code>\n"
+            f"📊 +{len(new_commits)} коммит(ов)\n\n"
+            f"🔗 <a href='{c['url']}'>Посмотреть коммит</a>"
+        )
+        
+        if success:
+            commits[key] = c['sha']
+            count += 1
+            stats["posted"] += 1
+            await asyncio.sleep(MESSAGE_DELAY)
 
     # 2. Поиск по запросам
     logger.info("\n🔍 Searching repositories...")
@@ -529,40 +661,51 @@ async def main():
         
         logger.info(f"\n🔍 {s['name']} (priority: {s.get('priority', 5)})...")
         items = search_fresh_repos(s['query'])
+        
+        stats["total_found"] += len(items)
 
         if not items:
-            logger.info("   ℹ️ No fresh repos found")
             continue
 
         candidates = []
         for i in items:
-            if str(i['id']) in posted:
+            repo_id = str(i['id'])
+            full_name = i.get('full_name', 'unknown')
+            
+            if repo_id in posted:
+                logger.debug(f"   ⏭ Already posted: {full_name}")
+                stats["skipped_posted"] += 1
                 continue
             
             if not quick_filter(i.get('full_name'), i.get('description'), i.get('stargazers_count', 0)):
+                stats["skipped_filter"] += 1
                 continue
             
             if is_likely_fork_spam(i):
-                logger.debug(f"   ⏭ SKIP (fork spam): {i['full_name']}")
+                logger.debug(f"   ⏭ Fork spam: {full_name}")
+                stats["skipped_fork"] += 1
                 continue
             
-            owner, repo = i['full_name'].split('/')
+            owner, repo = full_name.split('/')
             if is_repo_empty(owner, repo, repo_cache):
-                logger.debug(f"   ⏭ SKIP (empty): {i['full_name']}")
+                stats["skipped_empty"] += 1
                 continue
             
             candidates.append(i)
 
+        logger.info(f"   📊 Candidates after filtering: {len(candidates)}")
+
         if not candidates:
-            logger.info("   ℹ️ No candidates after filtering")
             continue
 
-        batch_size = 4
+        batch_size = 5  # ✅ ИЗМЕНЕНО: 5 вместо 4
         for batch_start in range(0, len(candidates), batch_size):
             if count >= MAX_POSTS_PER_RUN: 
                 break
             
             batch = candidates[batch_start:batch_start + batch_size]
+            
+            logger.info(f"   🤖 Analyzing batch of {len(batch)} repos...")
             decisions = await analyze_relevance(batch)
 
             for idx, item in enumerate(batch, 1):
@@ -570,7 +713,8 @@ async def main():
                     break
                 
                 if not decisions.get(idx, False):
-                    logger.debug(f"   ⏭ AI SKIP: {item['full_name']}")
+                    logger.debug(f"   ⏭ AI rejected: {item['full_name']}")
+                    stats["skipped_ai"] += 1
                     continue
 
                 final_desc = await generate_desc(item['full_name'], item['description'])
@@ -589,18 +733,33 @@ async def main():
                 )
                 
                 if success:
-                    posted.append(str(item['id']))
+                    posted.add(str(item['id']))
                     count += 1
+                    stats["posted"] += 1
                     logger.info(f"   ✅ Posted: {item['full_name']} (⭐{item['stargazers_count']})")
                     await asyncio.sleep(MESSAGE_DELAY)
             
             await asyncio.sleep(GROQ_DELAY)
 
-    save_state({"posted": posted[-2000:], "commits": commits, "repo_cache": repo_cache})
+    # ✅ ДОБАВЛЕНО: Детальная статистика
+    logger.info(f"\n{'=' * 60}")
+    logger.info("📊 STATISTICS:")
+    logger.info(f"   Total found: {stats['total_found']}")
+    logger.info(f"   Skipped (already posted): {stats['skipped_posted']}")
+    logger.info(f"   Skipped (filter): {stats['skipped_filter']}")
+    logger.info(f"   Skipped (fork spam): {stats['skipped_fork']}")
+    logger.info(f"   Skipped (empty): {stats['skipped_empty']}")
+    logger.info(f"   Skipped (AI): {stats['skipped_ai']}")
+    logger.info(f"   ✅ Posted: {stats['posted']}")
+    logger.info(f"{'=' * 60}")
+
+    save_state({
+        "posted": list(posted)[-3000:],  # ✅ ИЗМЕНЕНО: 3000 вместо 2000
+        "commits": commits, 
+        "repo_cache": repo_cache
+    })
     
-    logger.info(f"\n{'=' * 50}")
     logger.info(f"🏁 Completed! Published: {count}/{MAX_POSTS_PER_RUN}")
-    logger.info(f"{'=' * 50}")
     
     await bot.session.close()
 
