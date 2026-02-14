@@ -10702,3 +10702,175 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-02-11 13:14:17,256 | INFO | 🏁 Completed! Published: 55 posts
 2026-02-11 13:14:17,256 | INFO | ============================================================
+2026-02-14 12:47:41,559 | INFO | ============================================================
+2026-02-14 12:47:41,559 | INFO | 🕵️  SCOUT RADAR v8.0 (with releases tracking)
+2026-02-14 12:47:41,559 | INFO | ============================================================
+2026-02-14 12:47:41,559 | INFO | ✅ All environment variables validated
+2026-02-14 12:47:41,716 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-02-14 12:47:41,718 | INFO | 📂 Loaded: 231 posted, 4 releases tracked
+2026-02-14 12:47:41,718 | INFO | 
+🚀 Checking releases of tracked projects...
+2026-02-14 12:47:42,219 | INFO |    🆕 Release: 🛠 Zapret 2 v0.9.3
+2026-02-14 12:47:50,022 | INFO |    🆕 Release: 🎛 3X-UI v2.8.10
+2026-02-14 12:47:56,903 | INFO | 
+🔄 Checking commits of tracked projects...
+2026-02-14 12:47:57,296 | INFO |    🆕 Commit: 🛠 Zapret 2
+2026-02-14 12:48:01,431 | INFO |    🆕 Commit: 🛡 Amnezia Client
+2026-02-14 12:48:05,048 | INFO |    🆕 Commit: ⚡ Xray-core
+2026-02-14 12:48:08,654 | INFO |    🆕 Commit: 🚀 Hysteria
+2026-02-14 12:48:12,557 | INFO |    🆕 Commit: 📡 Outline Client
+2026-02-14 12:48:16,211 | INFO |    🆕 Commit: 🎛 3X-UI
+2026-02-14 12:48:19,753 | INFO |    🆕 Commit: 🎛 Hiddify Next
+2026-02-14 12:48:23,141 | INFO |    🆕 Commit: 🎛 Hiddify Manager
+2026-02-14 12:48:28,303 | INFO | 
+📡 Checking config aggregators...
+2026-02-14 12:48:28,498 | INFO |    🆕 📡 SubCrawler
+2026-02-14 12:48:32,231 | INFO |    🆕 📡 V2RayAggregator
+2026-02-14 12:48:35,889 | INFO |    🆕 📡 V2RayFree
+2026-02-14 12:48:39,084 | INFO | 
+🔍 Searching for new repositories...
+2026-02-14 12:48:39,246 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:48:39,247 | INFO | 
+🔍 Zapret Tools...
+2026-02-14 12:48:40,742 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:48:40,950 | INFO |    ✅ egor7ikk/zapret-roblox-1.9.6
+2026-02-14 12:48:44,152 | INFO |    ✅ AikoXanako/zapret-1.9.6-fixes
+2026-02-14 12:48:47,332 | INFO |    ✅ dkaragozyan/zapretbysanyareik-dkaragozyan-
+2026-02-14 12:48:50,501 | INFO |    ✅ xLabCode/dpi-off
+2026-02-14 12:48:55,590 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:48:55,664 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:48:55,830 | INFO |    ✅ necronicle/z2k
+2026-02-14 12:48:58,918 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:48:59,093 | INFO |    ✅ Net-runner-Linux/monospace-zapret
+2026-02-14 12:49:04,186 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:49:04,351 | INFO |    ✅ F33RNI/zapret-sing-box-docker
+2026-02-14 12:49:07,442 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:49:07,697 | INFO |    ✅ kafanase/zapret-socks5-proxy
+2026-02-14 12:49:12,785 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:49:12,882 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:49:13,053 | INFO |    ✅ glazkovmaks33-art/Zapret
+2026-02-14 12:49:16,230 | INFO |    ✅ zumuvik/zapret-cynon
+2026-02-14 12:49:21,387 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:49:23,546 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:49:23,547 | INFO | 
+🔍 DPI Bypass...
+2026-02-14 12:49:24,404 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:49:24,589 | INFO |    ✅ erayselim/offveil
+2026-02-14 12:49:27,787 | INFO |    ✅ imamirmhd/lucy
+2026-02-14 12:49:30,963 | INFO |    ✅ 3x-code/SMTP-Tunnel
+2026-02-14 12:49:36,157 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:49:36,158 | INFO | 
+🔍 RKN Block...
+2026-02-14 12:49:36,925 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:49:37,148 | INFO |    ✅ Just-blech/white_list_bypass
+2026-02-14 12:49:40,333 | INFO |    ✅ GAME-OVER-op/ZDT-D
+2026-02-14 12:49:45,517 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:49:45,518 | INFO | 
+🔍 AntiZapret...
+2026-02-14 12:49:46,359 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:49:46,360 | INFO | 
+🔍 TSPU...
+2026-02-14 12:49:47,063 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:49:47,308 | INFO |    ✅ kort0881/telegram-proxy-collector
+2026-02-14 12:49:52,472 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:49:52,473 | INFO | 
+🔍 Amnezia...
+2026-02-14 12:49:53,447 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:49:53,513 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:49:53,674 | INFO |    ✅ hoaxisr/amneziawg-linux-kernel-module-keenetic
+2026-02-14 12:49:56,845 | INFO |    ✅ hoaxisr/awg-manager
+2026-02-14 12:49:59,928 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:00,130 | INFO |    ✅ PinceredCoder/amnezia-rs
+2026-02-14 12:50:03,343 | INFO |    ✅ v-sulimov/amneziawg-socks-docker
+2026-02-14 12:50:08,580 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:08,661 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:08,829 | INFO |    ✅ eyrafir/amneziawg-go
+2026-02-14 12:50:14,011 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:50:14,012 | INFO | 
+🔍 Russia VPN...
+2026-02-14 12:50:15,917 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:18,054 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:20,219 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:22,356 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:24,503 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:26,630 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:28,709 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:28,792 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:29,191 | INFO |    ✅ loopbacksq-spec/anonimcharRussia
+2026-02-14 12:50:34,397 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:36,527 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:36,693 | INFO |    ✅ Bobb768/ru_notMDN
+2026-02-14 12:50:41,788 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:41,956 | INFO |    ✅ cornusandu/process-roulette
+2026-02-14 12:50:47,049 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:47,233 | INFO |    ✅ artist2026777-arch/vps-control-panel-ru
+2026-02-14 12:50:52,308 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:54,478 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:50:54,479 | INFO | 
+🔍 VLESS Reality...
+2026-02-14 12:50:55,697 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:55,877 | INFO |    ✅ undead-undead/xray-lite
+2026-02-14 12:50:58,955 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:50:59,220 | INFO |    ✅ chugun1324/VLESS-Reality-server
+2026-02-14 12:51:04,306 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:51:04,497 | INFO |    ✅ DeV1L/easy-vpn-ansible
+2026-02-14 12:51:07,687 | INFO |    ✅ DaDe287/AutoVLESS
+2026-02-14 12:51:10,857 | INFO |    ✅ anfixit/routerus
+2026-02-14 12:51:16,023 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:51:16,024 | INFO | 
+🔍 Hysteria2...
+2026-02-14 12:51:17,191 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:51:17,389 | INFO |    ✅ hiddify/hiddify-app
+2026-02-14 12:51:20,577 | INFO |    ✅ alireza0/s-ui
+2026-02-14 12:51:25,660 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:51:25,839 | INFO |    ✅ ehsanking/Elahe
+2026-02-14 12:51:29,016 | INFO |    ✅ M450ud/PrList
+2026-02-14 12:51:34,185 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:51:34,186 | INFO | 
+🔍 Marzban...
+2026-02-14 12:51:35,125 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:51:37,303 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:51:37,304 | INFO | 
+🔍 XRay Config...
+2026-02-14 12:51:38,051 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:51:38,155 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:51:38,385 | INFO |    ✅ bropines/xray-config-ui-editor
+2026-02-14 12:51:43,558 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:51:43,559 | INFO | 
+🔍 Geosite RU...
+2026-02-14 12:51:44,309 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:51:44,309 | INFO | 
+🔍 Domain List RU...
+2026-02-14 12:51:45,004 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:51:45,300 | INFO |    ✅ 1andrevich/Re-filter-lists
+2026-02-14 12:51:50,466 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:51:50,467 | INFO | 
+🔍 Sing-Box RU...
+2026-02-14 12:51:51,143 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:51:51,144 | INFO | 
+🔍 Censorship...
+2026-02-14 12:51:51,805 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:51:51,806 | INFO | 
+🔍 Proxy Configs...
+2026-02-14 12:51:52,410 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:51:52,410 | INFO | 
+🔍 Clash Rules...
+2026-02-14 12:51:53,018 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:51:53,019 | INFO | 
+🔍 Shadowsocks...
+2026-02-14 12:51:54,161 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:51:54,342 | INFO |    ✅ metio/tree-sitter-ssh-client-config
+2026-02-14 12:51:59,439 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:51:59,514 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-14 12:51:59,734 | INFO |    ✅ snowing2048/ACL4SSR-Config
+2026-02-14 12:52:04,939 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:52:04,940 | INFO | 
+🔍 WireGuard RU...
+2026-02-14 12:52:05,639 | INFO | 📊 GitHub API: 4931/5000 calls remaining
+2026-02-14 12:52:05,640 | INFO | 
+🔍 Outline...
+2026-02-14 12:52:06,085 | INFO | 💾 State saved
+2026-02-14 12:52:06,085 | INFO | 
+============================================================
+2026-02-14 12:52:06,085 | INFO | 🏁 Completed! Published: 51 posts
+2026-02-14 12:52:06,085 | INFO | ============================================================
