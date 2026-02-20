@@ -9,7 +9,9 @@ from datetime import datetime, timedelta, timezone
 from aiogram import Bot
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
+from aiogram.exceptions import TelegramRetryAfter, TelegramForbiddenError
 from groq import Groq
+import aiohttp
 
 # ============ LOGGING ============
 
@@ -31,7 +33,7 @@ TARGET_CHANNEL_ID = os.getenv("CHANNEL_ID")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
 STATE_FILE = "scout_history.json"
-CONFIG_SOURCES_FILE = "config_sources.json"  # новое
+CONFIG_SOURCES_FILE = "config_sources.json"
 
 MAX_AGE_DAYS = 3
 MAX_POSTS_PER_RUN = 100
@@ -110,7 +112,12 @@ FRESH_SEARCHES = [
     {"name": "RKN Block", "title": "👁 РКН блокировки", "query": "roskomnadzor OR rkn-block OR rkn-bypass", "priority": 10},
     {"name": "TSPU", "title": "👁 ТСПУ", "query": "tspu OR sorm OR russia-censorship", "priority": 9},
     {"name": "AntiZapret", "title": "🛡 AntiZapret", "query": "antizapret OR anti-zapret", "priority": 10},
-    {"name": "Russia VPN", "title": "🔧 VPN для России", "query": "russia vpn OR russian-vpn OR vpn-russia", "priority": 8},
+
+    {"name": "Russia VPN Tools", "title": "🔧 VPN инструменты для РФ",
+     "query": "vpn russia bypass OR vpn russia censorship OR russia vpn tool", "priority": 8},
+    {"name": "RU VPN Configs", "title": "🔧 Конфиги VPN для РФ",
+     "query": "russia vless OR russia reality OR russia hysteria", "priority": 9},
+
     {"name": "VLESS Reality", "title": "🔧 VLESS Reality", "query": "vless-reality OR reality-config", "priority": 8},
     {"name": "Hysteria2", "title": "🚀 Hysteria 2", "query": "hysteria2 OR hysteria-2", "priority": 8},
     {"name": "XRay Config", "title": "⚡ XRay конфиги", "query": "xray-config OR xray-russia", "priority": 7},
@@ -225,6 +232,10 @@ def safe_desc(desc, max_len=120):
     return desc[:max_len] if desc else ""
 
 def quick_filter(name, desc, stars=0):
+    """
+    Улучшенная фильтрация, чтобы не ловить мусор типа
+    russian-vocabulary-trainer, steel-market и т.п.
+    """
     text = f"{name} {desc or ''}".lower()
     full_text = f"{name} {desc or ''}"
 
@@ -233,6 +244,44 @@ def quick_filter(name, desc, stars=0):
 
     if stars < MIN_STARS:
         return False
+
+    # Категориальные стоп-слова (нерелевантные темы)
+    irrelevant_categories = [
+        # образование / обучение
+        'vocabulary', 'trainer', 'learning', 'educational', 'course',
+        'tutorial', 'lesson', 'homework', 'student', 'university',
+        'language-learning', 'flashcard', 'quiz',
+
+        # бизнес / рынок
+        'market', 'steel', 'trading', 'business', 'finance',
+        'ecommerce', 'shop', 'store', 'retail', 'analytics',
+
+        # демо / примеры
+        'example-', 'demo-', 'template', 'boilerplate', 'starter',
+        'practice', 'exercise', 'sample',
+
+        # прочий оффтоп
+        'recipe', 'cooking', 'food', 'restaurant', 'travel',
+        'portfolio', 'resume', 'cv',
+        'game', 'minigame',
+    ]
+    if any(cat in text for cat in irrelevant_categories):
+        logger.debug(f"   ❌ Filtered by category: {name}")
+        return False
+
+    # Если используется "russia"/"russian", требуем VPN-контекст
+    if 'russia' in text or 'russian' in text:
+        vpn_context_required = [
+            'vpn', 'proxy', 'bypass', 'dpi', 'censorship',
+            'block', 'unblock', 'freedom', 'gfw',
+            'zapret', 'rkn', 'sorm', 'tspu',
+            'vless', 'vmess', 'xray', 'v2ray', 'reality',
+            'shadowsocks', 'trojan', 'hysteria', 'wireguard',
+            'amnezia', 'outline', 'clash', 'sing-box',
+        ]
+        if not any(ctx in text for ctx in vpn_context_required):
+            logger.debug(f"   ❌ 'russia' without VPN context: {name}")
+            return False
 
     whitelist = [
         'russia', 'russian', 'ru-', 'roskomnadzor', 'rkn', 'antizapret',
@@ -252,7 +301,7 @@ def quick_filter(name, desc, stars=0):
     if any(k in text for k in blacklist):
         return False
 
-    return True
+    return False
 
 def is_likely_fork_spam(item):
     if not item.get('fork'):
@@ -261,7 +310,51 @@ def is_likely_fork_spam(item):
         return True
     return False
 
-# ============ GITHUB API FUNCTIONS ============
+# ============ GITHUB API FUNCTIONS (ASYNC) ============
+
+async def get_default_branch(session, owner, repo):
+    """Получить default branch через API"""
+    url = f"https://api.github.com/repos/{owner}/{repo}"
+    try:
+        async with session.get(url) as resp:
+            if resp.status == 200:
+                data = await resp.json()
+                return data.get('default_branch', 'main')
+    except Exception as e:
+        logger.debug(f"Error getting default branch for {owner}/{repo}: {e}")
+    return 'main'
+
+async def fetch_repo_text_async(owner, repo):
+    """Асинхронная загрузка README с правильным определением ветки"""
+    try:
+        async with aiohttp.ClientSession(headers=API_HEADERS) as session:
+            # Сначала получаем default branch
+            branch = await get_default_branch(session, owner, repo)
+            
+            urls = [
+                f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/README.md",
+                f"https://raw.githubusercontent.com/{owner}/{repo}/main/README.md",
+                f"https://raw.githubusercontent.com/{owner}/{repo}/master/README.md",
+            ]
+            
+            for url in urls:
+                try:
+                    async with session.get(url, timeout=aiohttp.ClientTimeout(total=8)) as resp:
+                        if resp.status == 200:
+                            text = await resp.text()
+                            logger.debug(f"   ✅ README loaded from {url}")
+                            return text
+                except asyncio.TimeoutError:
+                    logger.debug(f"   ⏱ Timeout loading {url}")
+                    continue
+                except Exception as e:
+                    logger.debug(f"   ⚠️ Error loading {url}: {e}")
+                    continue
+                    
+    except Exception as e:
+        logger.debug(f"Error fetching README for {owner}/{repo}: {e}")
+    
+    return ""
 
 def get_latest_release(owner, repo):
     url = f"https://api.github.com/repos/{owner}/{repo}/releases/latest"
@@ -365,6 +458,8 @@ def load_state():
         try:
             with open(STATE_FILE, "r", encoding='utf-8') as f:
                 data = json.load(f)
+                # Обрезаем posted сразу при загрузке
+                data['posted'] = data.get('posted', [])[-3000:]
                 logger.info(f"📂 Loaded: {len(data.get('posted', []))} posted, {len(data.get('releases', {}))} releases tracked")
                 return data
         except Exception as e:
@@ -373,6 +468,8 @@ def load_state():
 
 def save_state(state):
     state['last_run'] = datetime.now(timezone.utc).isoformat()
+    # Обрезаем при сохранении для надёжности
+    state['posted'] = state.get('posted', [])[-3000:]
     try:
         with open(STATE_FILE, "w", encoding='utf-8') as f:
             json.dump(state, f, indent=2, ensure_ascii=False)
@@ -400,6 +497,7 @@ def save_config_sources(sources):
 # ============ AI FUNCTIONS ============
 
 async def analyze_relevance(repos):
+    """Анализ релевантности небольшими батчами"""
     if not repos:
         return {}
 
@@ -410,18 +508,26 @@ async def analyze_relevance(repos):
 
     prompt = f"""Отфильтруй репозитории для канала про обход блокировок в РФ.
 
-Темы: VPN, прокси, DPI-обход, Zapret, ByeDPI, Amnezia, РКН, ТСПУ, конфиги, списки IP/доменов.
+✅ Релевантные темы:
+- VPN, прокси, туннели (vless, vmess, hysteria, reality)
+- Обход DPI/блокировок (zapret, ByeDPI, GoodbyeDPI)
+- Панели управления (Marzban, 3x-ui, Hiddify)
+- Списки доменов/IP для обхода РКН
+- Инструменты обхода цензуры в России
+
+❌ Нерелевантные (всегда SKIP):
+- Обучение языку (vocabulary, language learning)
+- Бизнес/рынок (market, steel market, trading, ecommerce)
+- Примеры кода/учебные проекты без VPN-функций
+- Игры, боты, утилиты без тематики обхода блокировок
+- Любые проекты с "russia" БЕЗ VPN/DPI/цензуры-контекста
 
 Репозитории:
 {text}
 
 Ответь GOOD или SKIP для каждого:
-- GOOD: полезный инструмент/конфиг для обхода
-- SKIP: мусор, учебный проект, не по теме
-
-Формат:
-1: GOOD
-2: SKIP
+1: GOOD/SKIP
+2: GOOD/SKIP
 ..."""
 
     try:
@@ -468,10 +574,54 @@ async def generate_desc(name, desc):
         generated = resp.choices[0].message.content.strip()
         if generated and not has_non_latin(generated):
             return generated
-    except:
-        pass
+    except Exception as e:
+        logger.debug(f"Error generating description: {e}")
 
     return "Инструмент для обхода блокировок"
+
+# финальная проверка репо по README (теперь async)
+async def check_repo_relevance(owner: str, repo: str, repo_cache: dict) -> bool:
+    """
+    Финальная валидация: проверяем README на VPN/DPI-контекст,
+    чтобы не публиковать vocabulary-trainer, steel-market и т.п.
+    С кэшированием результатов.
+    """
+    cache_key = f"relevance:{owner}/{repo}"
+    
+    # Проверяем кэш
+    if cache_key in repo_cache:
+        return repo_cache[cache_key]
+    
+    text = await fetch_repo_text_async(owner, repo)
+    if not text:
+        repo_cache[cache_key] = False
+        return False
+
+    low = text.lower()
+
+    required_terms = [
+        'vpn', 'proxy', 'bypass', 'censorship', 'dpi',
+        'vless', 'vmess', 'xray', 'v2ray', 'shadowsocks',
+        'trojan', 'hysteria', 'wireguard', 'clash', 'sing-box',
+        'zapret', 'rkn', 'roskomnadzor', 'sorm', 'tspu',
+    ]
+    if not any(term in low for term in required_terms):
+        logger.debug(f"   ❌ No VPN/DPI terms in README: {owner}/{repo}")
+        repo_cache[cache_key] = False
+        return False
+
+    bad_signs = [
+        'vocabulary trainer', 'language learning', 'flashcard',
+        'steel market', 'commodity market', 'stock market',
+        'cooking recipe', 'restaurant', 'shopping cart', 'ecommerce',
+    ]
+    if any(sign in low for sign in bad_signs):
+        logger.debug(f"   ❌ Irrelevant content in README: {owner}/{repo}")
+        repo_cache[cache_key] = False
+        return False
+
+    repo_cache[cache_key] = True
+    return True
 
 # ============ TELEGRAM ============
 
@@ -484,6 +634,12 @@ async def send_message_safe(chat_id, text):
         try:
             await bot.send_message(chat_id, text, disable_web_page_preview=True)
             return True
+        except TelegramRetryAfter as e:
+            logger.warning(f"⚠️ Flood control: waiting {e.retry_after}s")
+            await asyncio.sleep(e.retry_after)
+        except TelegramForbiddenError:
+            logger.error("❌ Bot blocked by user/chat")
+            return False
         except Exception as e:
             logger.warning(f"⚠️ Send attempt {attempt+1} failed: {e}")
             await asyncio.sleep(2 ** attempt)
@@ -545,48 +701,24 @@ def extract_config_urls(text: str):
         for m in re.findall(pattern, text):
             urls.add(m.strip())
 
-    # базовая очистка мусора
     candidates = []
     for u in urls:
         low = u.lower()
-        # только более-менее осмысленные источники
         if any(proto in low for proto in ["vless", "vmess", "hysteria", "trojan", "shadow", "sub", "clash"]):
             candidates.append(u)
     return candidates
 
-def fetch_repo_text(owner, repo):
-    urls = [
-        f"https://raw.githubusercontent.com/{owner}/{repo}/refs/heads/main/README.md",
-        f"https://raw.githubusercontent.com/{owner}/{repo}/refs/heads/master/README.md",
-        f"https://raw.githubusercontent.com/{owner}/{repo}/main/README.md",
-        f"https://raw.githubusercontent.com/{owner}/{repo}/master/README.md",
-    ]
-    texts = []
-    for u in urls:
-        try:
-            r = requests.get(u, timeout=8)
-            if r.status_code == 200:
-                texts.append(r.text)
-        except:
-            pass
-    return "\n".join(texts)
-
 def filter_url_for_russia_and_vless(url: str) -> bool:
-    """
-    Фильтрация URL под твой кейс:
-    - явно конфиги (vless/vmess/Reality/clash/sub)
-    - не только иран/китай
-    - пригодно для дальнейшей проверки
-    """
     low = url.lower()
 
-    # протоколы: даём приоритет vless/reality, но не режем vmess/sing/clash
     if not any(p in low for p in ["vless", "reality", "vmess", "xray", "v2ray", "clash", "sub", "subscription"]):
         return False
 
-    # режем источники, заточенные под iran/china (при желании можно ослабить)
     bad_markers = ["iran", "/ir-", "iran-"]
     if any(b in low for b in bad_markers):
+        return False
+
+    if re.search(r'Sub\d+\.txt$', url):
         return False
 
     return True
@@ -622,7 +754,7 @@ async def discover_config_sources():
             if not quick_filter(full_name, item.get("description"), item.get("stargazers_count", 0)):
                 continue
 
-            text = fetch_repo_text(owner, repo)
+            text = await fetch_repo_text_async(owner, repo)
             if not text:
                 continue
 
@@ -644,7 +776,7 @@ async def discover_config_sources():
 
 async def main():
     logger.info("=" * 60)
-    logger.info("🕵️  SCOUT RADAR v8.1 (with config sources discovery)")
+    logger.info("🕵️  SCOUT RADAR v8.3 (optimized)")
     logger.info("=" * 60)
 
     if not validate_env():
@@ -783,7 +915,8 @@ async def main():
         if not candidates:
             continue
 
-        batch_size = 5
+        # Обрабатываем батчами по 3 репозитория
+        batch_size = 3
         for batch_start in range(0, len(candidates), batch_size):
             if count >= MAX_POSTS_PER_RUN:
                 break
@@ -796,6 +929,15 @@ async def main():
                     break
 
                 if not decisions.get(idx, False):
+                    logger.debug(f"   ⏭ AI filtered: {item['full_name']}")
+                    continue
+
+                owner, repo = item['full_name'].split('/')
+                
+                # Проверяем релевантность через README с кэшированием
+                is_relevant = await check_repo_relevance(owner, repo, repo_cache)
+                if not is_relevant:
+                    logger.info(f"   ⏭ Skipped (irrelevant README): {item['full_name']}")
                     continue
 
                 final_desc = await generate_desc(item['full_name'], item['description'])
@@ -825,7 +967,7 @@ async def main():
 
     # SAVE STATE
     save_state({
-        "posted": list(posted)[-3000:],
+        "posted": list(posted),
         "commits": commits,
         "releases": releases,
         "repo_cache": repo_cache
