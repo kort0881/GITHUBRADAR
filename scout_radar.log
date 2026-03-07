@@ -16101,3 +16101,931 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-03-04 12:59:27,897 | INFO | 🏁 Completed! Published: 41 posts
 2026-03-04 12:59:27,897 | INFO | ============================================================
+2026-03-07 12:45:37,644 | INFO | ============================================================
+2026-03-07 12:45:37,644 | INFO | 🕵️  SCOUT RADAR v8.3 (optimized)
+2026-03-07 12:45:37,644 | INFO | ============================================================
+2026-03-07 12:45:37,645 | INFO | ✅ All environment variables validated
+2026-03-07 12:45:37,797 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-03-07 12:45:37,799 | INFO | 📂 Loaded: 543 posted, 32 releases tracked
+2026-03-07 12:45:37,799 | INFO | 
+🚀 Checking releases of tracked projects...
+2026-03-07 12:45:38,242 | INFO |    🆕 Release: 🛠 Zapret 2 v0.9.4.5
+2026-03-07 12:45:44,095 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-alpha.1
+2026-03-07 12:45:47,296 | INFO |    🆕 Release: 📦 Sing-Box v1.13.2
+2026-03-07 12:45:50,486 | INFO |    🆕 Release: 📦 Sing-Box v1.13.1
+2026-03-07 12:45:53,727 | INFO |    🆕 Release: 📦 Sing-Box v1.12.24
+2026-03-07 12:45:58,456 | INFO |    🆕 Release: 🎛 3X-UI v2.8.11
+2026-03-07 12:46:02,129 | INFO |    🆕 Release: 🎛 Hiddify Next v4.1.1
+2026-03-07 12:46:02,129 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-03-07 12:46:02,390 | INFO |    🆕 Release: 🎛 Hiddify Manager v12.1.0b6
+2026-03-07 12:46:05,574 | INFO |    🆕 Release: 🎛 Hiddify Manager v12.1.0b4
+2026-03-07 12:46:08,786 | INFO |    🆕 Release: 🎛 Hiddify Manager v12.1.0b3
+2026-03-07 12:46:11,980 | INFO |    🆕 Release: 🎛 Hiddify Manager v12.1.0b2
+2026-03-07 12:46:15,173 | INFO |    🆕 Release: 🎛 Hiddify Manager v12.1.0b1
+2026-03-07 12:46:18,989 | INFO |    🆕 Release: 💻 V2RayN 7.19.2
+2026-03-07 12:46:18,989 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-03-07 12:46:21,016 | INFO | 
+🔄 Checking commits of tracked projects...
+2026-03-07 12:46:21,204 | INFO |    🆕 Commit: 🛠 Zapret (original)
+2026-03-07 12:46:24,598 | INFO |    🆕 Commit: 🛠 Zapret 2
+2026-03-07 12:46:28,510 | INFO |    🆕 Commit: 🛡 Amnezia Client
+2026-03-07 12:46:32,133 | INFO |    🆕 Commit: ⚡ Xray-core
+2026-03-07 12:46:35,619 | INFO |    🆕 Commit: 📦 Sing-Box
+2026-03-07 12:46:40,192 | INFO |    🆕 Commit: 🎛 3X-UI
+2026-03-07 12:46:43,714 | INFO |    🆕 Commit: 🎛 Hiddify Next
+2026-03-07 12:46:47,142 | INFO |    🆕 Commit: 🎛 Hiddify Manager
+2026-03-07 12:46:50,731 | INFO |    🆕 Commit: 💻 V2RayN
+2026-03-07 12:46:55,629 | INFO | 
+📡 Checking config aggregators...
+2026-03-07 12:46:55,822 | INFO |    🆕 📡 SubCrawler
+2026-03-07 12:46:59,771 | INFO |    🆕 📡 V2RayAggregator
+2026-03-07 12:47:03,463 | INFO |    🆕 📡 V2RayFree
+2026-03-07 12:47:06,654 | INFO | 
+🔍 Searching for new repositories...
+2026-03-07 12:47:06,796 | INFO | 📊 GitHub API: 4935/5000 calls remaining
+2026-03-07 12:47:06,797 | INFO | 
+🔍 Zapret Tools...
+2026-03-07 12:47:07,956 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:47:07,957 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:47:08,305 | INFO |    ⏭ Skipped (irrelevant README): Zena-Linux/zapret
+2026-03-07 12:47:08,669 | INFO |    ⏭ Skipped (irrelevant README): ZefirVSarae/ZApretiK
+2026-03-07 12:47:09,149 | INFO |    ✅ CesarDCM/GeminiVPN
+2026-03-07 12:47:14,198 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:47:14,198 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:47:14,199 | INFO |    ⏭ Skipped (irrelevant README): naturedrug/zapret_shell
+2026-03-07 12:47:14,555 | INFO |    ⏭ Skipped (irrelevant README): LimeJR/limejr-zapret
+2026-03-07 12:47:14,885 | INFO |    ⏭ Skipped (irrelevant README): x6o4r/nixos-cosmic-opt
+2026-03-07 12:47:16,921 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:47:16,921 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:47:17,506 | INFO |    ✅ EmirenRU/modified-zapret-presets
+2026-03-07 12:47:20,964 | INFO |    ✅ CNTMA/Zapret-NO-OFFICIAL-with-launcher
+2026-03-07 12:47:24,321 | INFO |    ⏭ Skipped (irrelevant README): apuryhach-ctrl/zapret-discord-youtube-1.9.9b.zip
+2026-03-07 12:47:26,362 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:47:26,363 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:47:26,944 | INFO |    ✅ sarumyan007/bypass-openclaw-skill
+2026-03-07 12:47:30,277 | INFO |    ⏭ Skipped (irrelevant README): apuryhach-ctrl/zapret-discord-youtube-1.9.7b.zip
+2026-03-07 12:47:30,587 | INFO |    ⏭ Skipped (irrelevant README): apuryhach-ctrl/Zapret-Discord-YouTube
+2026-03-07 12:47:32,740 | INFO | 📊 GitHub API: 4924/5000 calls remaining
+2026-03-07 12:47:32,741 | INFO | 
+🔍 DPI Bypass...
+2026-03-07 12:47:33,628 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:47:33,629 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:47:34,189 | INFO |    ✅ Boss-venkatesh/Gost-Tunnel-Manager
+2026-03-07 12:47:37,654 | INFO |    ✅ prostoy23rus/openwrt-antidpi
+2026-03-07 12:47:42,807 | INFO | 📊 GitHub API: 4922/5000 calls remaining
+2026-03-07 12:47:42,808 | INFO | 
+🔍 RKN Block...
+2026-03-07 12:47:43,512 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:47:43,513 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:47:43,842 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:47:44,082 | INFO |    ✅ bpm500/ZapretTester
+2026-03-07 12:47:49,237 | INFO | 📊 GitHub API: 4921/5000 calls remaining
+2026-03-07 12:47:49,238 | INFO | 
+🔍 AntiZapret...
+2026-03-07 12:47:49,959 | INFO | 📊 GitHub API: 4921/5000 calls remaining
+2026-03-07 12:47:49,960 | INFO | 
+🔍 TSPU...
+2026-03-07 12:47:50,609 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:47:50,610 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:47:50,861 | INFO |    ⏭ Skipped (irrelevant README): laurplesca2006testing-design/Sormea8Martie
+2026-03-07 12:47:51,353 | INFO |    ✅ god1122/tspu-docs
+2026-03-07 12:47:56,504 | INFO | 📊 GitHub API: 4919/5000 calls remaining
+2026-03-07 12:47:56,505 | INFO | 
+🔍 RU VPN Configs...
+2026-03-07 12:47:57,157 | INFO | 📊 GitHub API: 4919/5000 calls remaining
+2026-03-07 12:47:57,158 | INFO | 
+🔍 Amnezia...
+2026-03-07 12:47:58,096 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:47:58,097 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:47:58,604 | INFO |    ✅ ShiffGray/awg-create
+2026-03-07 12:48:01,607 | INFO |    ⏭ Skipped (irrelevant README): YroriXW/amneziawg
+2026-03-07 12:48:01,797 | INFO |    ✅ seb0ch/vpn
+2026-03-07 12:48:06,846 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:48:06,846 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:48:07,272 | INFO |    ✅ Sophiedevops/padavan-singbox-smartproxy-awg2.0
+2026-03-07 12:48:10,602 | INFO |    ⏭ Skipped (irrelevant README): DamBalDoor/amneziaVPN_tg_bot
+2026-03-07 12:48:11,048 | INFO |    ✅ MacTepYoba/AmneziaWG-Configuration-QR-Generator
+2026-03-07 12:48:16,094 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:48:16,094 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:48:16,649 | INFO |    ✅ PRVTPRO/Amnezia-Web-Panel
+2026-03-07 12:48:21,803 | INFO | 📊 GitHub API: 4914/5000 calls remaining
+2026-03-07 12:48:21,804 | INFO | 
+🔍 Russia VPN Tools...
+2026-03-07 12:48:22,487 | INFO | 📊 GitHub API: 4914/5000 calls remaining
+2026-03-07 12:48:22,487 | INFO | 
+🔍 VLESS Reality...
+2026-03-07 12:48:23,664 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:48:23,664 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:48:23,983 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:48:24,221 | INFO |    ✅ tarpy-socdev/-VPN-VLESS-Reality
+2026-03-07 12:48:27,690 | INFO |    ✅ spooky-finn/sing-config-gate
+2026-03-07 12:48:30,693 | INFO |    ⏭ Skipped (irrelevant README): Weoge/WeogeVPN
+2026-03-07 12:48:32,738 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:48:32,739 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:48:33,195 | INFO |    ✅ LYISTR2/proxy-installer
+2026-03-07 12:48:36,538 | INFO |    ⏭ Skipped (irrelevant README): DrSeedon/hedgehog-vpn
+2026-03-07 12:48:36,996 | INFO |    ✅ thejohnd0e/VLESS-to-HTTP
+2026-03-07 12:48:42,161 | INFO | 📊 GitHub API: 4909/5000 calls remaining
+2026-03-07 12:48:42,162 | INFO | 
+🔍 Hysteria2...
+2026-03-07 12:48:43,414 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:48:43,414 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:48:43,842 | INFO |    ✅ bk88collab/hiddify-app
+2026-03-07 12:48:46,845 | INFO |    ⏭ Skipped (irrelevant README): wiyba/hyst-panel
+2026-03-07 12:48:47,283 | INFO |    ✅ shafreeck/Tunnet
+2026-03-07 12:48:52,330 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:48:52,330 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:48:52,932 | INFO |    ✅ alexivengo/fastvps-hysteria2-agent-skill-pack
+2026-03-07 12:48:58,087 | INFO | 📊 GitHub API: 4906/5000 calls remaining
+2026-03-07 12:48:58,088 | INFO | 
+🔍 Marzban...
+2026-03-07 12:48:58,605 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:48:58,605 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:48:59,092 | INFO |    ✅ Orazmyrat-Hojamyradov/marzban-fork
+2026-03-07 12:49:04,253 | INFO | 📊 GitHub API: 4905/5000 calls remaining
+2026-03-07 12:49:04,254 | INFO | 
+🔍 XRay Config...
+2026-03-07 12:49:05,045 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:49:05,046 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:49:05,384 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:49:05,587 | INFO |    ✅ Sandy3100/xray
+2026-03-07 12:49:09,043 | INFO |    ✅ PaPerseller/chn-iplist
+2026-03-07 12:49:14,204 | INFO | 📊 GitHub API: 4903/5000 calls remaining
+2026-03-07 12:49:14,205 | INFO | 
+🔍 Geosite RU...
+2026-03-07 12:49:14,875 | INFO | 📊 GitHub API: 4903/5000 calls remaining
+2026-03-07 12:49:14,876 | INFO | 
+🔍 Domain List RU...
+2026-03-07 12:49:15,597 | INFO | 📊 GitHub API: 4903/5000 calls remaining
+2026-03-07 12:49:15,599 | INFO | 
+🔍 Sing-Box RU...
+2026-03-07 12:49:16,154 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-03-07 12:49:16,155 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-03-07 12:49:16,631 | INFO |    ✅ bitxwave/proxy-convert
+2026-03-07 12:49:21,807 | INFO | 📊 GitHub API: 4902/5000 calls remaining
+2026-03-07 12:49:21,808 | INFO | 
+🔍 Censorship...
+2026-03-07 12:49:22,518 | INFO | 📊 GitHub API: 4902/5000 calls remaining
+2026-03-07 12:49:22,519 | INFO | 
+🔍 Proxy Configs...
+2026-03-07 12:49:23,134 | INFO | 📊 GitHub API: 4902/5000 calls remaining
+2026-03-07 12:49:23,135 | INFO | 
+🔍 Clash Rules...
+2026-03-07 12:49:23,814 | INFO | 📊 GitHub API: 4902/5000 calls remaining
+2026-03-07 12:49:23,815 | INFO | 
+🔍 Shadowsocks...
+2026-03-07 12:49:24,744 | INFO | 📊 GitHub API: 4902/5000 calls remaining
+2026-03-07 12:49:24,745 | INFO | 
+🔍 WireGuard RU...
+2026-03-07 12:49:25,291 | INFO | 📊 GitHub API: 4902/5000 calls remaining
+2026-03-07 12:49:25,292 | INFO | 
+🔍 Outline...
+2026-03-07 12:49:25,891 | INFO | 
+🌐 Discovering new config sources...
+2026-03-07 12:49:26,043 | INFO | 📊 GitHub API: 4902/5000 calls remaining
+2026-03-07 12:49:26,044 | INFO |    🔍 Searching configs for query: v2ray configs free
+2026-03-07 12:49:26,974 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/vless.txt)
+2026-03-07 12:49:26,974 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/shadowsocks.txt)
+2026-03-07 12:49:26,974 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/trojan.txt)
+2026-03-07 12:49:26,974 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/vmess.txt)
+2026-03-07 12:49:27,230 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt
+2026-03-07 12:49:27,230 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/ss.txt
+2026-03-07 12:49:27,231 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub4.txt
+2026-03-07 12:49:27,231 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vmess.txt
+2026-03-07 12:49:27,231 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/hysteria2.txt
+2026-03-07 12:49:27,231 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/super-sub.txt
+2026-03-07 12:49:27,231 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vless.txt
+2026-03-07 12:49:27,231 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub39.txt
+2026-03-07 12:49:27,231 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub3.txt
+2026-03-07 12:49:27,231 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub2.txt
+2026-03-07 12:49:27,231 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/trojan.txt
+2026-03-07 12:49:27,231 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub1.txt
+2026-03-07 12:49:27,740 | INFO |    🆕 Config source: https://raw.githubusercontent.com/wiki/gfpcom/free-proxy-list/lists/vless.txt
+2026-03-07 12:49:27,740 | INFO |    🆕 Config source: https://raw.githubusercontent.com/wiki/gfpcom/free-proxy-list/lists/vmess.txt
+2026-03-07 12:49:28,027 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/clash-meta/actives_under_1000ms.yaml)
+2026-03-07 12:49:28,027 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/clash-meta/actives_under_1500ms.yaml)
+2026-03-07 12:49:28,027 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/clash-meta/all.yaml)
+2026-03-07 12:49:28,308 | INFO |    🆕 Config source: https://img.shields.io/github/stars/Epodonios/bulk-xray-v2ray-vless-vmess-...-configs?style=for-the-badge)](https://github.com/Epodonios/bulk-xray-v2ray-vless-vmess-...-configs/stargazers)
+2026-03-07 12:49:28,308 | INFO |    🆕 Config source: https://img.shields.io/github/issues-pr/Epodonios/V2rayCollector_py?style=for-the-badge)](https://github.com/Epodonios/bulk-xray-v2ray-vless-vmess-...-configs/pulls)
+2026-03-07 12:49:28,308 | INFO |    🆕 Config source: https://img.shields.io/github/issues/Epodonios/bulk-xray-v2ray-vless-vmess-...-configs?style=for-the-badge)](https://github.com/Epodonios/bulk-xray-v2ray-vless-vmess-...-configs/issues)
+2026-03-07 12:49:28,308 | INFO |    🆕 Config source: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://github.com/Epodonios/bulk-xray-v2ray-vless-vmess-...-configs)
+2026-03-07 12:49:28,855 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vmess/80.txt
+2026-03-07 12:49:28,855 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/trojan/2087.txt
+2026-03-07 12:49:28,855 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vless/2087.txt
+2026-03-07 12:49:28,855 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vless/2053.txt
+2026-03-07 12:49:28,855 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vmess/2087.txt
+2026-03-07 12:49:28,855 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vmess/2096.txt
+2026-03-07 12:49:28,855 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_443.txt)
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vmess/2053.txt
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vmess/8443.txt
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://github.com/hamedcode/port-based-v2ray-configs/tree/main/sub)
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/trojan/2096.txt
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/ss.txt)
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_2087.txt)
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_2096.txt)
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/other.txt)
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/trojan/443.txt
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vmess/8880.txt
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_8443.txt)
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/vmess.txt)
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vless/80.txt
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_8880.txt)
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vless/2096.txt
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/trojan/2053.txt
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/trojan.txt)
+2026-03-07 12:49:28,856 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/trojan/80.txt
+2026-03-07 12:49:28,857 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/trojan/8443.txt
+2026-03-07 12:49:28,857 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/vless.txt)
+2026-03-07 12:49:28,857 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vless/443.txt
+2026-03-07 12:49:28,857 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vmess/443.txt
+2026-03-07 12:49:28,857 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vless/8880.txt
+2026-03-07 12:49:28,857 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vless/8443.txt
+2026-03-07 12:49:28,857 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_2053.txt)
+2026-03-07 12:49:28,857 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_80.txt)
+2026-03-07 12:49:29,157 | INFO |    🆕 Config source: https://github.com/igareck/vpn-configs-for-russia/blob/main/QR-codes/Vless-Reality-White-Lists-Rus-Mobile-2-QR.png)
+2026-03-07 12:49:29,157 | INFO |    🆕 Config source: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile-2.txt)
+2026-03-07 12:49:29,157 | INFO |    🆕 Config source: https://github.com/igareck/vpn-configs-for-russia/blob/main/QR-codes/Vless-Reality-White-Lists-Rus-Mobile-QR.png)
+2026-03-07 12:49:29,157 | INFO |    🆕 Config source: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt)
+2026-03-07 12:49:29,157 | INFO |    🆕 Config source: https://github.com/igareck/vpn-configs-for-russia/blob/main/QR-codes/BLACK_VLESS_RUS_mobile_QR.png)
+2026-03-07 12:49:29,157 | INFO |    🆕 Config source: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt)
+2026-03-07 12:49:29,157 | INFO |    🆕 Config source: https://github.com/igareck/vpn-configs-for-russia/blob/main/QR-codes/BLACK_VLESS_RUS-QR.png)
+2026-03-07 12:49:29,157 | INFO |    🆕 Config source: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt)
+2026-03-07 12:49:30,257 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_base64_Sub.txt
+2026-03-07 12:49:30,257 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/trojan.txt
+2026-03-07 12:49:30,257 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/vless.txt
+2026-03-07 12:49:30,257 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_Sub.txt
+2026-03-07 12:49:30,257 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/vmess.txt
+2026-03-07 12:49:30,503 | INFO |    🆕 Config source: https://raw.githubusercontent.com/barry-far/V2ray-config/main/All_Configs_base64_Sub.txt)
+2026-03-07 12:49:30,503 | INFO |    🆕 Config source: https://raw.githubusercontent.com/barry-far/V2ray-config/main/All_Configs_Sub.txt)
+2026-03-07 12:49:30,503 | INFO |    🆕 Config source: https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt
+2026-03-07 12:49:30,503 | INFO |    🆕 Config source: https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/trojan.txt
+2026-03-07 12:49:30,503 | INFO |    🆕 Config source: https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vless.txt
+2026-03-07 12:49:30,746 | INFO |    🆕 Config source: https://github.com/kort0881/vpn-vless-configs-russia/discussions)
+2026-03-07 12:49:30,746 | INFO |    🆕 Config source: https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/githubmirror/ru-sni/vless_ru.txt
+2026-03-07 12:49:30,746 | INFO |    🆕 Config source: https://vlesstrojan.alexanderyurievich88.workers.dev?token=sub&filter=vless&warp=on
+2026-03-07 12:49:30,746 | INFO |    🆕 Config source: https://img.shields.io/github/stars/kort0881/vpn-vless-configs-russia?style=social)](https://github.com/kort0881/vpn-vless-configs-russia/stargazers)
+2026-03-07 12:49:30,746 | INFO |    🆕 Config source: https://vlesstrojan.alexanderyurievich88.workers.dev?token=sub
+2026-03-07 12:49:30,746 | INFO |    🆕 Config source: https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/githubmirror/clean/vless.txt
+2026-03-07 12:49:30,746 | INFO |    🆕 Config source: https://github.com/kort0881/vpn-vless-configs-russia.git
+2026-03-07 12:49:30,746 | INFO |    🆕 Config source: https://img.shields.io/github/watchers/kort0881/vpn-vless-configs-russia?style=social)](https://github.com/kort0881/vpn-vless-configs-russia/watchers)
+2026-03-07 12:49:30,746 | INFO |    🆕 Config source: https://vlesstrojan.alexanderyurievich88.workers.dev?token=sub&name=MyVPN
+2026-03-07 12:49:30,746 | INFO |    🆕 Config source: https://img.shields.io/github/forks/kort0881/vpn-vless-configs-russia?style=social)](https://github.com/kort0881/vpn-vless-configs-russia/network/members)
+2026-03-07 12:49:30,747 | INFO |    🆕 Config source: https://vlesstrojan.alexanderyurievich88.workers.dev?token=sub&filter=vless
+2026-03-07 12:49:30,747 | INFO |    🆕 Config source: https://github.com/kort0881/vpn-vless-configs-russia/issues)
+2026-03-07 12:49:31,040 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/rayan_proxy.yaml)|[25]|
+2026-03-07 12:49:31,040 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/lagzian_mix.yaml)|[192]|
+2026-03-07 12:49:31,040 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/wudongdefeng_list_raw.yaml)|[308]|
+2026-03-07 12:49:31,040 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/SubConfigShuffler/10ium_Collector_mixed_cloudflare.txt.yaml)|[138]|
+2026-03-07 12:49:31,040 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/moneyfly1_merged_proxies_new.yaml)|[6001]|
+2026-03-07 12:49:31,040 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/wudongdefeng_list_raw.yaml)|[29]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Mosifree/_SS.yaml)|[227]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Epodonios/v2ray-configs/Splitted-By-Protocol/trojan.txt.yaml)|[426]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/hamedp-71_hp.yaml)|[174]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/ebrasha/_lite.yaml)|[30]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/moneyfly1_merged_proxies_new.yaml)|[6000]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/mahdibland/ShadowsocksAggregator/EternityAir.yaml)|[61]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/itsyebekhe/PSG/subscriptions/clash/trojan_ipv4.yaml)|[11]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/_V2Hub3_shadowsocks.yaml)|[308]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/V2ray-Config/Splitted-By-Protocol/hysteria2.txt.yaml)|[51]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/lagzian_trinity.yaml)|[152]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/Barabama_nodefree.yaml)|[14]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/ndsphonemy/_my.yaml)|[33]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/wudongdefeng_list_raw.yaml)|[306]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/V2Hub3/trojan.yaml)|[86]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/HiN-VPN/subscription/base64/vmess.yaml)|[36]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/10ium_V2Hub_shadowsocks.yaml)|[274]|
+2026-03-07 12:49:31,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/hamedp-71_Trojan_hp.yaml)|[199]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/ebrasha/_lite.yaml)|[48]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/base64-encoder/miladtahanian_config.yaml)|[43]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/Epodonios/v2ray-configs/Splitted-By-Protocol/ss.txt.yaml)|[480]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/vpnclashfa-backup/MirrorMan/MatinGhanbari_v2ray-configs-super-sub.b64.yaml)|[81]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/ndsphonemy/_lt-sub.yaml)|[41]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/SubConfigShuffler/roosterkid_v2ray.txt.yaml)|[72]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/base64/mix.yaml)|[511]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/MirrorMan/gheychiamoozesh.b64.yaml)|[31]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/liketolivefree_sub.yaml)|[390]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/mahsanet/_mci_sub_4.yaml)|[27]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/ndsphonemy/_default.yaml)|[501]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/amirparsaxs_xsfilternet.yaml)|[47]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/HiN-VPN/subscription/base64/vmess.yaml)|[36]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/hamedp-71_openproxylist.yaml)|[31]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/vpnclashfa-backup/SubConfigShuffler/10ium/V2ray/Config/vmess/cloudflare.txt.yaml)|[28]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/MirrorMan/MatinGhanbari_v2ray-configs-super-sub.b64.yaml)|[184]|
+2026-03-07 12:49:31,042 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/rb360full_Reza-Collection.yaml)|[313]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/rayan/_proxy.yaml)|[51]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/lagzian_mix.yaml)|[25]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/base64-encoder/FreedomGuard/_Finder_configs.yaml)|[160]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/MirrorMan/Danialsamadi_v2go_custom.b64.yaml)|[421]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/10ium_V2Hub3_trojan.yaml)|[88]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/roosterkid/_V2RAY_RAW.yaml)|[37]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/HiN-VPN/subscription/base64/mix.yaml)|[36]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/azadnet05.pages.dev/sub/4d794980-54c0-4fcb-8def-c2beaecadbad.yaml)|[36]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/hiddify/vmess.yaml)|[40]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/FreedomGuard_Finder_configs.yaml)|[77]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Epodonios/v2ray-configs/All_Configs_base64_Sub.txt.yaml)|[1454]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/moneyfly1_merged_proxies_new.yaml)|[6003]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/SnapdragonLee_clash_config_extra_US.yaml)|[52]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/money.yaml)|[18]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/MahsaNetConfigTopic.yaml)|[72]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/rb360full_Reza-2.yaml)|[430]|
+2026-03-07 12:49:31,043 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/peasoft_list_raw.yaml)|[73]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/66_42_50_118.yaml)|[507]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/Surfboardv2ray/TGParse/splitted/mixed.yaml)|[234]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/rb360full_Reza-2.yaml)|[42]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/vpnclashfa-backup/SubConfigShuffler/roosterkid_v2ray.txt.yaml)|[43]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/V2RayAggregator/Eternity.yml.yaml)|[201]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/AzadNet/-t.me.yaml)|[576]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/robin.victoriacross.ir.yaml)|[782]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/roosterkid.yaml)|[35]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/darkvpn/app_CloudflarePlus_proxy.yaml)|[11]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/moeinkey_ssh.yaml)|[16]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/itsyebekhe/PSG/lite/subscriptions/clash/mix.yaml)|[25]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/vpnclashfa-backup/MirrorMan/Danialsamadi_v2go_custom.b64.yaml)|[116]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/base64/ss.yaml)|[14]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Surfboardv2ray/TGParse/mixed.yaml)|[668]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/_hin-vpn-mix.yaml)|[89]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/mahsanet/_mci_sub_3.yaml)|[30]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/source/base64/anty_filter.yaml)|[42]|
+2026-03-07 12:49:31,044 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/Rayan/-Config_WG.yaml)|[40]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/SubConfigShuffler/10ium_telegram_configs_collector_cloudflare.txt.yaml)|[296]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/hamedp-71_hp.yaml)|[146]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/muma16fx_netlify_app.yaml)|[20]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/SubConfigShuffler/10ium_V2Hub_merged_cloudflare.txt.yaml)|[119]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/freeclash/-v2ray-4.yaml)|[164]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/Danialsamadi_v2go_custom.yaml)|[109]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/Surfboardv2ray_bugfix.yaml)|[32]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/freeclash/-v2ray-2.yaml)|[22]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium_V2RayAggregator-Eternity.yaml)|[115]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/freeclash/-4.yaml)|[166]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/SubConfigShuffler/10ium_V2ray_Config_vmess_cloudflare.txt.yaml)|[28]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/peasoft_list_raw.yaml)|[14]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/SubConfigShuffler/10ium_V2ray_Config_All_cloudflare.txt.yaml)|[1119]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Surfboardv2ray/TGParse/splitted/trojan.yaml)|[256]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/ALIILAPRO/v2rayNG-Config/sub.txt.yaml)|[116]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/freeclash/-2.yaml)|[22]|
+2026-03-07 12:49:31,045 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/FreedomGuard_Finder_configs.yaml)|[38]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/wudongdefeng_list_raw.yaml)|[310]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/theGreatPeter_nodes.yaml)|[25]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/ALIILAPRO/v2rayNG-Config/sub.txt.yaml)|[81]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/maimengmeng/_custom.yaml)|[286]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/SubConfigShuffler/roosterkid_v2ray.txt.yaml)|[101]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/_V2Hub3_trojan.yaml)|[124]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/itsyebekhe/PSG/subscriptions/clash/vmess_domain.yaml)|[19]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/base64/vless.yaml)|[430]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/itsyebekhe_IR.yaml)|[11]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/Danialsamadi_v2go_custom.yaml)|[112]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/MatinGhanbari/v2ray-configs/subscriptions/filtered/subs/vmess.txt.yaml)|[1498]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/free18.yaml)|[130]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/NiREvil_SSTime.yaml)|[756]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/Barabama_clashmeta.yaml)|[11]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/Barabama_ndnode.yaml)|[16]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/Barabama_nodefree.yaml)|[18]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/itsyebekhe/PSG/subscriptions/clash/trojan_ipv4.yaml)|[11]|
+2026-03-07 12:49:31,046 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/SubConfigShuffler/rayan_proxy.txt.yaml)|[30]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/itsyebekhe/PSG/lite/subscriptions/clash/vmess_domain.yaml)|[12]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/66_42_50_118.yaml)|[478]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/itsyebekhe/PSG/lite/subscriptions/clash/vmess.yaml)|[15]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/MatinGhanbari/v2ray-configs/subscriptions/v2ray/super-sub.txt.yaml)|[186]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/V2RayAggregator/Eternity.yml.yaml)|[201]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/voken100g/_recent.yaml)|[11]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/lagzian/_vmess.yaml)|[25]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/freeclash/-v2ray-4.yaml)|[14]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/firefoxmmx2.yaml)|[14]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/gheychiamoozesh.yaml)|[33]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium_hin-vpn-mix.yaml)|[50]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/maimengmeng_custom.yaml)|[291]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/MahsaNet/ConfigTopic.yaml)|[39]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/maimengmeng_500.yaml)|[59]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/HiN-VPN/subscription/hiddify/vmess.yaml)|[36]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/free18.yaml)|[416]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/MahsaNetConfigTopic.yaml)|[74]|
+2026-03-07 12:49:31,047 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/miladtahanian_config.yaml)|[1087]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Leon406/SubCrawler/sub/share/a11.yaml)|[271]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/Leon406/SubCrawler/sub/share/a11.yaml)|[116]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/Mosifree_Vmess.yaml)|[155]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/roosterkid/openproxylist/V2RAY_BASE64.txt.yaml)|[64]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/itsyebekhe/PSG/lite/subscriptions/clash/mix.yaml)|[15]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/mahdibland/ShadowsocksAggregator/Eternity.yml.yaml)|[53]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/roosterkid.yaml)|[68]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/SubConfigShuffler/maimengmeng.txt.yaml)|[465]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/itsyebekhe/PSG/lite/subscriptions/clash/mix.yaml)|[25]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/base64-encoder/wudongdefeng_list_raw.yaml)|[276]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/lagzian/_mix.yaml)|[190]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/freeclash/-3.yaml)|[22]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/66_42_50_118.yaml)|[38]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/base64-encoder/MahsaNetConfigTopic.yaml)|[12]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/vpnclashfa-backup/MirrorMan/v2nodes.b64.yaml)|[56]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/10ium_Aggregator.yaml)|[202]|
+2026-03-07 12:49:31,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/HiN-VPN/subscription/source/base64/soskeynet.yaml)|[11]|
+2026-03-07 12:49:31,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/freedomnet25500_free.yaml)|[69]|
+2026-03-07 12:49:31,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/MatinGhanbari/v2ray-configs/subscriptions/filtered/subs/ss.txt.yaml)|[1780]|
+2026-03-07 12:49:31,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/ResistalProxy_server.yaml)|[46]|
+2026-03-07 12:49:31,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/base64/vmess.yaml)|[40]|
+2026-03-07 12:49:31,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/ebrasha/_lite.yaml)|[126]|
+2026-03-07 12:49:31,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/shabane_trojan.yaml)|[31]|
+2026-03-07 12:49:31,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/lagzian_meta.yaml)|[34]|
+2026-03-07 12:49:31,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Epodonios/v2ray-configs/trojan.txt.yaml)|[426]|
+2026-03-07 12:49:31,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/V2Hub3/reality.yaml)|[232]|
+2026-03-07 12:49:31,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/itsyebekhe/PSG/subscriptions/clash/trojan.yaml)|[16]|
+2026-03-07 12:49:31,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/mahsanet/_mtn_sub_3.yaml)|[30]|
+2026-03-07 12:49:31,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/firefoxmmx2.yaml)|[16]|
+2026-03-07 12:49:31,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/10ium_V2Hub3_vmess.yaml)|[120]|
+2026-03-07 12:49:31,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/mahsa-sub_3.yaml)|[30]|
+2026-03-07 12:49:31,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/mahdibland/ShadowsocksAggregator/Eternity.yaml)|[153]|
+2026-03-07 12:49:31,050 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/hfarahani_pr.yaml)|[14]|
+2026-03-07 12:49:31,050 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/MatinGhanbari/-super-sub.yaml)|[68]|
+2026-03-07 12:49:31,050 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/V2Hub3/shadowsocks.yaml)|[272]|
+2026-03-07 12:49:31,050 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/Surfboardv2ray/TGParse/splitted/ss.yaml)|[178]|
+2026-03-07 12:49:31,050 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/rb360full_Reza-2.yaml)|[121]|
+2026-03-07 12:49:31,050 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Barabama_ndnode.yaml)|[14]|
+2026-03-07 12:49:31,050 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/lagzian_mix.yaml)|[165]|
+2026-03-07 12:49:31,050 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Surfboardv2ray/_bugfix.yaml)|[30]|
+2026-03-07 12:49:31,050 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/shabane/_trojan.yaml)|[29]|
+2026-03-07 12:49:31,050 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/freeclash/-1.yaml)|[16]|
+2026-03-07 12:49:31,050 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Ruk1ng001.yaml)|[500]|
+2026-03-07 12:49:31,050 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/itsyebekhe/PSG/subscriptions/clash/vmess.yaml)|[27]|
+2026-03-07 12:49:31,050 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/SubConfigShuffler/10ium_V2ray_Config_trojan_cloudflare.txt.yaml)|[162]|
+2026-03-07 12:49:31,050 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/tristan-deng_MyNodes.yaml)|[84]|
+2026-03-07 12:49:31,050 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/10ium_hin-vpn-mix.yaml)|[83]|
+2026-03-07 12:49:31,051 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/mahdibland/ShadowsocksAggregator/Eternity.yaml)|[200]|
+2026-03-07 12:49:31,051 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/ResistalProxy_server.yaml)|[110]|
+2026-03-07 12:49:31,051 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/v2ray_hidify.yaml)|[92]|
+2026-03-07 12:49:31,051 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/Barabama_v2rayshare.yaml)|[14]|
+2026-03-07 12:49:31,051 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/hamedp-71_openproxylist.yaml)|[20]|
+2026-03-07 12:49:31,051 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/Surfboardv2ray/TGParse/splitted/mixed.yaml)|[178]|
+2026-03-07 12:49:31,051 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/HiN-VPN/subscription/source/base64/soskeynet.yaml)|[29]|
+2026-03-07 12:49:31,051 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/shabane/_trojan.yaml)|[29]|
+2026-03-07 12:49:31,051 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/v2nodes.yaml)|[187]|
+2026-03-07 12:49:31,051 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/Surfboardv2ray_ipv6.yaml)|[16]|
+2026-03-07 12:49:31,051 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/itsyebekhe/PSG/subscriptions/clash/trojan.yaml)|[16]|
+2026-03-07 12:49:31,051 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/Surfboardv2ray_mahsa.yaml)|[16]|
+2026-03-07 12:49:31,051 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/maimengmeng.yaml)|[392]|
+2026-03-07 12:49:31,051 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/AzadNet/-hysteria.yaml)|[86]|
+2026-03-07 12:49:31,052 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/ndsphonemy_lt-sub.yaml)|[43]|
+2026-03-07 12:49:31,052 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Surfboardv2ray/_ipv6.yaml)|[17]|
+2026-03-07 12:49:31,052 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/MatinGhanbari/v2ray-configs/subscriptions/filtered/subs/vmess.txt.yaml)|[1498]|
+2026-03-07 12:49:31,052 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/shabane_ss.yaml)|[101]|
+2026-03-07 12:49:31,052 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/MirrorMan/MatinGhanbari_v2ray-configs-super-sub.b64.yaml)|[200]|
+2026-03-07 12:49:31,052 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/Ruk1ng001.yaml)|[46]|
+2026-03-07 12:49:31,052 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/freeclash/-1.yaml)|[24]|
+2026-03-07 12:49:31,052 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/MatinGhanbari/_v2ray-configs-super-sub.yaml)|[186]|
+2026-03-07 12:49:31,052 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/mahdibland/ShadowsocksAggregator/EternityAir.yaml)|[61]|
+2026-03-07 12:49:31,052 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/roosterkid_V2RAY_RAW.yaml)|[18]|
+2026-03-07 12:49:31,052 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/MahsaNetConfigTopic.yaml)|[12]|
+2026-03-07 12:49:31,052 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/freeclash/-v2ray-3.yaml)|[50]|
+2026-03-07 12:49:31,052 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/Surfboardv2ray_bugfix.yaml)|[30]|
+2026-03-07 12:49:31,052 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/freeclash/-4.yaml)|[26]|
+2026-03-07 12:49:31,053 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/MatinGhanbari/v2ray-configs/subscriptions/v2ray/super-sub.txt.yaml)|[199]|
+2026-03-07 12:49:31,053 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/AzadNetCH/workers/AzadNet.txt.yaml)|[237]|
+2026-03-07 12:49:31,053 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/10ium_V2RayAggregator-Eternity.yaml)|[203]|
+2026-03-07 12:49:31,053 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/vpnclashfa-backup/MirrorMan/gheychiamoozesh.b64.yaml)|[13]|
+2026-03-07 12:49:31,053 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/vpnclashfa-backup/MirrorMan/hamedp-71_Trojan_hp.b64.yaml)|[52]|
+2026-03-07 12:49:31,053 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/yebekhe_vpn-fail.yaml)|[92]|
+2026-03-07 12:49:31,053 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/mahdibland/ShadowsocksAggregator/Eternity.yml.yaml)|[201]|
+2026-03-07 12:49:31,053 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/AzadNetCH/Clash/AzadNet.txt.yaml)|[576]|
+2026-03-07 12:49:31,053 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/mahdibland/ShadowsocksAggregator/Eternity.yaml)|[200]|
+2026-03-07 12:49:31,053 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/NiREvil_SSTime.yaml)|[374]|
+2026-03-07 12:49:31,053 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/muma16fx_netlify_app.yaml)|[19]|
+2026-03-07 12:49:31,053 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/vpnclashfa-backup/SubConfigShuffler/rayan_proxy.txt.yaml)|[22]|
+2026-03-07 12:49:31,053 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Surfboardv2ray/TGParse/splitted/vless.yaml)|[3036]|
+2026-03-07 12:49:31,053 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/freeclash/-v2ray-1.yaml)|[173]|
+2026-03-07 12:49:31,054 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Epodonios/v2ray-configs/All_Configs_base64_Sub.txt.yaml)|[5539]|
+2026-03-07 12:49:31,054 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/muma16fx_netlify_app.yaml)|[20]|
+2026-03-07 12:49:31,054 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/vpnclashfa-backup/MirrorMan/MatinGhanbari_v2ray-configs-super-sub.b64.yaml)|[74]|
+2026-03-07 12:49:31,054 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/freeclash/-3.yaml)|[22]|
+2026-03-07 12:49:31,054 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/V2Hub3/shadowsocks.yaml)|[272]|
+2026-03-07 12:49:31,054 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/FreedomGuard_Finder_configs.yaml)|[231]|
+2026-03-07 12:49:31,054 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/lagzian_vmess_tvc.yaml)|[34]|
+2026-03-07 12:49:31,054 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/FreedomGuard/_Finder_configs.yaml)|[240]|
+2026-03-07 12:49:31,054 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/AzadNet/-t.me.yaml)|[1347]|
+2026-03-07 12:49:31,054 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/lagzian/_vmess_tvc.yaml)|[34]|
+2026-03-07 12:49:31,054 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/lagzian/_reality.yaml)|[45]|
+2026-03-07 12:49:31,054 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/MatinGhanbari/-super-sub.yaml)|[186]|
+2026-03-07 12:49:31,054 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/ebrasha_lite.yaml)|[18]|
+2026-03-07 12:49:31,054 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/moeinkey_ssh.yaml)|[16]|
+2026-03-07 12:49:31,054 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/HiN-VPN/subscription/source/base64/ar14n24b.yaml)|[35]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium_V2RayAggregator-Eternity.yaml)|[86]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/Ruk1ng001.yaml)|[148]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/V2RayAggregator/Eternity.yml.yaml)|[41]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/hiddify/ss.yaml)|[14]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/azadnet05.pages.dev/sub/4d794980-54c0-4fcb-8def-c2beaecadbad.yaml)|[72]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/base64-encoder/rb360full_Reza-Collection.yaml)|[181]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/V2Hub3/merged_base64.yaml)|[119]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Rayan/-Config_H-I.yaml)|[45]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/MirrorMan/v2nodes.b64.yaml)|[494]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/rb360full_Reza-Collection.yaml)|[105]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/v2ray_hidify.yaml)|[28]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/SubConfigShuffler/10ium_Collector_mixed_cloudflare.txt.yaml)|[23]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/MirrorMan/hamedp-71_Trojan_hp.b64.yaml)|[489]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/roosterkid_V2RAY_BASE64.yaml)|[67]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/lagzian/_vmess_tvc.yaml)|[34]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/source/base64/vpnbaz.yaml)|[42]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/shabane/_ss.yaml)|[29]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/hfarahani_pr.yaml)|[59]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/freedomnet25500_ss.yaml)|[17]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/mfuu_v2ray.yaml)|[69]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/maimengmeng.yaml)|[44]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/ndsphonemy/_default.yaml)|[477]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/MatinGhanbari/v2ray-configs/super-sub.txt.yaml)|[94]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/hamedp-71_Sub_Checker_Creator_final.yaml)|[146]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/base64-encoder/ebrasha/_lite.yaml)|[12]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/rb360full_Reza-2.yaml)|[122]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/MatinGhanbari/v2ray-configs/subscriptions/v2ray/super-sub.txt.yaml)|[94]|
+2026-03-07 12:49:31,055 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/proxy_kafee.yaml)|[82]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/ebrasha_lite.yaml)|[27]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/freedomnet25500_free.yaml)|[71]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/lagzian/_trinity.yaml)|[150]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/roosterkid/openproxylist/V2RAY_BASE64.txt.yaml)|[30]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Surfboardv2ray/TGParse/mixed.yaml)|[3750]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/lagzian/_mix.yaml)|[25]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/HiN-VPN/subscription/source/base64/ar14n24b.yaml)|[17]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Barabama_v2rayshare.yaml)|[16]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/chromego-sub.netlify.app/sub/merged_proxies_new.yaml.yaml)|[52]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/MatinGhanbari/_v2ray-configs-super-sub.yaml)|[68]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/ndsphonemy_default.yaml)|[222]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/Danialsamadi_v2go_custom.yaml)|[308]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Surfboardv2ray/TGParse/splitted/ss.yaml)|[178]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/hfarahani_pr.yaml)|[14]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/SubConfigShuffler/10ium_V2ray_Config_trojan_cloudflare.txt.yaml)|[162]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Mosifree/-Reality.yaml)|[476]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/lagzian/_trinity.yaml)|[150]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/roosterkid_V2RAY_BASE64.yaml)|[25]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/source/base64/surfboardv2ray.yaml)|[11]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/SubConfigShuffler/maimengmeng_cloudflare.txt.yaml)|[26]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium_V2Hub3_vmess.yaml)|[228]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/rb360full_Reza-Collection.yaml)|[889]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/66_42_50_118.yaml)|[450]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/MirrorMan/hamedp-71_Trojan_hp.b64.yaml)|[153]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Mosifree/_Vmess.yaml)|[155]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/wudongdefeng_list_raw.yaml)|[29]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/Surfboardv2ray/_mahsa.yaml)|[14]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/V2Hub3/merged_base64.yaml)|[272]|
+2026-03-07 12:49:31,056 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/freeclash/-v2ray-2.yaml)|[22]|
+2026-03-07 12:49:31,057 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/Surfboardv2ray/TGParse/mixed.yaml)|[234]|
+2026-03-07 12:49:31,057 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium_V2Hub3_shadowsocks.yaml)|[298]|
+2026-03-07 12:49:31,057 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/moneyfly1_merged_proxies.yaml)|[17]|
+2026-03-07 12:49:31,057 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/hiddify/trojan.yaml)|[39]|
+2026-03-07 12:49:31,057 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/hfarahani_pr.yaml)|[15]|
+2026-03-07 12:49:31,057 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/itsyebekhe/PSG/subscriptions/clash/mix.yaml)|[43]|
+2026-03-07 12:49:31,057 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/source/base64/configfa.yaml)|[15]|
+2026-03-07 12:49:31,057 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/ndsphonemy/_my.yaml)|[485]|
+2026-03-07 12:49:31,057 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/NiREvil_SSTime.yaml)|[374]|
+2026-03-07 12:49:31,057 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/lagzian_trinity.yaml)|[150]|
+2026-03-07 12:49:31,057 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/V2Hub3/vmess.yaml)|[119]|
+2026-03-07 12:49:31,057 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Epodonios/v2ray-configs/ss.txt.yaml)|[480]|
+2026-03-07 12:49:31,057 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/MatinGhanbari/v2ray-configs/subscriptions/filtered/subs/vless.txt.yaml)|[260]|
+2026-03-07 12:49:31,057 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/Barabama_v2rayshare.yaml)|[18]|
+2026-03-07 12:49:31,057 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/10ium_fetcher.yaml)|[28]|
+2026-03-07 12:49:31,058 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/peasoft_list_raw.yaml)|[39]|
+2026-03-07 12:49:31,058 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/voken100g/_recent.yaml)|[11]|
+2026-03-07 12:49:31,058 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/miladtahanian_config.yaml)|[113]|
+2026-03-07 12:49:31,058 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/freedomnet25500_free.yaml)|[44]|
+2026-03-07 12:49:31,058 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Danialsamadi_v2go_custom.yaml)|[328]|
+2026-03-07 12:49:31,058 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/freedomnet25500_ss.yaml)|[15]|
+2026-03-07 12:49:31,058 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/ResistalProxy_server.yaml)|[241]|
+2026-03-07 12:49:31,058 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/SubConfigShuffler/MahsaNetConfigTopic.txt.yaml)|[86]|
+2026-03-07 12:49:31,058 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/firefoxmmx2.yaml)|[26]|
+2026-03-07 12:49:31,058 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/Surfboardv2ray/_udp.yaml)|[46]|
+2026-03-07 12:49:31,058 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/mahdibland/SSAggregator/sub/sub_merge_base64.txt.yaml)|[2027]|
+2026-03-07 12:49:31,058 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/HiN-VPN/subscription/base64/trojan.yaml)|[35]|
+2026-03-07 12:49:31,058 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/SubConfigShuffler/10ium_telegram_configs_collector_cloudflare.txt.yaml)|[34]|
+2026-03-07 12:49:31,058 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/lagzian/_vmess_tvc.yaml)|[34]|
+2026-03-07 12:49:31,058 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/Surfboardv2ray/_bugfix.yaml)|[30]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/hiddify/mix.yaml)|[511]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/itsyebekhe/PSG/lite/subscriptions/clash/vmess_domain.yaml)|[12]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/maimengmeng_custom.yaml)|[90]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/MatinGhanbari/v2ray-configs/vless.txt.yaml)|[260]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/itsyebekhe/_mix.yaml)|[486]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/rayan_proxy.yaml)|[63]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/SnapdragonLee_clash_config_extra_US.yaml)|[59]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/hamedp-71_Sub_Checker_Creator_final.yaml)|[135]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/hfarahani_pr.yaml)|[15]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Epodonios/v2ray-configs/ss.txt.yaml)|[480]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Surfboardv2ray/_mahsa.yaml)|[19]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/freedomnet25500_ss.yaml)|[15]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/10ium_V2Hub3_shadowsocks.yaml)|[274]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Surfboardv2ray/TGParse/splitted/trojan.yaml)|[256]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/liketolivefree.yaml)|[390]|
+2026-03-07 12:49:31,059 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/Surfboardv2ray/_bugfix.yaml)|[30]|
+2026-03-07 12:49:31,060 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/shabane/_merged.yaml)|[143]|
+2026-03-07 12:49:31,060 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/ebrasha_lite.yaml)|[50]|
+2026-03-07 12:49:31,060 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/AzadNetCH/Clash/AzadNet.txt.yaml)|[237]|
+2026-03-07 12:49:31,060 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/MatinGhanbari/_v2ray-configs-super-sub.yaml)|[199]|
+2026-03-07 12:49:31,060 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/ndsphonemy_default.yaml)|[503]|
+2026-03-07 12:49:31,060 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/MatinGhanbari/v2ray-configs/subscriptions/filtered/subs/ss.txt.yaml)|[1780]|
+2026-03-07 12:49:31,060 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/ndsphonemy/_my.yaml)|[957]|
+2026-03-07 12:49:31,060 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/mahsa-sub_4.yaml)|[27]|
+2026-03-07 12:49:31,060 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/itsyebekhe/PSG/lite/subscriptions/clash/vmess_domain.yaml)|[12]|
+2026-03-07 12:49:31,060 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/MatinGhanbari/v2ray-configs/super-sub.txt.yaml)|[186]|
+2026-03-07 12:49:31,060 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/Surfboardv2ray/_mahsa.yaml)|[117]|
+2026-03-07 12:49:31,060 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/itsyebekhe/PSG/subscriptions/clash/vmess.yaml)|[27]|
+2026-03-07 12:49:31,060 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/proxy_kafee.yaml)|[34]|
+2026-03-07 12:49:31,060 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/shabane/_trojan.yaml)|[19]|
+2026-03-07 12:49:31,060 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Epodonios/v2ray-configs/trojan.txt.yaml)|[426]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/voken100g/_recent.yaml)|[11]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/Ruk1ng001.yaml)|[246]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/NiREvil_SSTime.yaml)|[741]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/ndsphonemy_my.yaml)|[16]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/source/base64/soskeynet.yaml)|[180]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/maimengmeng_custom.yaml)|[102]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/V2Hub3/merged_base64.yaml)|[477]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/HiN-VPN/subscription/hiddify/mix.yaml)|[81]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/itsyebekhe_mix.yaml)|[452]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/roosterkid.yaml)|[25]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/miladtahanian_config.yaml)|[252]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/shatakvpn.yaml)|[496]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/itsyebekhe/PSG/subscriptions/clash/mix.yaml)|[43]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/itsyebekhe/PSG/subscriptions/clash/vmess_domain.yaml)|[19]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/SubConfigShuffler/MahsaNetConfigTopic.txt.yaml)|[18]|
+2026-03-07 12:49:31,061 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/vpnclashfa-backup/MirrorMan/hamedp-71_Sub_Checker_Creator_final.b64.yaml)|[174]|
+2026-03-07 12:49:31,062 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/shatakvpn.yaml)|[97]|
+2026-03-07 12:49:31,062 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/MahsaNetConfigTopic.yaml)|[29]|
+2026-03-07 12:49:31,062 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/muma16fx_netlify_app.yaml)|[20]|
+2026-03-07 12:49:31,062 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/ndsphonemy/_default.yaml)|[265]|
+2026-03-07 12:49:31,062 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/vpnclashfa-backup/SubConfigShuffler/maimengmeng.txt.yaml)|[300]|
+2026-03-07 12:49:31,062 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/itsyebekhe/PSG/subscriptions/clash/mix.yaml)|[27]|
+2026-03-07 12:49:31,062 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/miladtahanian_config.yaml)|[254]|
+2026-03-07 12:49:31,062 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/trojanvmess.pages.dev/cmcm_b64.yaml)|[5263]|
+2026-03-07 12:49:31,062 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/base64-encoder/Surfboardv2ray/_bugfix.yaml)|[30]|
+2026-03-07 12:49:31,062 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/MatinGhanbari/v2ray-configs/subscriptions/filtered/subs/vmess.txt.yaml)|[1498]|
+2026-03-07 12:49:31,062 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/hamedp-71_hp.yaml)|[135]|
+2026-03-07 12:49:31,062 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/free18.yaml)|[177]|
+2026-03-07 12:49:31,062 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/V2Hub3/merged_base64.yaml)|[1258]|
+2026-03-07 12:49:31,062 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/MatinGhanbari_v2ray-configs-super-sub.yaml)|[182]|
+2026-03-07 12:49:31,062 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/10ium_V2Hub_vmess.yaml)|[120]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/roosterkid/openproxylist/V2RAY_BASE64.txt.yaml)|[18]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/mahdibland/SSAggregator/sub/sub_merge_yaml.yml.yaml)|[2035]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/roosterkid/_V2RAY_BASE64.yaml)|[68]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/rb360full_Reza-2.yaml)|[1330]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/MatinGhanbari/v2ray-configs/vmess.txt.yaml)|[1498]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/lagzian/_meta.yaml)|[456]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/V2Hub3/shadowsocks.yaml)|[272]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/maimengmeng/_custom.yaml)|[93]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/ndsphonemy/_lt-sub.yaml)|[41]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/roosterkid/_V2RAY_RAW.yaml)|[142]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/yebekhe_vpn-fail.yaml)|[92]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/maimengmeng/000.yaml)|[181]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/ndsphonemy_lt-sub.yaml)|[41]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/mfuu_v2ray.yaml)|[36]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/itsyebekhe/PSG/lite/subscriptions/clash/vmess.yaml)|[15]|
+2026-03-07 12:49:31,063 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/hamedp-71_openproxylist.yaml)|[56]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/HiN-VPN/subscription/hiddify/trojan.yaml)|[35]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/wudongdefeng_list_raw.yaml)|[310]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/HiN-VPN/subscription/base64/mix.yaml)|[81]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/moeinkey_ssh.yaml)|[18]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/mfuu_v2ray.yaml)|[142]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/maimengmeng/_custom.yaml)|[102]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/hiddify/vless.yaml)|[430]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/roosterkid_V2RAY_RAW.yaml)|[34]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/Mosifree_Vmess.yaml)|[157]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/_V2RayAggregator-Eternity.yaml)|[201]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/yebekhe_vpn-fail.yaml)|[94]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/base64-encoder/peasoft_list_raw.yaml)|[12]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/freeclash/-3.yaml)|[17]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/V2Hub3/vmess.yaml)|[119]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/hamedp-71_hp.yaml)|[188]|
+2026-03-07 12:49:31,064 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Barabama_clashmeta.yaml)|[89]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/itsyebekhe/PSG/lite/subscriptions/clash/vmess.yaml)|[15]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/SubConfigShuffler/10ium_V2ray_Config_vless_cloudflare.txt.yaml)|[1047]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/trojanvmess.pages.dev/cmcm_b64.yaml)|[5324]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/ndsphonemy/_default.yaml)|[1219]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/MirrorMan/the3rf_com_sub_php.b64.yaml)|[20]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/hamedp-71_hp.yaml)|[299]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/SubConfigShuffler/10ium_V2ray_Config_vmess_cloudflare.txt.yaml)|[28]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/mfuu_v2ray.yaml)|[142]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/maimengmeng_500.yaml)|[390]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/hamedp-71/_Sub_Checker_Creator_final.yaml)|[188]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/_V2Hub3_vmess.yaml)|[281]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/source/base64/configx2ray.yaml)|[14]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/ndsphonemy/_lt-sub.yaml)|[41]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/roosterkid/_V2RAY_RAW.yaml)|[69]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/rb360full_Reza-Collection.yaml)|[51]|
+2026-03-07 12:49:31,065 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/MatinGhanbari/v2ray-configs/ss.txt.yaml)|[1780]|
+2026-03-07 12:49:31,066 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/maimengmeng/_custom.yaml)|[633]|
+2026-03-07 12:49:31,066 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/Epodonios/v2ray-configs/All_Configs_base64_Sub.txt.yaml)|[496]|
+2026-03-07 12:49:31,066 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/hfarahani_pr.yaml)|[17]|
+2026-03-07 12:49:31,066 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/mahdibland/SSAggregator/sub/sub_merge_base64.txt.yaml)|[5026]|
+2026-03-07 12:49:31,066 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/Mosifree_SS.yaml)|[227]|
+2026-03-07 12:49:31,066 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/ndsphonemy/_lt-sub.yaml)|[41]|
+2026-03-07 12:49:31,066 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/itsyebekhe_mix.yaml)|[281]|
+2026-03-07 12:49:31,066 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/lagzian/_meta.yaml)|[34]|
+2026-03-07 12:49:31,066 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/hamedp-71/_Sub_Checker_Creator_final.yaml)|[299]|
+2026-03-07 12:49:31,066 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Barabama_v2rayshare.yaml)|[26]|
+2026-03-07 12:49:31,066 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/shabane/_ss.yaml)|[99]|
+2026-03-07 12:49:31,066 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/shabane_merged.yaml)|[130]|
+2026-03-07 12:49:31,066 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/base64/trojan.yaml)|[39]|
+2026-03-07 12:49:31,066 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/source/base64/speeds_vpn1.yaml)|[27]|
+2026-03-07 12:49:31,066 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/freedomnet25500_free.yaml)|[21]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/itsyebekhe_mix.yaml)|[131]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/hamedp-71_hp.yaml)|[190]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Leon406/SubCrawler/sub/share/a11.yaml)|[270]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/lagzian_vmess_tvc.yaml)|[36]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/MahsaNetConfigTopic.yaml)|[39]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/tristan-deng_MyNodes.yaml)|[115]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/AzadNetCH/Clash/AzadNet.txt.yaml)|[1850]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/shatakvpn.yaml)|[187]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/freeclash/-v2ray-3.yaml)|[17]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/SubConfigShuffler/10ium_CollectorLite_Config_mixed_cloudflare.txt.yaml)|[155]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/SubConfigShuffler/10ium_V2Hub_merged_cloudflare.txt.yaml)|[27]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/ndsphonemy/_hys-tuic.yaml)|[16]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/roosterkid-V2RAY_BASE64.yaml)|[68]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/Surfboardv2ray/_US.yaml)|[120]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/roosterkid_V2RAY_BASE64.yaml)|[35]|
+2026-03-07 12:49:31,067 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/moeinkey_ssh.yaml)|[16]|
+2026-03-07 12:49:31,068 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/liketolivefree_sub.yaml)|[35]|
+2026-03-07 12:49:31,068 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/shatakvpn.yaml)|[118]|
+2026-03-07 12:49:31,068 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/darkvpn_xray_final.yaml)|[23]|
+2026-03-07 12:49:31,068 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/MirrorMan/gheychiamoozesh.b64.yaml)|[42]|
+2026-03-07 12:49:31,068 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/FreedomGuard/_Finder_configs.yaml)|[146]|
+2026-03-07 12:49:31,068 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/rb360full_Reza-2.yaml)|[432]|
+2026-03-07 12:49:31,068 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/trojanvmess.pages.dev/cmcm_b64.yaml)|[2113]|
+2026-03-07 12:49:31,068 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/Surfboardv2ray_mahsa.yaml)|[12]|
+2026-03-07 12:49:31,068 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/freeclash/-v2ray-1.yaml)|[16]|
+2026-03-07 12:49:31,068 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/vpnclashfa-backup/MirrorMan/Danialsamadi_v2go_custom.b64.yaml)|[92]|
+2026-03-07 12:49:31,068 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/liketolivefree_sub.yaml)|[23]|
+2026-03-07 12:49:31,068 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/freeclash/-1.yaml)|[24]|
+2026-03-07 12:49:31,068 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/ResistalProxy_server.yaml)|[242]|
+2026-03-07 12:49:31,068 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/V2Hub3/trojan.yaml)|[86]|
+2026-03-07 12:49:31,068 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/MatinGhanbari/v2ray-configs/ss.txt.yaml)|[1780]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/vpnclashfa-backup/SubConfigShuffler/roosterkid_v2ray.txt.yaml)|[21]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/Epodonios/v2ray-configs/All_Configs_base64_Sub.txt.yaml)|[596]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Barabama_nodefree.yaml)|[16]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/hamedp-71_openproxylist.yaml)|[105]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/trojanvmess.pages.dev/cmcm_b64.yaml)|[2509]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/MirrorMan/hamedp-71_Sub_Checker_Creator_final.b64.yaml)|[188]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/SubConfigShuffler/10ium_CollectorLite_Config_mixed_cloudflare.txt.yaml)|[39]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/rb360full_Reza-Collection.yaml)|[315]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Surfboardv2ray/TGParse/splitted/ss.yaml)|[178]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/MatinGhanbari/v2ray-configs/subscriptions/filtered/subs/ss.txt.yaml)|[1780]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/freeclash/-4.yaml)|[14]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/shabane_merged.yaml)|[26]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/roosterkid/openproxylist/V2RAY_BASE64.txt.yaml)|[142]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/proxy_kafee.yaml)|[30]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/mahdibland/ShadowsocksAggregator/Eternity.yaml)|[41]|
+2026-03-07 12:49:31,069 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/lagzian/_vmess.yaml)|[25]|
+2026-03-07 12:49:31,070 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/Leon406/SubCrawler/sub/share/a11.yaml)|[138]|
+2026-03-07 12:49:31,070 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/SubConfigShuffler/10ium_V2ray_HiNVPN_mix_cloudflare.txt.yaml)|[31]|
+2026-03-07 12:49:31,070 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/proxy_kafee.yaml)|[80]|
+2026-03-07 12:49:31,070 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/ebrasha/_lite.yaml)|[59]|
+2026-03-07 12:49:31,070 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/base64-encoder/ResistalProxy_server.yaml)|[52]|
+2026-03-07 12:49:31,070 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Epodonios/v2ray-configs/Splitted-By-Protocol/trojan.txt.yaml)|[426]|
+2026-03-07 12:49:31,070 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/MirrorMan/Danialsamadi_v2go_custom.b64.yaml)|[318]|
+2026-03-07 12:49:31,070 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/10ium_V2Hub_trojan.yaml)|[88]|
+2026-03-07 12:49:31,070 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/rb360full_Reza-Collection.yaml)|[82]|
+2026-03-07 12:49:31,070 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/AzadNetCH/Clash/AzadNet.txt.yaml)|[1347]|
+2026-03-07 12:49:31,070 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/ndsphonemy_my.yaml)|[959]|
+2026-03-07 12:49:31,070 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/freeclash/-v2ray-3.yaml)|[22]|
+2026-03-07 12:49:31,070 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/firefoxmmx2.yaml)|[18]|
+2026-03-07 12:49:31,070 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Barabama_ndnode.yaml)|[14]|
+2026-03-07 12:49:31,070 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/freeclash/-v2ray-4.yaml)|[28]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/shabane/_merged.yaml)|[128]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/V2Hub3/vmess.yaml)|[119]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/MatinGhanbari/v2ray-configs/subscriptions/v2ray/super-sub.txt.yaml)|[68]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/lagzian/_trinity.yaml)|[150]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/base64-encoder/tristan-deng_MyNodes.yaml)|[58]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/lagzian/_meta.yaml)|[71]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/mahdibland/ShadowsocksAggregator/Eternity.yml.yaml)|[201]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/HiN-VPN/subscription/hiddify/mix.yaml)|[36]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/MirrorMan/v2nodes.b64.yaml)|[850]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/wudongdefeng_list_raw.yaml)|[276]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Surfboardv2ray/TGParse/splitted/mixed.yaml)|[3750]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/MatinGhanbari/v2ray-configs/vmess.txt.yaml)|[1498]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/MatinGhanbari/v2ray-configs/vmess.txt.yaml)|[1498]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/SnapdragonLee_clash_config_extra_US.yaml)|[52]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/darkvpn.yaml)|[18]|
+2026-03-07 12:49:31,071 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/roosterkid_V2RAY_RAW.yaml)|[64]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/shabane_ss.yaml)|[26]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/MahsaNetConfigTopic.yaml)|[181]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/Rayan-Config_H-I.yaml)|[63]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/66_42_50_118.yaml)|[491]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/tristan-deng_MyNodes.yaml)|[69]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/FreedomGuard/_Finder_configs.yaml)|[559]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/vpnclashfa-backup/SubConfigShuffler/maimengmeng.txt.yaml)|[12]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/darkvpn.yaml)|[34]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/MatinGhanbari_v2ray-configs-super-sub.yaml)|[87]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/ndsphonemy/_my.yaml)|[2914]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/MatinGhanbari/v2ray-configs/ss.txt.yaml)|[1780]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/voken100g_recent.yaml)|[11]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/yebekhe_vpn-fail.yaml)|[92]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/base64-encoder/rb360full_Reza-2.yaml)|[246]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/robin.victoriacross.ir.yaml)|[263]|
+2026-03-07 12:49:31,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium_hin-vpn-mix.yaml)|[22]|
+2026-03-07 12:49:31,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/peasoft_list_raw.yaml)|[37]|
+2026-03-07 12:49:31,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/vpnclashfa-backup/SubConfigShuffler/10ium/V2ray/Config/All/cloudflare.txt.yaml)|[33]|
+2026-03-07 12:49:31,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/SnapdragonLee_clash_config_extra_US.yaml)|[25]|
+2026-03-07 12:49:31,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/MatinGhanbari/v2ray-configs/super-sub.txt.yaml)|[68]|
+2026-03-07 12:49:31,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/shabane/_ss.yaml)|[99]|
+2026-03-07 12:49:31,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/amirparsaxs_xsfilternet.yaml)|[54]|
+2026-03-07 12:49:31,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/v2nodes.yaml)|[118]|
+2026-03-07 12:49:31,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Surfboardv2ray/TGParse/splitted/mixed.yaml)|[668]|
+2026-03-07 12:49:31,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/mahdibland/SSAggregator/sub/sub_merge_yaml.yml.yaml)|[4989]|
+2026-03-07 12:49:31,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/MirrorMan/hamedp-71_Sub_Checker_Creator_final.b64.yaml)|[299]|
+2026-03-07 12:49:31,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/free18.yaml)|[179]|
+2026-03-07 12:49:31,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/vpnclashfa-backup/SubConfigShuffler/MahsaNetConfigTopic.txt.yaml)|[16]|
+2026-03-07 12:49:31,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/darkvpn.yaml)|[16]|
+2026-03-07 12:49:31,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/10ium_HiN-VPN.yaml)|[83]|
+2026-03-07 12:49:31,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Epodonios/v2ray-configs/Splitted-By-Protocol/ss.txt.yaml)|[480]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/Surfboardv2ray/_IR.yaml)|[722]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/HiN-VPN/subscription/hiddify/vmess.yaml)|[36]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/Mosifree_SS.yaml)|[116]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/maimengmeng_500.yaml)|[43]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/base64-encoder/ResistalProxy_server.yaml)|[660]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/hamedp-71/_Sub_Checker_Creator_final.yaml)|[174]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/SubConfigShuffler/10ium_V2ray_Config_All_cloudflare.txt.yaml)|[186]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/amirparsaxs_xsfilternet.yaml)|[52]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/MatinGhanbari/_v2ray-configs-super-sub.yaml)|[94]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/SnapdragonLee_clash_config_extra_US.yaml)|[31]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/lagzian_vmess.yaml)|[27]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/SubConfigShuffler/rayan_proxy.txt.yaml)|[23]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/ebrasha_lite.yaml)|[59]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/v2nodes.yaml)|[496]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/v2ray_hidify.yaml)|[45]|
+2026-03-07 12:49:31,074 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/MatinGhanbari/v2ray-configs/super-sub.txt.yaml)|[199]|
+2026-03-07 12:49:31,075 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/10ium/HiN-VPN/subscription/source/base64/ar14n24b.yaml)|[185]|
+2026-03-07 12:49:31,075 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Epodonios/v2ray-configs/Splitted-By-Protocol/ss.txt.yaml)|[480]|
+2026-03-07 12:49:31,075 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/v2nodes.yaml)|[97]|
+2026-03-07 12:49:31,075 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/mahsanet/_mtn_sub_4.yaml)|[26]|
+2026-03-07 12:49:31,075 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/v2ray_hidify.yaml)|[94]|
+2026-03-07 12:49:31,075 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/shabane/_ss.yaml)|[99]|
+2026-03-07 12:49:31,075 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/MatinGhanbari_v2ray-configs-super-sub.yaml)|[69]|
+2026-03-07 12:49:31,075 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/lagzian_vmess.yaml)|[25]|
+2026-03-07 12:49:31,075 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/MatinGhanbari/-super-sub.yaml)|[199]|
+2026-03-07 12:49:31,075 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/ResistalProxy_server.yaml)|[46]|
+2026-03-07 12:49:31,075 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/shabane/_merged.yaml)|[99]|
+2026-03-07 12:49:31,075 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/vpnclashfa-backup/SubConfigShuffler/itsyebekhe_PSG_mix_cloudflare.txt.yaml)|[72]|
+2026-03-07 12:49:31,075 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/itsyebekhe/PSG/subscriptions/clash/vmess_domain.yaml)|[19]|
+2026-03-07 12:49:31,075 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/Surfboardv2ray/TGParse/mixed.yaml)|[178]|
+2026-03-07 12:49:31,075 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/mahdibland/SSAggregator/sub/sub_merge_base64.txt.yaml)|[5026]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/FreedomGuard/_Finder_configs.yaml)|[37]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/maimengmeng.yaml)|[59]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/maimengmeng/_500.yaml)|[181]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/freeclash/-v2ray-1.yaml)|[24]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/itsyebekhe/PSG/subscriptions/clash/vmess.yaml)|[27]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/Ruk1ng001.yaml)|[201]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/vpnclashfa-backup/MirrorMan/hamedp-71_Trojan_hp.b64.yaml)|[79]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/NiREvil_SSTime.yaml)|[741]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/lagzian/_mix.yaml)|[165]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/ResistalProxy_server.yaml)|[185]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/vpnclashfa-backup/SubConfigShuffler/maimengmeng.txt.yaml)|[390]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/robin.victoriacross.ir.yaml)|[119]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/peasoft_list_raw.yaml)|[30]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/base64-encoder/tristan-deng_MyNodes.yaml)|[22]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/vpnclashfa-backup/MirrorMan/v2nodes.b64.yaml)|[373]|
+2026-03-07 12:49:31,076 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/robin.victoriacross.ir.yaml)|[455]|
+2026-03-07 12:49:31,077 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/AzadNet/-t.me.yaml)|[1850]|
+2026-03-07 12:49:31,077 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/Barabama_nodefree.yaml)|[27]|
+2026-03-07 12:49:31,077 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/ALIILAPRO/v2rayNG-Config/sub.txt.yaml)|[471]|
+2026-03-07 12:49:31,077 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/10ium/V2RayAggregator/Eternity.yml.yaml)|[154]|
+2026-03-07 12:49:31,077 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/hamedp-71_openproxylist.yaml)|[54]|
+2026-03-07 12:49:31,077 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/lagzian_meta.yaml)|[73]|
+2026-03-07 12:49:31,077 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/NiREvil_SSTime.yaml)|[743]|
+2026-03-07 12:49:31,077 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/surfboard/roosterkid.yaml)|[67]|
+2026-03-07 12:49:31,077 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/10ium/base64-encoder/roosterkid/_V2RAY_RAW.yaml)|[62]|
+2026-03-07 12:49:31,077 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/lagzian/_mix.yaml)|[190]|
+2026-03-07 12:49:31,077 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/moneyfly1_merged_proxies_new.yaml)|[6037]|
+2026-03-07 12:49:31,077 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/lagzian/_vmess.yaml)|[25]|
+2026-03-07 12:49:31,077 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/hamedp-71/_Trojan_hp.yaml)|[476]|
+2026-03-07 12:49:31,077 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/MatinGhanbari/-super-sub.yaml)|[94]|
+2026-03-07 12:49:31,077 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/ss/Epodonios/v2ray-configs/ss.txt.yaml)|[480]|
+2026-03-07 12:49:31,078 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/v2ray/10ium/base64-encoder/roosterkid/_V2RAY_RAW.yaml)|[19]|
+2026-03-07 12:49:31,078 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/mixed/freeclash/-2.yaml)|[22]|
+2026-03-07 12:49:31,078 | INFO |    🆕 Config source: https://raw.githubusercontent.com/asgharkapk/Sub-Config-Extractor/refs/heads/main/output_configs/clash/mahdibland/SSAggregator/sub/sub_merge_yaml.yml.yaml)|[4993]|
+2026-03-07 12:49:31,220 | INFO | 📊 GitHub API: 4886/5000 calls remaining
+2026-03-07 12:49:31,221 | INFO |    🔍 Searching configs for query: vless reality subscription
+2026-03-07 12:49:31,912 | INFO | 📊 GitHub API: 4886/5000 calls remaining
+2026-03-07 12:49:31,913 | INFO |    🔍 Searching configs for query: vless reality v2ray
+2026-03-07 12:49:33,040 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/vless.txt)
+2026-03-07 12:49:33,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/shadowsocks.txt)
+2026-03-07 12:49:33,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/trojan.txt)
+2026-03-07 12:49:33,041 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/vmess.txt)
+2026-03-07 12:49:33,916 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_base64_Sub.txt
+2026-03-07 12:49:33,916 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/trojan.txt
+2026-03-07 12:49:33,916 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/vless.txt
+2026-03-07 12:49:33,916 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_Sub.txt
+2026-03-07 12:49:33,916 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/vmess.txt
+2026-03-07 12:49:35,506 | INFO | 📊 GitHub API: 4875/5000 calls remaining
+2026-03-07 12:49:35,507 | INFO |    🔍 Searching configs for query: v2ray subscription link
+2026-03-07 12:49:36,050 | INFO | 📊 GitHub API: 4875/5000 calls remaining
+2026-03-07 12:49:36,051 | INFO |    🔍 Searching configs for query: free vless configs
+2026-03-07 12:49:37,252 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/vless.txt)
+2026-03-07 12:49:37,252 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/shadowsocks.txt)
+2026-03-07 12:49:37,252 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/trojan.txt)
+2026-03-07 12:49:37,252 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/vmess.txt)
+2026-03-07 12:49:37,434 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt
+2026-03-07 12:49:37,434 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/ss.txt
+2026-03-07 12:49:37,434 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub4.txt
+2026-03-07 12:49:37,434 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vmess.txt
+2026-03-07 12:49:37,434 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/hysteria2.txt
+2026-03-07 12:49:37,434 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/super-sub.txt
+2026-03-07 12:49:37,434 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vless.txt
+2026-03-07 12:49:37,434 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub39.txt
+2026-03-07 12:49:37,434 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub3.txt
+2026-03-07 12:49:37,434 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub2.txt
+2026-03-07 12:49:37,434 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/trojan.txt
+2026-03-07 12:49:37,434 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub1.txt
+2026-03-07 12:49:37,435 | INFO | 💾 Config sources saved: 706 urls
+2026-03-07 12:49:37,438 | INFO | 💾 State saved
+2026-03-07 12:49:37,438 | INFO | 
+============================================================
+2026-03-07 12:49:37,438 | INFO | 🏁 Completed! Published: 47 posts
+2026-03-07 12:49:37,438 | INFO | ============================================================
