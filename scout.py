@@ -13,8 +13,6 @@ from aiogram.exceptions import TelegramRetryAfter, TelegramForbiddenError
 from groq import Groq
 import aiohttp
 
-# ============ LOGGING ============
-
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s | %(levelname)s | %(message)s',
@@ -24,8 +22,6 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
-
-# ============ CONFIG ============
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
@@ -50,17 +46,13 @@ API_HEADERS = {
 bot = Bot(token=TELEGRAM_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 groq_client = Groq(api_key=GROQ_API_KEY)
 
-# ============ КЛЮЧЕВЫЕ ПРОЕКТЫ (коммиты + релизы) ============
-
 TRACKED_PROJECTS = [
-    # Zapret и DPI-обход
     {"owner": "bol-van", "repo": "zapret", "name": "🛠 Zapret (original)", "priority": "high"},
     {"owner": "bol-van", "repo": "zapret2", "name": "🛠 Zapret 2", "priority": "high"},
     {"owner": "ValdikSS", "repo": "GoodbyeDPI", "name": "🛠 GoodbyeDPI", "priority": "high"},
     {"owner": "hufrea", "repo": "byedpi", "name": "🛠 ByeDPI", "priority": "high"},
     {"owner": "xvzc", "repo": "SpoofDPI", "name": "🛠 SpoofDPI", "priority": "high"},
 
-    # VPN и прокси
     {"owner": "amnezia-vpn", "repo": "amnezia-client", "name": "🛡 Amnezia Client", "priority": "high"},
     {"owner": "amnezia-vpn", "repo": "amneziawg-linux-kernel-module", "name": "🛡 AmneziaWG Kernel", "priority": "medium"},
     {"owner": "XTLS", "repo": "Xray-core", "name": "⚡ Xray-core", "priority": "high"},
@@ -69,31 +61,25 @@ TRACKED_PROJECTS = [
     {"owner": "Jigsaw-Code", "repo": "outline-server", "name": "📡 Outline Server", "priority": "medium"},
     {"owner": "Jigsaw-Code", "repo": "outline-client", "name": "📡 Outline Client", "priority": "medium"},
 
-    # Панели управления
     {"owner": "Gozargah", "repo": "Marzban", "name": "🎛 Marzban", "priority": "high"},
     {"owner": "MHSanaei", "repo": "3x-ui", "name": "🎛 3X-UI", "priority": "high"},
     {"owner": "hiddify", "repo": "hiddify-next", "name": "🎛 Hiddify Next", "priority": "high"},
     {"owner": "hiddify", "repo": "Hiddify-Manager", "name": "🎛 Hiddify Manager", "priority": "medium"},
 
-    # Клиенты
     {"owner": "MatsuriDayo", "repo": "nekoray", "name": "🐱 Nekoray", "priority": "high"},
     {"owner": "2dust", "repo": "v2rayN", "name": "💻 V2RayN", "priority": "high"},
     {"owner": "2dust", "repo": "v2rayNG", "name": "📱 V2RayNG", "priority": "high"},
     {"owner": "metacubex", "repo": "ClashMeta", "name": "⚔️ Clash Meta", "priority": "medium"},
     {"owner": "metacubex", "repo": "mihomo", "name": "⚔️ Mihomo", "priority": "medium"},
 
-    # AntiZapret и списки
     {"owner": "AntiZapret", "repo": "antizapret", "name": "🛡 AntiZapret", "priority": "high"},
     {"owner": "AntiZapret", "repo": "antizapret-pac-generator-light", "name": "🛡 AntiZapret PAC", "priority": "medium"},
     {"owner": "zapret-info", "repo": "z-i", "name": "📋 Zapret-Info", "priority": "medium"},
     {"owner": "C24Be", "repo": "AS_REG", "name": "📋 AS Registry RU", "priority": "medium"},
 
-    # Роскомсвобода
     {"owner": "roskomsvoboda", "repo": "censortracker", "name": "📢 CensorTracker", "priority": "high"},
     {"owner": "roskomsvoboda", "repo": "moscow_covid_queues", "name": "📢 RKS Tools", "priority": "low"},
 ]
-
-# ============ АГРЕГАТОРЫ КОНФИГОВ ============
 
 CONFIG_AGGREGATORS = [
     {"owner": "Leon406", "repo": "SubCrawler", "name": "📡 SubCrawler"},
@@ -103,8 +89,6 @@ CONFIG_AGGREGATORS = [
     {"owner": "Pawdroid", "repo": "Free-servers", "name": "📡 Free-servers"},
     {"owner": "aiboboxx", "repo": "v2rayfree", "name": "📡 V2RayFree"},
 ]
-
-# ============ ПОИСКОВЫЕ ЗАПРОСЫ ============
 
 FRESH_SEARCHES = [
     {"name": "Zapret Tools", "title": "🛠 Zapret инструменты", "query": "zapret OR zapret-discord OR zapret-youtube", "priority": 10},
@@ -132,11 +116,16 @@ FRESH_SEARCHES = [
     {"name": "WireGuard RU", "title": "🔒 WireGuard", "query": "wireguard-russia OR wg-config-russia", "priority": 6},
     {"name": "Outline", "title": "📡 Outline", "query": "outline-russia OR outline-config", "priority": 6},
     {"name": "Censorship", "title": "🌐 Антицензура", "query": "anti-censorship russia OR internet-freedom russia", "priority": 7},
+
+    {"name": "Reality Extra", "title": "🔧 Reality доп. запросы",
+     "query": "reality vless OR xray reality OR sing-box reality", "priority": 7},
+    {"name": "Hysteria2 Extra", "title": "🚀 Hysteria2 доп. запросы",
+     "query": "hysteria2 reality OR hysteria2 config", "priority": 7},
+    {"name": "Subconverter", "title": "🔧 Subconverter/Subscriptions",
+     "query": "subconverter OR clash subscription OR subscription converter", "priority": 6},
 ]
 
 FRESH_SEARCHES.sort(key=lambda x: x.get('priority', 5), reverse=True)
-
-# ============ ДОП. ПОИСК ДЛЯ ИСТОЧНИКОВ КОНФИГОВ ============
 
 CONFIG_SEARCH_QUERIES = [
     "v2ray configs free",
@@ -145,15 +134,21 @@ CONFIG_SEARCH_QUERIES = [
     "v2ray subscription link",
     "free vless configs",
     "vpn configs russia vless",
+    "hysteria2 reality config",
+    "clash reality subscription",
+    "subconverter subscription",
+    "xray reality vless config",
 ]
 
 CONFIG_URL_PATTERNS = [
     r"https://raw\.githubusercontent\.com[^\s\"']+",
     r"https://github\.com[^\s\"']+/raw[^\s\"']*",
     r"https?://[^\s\"']*(?:sub|subscription|clash\.ya?ml|config|proxy)[^\s\"']*",
+    r"https://gist\.githubusercontent\.com[^\s\"']+",
+    r"https?://pastebin\.com/[^\s\"']+",
+    r"https?://[^\s\"']*(?:vless|vmess|hysteria2|reality)[^\s\"']*",
 ]
 
-# ============ VALIDATION ============
 
 def validate_env():
     required = {
@@ -171,6 +166,7 @@ def validate_env():
 
     logger.info("✅ All environment variables validated")
     return True
+
 
 def check_rate_limit():
     try:
@@ -191,7 +187,6 @@ def check_rate_limit():
         logger.warning(f"⚠️ Could not check rate limit: {e}")
     return True
 
-# ============ HELPERS ============
 
 def has_non_latin(text):
     if not text:
@@ -203,6 +198,7 @@ def has_non_latin(text):
     ]
     return any(re.search(p, text) for p in patterns)
 
+
 def get_age_hours(date_string):
     try:
         if not date_string:
@@ -212,17 +208,26 @@ def get_age_hours(date_string):
     except:
         return 9999
 
+
 def get_freshness(date_string):
     hours = get_age_hours(date_string)
-    if hours < 1: return "🔥 Только что"
-    elif hours < 6: return f"🔥 {int(hours)}ч назад"
-    elif hours < 24: return "🔥 Сегодня"
-    elif hours < 48: return "✅ Вчера"
-    elif hours < 72: return "📅 2 дня назад"
-    else: return f"📅 {int(hours/24)}д назад"
+    if hours < 1:
+        return "🔥 Только что"
+    elif hours < 6:
+        return f"🔥 {int(hours)}ч назад"
+    elif hours < 24:
+        return "🔥 Сегодня"
+    elif hours < 48:
+        return "✅ Вчера"
+    elif hours < 72:
+        return "📅 2 дня назад"
+    else:
+        return f"📅 {int(hours/24)}д назад"
+
 
 def is_fresh(date_string):
     return get_age_hours(date_string) <= (MAX_AGE_DAYS * 24)
+
 
 def safe_desc(desc, max_len=120):
     if desc is None:
@@ -231,11 +236,8 @@ def safe_desc(desc, max_len=120):
     desc = re.sub(r'[🔥⚡️✨🎉]{3,}', '', desc)
     return desc[:max_len] if desc else ""
 
+
 def quick_filter(name, desc, stars=0):
-    """
-    Улучшенная фильтрация, чтобы не ловить мусор типа
-    russian-vocabulary-trainer, steel-market и т.п.
-    """
     text = f"{name} {desc or ''}".lower()
     full_text = f"{name} {desc or ''}"
 
@@ -245,22 +247,14 @@ def quick_filter(name, desc, stars=0):
     if stars < MIN_STARS:
         return False
 
-    # Категориальные стоп-слова (нерелевантные темы)
     irrelevant_categories = [
-        # образование / обучение
         'vocabulary', 'trainer', 'learning', 'educational', 'course',
         'tutorial', 'lesson', 'homework', 'student', 'university',
         'language-learning', 'flashcard', 'quiz',
-
-        # бизнес / рынок
         'market', 'steel', 'trading', 'business', 'finance',
         'ecommerce', 'shop', 'store', 'retail', 'analytics',
-
-        # демо / примеры
         'example-', 'demo-', 'template', 'boilerplate', 'starter',
         'practice', 'exercise', 'sample',
-
-        # прочий оффтоп
         'recipe', 'cooking', 'food', 'restaurant', 'travel',
         'portfolio', 'resume', 'cv',
         'game', 'minigame',
@@ -269,7 +263,6 @@ def quick_filter(name, desc, stars=0):
         logger.debug(f"   ❌ Filtered by category: {name}")
         return False
 
-    # Если используется "russia"/"russian", требуем VPN-контекст
     if 'russia' in text or 'russian' in text:
         vpn_context_required = [
             'vpn', 'proxy', 'bypass', 'dpi', 'censorship',
@@ -303,6 +296,7 @@ def quick_filter(name, desc, stars=0):
 
     return False
 
+
 def is_likely_fork_spam(item):
     if not item.get('fork'):
         return False
@@ -310,10 +304,8 @@ def is_likely_fork_spam(item):
         return True
     return False
 
-# ============ GITHUB API FUNCTIONS (ASYNC) ============
 
 async def get_default_branch(session, owner, repo):
-    """Получить default branch через API"""
     url = f"https://api.github.com/repos/{owner}/{repo}"
     try:
         async with session.get(url) as resp:
@@ -324,19 +316,18 @@ async def get_default_branch(session, owner, repo):
         logger.debug(f"Error getting default branch for {owner}/{repo}: {e}")
     return 'main'
 
+
 async def fetch_repo_text_async(owner, repo):
-    """Асинхронная загрузка README с правильным определением ветки"""
     try:
         async with aiohttp.ClientSession(headers=API_HEADERS) as session:
-            # Сначала получаем default branch
             branch = await get_default_branch(session, owner, repo)
-            
+
             urls = [
                 f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/README.md",
                 f"https://raw.githubusercontent.com/{owner}/{repo}/main/README.md",
                 f"https://raw.githubusercontent.com/{owner}/{repo}/master/README.md",
             ]
-            
+
             for url in urls:
                 try:
                     async with session.get(url, timeout=aiohttp.ClientTimeout(total=8)) as resp:
@@ -350,31 +341,12 @@ async def fetch_repo_text_async(owner, repo):
                 except Exception as e:
                     logger.debug(f"   ⚠️ Error loading {url}: {e}")
                     continue
-                    
+
     except Exception as e:
         logger.debug(f"Error fetching README for {owner}/{repo}: {e}")
-    
+
     return ""
 
-def get_latest_release(owner, repo):
-    url = f"https://api.github.com/repos/{owner}/{repo}/releases/latest"
-    try:
-        resp = requests.get(url, headers=API_HEADERS, timeout=10)
-        if resp.status_code == 200:
-            r = resp.json()
-            return {
-                "tag": r.get('tag_name', ''),
-                "name": r.get('name', r.get('tag_name', '')),
-                "date": r.get('published_at', r.get('created_at')),
-                "url": r.get('html_url', ''),
-                "body": (r.get('body', '') or '')[:300],
-                "prerelease": r.get('prerelease', False)
-            }
-        elif resp.status_code == 404:
-            logger.debug(f"   No releases for {owner}/{repo}")
-    except Exception as e:
-        logger.debug(f"Error getting release for {owner}/{repo}: {e}")
-    return None
 
 def get_recent_releases(owner, repo, limit=5):
     url = f"https://api.github.com/repos/{owner}/{repo}/releases?per_page={limit}"
@@ -397,6 +369,7 @@ def get_recent_releases(owner, repo, limit=5):
         logger.debug(f"Error getting releases for {owner}/{repo}: {e}")
     return []
 
+
 def get_last_commit(owner, repo):
     url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=1"
     try:
@@ -417,6 +390,7 @@ def get_last_commit(owner, repo):
     except Exception as e:
         logger.debug(f"Error getting commit for {owner}/{repo}: {e}")
     return None
+
 
 def search_fresh_repos(query, per_page=40):
     date_filter = (datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)).strftime('%Y-%m-%d')
@@ -451,31 +425,49 @@ def search_fresh_repos(query, per_page=40):
 
     return results
 
-# ============ STATE MANAGEMENT ============
 
 def load_state():
     if os.path.exists(STATE_FILE):
         try:
             with open(STATE_FILE, "r", encoding='utf-8') as f:
                 data = json.load(f)
-                # Обрезаем posted сразу при загрузке
                 data['posted'] = data.get('posted', [])[-3000:]
-                logger.info(f"📂 Loaded: {len(data.get('posted', []))} posted, {len(data.get('releases', {}))} releases tracked")
+                if 'dynamic_tracked' not in data:
+                    data['dynamic_tracked'] = {}
+                logger.info(
+                    f"📂 Loaded: {len(data.get('posted', []))} posted, "
+                    f"{len(data.get('releases', {}))} releases, "
+                    f"{len(data.get('dynamic_tracked', {}))} dynamic tracked"
+                )
                 return data
         except Exception as e:
             logger.warning(f"Could not load state: {e}")
-    return {"posted": [], "commits": {}, "releases": {}, "repo_cache": {}, "last_run": None}
+    return {
+        "posted": [],
+        "commits": {},
+        "releases": {},
+        "repo_cache": {},
+        "last_run": None,
+        "dynamic_tracked": {},
+    }
+
 
 def save_state(state):
     state['last_run'] = datetime.now(timezone.utc).isoformat()
-    # Обрезаем при сохранении для надёжности
     state['posted'] = state.get('posted', [])[-3000:]
     try:
         with open(STATE_FILE, "w", encoding='utf-8') as f:
             json.dump(state, f, indent=2, ensure_ascii=False)
-        logger.info(f"💾 State saved")
+        logger.info(
+            f"💾 State saved "
+            f"(posted={len(state.get('posted', []))}, "
+            f"commits={len(state.get('commits', {}))}, "
+            f"releases={len(state.get('releases', {}))}, "
+            f"dynamic_tracked={len(state.get('dynamic_tracked', {}))})"
+        )
     except Exception as e:
         logger.error(f"❌ Could not save state: {e}")
+
 
 def load_config_sources():
     if os.path.exists(CONFIG_SOURCES_FILE):
@@ -486,6 +478,7 @@ def load_config_sources():
             logger.warning(f"Could not load config_sources: {e}")
     return []
 
+
 def save_config_sources(sources):
     try:
         with open(CONFIG_SOURCES_FILE, "w", encoding="utf-8") as f:
@@ -494,10 +487,8 @@ def save_config_sources(sources):
     except Exception as e:
         logger.error(f"❌ Could not save config_sources: {e}")
 
-# ============ AI FUNCTIONS ============
 
 async def analyze_relevance(repos):
-    """Анализ релевантности небольшими батчами"""
     if not repos:
         return {}
 
@@ -552,6 +543,7 @@ async def analyze_relevance(repos):
         logger.warning(f"⚠️ AI error: {e}")
         return {i: True for i in range(1, len(repos) + 1)}
 
+
 async def generate_desc(name, desc):
     if desc and len(desc) > 25 and not has_non_latin(desc):
         return desc
@@ -579,19 +571,13 @@ async def generate_desc(name, desc):
 
     return "Инструмент для обхода блокировок"
 
-# финальная проверка репо по README (теперь async)
+
 async def check_repo_relevance(owner: str, repo: str, repo_cache: dict) -> bool:
-    """
-    Финальная валидация: проверяем README на VPN/DPI-контекст,
-    чтобы не публиковать vocabulary-trainer, steel-market и т.п.
-    С кэшированием результатов.
-    """
     cache_key = f"relevance:{owner}/{repo}"
-    
-    # Проверяем кэш
+
     if cache_key in repo_cache:
         return repo_cache[cache_key]
-    
+
     text = await fetch_repo_text_async(owner, repo)
     if not text:
         repo_cache[cache_key] = False
@@ -623,7 +609,6 @@ async def check_repo_relevance(owner: str, repo: str, repo_cache: dict) -> bool:
     repo_cache[cache_key] = True
     return True
 
-# ============ TELEGRAM ============
 
 async def send_message_safe(chat_id, text):
     if has_non_latin(text):
@@ -645,11 +630,9 @@ async def send_message_safe(chat_id, text):
             await asyncio.sleep(2 ** attempt)
     return False
 
-# ============ POST BUILDERS ============
 
 def build_release_post(project_name, release, owner, repo):
     tag = release['tag']
-    name = release['name'] or tag
     body = release['body']
 
     if body:
@@ -672,6 +655,7 @@ def build_release_post(project_name, release, owner, repo):
 
     return text
 
+
 def build_commit_post(project_name, commit, owner, repo):
     return (
         f"🔄 <b>{html.escape(project_name)}</b>\n\n"
@@ -680,6 +664,7 @@ def build_commit_post(project_name, commit, owner, repo):
         f"📝 <code>{html.escape(commit['msg'])}</code>\n\n"
         f"🔗 <a href='{commit['url']}'>Посмотреть коммит</a>"
     )
+
 
 def build_repo_post(title, repo_full_name, stars, freshness, description, url):
     return (
@@ -690,7 +675,6 @@ def build_repo_post(title, repo_full_name, stars, freshness, description, url):
         f"🔗 <a href='{url}'>Открыть на GitHub</a>"
     )
 
-# ============ DISCOVER CONFIG SOURCES ============
 
 def extract_config_urls(text: str):
     urls = set()
@@ -704,9 +688,10 @@ def extract_config_urls(text: str):
     candidates = []
     for u in urls:
         low = u.lower()
-        if any(proto in low for proto in ["vless", "vmess", "hysteria", "trojan", "shadow", "sub", "clash"]):
+        if any(proto in low for proto in ["vless", "vmess", "hysteria", "hysteria2", "trojan", "shadow", "sub", "clash"]):
             candidates.append(u)
     return candidates
+
 
 def filter_url_for_russia_and_vless(url: str) -> bool:
     low = url.lower()
@@ -722,6 +707,7 @@ def filter_url_for_russia_and_vless(url: str) -> bool:
         return False
 
     return True
+
 
 async def discover_config_sources():
     logger.info("\n🌐 Discovering new config sources...")
@@ -772,11 +758,10 @@ async def discover_config_sources():
     else:
         logger.info("ℹ️ No new config sources found")
 
-# ============ MAIN ============
 
 async def main():
     logger.info("=" * 60)
-    logger.info("🕵️  SCOUT RADAR v8.3 (optimized)")
+    logger.info("🕵️  SCOUT RADAR v8.4 (dynamic tracked)")
     logger.info("=" * 60)
 
     if not validate_env():
@@ -791,11 +776,29 @@ async def main():
     commits = state.get("commits", {})
     releases = state.get("releases", {})
     repo_cache = state.get("repo_cache", {})
+    dynamic_tracked = state.get("dynamic_tracked", {})
     count = 0
 
-    # 1. РЕЛИЗЫ
+    all_tracked_projects = list(TRACKED_PROJECTS)
+    for full_name, meta in dynamic_tracked.items():
+        try:
+            owner, repo = full_name.split("/")
+        except ValueError:
+            continue
+        all_tracked_projects.append({
+            "owner": owner,
+            "repo": repo,
+            "name": f"🆕 {full_name}",
+            "priority": meta.get("priority", "medium"),
+        })
+
+    logger.info(
+        f"📡 Tracked projects: static={len(TRACKED_PROJECTS)}, "
+        f"dynamic={len(dynamic_tracked)}, total={len(all_tracked_projects)}"
+    )
+
     logger.info("\n🚀 Checking releases of tracked projects...")
-    for project in TRACKED_PROJECTS:
+    for project in all_tracked_projects:
         if count >= MAX_POSTS_PER_RUN:
             break
 
@@ -826,9 +829,8 @@ async def main():
                 count += 1
                 await asyncio.sleep(MESSAGE_DELAY)
 
-    # 2. КОММИТЫ
     logger.info("\n🔄 Checking commits of tracked projects...")
-    for project in TRACKED_PROJECTS:
+    for project in all_tracked_projects:
         if count >= MAX_POSTS_PER_RUN:
             break
 
@@ -858,7 +860,6 @@ async def main():
             count += 1
             await asyncio.sleep(MESSAGE_DELAY)
 
-    # 3. АГРЕГАТОРЫ КОНФИГОВ
     logger.info("\n📡 Checking config aggregators...")
     for agg in CONFIG_AGGREGATORS:
         if count >= MAX_POSTS_PER_RUN:
@@ -885,7 +886,6 @@ async def main():
             count += 1
             await asyncio.sleep(MESSAGE_DELAY)
 
-    # 4. ПОИСК НОВЫХ РЕПОЗИТОРИЕВ
     logger.info("\n🔍 Searching for new repositories...")
     for s in FRESH_SEARCHES:
         if count >= MAX_POSTS_PER_RUN:
@@ -915,7 +915,6 @@ async def main():
         if not candidates:
             continue
 
-        # Обрабатываем батчами по 3 репозитория
         batch_size = 3
         for batch_start in range(0, len(candidates), batch_size):
             if count >= MAX_POSTS_PER_RUN:
@@ -924,17 +923,16 @@ async def main():
             batch = candidates[batch_start:batch_start + batch_size]
             decisions = await analyze_relevance(batch)
 
-            for idx, item in enumerate(batch, 1):
+            for local_idx, item in enumerate(batch, start=1):
                 if count >= MAX_POSTS_PER_RUN:
                     break
 
-                if not decisions.get(idx, False):
+                if not decisions.get(local_idx, False):
                     logger.debug(f"   ⏭ AI filtered: {item['full_name']}")
                     continue
 
                 owner, repo = item['full_name'].split('/')
-                
-                # Проверяем релевантность через README с кэшированием
+
                 is_relevant = await check_repo_relevance(owner, repo, repo_cache)
                 if not is_relevant:
                     logger.info(f"   ⏭ Skipped (irrelevant README): {item['full_name']}")
@@ -956,21 +954,24 @@ async def main():
 
                 if success:
                     posted.add(str(item['id']))
+                    dynamic_tracked[item['full_name']] = {
+                        "first_seen": datetime.now(timezone.utc).isoformat(),
+                        "priority": "medium",
+                    }
+                    logger.info(f"   ✅ {item['full_name']} added to dynamic_tracked")
                     count += 1
-                    logger.info(f"   ✅ {item['full_name']}")
                     await asyncio.sleep(MESSAGE_DELAY)
 
             await asyncio.sleep(GROQ_DELAY)
 
-    # 5. ПОИСК ИСТОЧНИКОВ КОНФИГОВ
     await discover_config_sources()
 
-    # SAVE STATE
     save_state({
         "posted": list(posted),
         "commits": commits,
         "releases": releases,
-        "repo_cache": repo_cache
+        "repo_cache": repo_cache,
+        "dynamic_tracked": dynamic_tracked,
     })
 
     logger.info(f"\n{'=' * 60}")
@@ -978,6 +979,7 @@ async def main():
     logger.info(f"{'=' * 60}")
 
     await bot.session.close()
+
 
 if __name__ == "__main__":
     try:
