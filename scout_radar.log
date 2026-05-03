@@ -33322,3 +33322,361 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-04-30 14:02:36,302 | INFO | 🏁 Completed! Published: 100 posts
 2026-04-30 14:02:36,302 | INFO | ============================================================
+2026-05-03 13:09:06,984 | INFO | ============================================================
+2026-05-03 13:09:06,984 | INFO | 🕵️  SCOUT RADAR v8.4 (dynamic tracked)
+2026-05-03 13:09:06,984 | INFO | ============================================================
+2026-05-03 13:09:06,984 | INFO | ✅ All environment variables validated
+2026-05-03 13:09:07,083 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-05-03 13:09:07,085 | INFO | 📂 Loaded: 1189 posted, 159 releases, 150 dynamic tracked
+2026-05-03 13:09:07,085 | INFO | 📡 Tracked projects: static=27, dynamic=150, total=177
+2026-05-03 13:09:07,085 | INFO | 
+🚀 Checking releases of tracked projects...
+2026-05-03 13:09:07,614 | INFO |    🆕 Release: 🛠 Zapret 2 v0.9.5.2
+2026-05-03 13:09:11,836 | INFO |    🆕 Release: 🛠 SpoofDPI v1.4.1
+2026-05-03 13:09:15,987 | INFO |    🆕 Release: ⚡ Xray-core v26.5.3
+2026-05-03 13:09:19,734 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-alpha.21
+2026-05-03 13:09:26,253 | INFO |    🆕 Release: 📱 V2RayNG 2.1.5
+2026-05-03 13:09:26,254 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-03 13:09:28,732 | INFO |    🆕 Release: 🆕 Sunkist228/Zapret-Manager v1.0.16
+2026-05-03 13:09:31,877 | INFO |    🆕 Release: 🆕 Sunkist228/Zapret-Manager v1.0.15
+2026-05-03 13:09:42,591 | INFO |    🆕 Release: 🆕 uuigww/home-proxy v0.3.8
+2026-05-03 13:09:45,731 | INFO |    🆕 Release: 🆕 uuigww/home-proxy v0.3.7
+2026-05-03 13:09:50,268 | INFO |    🆕 Release: 🆕 GrimbirdUsers/ru-routing-dat v2026.05.03
+2026-05-03 13:09:58,231 | INFO |    🆕 Release: 🆕 therealaleph/MasterHttpRelayVPN-RUST v1.9.7
+2026-05-03 13:09:58,232 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-03 13:09:58,232 | INFO |    🆕 Release: 🆕 therealaleph/MasterHttpRelayVPN-RUST v1.9.5
+2026-05-03 13:09:58,232 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-03 13:09:58,232 | INFO |    🆕 Release: 🆕 therealaleph/MasterHttpRelayVPN-RUST v1.9.4
+2026-05-03 13:09:58,232 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-03 13:09:58,232 | INFO |    🆕 Release: 🆕 therealaleph/MasterHttpRelayVPN-RUST v1.9.3
+2026-05-03 13:09:58,232 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-03 13:09:58,232 | INFO |    🆕 Release: 🆕 therealaleph/MasterHttpRelayVPN-RUST v1.9.2
+2026-05-03 13:09:58,232 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-03 13:10:07,121 | INFO |    🆕 Release: 🆕 erebe/wstunnel v10.5.3
+2026-05-03 13:10:12,330 | INFO |    🆕 Release: 🆕 Atomicpickleofworld/Twi2wi_Re 3.2.0Re
+2026-05-03 13:10:18,810 | INFO |    🆕 Release: 🆕 SIPC/H2O v2026.05.03.01
+2026-05-03 13:10:18,811 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-03 13:10:18,811 | INFO |    🆕 Release: 🆕 SIPC/H2O v2026.05.02.06
+2026-05-03 13:10:18,811 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-03 13:10:18,811 | INFO |    🆕 Release: 🆕 SIPC/H2O v2026.05.02.05
+2026-05-03 13:10:18,811 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-03 13:10:18,811 | INFO |    🆕 Release: 🆕 SIPC/H2O v2026.05.02.04
+2026-05-03 13:10:18,811 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-03 13:10:18,811 | INFO |    🆕 Release: 🆕 SIPC/H2O v2026.05.02.03
+2026-05-03 13:10:18,811 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-03 13:10:20,681 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-03T11-22
+2026-05-03 13:10:23,822 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-03T05-07
+2026-05-03 13:10:26,961 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-02T22-52
+2026-05-03 13:10:30,101 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-02T16-37
+2026-05-03 13:10:33,243 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-02T10-22
+2026-05-03 13:10:37,158 | INFO |    🆕 Release: 🆕 werteksjobs-pixel/Dpi-Dashboard v1.1.6
+2026-05-03 13:10:40,301 | INFO |    🆕 Release: 🆕 werteksjobs-pixel/Dpi-Dashboard v1.1.5
+2026-05-03 13:10:43,490 | INFO |    🆕 Release: 🆕 werteksjobs-pixel/Dpi-Dashboard v1.1.3
+2026-05-03 13:10:46,680 | INFO |    🆕 Release: 🆕 werteksjobs-pixel/Dpi-Dashboard v1.0.8
+2026-05-03 13:10:49,820 | INFO |    🆕 Release: 🆕 werteksjobs-pixel/Dpi-Dashboard v1.0.7
+2026-05-03 13:10:56,880 | INFO | 
+🔄 Checking commits of tracked projects...
+2026-05-03 13:10:57,197 | INFO |    🆕 Commit: 🛠 Zapret 2
+2026-05-03 13:11:00,846 | INFO |    🆕 Commit: 🛠 SpoofDPI
+2026-05-03 13:11:04,190 | INFO |    🆕 Commit: 🛡 Amnezia Client
+2026-05-03 13:11:07,711 | INFO |    🆕 Commit: ⚡ Xray-core
+2026-05-03 13:11:11,033 | INFO |    🆕 Commit: 📦 Sing-Box
+2026-05-03 13:11:16,111 | INFO |    🆕 Commit: 💻 V2RayN
+2026-05-03 13:11:19,445 | INFO |    🆕 Commit: 📱 V2RayNG
+2026-05-03 13:11:24,309 | INFO |    🆕 Commit: 🆕 Sunkist228/Zapret-Manager
+2026-05-03 13:11:27,593 | INFO |    🆕 Commit: 🆕 Eljaja/BibaVPN
+2026-05-03 13:11:37,452 | INFO |    🆕 Commit: 🆕 uuigww/home-proxy
+2026-05-03 13:11:41,857 | INFO |    🆕 Commit: 🆕 GrimbirdUsers/ru-routing-dat
+2026-05-03 13:11:45,536 | INFO |    🆕 Commit: 🆕 jesusmedrandam/miniature-octo-palm-tree
+2026-05-03 13:11:48,829 | INFO |    🆕 Commit: 🆕 LuisF-92/Freedom-V2Ray
+2026-05-03 13:11:52,137 | INFO |    🆕 Commit: 🆕 VOID-Anonymity/V.O.I.D-VPN_Bypass
+2026-05-03 13:11:55,984 | INFO |    🆕 Commit: 🆕 bucissss/Xray-VPN-OneClick
+2026-05-03 13:11:59,369 | INFO |    🆕 Commit: 🆕 matrixsy/cf_ech_worker
+2026-05-03 13:12:02,713 | INFO |    🆕 Commit: 🆕 Karenfsi188/xray
+2026-05-03 13:12:06,407 | INFO |    🆕 Commit: 🆕 MaskaBOG/clash-vless-auto
+2026-05-03 13:12:10,956 | INFO |    🆕 Commit: 🆕 therealaleph/MasterHttpRelayVPN-RUST
+2026-05-03 13:12:18,066 | INFO |    🆕 Commit: 🆕 almax07082005/VPN
+2026-05-03 13:12:21,589 | INFO |    🆕 Commit: 🆕 beligel/vpn-clean
+2026-05-03 13:12:28,255 | INFO |    🆕 Commit: 🆕 erebe/wstunnel
+2026-05-03 13:12:31,969 | INFO |    🆕 Commit: 🆕 Flirexa/flirexa
+2026-05-03 13:12:36,058 | INFO |    🆕 Commit: 🆕 Atomicpickleofworld/Twi2wi_Re
+2026-05-03 13:12:39,859 | INFO |    🆕 Commit: 🆕 batonogov/terraform-provider-threexui
+2026-05-03 13:12:43,547 | INFO |    🆕 Commit: 🆕 adeshra5646/VLESS-XTLS-Reality-VPN
+2026-05-03 13:12:47,741 | INFO |    🆕 Commit: 🆕 eiler2005/ghostroute
+2026-05-03 13:12:51,550 | INFO |    🆕 Commit: 🆕 movingcursor/clearway
+2026-05-03 13:12:54,928 | INFO |    🆕 Commit: 🆕 elly5490/telegram-proxy
+2026-05-03 13:12:58,245 | INFO |    🆕 Commit: 🆕 mansar1337/ShadowProxy
+2026-05-03 13:13:01,744 | INFO |    🆕 Commit: 🆕 YawStar/Proxy-Hunter
+2026-05-03 13:13:05,494 | INFO |    🆕 Commit: 🆕 MustafaBaqer/VestraNet-Nodes
+2026-05-03 13:13:08,966 | INFO |    🆕 Commit: 🆕 madtest48/zapretmanager-desktop
+2026-05-03 13:13:12,337 | INFO |    🆕 Commit: 🆕 werteksjobs-pixel/Dpi-Dashboard
+2026-05-03 13:13:16,420 | INFO |    🆕 Commit: 🆕 murzikovv/zapret-gui-remake
+2026-05-03 13:13:20,619 | INFO |    🆕 Commit: 🆕 acidS0ul/zapret-ipsets-list
+2026-05-03 13:13:24,106 | INFO |    🆕 Commit: 🆕 acidS0ul/zapret-configurations
+2026-05-03 13:13:27,417 | INFO |    🆕 Commit: 🆕 unnourished-calciumchannelblocker351/HydraFlow
+2026-05-03 13:13:31,167 | INFO |    🆕 Commit: 🆕 Tryn996/TrynDPI
+2026-05-03 13:13:34,474 | INFO |    🆕 Commit: 🆕 denuitt1/mhr-cfw
+2026-05-03 13:13:37,680 | INFO | 
+📡 Checking config aggregators...
+2026-05-03 13:13:37,860 | INFO |    🆕 📡 SubCrawler
+2026-05-03 13:13:41,415 | INFO |    🆕 📡 V2RayAggregator
+2026-05-03 13:13:44,965 | INFO |    🆕 📡 V2RayFree
+2026-05-03 13:13:48,112 | INFO | 
+🔍 Searching for new repositories...
+2026-05-03 13:13:48,216 | INFO | 📊 GitHub API: 4627/5000 calls remaining
+2026-05-03 13:13:48,216 | INFO | 
+🔍 Zapret Tools...
+2026-05-03 13:13:50,070 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:13:50,070 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:13:50,321 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:13:50,487 | INFO |    ✅ MagicSlayerRoute/discord-zapret added to dynamic_tracked
+2026-05-03 13:13:53,958 | INFO |    ✅ Wonky0/Zapret_DiscordFix-1 added to dynamic_tracked
+2026-05-03 13:13:57,305 | INFO |    ✅ Wonky0/Zapret_DiscordFix added to dynamic_tracked
+2026-05-03 13:14:02,358 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:14:02,359 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:14:02,774 | INFO |    ✅ xxFireflyxx/Flowzap-zapret-dns added to dynamic_tracked
+2026-05-03 13:14:06,157 | INFO |    ✅ Wonky0/Zapret_Discord added to dynamic_tracked
+2026-05-03 13:14:09,411 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:14:09,550 | INFO |    ✅ pythoneer-dev-q/ne-zapret added to dynamic_tracked
+2026-05-03 13:14:14,611 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:14:14,611 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:14:14,991 | INFO |    ✅ glovyhub-maker/Zapret_ALl added to dynamic_tracked
+2026-05-03 13:14:18,338 | INFO |    ✅ glovyhub-maker/Zapret_Discord added to dynamic_tracked
+2026-05-03 13:14:21,603 | INFO |    ⏭ Skipped (irrelevant README): LycoCeeK/zapret_Dc
+2026-05-03 13:14:23,658 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:14:23,658 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:14:24,012 | INFO |    ✅ Mirroxon/Zapret_DiscordFix added to dynamic_tracked
+2026-05-03 13:14:27,368 | INFO |    ✅ Mirroxon/Zapret_DiscordFix-1 added to dynamic_tracked
+2026-05-03 13:14:30,713 | INFO |    ✅ Mirroxon/Zapret_Discord added to dynamic_tracked
+2026-05-03 13:14:35,772 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:14:35,773 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:14:36,126 | INFO |    ✅ wvaldSUOLMATE/Discord-zapret-By-Sivist-hub added to dynamic_tracked
+2026-05-03 13:14:39,551 | INFO |    ✅ Garaaimi/unzapret-fork-zapret added to dynamic_tracked
+2026-05-03 13:14:42,814 | INFO |    ⏭ Skipped (irrelevant README): faze4ik/Zapret-NEW
+2026-05-03 13:14:44,864 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:14:44,864 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:14:44,864 | INFO |    ⏭ Skipped (irrelevant README): 6yKBaPb01/zapret-go-pcap2socks
+2026-05-03 13:14:45,142 | INFO |    ⏭ Skipped (irrelevant README): iwangagarin2012-coder/zapret-youtube-discord
+2026-05-03 13:14:45,476 | INFO |    ⏭ Skipped (irrelevant README): iwangagarin2012-coder/zapret
+2026-05-03 13:14:47,518 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:14:47,519 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:14:47,814 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:14:47,947 | INFO |    ✅ WhiteSmoke19/ZapretLauncher added to dynamic_tracked
+2026-05-03 13:14:51,329 | INFO |    ✅ evelinagutirrez48628/obhod-zapreta-hub added to dynamic_tracked
+2026-05-03 13:14:54,620 | INFO |    ⏭ Skipped (irrelevant README): debug874/Zapret-roblox
+2026-05-03 13:14:56,676 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:14:56,676 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:14:57,064 | INFO |    ✅ RexinTOP/ZAPRET-ROBLOX added to dynamic_tracked
+2026-05-03 13:15:00,361 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:15:00,494 | INFO |    ✅ sjhejf83he/youtube-discord-zapret added to dynamic_tracked
+2026-05-03 13:15:03,800 | INFO |    ⏭ Skipped (irrelevant README): sjhejf83he/zapret-discord-youtube
+2026-05-03 13:15:05,851 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:15:05,852 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:15:06,158 | INFO |    ⏭ Skipped (irrelevant README): stulker3/InterfaceZapret
+2026-05-03 13:15:06,577 | INFO |    ✅ riut91937-sudo/Zapret-DiscordFix added to dynamic_tracked
+2026-05-03 13:15:09,856 | INFO |    ⏭ Skipped (irrelevant README): nuetoa01-ux/zapret-for-roblox-ishakedition
+2026-05-03 13:15:11,908 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:15:11,908 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:15:12,228 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:15:12,360 | INFO |    ✅ kl3vr/zapret-apk added to dynamic_tracked
+2026-05-03 13:15:15,733 | INFO |    ✅ glovyhub-maker/Zapret_Roblox added to dynamic_tracked
+2026-05-03 13:15:19,027 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:15:19,228 | INFO |    ✅ enosenso/zapret-discord added to dynamic_tracked
+2026-05-03 13:15:24,277 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:15:24,277 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:15:24,680 | INFO |    ✅ Marnugs/zapret_discordFixx added to dynamic_tracked
+2026-05-03 13:15:27,952 | INFO |    ⏭ Skipped (irrelevant README): Marnugs/zapret_discordFix
+2026-05-03 13:15:28,227 | INFO |    ⏭ Skipped (irrelevant README): kromencik-rgb/ZapretRobloxYoutubeDiscord
+2026-05-03 13:15:30,279 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:15:30,279 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:15:30,647 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:15:30,785 | INFO |    ✅ Latyyx/zapret-discord-youtube added to dynamic_tracked
+2026-05-03 13:15:34,078 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:15:34,217 | INFO |    ✅ Yan4ik000/Zapret-updater added to dynamic_tracked
+2026-05-03 13:15:37,498 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:15:37,636 | INFO |    ✅ Kurt747/zapret added to dynamic_tracked
+2026-05-03 13:15:42,693 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:15:42,694 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:15:42,995 | INFO |    ⏭ Skipped (irrelevant README): Kurt747/zapret1
+2026-05-03 13:15:43,289 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:15:43,428 | INFO |    ✅ DiscordZapretka/DiscordZapret added to dynamic_tracked
+2026-05-03 13:15:46,806 | INFO |    ✅ SevixHub/Zapret_Discord added to dynamic_tracked
+2026-05-03 13:15:51,861 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:15:51,861 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:15:52,093 | INFO |    ⏭ Skipped (irrelevant README): nectomailiey-cell/zapret-console
+2026-05-03 13:15:52,335 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:15:52,484 | INFO |    ✅ discordzapret/zapret-discord-youtube added to dynamic_tracked
+2026-05-03 13:15:57,586 | INFO | 📊 GitHub API: 4587/5000 calls remaining
+2026-05-03 13:15:57,587 | INFO | 
+🔍 DPI Bypass...
+2026-05-03 13:15:58,842 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:15:58,842 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:15:59,202 | INFO |    ✅ Freezonplay070/0bx0d added to dynamic_tracked
+2026-05-03 13:16:02,579 | INFO |    ✅ net-learner-04/DPI-Bypass added to dynamic_tracked
+2026-05-03 13:16:06,037 | INFO |    ✅ birdwarp/bypass-whatsapp-call-block-uae-2026 added to dynamic_tracked
+2026-05-03 13:16:11,095 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:16:11,095 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:16:11,484 | INFO |    ✅ xhchddu98-netizen/LSSD-Theory-Layered-Strategy-Segmented-Deception-Layered-Strategy-and-Segmented-Deception-Theory added to dynamic_tracked
+2026-05-03 13:16:14,900 | INFO |    ✅ bnsware/GoodByeDPIManager-TR added to dynamic_tracked
+2026-05-03 13:16:18,277 | INFO |    ✅ MaksimSamarin/AntiGoblin added to dynamic_tracked
+2026-05-03 13:16:23,333 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-05-03 13:16:23,334 | WARNING | ⚠️ AI error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-05-03 13:16:23,785 | INFO |    ✅ Xassemblianist/SiktirGitDPI added to dynamic_tracked
+2026-05-03 13:16:27,195 | INFO |    ✅ frethernet/yutup added to dynamic_tracked
+2026-05-03 13:16:32,201 | INFO | 
+🌐 Discovering new config sources...
+2026-05-03 13:16:32,320 | INFO | 📊 GitHub API: 4579/5000 calls remaining
+2026-05-03 13:16:32,321 | INFO |    🔍 Searching configs for query: v2ray configs free
+2026-05-03 13:16:33,157 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/trojan.txt)
+2026-05-03 13:16:33,158 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/vless.txt)
+2026-05-03 13:16:33,158 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/shadowsocks.txt)
+2026-05-03 13:16:33,158 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/vmess.txt)
+2026-05-03 13:16:34,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/trojan.txt
+2026-05-03 13:16:34,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub4.txt
+2026-05-03 13:16:34,072 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vless.txt
+2026-05-03 13:16:34,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/ss.txt
+2026-05-03 13:16:34,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/super-sub.txt
+2026-05-03 13:16:34,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub39.txt
+2026-05-03 13:16:34,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt
+2026-05-03 13:16:34,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vmess.txt
+2026-05-03 13:16:34,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub1.txt
+2026-05-03 13:16:34,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub2.txt
+2026-05-03 13:16:34,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/hysteria2.txt
+2026-05-03 13:16:34,073 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub3.txt
+2026-05-03 13:16:34,306 | INFO |    🆕 Config source: https://img.shields.io/github/issues/Epodonios/bulk-xray-v2ray-vless-vmess-...-configs?style=for-the-badge)](https://github.com/Epodonios/bulk-xray-v2ray-vless-vmess-...-configs/issues)
+2026-05-03 13:16:34,306 | INFO |    🆕 Config source: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://github.com/Epodonios/bulk-xray-v2ray-vless-vmess-...-configs)
+2026-05-03 13:16:34,306 | INFO |    🆕 Config source: https://img.shields.io/github/issues-pr/Epodonios/V2rayCollector_py?style=for-the-badge)](https://github.com/Epodonios/bulk-xray-v2ray-vless-vmess-...-configs/pulls)
+2026-05-03 13:16:34,306 | INFO |    🆕 Config source: https://t.me/s/v2_vmess)
+2026-05-03 13:16:34,306 | INFO |    🆕 Config source: https://t.me/s/vmess_vless_v2rayng)
+2026-05-03 13:16:34,306 | INFO |    🆕 Config source: https://img.shields.io/github/stars/Epodonios/bulk-xray-v2ray-vless-vmess-...-configs?style=for-the-badge)](https://github.com/Epodonios/bulk-xray-v2ray-vless-vmess-...-configs/stargazers)
+2026-05-03 13:16:34,306 | INFO |    🆕 Config source: https://t.me/s/vmessq)
+2026-05-03 13:16:34,700 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_2096.txt)
+2026-05-03 13:16:34,700 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/vless.txt)
+2026-05-03 13:16:34,700 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/ss.txt)
+2026-05-03 13:16:34,700 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/vmess.txt)
+2026-05-03 13:16:34,700 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vless/443.txt
+2026-05-03 13:16:34,700 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_2087.txt)
+2026-05-03 13:16:34,700 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vmess/8443.txt
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vmess/2053.txt
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/trojan/2053.txt
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vmess/2087.txt
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vmess/443.txt
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/trojan/443.txt
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/trojan/2087.txt
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_443.txt)
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vmess/8880.txt
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/trojan/8443.txt
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vless/2096.txt
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vless/2087.txt
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vless/80.txt
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vless/8443.txt
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/trojan/80.txt
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/other.txt)
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_80.txt)
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vless/8880.txt
+2026-05-03 13:16:34,701 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vmess/80.txt
+2026-05-03 13:16:34,702 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_2053.txt)
+2026-05-03 13:16:34,702 | INFO |    🆕 Config source: https://github.com/hamedcode/port-based-v2ray-configs/tree/main/sub)
+2026-05-03 13:16:34,702 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_8880.txt)
+2026-05-03 13:16:34,702 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_8443.txt)
+2026-05-03 13:16:34,702 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/trojan.txt)
+2026-05-03 13:16:34,702 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/trojan/2096.txt
+2026-05-03 13:16:34,702 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vless/2053.txt
+2026-05-03 13:16:34,702 | INFO |    🆕 Config source: https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/detailed/vmess/2096.txt
+2026-05-03 13:16:35,110 | INFO |    🆕 Config source: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt)
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://translate.yandex.ru/translate?url=https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt&lang=de-de
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt)
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://translate.yandex.ru/translate?url=https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt&lang=de-de
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://raw.githack.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://cdn.jsdelivr.net/gh/igareck/vpn-configs-for-russia@main/BLACK_VLESS_RUS.txt
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt&lang=de-de
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://github.com/igareck/vpn-configs-for-russia/blob/main/QR-codes/BLACK_VLESS_RUS_mobile_QR.png)
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://github.com/igareck/vpn-configs-for-russia/blob/main/QR-codes/Vless-Reality-White-Lists-Rus-Mobile-2-QR.png)
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://cdn.statically.io/gh/igareck/vpn-configs-for-russia@main/BLACK_VLESS_RUS_mobile.txt
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile-2.txt&lang=de-de
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://raw.githack.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile-2.txt
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://cdn.jsdelivr.net/gh/igareck/vpn-configs-for-russia@main/Vless-Reality-White-Lists-Rus-Mobile.txt
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt)
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://raw.githack.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS.txt
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://cdn.jsdelivr.net/gh/igareck/vpn-configs-for-russia@main/BLACK_VLESS_RUS_mobile.txt
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://cdn.statically.io/gh/igareck/vpn-configs-for-russia@main/Vless-Reality-White-Lists-Rus-Mobile.txt
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://translate.yandex.ru/translate?url=https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile-2.txt&lang=de-de
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile-2.txt)
+2026-05-03 13:16:35,111 | INFO |    🆕 Config source: https://github.com/igareck/vpn-configs-for-russia/blob/main/QR-codes/Vless-Reality-White-Lists-Rus-Mobile-QR.png)
+2026-05-03 13:16:35,112 | INFO |    🆕 Config source: https://rawcdn.githack.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt
+2026-05-03 13:16:35,112 | INFO |    🆕 Config source: https://rawcdn.githack.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile-2.txt
+2026-05-03 13:16:35,112 | INFO |    🆕 Config source: https://rawcdn.githack.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS.txt
+2026-05-03 13:16:35,112 | INFO |    🆕 Config source: https://cdn.statically.io/gh/igareck/vpn-configs-for-russia@main/Vless-Reality-White-Lists-Rus-Mobile-2.txt
+2026-05-03 13:16:35,112 | INFO |    🆕 Config source: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt&lang=de-de
+2026-05-03 13:16:35,112 | INFO |    🆕 Config source: https://raw.githack.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt
+2026-05-03 13:16:35,112 | INFO |    🆕 Config source: https://cdn.statically.io/gh/igareck/vpn-configs-for-russia@main/BLACK_VLESS_RUS.txt
+2026-05-03 13:16:35,112 | INFO |    🆕 Config source: https://github.com/igareck/vpn-configs-for-russia/blob/main/QR-codes/BLACK_VLESS_RUS-QR.png)
+2026-05-03 13:16:35,112 | INFO |    🆕 Config source: https://cdn.jsdelivr.net/gh/igareck/vpn-configs-for-russia@main/Vless-Reality-White-Lists-Rus-Mobile-2.txt
+2026-05-03 13:16:35,112 | INFO |    🆕 Config source: https://rawcdn.githack.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt
+2026-05-03 13:16:35,112 | INFO |    🆕 Config source: https://translate.yandex.ru/translate?url=https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt&lang=de-de
+2026-05-03 13:16:35,112 | INFO |    🆕 Config source: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt&lang=de-de
+2026-05-03 13:16:35,337 | INFO |    🆕 Config source: https://raw.githubusercontent.com/wiki/gfpcom/free-proxy-list/lists/vmess.txt
+2026-05-03 13:16:35,337 | INFO |    🆕 Config source: https://raw.githubusercontent.com/wiki/gfpcom/free-proxy-list/lists/vless.txt
+2026-05-03 13:16:35,558 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/vmess.txt
+2026-05-03 13:16:35,558 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/vless.txt
+2026-05-03 13:16:35,558 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/trojan.txt
+2026-05-03 13:16:35,558 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_base64_Sub.txt
+2026-05-03 13:16:35,558 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_Sub.txt
+2026-05-03 13:16:35,824 | INFO |    🆕 Config source: https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/trojan.txt
+2026-05-03 13:16:35,824 | INFO |    🆕 Config source: https://raw.githubusercontent.com/barry-far/V2ray-config/main/All_Configs_Sub.txt)
+2026-05-03 13:16:35,824 | INFO |    🆕 Config source: https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vless.txt
+2026-05-03 13:16:35,825 | INFO |    🆕 Config source: https://raw.githubusercontent.com/barry-far/V2ray-config/main/All_Configs_base64_Sub.txt)
+2026-05-03 13:16:35,825 | INFO |    🆕 Config source: https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt
+2026-05-03 13:16:36,087 | INFO |    🆕 Config source: https://<your-own-endpoint>/sub?filter=vless
+2026-05-03 13:16:36,087 | INFO |    🆕 Config source: https://img.shields.io/github/stars/kort0881/vpn-vless-configs-russia?style=social)](https://github.com/kort0881/vpn-vless-configs-russia/stargazers)
+2026-05-03 13:16:36,087 | INFO |    🆕 Config source: https://github.com/kort0881/vpn-vless-configs-russia/issues)
+2026-05-03 13:16:36,087 | INFO |    🆕 Config source: https://img.shields.io/github/forks/kort0881/vpn-vless-configs-russia?style=social)](https://github.com/kort0881/vpn-vless-configs-russia/network/members)
+2026-05-03 13:16:36,087 | INFO |    🆕 Config source: https://github.com/kort0881/vpn-vless-configs-russia/discussions)
+2026-05-03 13:16:36,087 | INFO |    🆕 Config source: https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/githubmirror/ru-sni/vless_ru.txt
+2026-05-03 13:16:36,087 | INFO |    🆕 Config source: https://github.com/kort0881/vpn-vless-configs-russia.git
+2026-05-03 13:16:36,087 | INFO |    🆕 Config source: https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/githubmirror/clean/vless.txt
+2026-05-03 13:16:36,087 | INFO |    🆕 Config source: https://img.shields.io/github/watchers/kort0881/vpn-vless-configs-russia?style=social)](https://github.com/kort0881/vpn-vless-configs-russia/watchers)
+2026-05-03 13:16:36,087 | INFO |    🆕 Config source: https://t.me/vlesstrojan)
+2026-05-03 13:16:36,087 | INFO |    🆕 Config source: https://img.shields.io/badge/Telegram-@vlesstrojan-blue?style=for-the-badge&logo=telegram)](https://t.me/vlesstrojan)
+2026-05-03 13:16:36,462 | INFO | 📊 GitHub API: 4565/5000 calls remaining
+2026-05-03 13:16:36,463 | INFO |    🔍 Searching configs for query: vless reality subscription
+2026-05-03 13:16:37,116 | INFO |    🆕 Config source: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt&lang=de-de`
+2026-05-03 13:16:37,116 | INFO |    🆕 Config source: https://translate.yandex.ru/translate?url=https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt&lang=de-de`
+2026-05-03 13:16:37,339 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MustafaBaqer/VestraNet-Nodes/main/protocols/vmess.txt`
+2026-05-03 13:16:37,340 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MustafaBaqer/VestraNet-Nodes/main/protocols/vless.txt`
+2026-05-03 13:16:37,340 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MustafaBaqer/VestraNet-Nodes/main/subscriptions/mix-base64.txt`
+2026-05-03 13:16:37,672 | INFO | 📊 GitHub API: 4562/5000 calls remaining
+2026-05-03 13:16:37,673 | INFO |    🔍 Searching configs for query: vless reality v2ray
+2026-05-03 13:16:38,560 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/trojan.txt)
+2026-05-03 13:16:38,560 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/vless.txt)
+2026-05-03 13:16:38,560 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/shadowsocks.txt)
+2026-05-03 13:16:38,560 | INFO |    🆕 Config source: https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/vmess.txt)
+2026-05-03 13:16:38,945 | INFO |    🆕 Config source: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt&lang=de-de`
+2026-05-03 13:16:38,945 | INFO |    🆕 Config source: https://translate.yandex.ru/translate?url=https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt&lang=de-de`
+2026-05-03 13:16:39,388 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/vmess.txt
+2026-05-03 13:16:39,388 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/vless.txt
+2026-05-03 13:16:39,388 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/trojan.txt
+2026-05-03 13:16:39,388 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_base64_Sub.txt
+2026-05-03 13:16:39,388 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_Sub.txt
+2026-05-03 13:16:39,854 | INFO |    🆕 Config source: https://opensea.io/collection/vless**
+2026-05-03 13:16:39,854 | INFO |    🆕 Config source: https://computerscot.github.io/vless-xtls-utls-reality-steal-oneself.html)
+2026-05-03 13:16:40,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/miladtahanian/V2RayCFGDumper/refs/heads/main/sub.txt)
+2026-05-03 13:16:40,048 | INFO |    🆕 Config source: https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/trojan.txt)
+2026-05-03 13:16:40,048 | INFO |    🆕 Config source: https://github.com/Mr-Meshky/vify/raw/refs/heads/main/configs/vless.txt)
+2026-05-03 13:16:40,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/mheidari98/.proxy/refs/heads/main/vless)
+2026-05-03 13:16:40,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/All_Configs_Sub.txt)
+2026-05-03 13:16:40,048 | INFO |    🆕 Config source: https://github.com/igareck/vpn-configs-for-russia/raw/refs/heads/main/BLACK_VLESS_RUS.txt)
+2026-05-03 13:16:40,048 | INFO |    🆕 Config source: https://github.com/rtwo2/FastNodes/raw/refs/heads/main/sub/protocols/hysteria2.txt)
+2026-05-03 13:16:40,048 | INFO |    🆕 Config source: https://github.com/MhdiTaheri/V2rayCollector_Py/raw/refs/heads/main/sub/Mix/mix.txt)
+2026-05-03 13:16:40,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/Pawdroid/Free-servers/refs/heads/main/sub)
+2026-05-03 13:16:40,048 | INFO |    🆕 Config source: https://raw.githubusercontent.com/V2RayRoot/V2RayConfig/refs/heads/main/Config/vless.txt)
+2026-05-03 13:16:40,049 | INFO |    🆕 Config source: https://raw.githubusercontent.com/mohamadfg-dev/telegram-v2ray-configs-collector/refs/heads/main/category/vless.txt)
+2026-05-03 13:16:40,196 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MustafaBaqer/VestraNet-Nodes/main/protocols/vmess.txt`
+2026-05-03 13:16:40,196 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MustafaBaqer/VestraNet-Nodes/main/protocols/vless.txt`
+2026-05-03 13:16:40,196 | INFO |    🆕 Config source: https://raw.githubusercontent.com/MustafaBaqer/VestraNet-Nodes/main/subscriptions/mix-base64.txt`
+2026-05-03 13:16:40,867 | INFO | 💾 Config sources saved: 129 urls
+2026-05-03 13:16:40,871 | INFO | 💾 State saved (posted=1225, commits=85, releases=180, dynamic_tracked=186)
+2026-05-03 13:16:40,871 | INFO | 
+============================================================
+2026-05-03 13:16:40,872 | INFO | 🏁 Completed! Published: 100 posts
+2026-05-03 13:16:40,872 | INFO | ============================================================
