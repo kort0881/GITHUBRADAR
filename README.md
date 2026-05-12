@@ -1,7 +1,3 @@
-Вот профессиональный README с анимацией и детальным описанием для твоего скрипта **Scout Radar**.
-
-***
-
 # 📡 SCOUT RADAR v8.0
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
