@@ -32,7 +32,7 @@ STATE_FILE = "scout_history.json"
 CONFIG_SOURCES_FILE = "config_sources.json"
 
 MAX_AGE_DAYS = 3
-MAX_POSTS_PER_RUN = 100
+MAX_POSTS_PER_RUN = 50
 GROQ_DELAY = 2
 MESSAGE_DELAY = 3
 MIN_STARS = 0
@@ -277,22 +277,35 @@ def quick_filter(name, desc, stars=0):
             return False
 
     whitelist = [
-        'russia', 'russian', 'ru-', 'roskomnadzor', 'rkn', 'antizapret',
-        'zapret', 'tspu', 'sorm', 'amnezia', 'hysteria', 'reality',
-        'marzban', 'xray', 'v2ray', 'vless', 'trojan', 'shadowsocks',
-        'clash', 'sing-box', 'bypass', 'proxy', 'vpn', 'dpi', 'gfw',
-        'censorship', 'freedom', 'unblock'
+        'zapret', 'zapret2', 'antizapret', 'dpi-bypass', 'bypass-dpi', 'nodpi',
+        'goodbyedpi', 'byedpi', 'spoofdpi', 'amnezia', 'amneziawg',
+        'xray-core', 'xray', 'vless-reality', 'reality', 'vless',
+        'hysteria2', 'hysteria', 'trojan', 'shadowsocks', 'wireguard',
+        'clash-meta', 'sing-box', 'singbox', 'marzban', '3x-ui',
+        'hiddify', 'nekoray', 'v2rayn', 'v2rayng',
+        'roskomnadzor', 'rkn', 'tspu', 'sorm',
+        'geosite', 'geoip', 'blocked-domains', 'block-list',
+        'censorship', 'freedom', 'unblock', 'gfw'
     ]
-    if any(w in text for w in whitelist):
-        return True
 
     blacklist = [
         'china', 'chinese', 'cn-', 'iran', 'persian', 'vietnam',
-        'homework', 'tutorial', 'example-', 'template', 'deprecated',
-        'test-repo', 'demo-', 'practice', 'learning', 'course'
+        'vocabulary', 'trainer', 'flashcard', 'quiz', 'market',
+        'steel', 'trading', 'business', 'finance', 'ecommerce',
+        'shop', 'store', 'retail', 'analytics', 'recipe', 'cooking',
+        'food', 'restaurant', 'travel', 'portfolio', 'resume', 'cv',
+        'game', 'minigame', 'weather', 'calculator', 'notebook',
+        'crypto', 'nft', 'blockchain', 'defi', 'sms', 'caller',
+        'video', 'stream', 'youtube-dl', 'pomodoro', 'meditation',
+        'workout', 'fitness', 'mental-health'
     ]
+
     if any(k in text for k in blacklist):
+        logger.debug(f"   ❌ Blacklisted: {name}")
         return False
+
+    if any(w in text for w in whitelist):
+        return True
 
     return False
 
@@ -399,8 +412,8 @@ def search_fresh_repos(query, per_page=40):
     seen_ids = set()
 
     strategies = [
-        f"{query}+pushed:>{date_filter}",
-        f"{query}+created:>{date_filter}",
+        f"{query}+pushed:>{date_filter}+language:python+NOT+fork:true",
+        f"{query}+created:>{date_filter}+language:python+NOT+fork:true",
     ]
 
     for strategy in strategies:
@@ -915,7 +928,7 @@ async def main():
         if not candidates:
             continue
 
-        batch_size = 3
+        batch_size = 10
         for batch_start in range(0, len(candidates), batch_size):
             if count >= MAX_POSTS_PER_RUN:
                 break
