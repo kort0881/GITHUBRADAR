@@ -35837,3 +35837,108 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-05-12 14:32:57,557 | INFO | 🏁 Completed! Published: 100 posts
 2026-05-12 14:32:57,557 | INFO | ============================================================
+2026-05-15 14:05:29,221 | INFO | ============================================================
+2026-05-15 14:05:29,222 | INFO | 🕵️  SCOUT RADAR v8.4 (dynamic tracked)
+2026-05-15 14:05:29,222 | INFO | ============================================================
+2026-05-15 14:05:29,222 | INFO | ✅ All environment variables validated
+2026-05-15 14:05:29,409 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-05-15 14:05:29,412 | INFO | 📂 Loaded: 1295 posted, 257 releases, 256 dynamic tracked
+2026-05-15 14:05:29,412 | INFO | 📡 Tracked projects: static=27, dynamic=256, total=283
+2026-05-15 14:05:29,412 | INFO | 
+🚀 Checking releases of tracked projects...
+2026-05-15 14:05:31,457 | INFO |    🆕 Release: 🛠 SpoofDPI v1.5.2
+2026-05-15 14:05:36,800 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-alpha.24
+2026-05-15 14:05:39,956 | INFO |    🆕 Release: 📦 Sing-Box v1.13.12
+2026-05-15 14:05:43,146 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-alpha.23
+2026-05-15 14:05:48,725 | INFO |    🆕 Release: 🎛 3X-UI v3.0.2
+2026-05-15 14:05:53,643 | INFO |    🆕 Release: 💻 V2RayN 7.22.0
+2026-05-15 14:05:53,643 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-15 14:06:15,653 | INFO |    🆕 Release: 🆕 therealaleph/MasterHttpRelayVPN-RUST v1.9.25
+2026-05-15 14:06:15,654 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-15 14:06:15,654 | INFO |    🆕 Release: 🆕 therealaleph/MasterHttpRelayVPN-RUST v1.9.24
+2026-05-15 14:06:15,654 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-15 14:06:21,868 | INFO |    🆕 Release: 🆕 agentram/ovpn 1.3.1
+2026-05-15 14:06:32,975 | INFO |    🆕 Release: 🆕 Flirexa/flirexa v1.6.13
+2026-05-15 14:06:38,913 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.5.0
+2026-05-15 14:06:42,132 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.4.0
+2026-05-15 14:06:45,286 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.3.0
+2026-05-15 14:06:52,090 | INFO |    🆕 Release: 🆕 SIPC/H2O v2026.05.14.02
+2026-05-15 14:06:52,091 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-15 14:06:52,091 | INFO |    🆕 Release: 🆕 SIPC/H2O v2026.05.14.01
+2026-05-15 14:06:52,091 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-15 14:06:52,091 | INFO |    🆕 Release: 🆕 SIPC/H2O v2026.05.12.01
+2026-05-15 14:06:52,091 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-15 14:06:54,824 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-15T13-09
+2026-05-15 14:06:58,001 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-15T06-54
+2026-05-15 14:07:01,160 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-15T00-39
+2026-05-15 14:07:04,368 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-14T18-24
+2026-05-15 14:07:07,513 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-14T12-09
+2026-05-15 14:07:16,463 | INFO |    🆕 Release: 🆕 Tryn996/TrynDPI v4.5.3
+2026-05-15 14:07:37,208 | INFO |    🆕 Release: 🆕 ajavadinezhad/zyrln v1.5.1-pre6
+2026-05-15 14:07:41,145 | INFO |    🆕 Release: 🆕 ThisIsDara/mhr-cfw-go v1.4.0
+2026-05-15 14:07:49,512 | INFO |    🆕 Release: 🆕 ike-sh/leikwan-wg-toolkit v1.4.6
+2026-05-15 14:07:52,720 | INFO |    🆕 Release: 🆕 ike-sh/leikwan-wg-toolkit v1.4.5
+2026-05-15 14:07:55,873 | INFO |    🆕 Release: 🆕 ike-sh/leikwan-wg-toolkit v1.4.4
+2026-05-15 14:07:59,027 | INFO |    🆕 Release: 🆕 ike-sh/leikwan-wg-toolkit v1.4.3
+2026-05-15 14:08:02,175 | INFO |    🆕 Release: 🆕 ike-sh/leikwan-wg-toolkit v1.4.2
+2026-05-15 14:08:10,338 | INFO |    🆕 Release: 🆕 Natureplugirder/zapret-discord-youtube-1.9.8 zapret-discord-youtube-1.9.8
+2026-05-15 14:08:13,901 | INFO |    🆕 Release: 🆕 Natureplugirder/zapret-discord-youtube-1.9.8b zapret-discord-youtube-1.9.8b
+2026-05-15 14:08:17,434 | INFO |    🆕 Release: 🆕 Natureplugirder/Zapret zapret-discord-youtube-1.9.8c
+2026-05-15 14:08:20,973 | INFO |    🆕 Release: 🆕 Natureplugirder/ZapretDiscord-1.9.8c ZapretDiscord
+2026-05-15 14:08:24,532 | INFO |    🆕 Release: 🆕 Natureplugirder/ZapretDiscord 1.9.8
+2026-05-15 14:08:28,045 | INFO |    🆕 Release: 🆕 Natureplugirder/zapret-discord-youtube-1.9.8c zapret-discord-youtube-1.9.8c
+2026-05-15 14:08:31,528 | INFO |    🆕 Release: 🆕 Natureplugirder/zapret-discord-youtube zapret-discord-youtube
+2026-05-15 14:08:35,153 | INFO |    🆕 Release: 🆕 Natureplugirder/DiscordZapret DiscordZapret
+2026-05-15 14:08:44,008 | INFO | 
+🔄 Checking commits of tracked projects...
+2026-05-15 14:08:45,570 | INFO |    🆕 Commit: 🛠 SpoofDPI
+2026-05-15 14:08:49,004 | INFO |    🆕 Commit: 🛡 Amnezia Client
+2026-05-15 14:08:52,977 | INFO |    🆕 Commit: 📦 Sing-Box
+2026-05-15 14:08:56,914 | INFO |    🆕 Commit: 📡 Outline Server
+2026-05-15 14:09:01,230 | INFO |    🆕 Commit: 🎛 3X-UI
+2026-05-15 14:09:05,758 | INFO |    🆕 Commit: 💻 V2RayN
+2026-05-15 14:09:09,231 | INFO |    🆕 Commit: 📱 V2RayNG
+2026-05-15 14:09:16,055 | INFO |    🆕 Commit: 🆕 Eljaja/BibaVPN
+2026-05-15 14:09:24,676 | INFO |    🆕 Commit: 🆕 medvedeff-true/ru-gaming-blocklist
+2026-05-15 14:09:32,163 | INFO |    🆕 Commit: 🆕 AYastrebov/docker-amneziawg
+2026-05-15 14:09:40,365 | INFO |    🆕 Commit: 🆕 throneproj/Throne
+2026-05-15 14:09:43,802 | INFO |    🆕 Commit: 🆕 jesusmedrandam/miniature-octo-palm-tree
+2026-05-15 14:09:47,227 | INFO |    🆕 Commit: 🆕 LuisF-92/Freedom-V2Ray
+2026-05-15 14:09:50,629 | INFO |    🆕 Commit: 🆕 VOID-Anonymity/V.O.I.D-VPN_Bypass
+2026-05-15 14:09:54,082 | INFO |    🆕 Commit: 🆕 bucissss/Xray-VPN-OneClick
+2026-05-15 14:09:57,522 | INFO |    🆕 Commit: 🆕 matrixsy/cf_ech_worker
+2026-05-15 14:10:01,000 | INFO |    🆕 Commit: 🆕 Karenfsi188/xray
+2026-05-15 14:10:05,083 | INFO |    🆕 Commit: 🆕 MaskaBOG/clash-vless-auto
+2026-05-15 14:10:11,156 | INFO |    🆕 Commit: 🆕 therealaleph/MasterHttpRelayVPN-RUST
+2026-05-15 14:10:14,309 | INFO | 
+📡 Checking config aggregators...
+2026-05-15 14:10:14,309 | INFO | 
+🔍 Searching for new repositories...
+2026-05-15 14:10:14,309 | INFO | 
+🌐 Discovering new config sources...
+2026-05-15 14:10:14,466 | INFO | 📊 GitHub API: 4706/5000 calls remaining
+2026-05-15 14:10:14,467 | INFO |    🔍 Searching configs for query: v2ray configs free
+2026-05-15 14:10:14,978 | INFO | 📊 GitHub API: 4706/5000 calls remaining
+2026-05-15 14:10:14,979 | INFO |    🔍 Searching configs for query: vless reality subscription
+2026-05-15 14:10:15,526 | INFO | 📊 GitHub API: 4706/5000 calls remaining
+2026-05-15 14:10:15,526 | INFO |    🔍 Searching configs for query: vless reality v2ray
+2026-05-15 14:10:16,098 | INFO | 📊 GitHub API: 4706/5000 calls remaining
+2026-05-15 14:10:16,099 | INFO |    🔍 Searching configs for query: v2ray subscription link
+2026-05-15 14:10:16,715 | INFO | 📊 GitHub API: 4706/5000 calls remaining
+2026-05-15 14:10:16,716 | INFO |    🔍 Searching configs for query: free vless configs
+2026-05-15 14:10:17,305 | INFO | 📊 GitHub API: 4706/5000 calls remaining
+2026-05-15 14:10:17,306 | INFO |    🔍 Searching configs for query: vpn configs russia vless
+2026-05-15 14:10:17,979 | INFO | 📊 GitHub API: 4706/5000 calls remaining
+2026-05-15 14:10:17,980 | INFO |    🔍 Searching configs for query: hysteria2 reality config
+2026-05-15 14:10:18,514 | INFO | 📊 GitHub API: 4706/5000 calls remaining
+2026-05-15 14:10:18,515 | INFO |    🔍 Searching configs for query: clash reality subscription
+2026-05-15 14:10:19,113 | INFO | 📊 GitHub API: 4706/5000 calls remaining
+2026-05-15 14:10:19,114 | INFO |    🔍 Searching configs for query: subconverter subscription
+2026-05-15 14:10:19,697 | INFO | 📊 GitHub API: 4706/5000 calls remaining
+2026-05-15 14:10:19,699 | INFO |    🔍 Searching configs for query: xray reality vless config
+2026-05-15 14:10:20,288 | INFO | ℹ️ No new config sources found
+2026-05-15 14:10:20,293 | INFO | 💾 State saved (posted=1295, commits=118, releases=288, dynamic_tracked=256)
+2026-05-15 14:10:20,293 | INFO | 
+============================================================
+2026-05-15 14:10:20,293 | INFO | 🏁 Completed! Published: 50 posts
+2026-05-15 14:10:20,294 | INFO | ============================================================
