@@ -36174,3 +36174,100 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-05-21 15:30:02,683 | INFO | 🏁 Completed! Published: 50 posts
 2026-05-21 15:30:02,683 | INFO | ============================================================
+2026-05-25 14:52:34,770 | INFO | ============================================================
+2026-05-25 14:52:34,770 | INFO | 🕵️  SCOUT RADAR v8.4 (dynamic tracked)
+2026-05-25 14:52:34,770 | INFO | ============================================================
+2026-05-25 14:52:34,770 | INFO | ✅ All environment variables validated
+2026-05-25 14:52:35,081 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-05-25 14:52:35,084 | INFO | 📂 Loaded: 1295 posted, 330 releases, 256 dynamic tracked
+2026-05-25 14:52:35,084 | INFO | 📡 Tracked projects: static=27, dynamic=256, total=283
+2026-05-25 14:52:35,084 | INFO | 
+🚀 Checking releases of tracked projects...
+2026-05-25 14:52:40,743 | INFO |    🆕 Release: 🚀 Hysteria app/v2.9.2
+2026-05-25 14:52:46,631 | INFO |    🆕 Release: 🎛 3X-UI v3.1.0
+2026-05-25 14:52:52,368 | INFO |    🆕 Release: 📱 V2RayNG 2.2.0
+2026-05-25 14:52:52,368 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-25 14:53:13,320 | INFO |    🆕 Release: 🆕 GrimbirdUsers/ru-routing-dat v2026.05.24
+2026-05-25 14:53:31,959 | INFO |    🆕 Release: 🆕 agentram/ovpn 1.3.3
+2026-05-25 14:53:53,015 | INFO |    🆕 Release: 🆕 SIPC/H2O v2026.05.24.01
+2026-05-25 14:53:53,015 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-25 14:53:56,494 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-25T10-39
+2026-05-25 14:53:59,978 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-25T04-24
+2026-05-25 14:54:03,175 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-24T22-09
+2026-05-25 14:54:06,403 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-24T15-54
+2026-05-25 14:54:09,786 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-24T09-39
+2026-05-25 14:55:03,003 | INFO | 
+🔄 Checking commits of tracked projects...
+2026-05-25 14:55:05,233 | INFO |    🆕 Commit: 🛡 Amnezia Client
+2026-05-25 14:55:09,499 | INFO |    🆕 Commit: ⚡ Xray-core
+2026-05-25 14:55:13,059 | INFO |    🆕 Commit: 📦 Sing-Box
+2026-05-25 14:55:16,667 | INFO |    🆕 Commit: 🚀 Hysteria
+2026-05-25 14:55:21,957 | INFO |    🆕 Commit: 🎛 3X-UI
+2026-05-25 14:55:26,851 | INFO |    🆕 Commit: 💻 V2RayN
+2026-05-25 14:55:30,422 | INFO |    🆕 Commit: 📱 V2RayNG
+2026-05-25 14:55:38,433 | INFO |    🆕 Commit: 🆕 Eljaja/BibaVPN
+2026-05-25 14:55:47,593 | INFO |    🆕 Commit: 🆕 medvedeff-true/ru-gaming-blocklist
+2026-05-25 14:55:51,293 | INFO |    🆕 Commit: 🆕 sormas/sormas
+2026-05-25 14:56:00,758 | INFO |    🆕 Commit: 🆕 QueenDekim/XRay-bot
+2026-05-25 14:56:08,179 | INFO |    🆕 Commit: 🆕 GrimbirdUsers/ru-routing-dat
+2026-05-25 14:56:12,270 | INFO |    🆕 Commit: 🆕 throneproj/Throne
+2026-05-25 14:56:15,949 | INFO |    🆕 Commit: 🆕 jesusmedrandam/miniature-octo-palm-tree
+2026-05-25 14:56:19,554 | INFO |    🆕 Commit: 🆕 LuisF-92/Freedom-V2Ray
+2026-05-25 14:56:23,184 | INFO |    🆕 Commit: 🆕 VOID-Anonymity/V.O.I.D-VPN_Bypass
+2026-05-25 14:56:26,776 | INFO |    🆕 Commit: 🆕 bucissss/Xray-VPN-OneClick
+2026-05-25 14:56:30,349 | INFO |    🆕 Commit: 🆕 matrixsy/cf_ech_worker
+2026-05-25 14:56:33,999 | INFO |    🆕 Commit: 🆕 Karenfsi188/xray
+2026-05-25 14:56:38,425 | INFO |    🆕 Commit: 🆕 MaskaBOG/clash-vless-auto
+2026-05-25 14:56:47,116 | INFO |    🆕 Commit: 🆕 nekorro/amneziawg-config-helper
+2026-05-25 14:56:56,638 | INFO |    🆕 Commit: 🆕 agentram/ovpn
+2026-05-25 14:57:13,728 | INFO |    🆕 Commit: 🆕 batonogov/terraform-provider-threexui
+2026-05-25 14:57:18,509 | INFO |    🆕 Commit: 🆕 adeshra5646/VLESS-XTLS-Reality-VPN
+2026-05-25 14:57:24,213 | INFO |    🆕 Commit: 🆕 eiler2005/ghostroute
+2026-05-25 14:57:27,845 | INFO |    🆕 Commit: 🆕 Wakotu/vless-reality-agent-
+2026-05-25 14:57:32,344 | INFO |    🆕 Commit: 🆕 movingcursor/clearway
+2026-05-25 14:57:35,933 | INFO |    🆕 Commit: 🆕 elly5490/telegram-proxy
+2026-05-25 14:57:40,462 | INFO |    🆕 Commit: 🆕 YawStar/Proxy-Hunter
+2026-05-25 14:57:44,900 | INFO |    🆕 Commit: 🆕 MustafaBaqer/VestraNet-Nodes
+2026-05-25 14:57:48,935 | INFO |    🆕 Commit: 🆕 madtest48/zapretmanager-desktop
+2026-05-25 14:57:58,338 | INFO |    🆕 Commit: 🆕 unnourished-calciumchannelblocker351/HydraFlow
+2026-05-25 14:58:16,473 | INFO |    🆕 Commit: 🆕 birdwarp/bypass-whatsapp-call-block-uae-2026
+2026-05-25 14:58:28,166 | INFO |    🆕 Commit: 🆕 sonic0jd/MasterHttpRelayVPN
+2026-05-25 14:58:31,767 | INFO |    🆕 Commit: 🆕 Rr3511167/snix
+2026-05-25 14:58:39,442 | INFO |    🆕 Commit: 🆕 birdwarp/bypass-youtube-rkn-2026
+2026-05-25 14:58:43,024 | INFO |    🆕 Commit: 🆕 Scarecrowish-shoat5968/ByeByeVPN
+2026-05-25 14:58:47,161 | INFO |    🆕 Commit: 🆕 arkashira/freedom-link
+2026-05-25 14:59:08,809 | INFO | 
+📡 Checking config aggregators...
+2026-05-25 14:59:09,182 | INFO |    🆕 📡 SubCrawler
+2026-05-25 14:59:13,729 | INFO |    🆕 📡 V2RayAggregator
+2026-05-25 14:59:17,424 | INFO |    🆕 📡 Free-servers
+2026-05-25 14:59:20,721 | INFO | 
+🔍 Searching for new repositories...
+2026-05-25 14:59:20,721 | INFO | 
+🌐 Discovering new config sources...
+2026-05-25 14:59:20,982 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-25 14:59:20,983 | INFO |    🔍 Searching configs for query: v2ray configs free
+2026-05-25 14:59:21,984 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-25 14:59:21,985 | INFO |    🔍 Searching configs for query: vless reality subscription
+2026-05-25 14:59:22,995 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-25 14:59:22,996 | INFO |    🔍 Searching configs for query: vless reality v2ray
+2026-05-25 14:59:23,957 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-25 14:59:23,958 | INFO |    🔍 Searching configs for query: v2ray subscription link
+2026-05-25 14:59:24,984 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-25 14:59:24,985 | INFO |    🔍 Searching configs for query: free vless configs
+2026-05-25 14:59:26,003 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-25 14:59:26,004 | INFO |    🔍 Searching configs for query: vpn configs russia vless
+2026-05-25 14:59:27,065 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-25 14:59:27,066 | INFO |    🔍 Searching configs for query: hysteria2 reality config
+2026-05-25 14:59:28,139 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-25 14:59:28,141 | INFO |    🔍 Searching configs for query: clash reality subscription
+2026-05-25 14:59:29,043 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-25 14:59:29,044 | INFO |    🔍 Searching configs for query: subconverter subscription
+2026-05-25 14:59:30,056 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-25 14:59:30,057 | INFO |    🔍 Searching configs for query: xray reality vless config
+2026-05-25 14:59:30,795 | INFO | ℹ️ No new config sources found
+2026-05-25 14:59:30,800 | INFO | 💾 State saved (posted=1295, commits=123, releases=339, dynamic_tracked=256)
+2026-05-25 14:59:30,800 | INFO | 
+============================================================
+2026-05-25 14:59:30,801 | INFO | 🏁 Completed! Published: 50 posts
+2026-05-25 14:59:30,801 | INFO | ============================================================
