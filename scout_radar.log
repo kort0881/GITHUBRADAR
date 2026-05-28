@@ -36271,3 +36271,102 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-05-25 14:59:30,801 | INFO | 🏁 Completed! Published: 50 posts
 2026-05-25 14:59:30,801 | INFO | ============================================================
+2026-05-28 15:52:39,329 | INFO | ============================================================
+2026-05-28 15:52:39,329 | INFO | 🕵️  SCOUT RADAR v8.4 (dynamic tracked)
+2026-05-28 15:52:39,329 | INFO | ============================================================
+2026-05-28 15:52:39,329 | INFO | ✅ All environment variables validated
+2026-05-28 15:52:39,484 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-05-28 15:52:39,487 | INFO | 📂 Loaded: 1295 posted, 339 releases, 256 dynamic tracked
+2026-05-28 15:52:39,487 | INFO | 📡 Tracked projects: static=27, dynamic=256, total=283
+2026-05-28 15:52:39,487 | INFO | 
+🚀 Checking releases of tracked projects...
+2026-05-28 15:52:43,870 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-alpha.26
+2026-05-28 15:52:50,748 | INFO |    🆕 Release: 🎛 Hiddify Manager v12.3.1
+2026-05-28 15:52:55,113 | INFO |    🆕 Release: 📱 V2RayNG 2.2.1
+2026-05-28 15:52:55,113 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-28 15:53:17,488 | INFO |    🆕 Release: 🆕 therealaleph/MasterHttpRelayVPN-RUST v1.9.36
+2026-05-28 15:53:17,488 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-28 15:53:17,488 | INFO |    🆕 Release: 🆕 therealaleph/MasterHttpRelayVPN-RUST v1.9.35
+2026-05-28 15:53:17,489 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-05-28 15:53:23,696 | INFO |    🆕 Release: 🆕 agentram/ovpn 1.4.2
+2026-05-28 15:53:27,066 | INFO |    🆕 Release: 🆕 agentram/ovpn 1.4.1
+2026-05-28 15:53:30,283 | INFO |    🆕 Release: 🆕 agentram/ovpn 1.4.0
+2026-05-28 15:53:43,824 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.6.4
+2026-05-28 15:53:46,974 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.6.3
+2026-05-28 15:53:50,133 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.6.2
+2026-05-28 15:53:53,288 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.6.1
+2026-05-28 15:54:02,611 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-28T12-43
+2026-05-28 15:54:05,768 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-28T06-28
+2026-05-28 15:54:08,935 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-28T00-13
+2026-05-28 15:54:12,117 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-27T18-13
+2026-05-28 15:54:15,393 | INFO |    🆕 Release: 🆕 MustafaBaqer/VestraNet-Nodes v2026-05-27T18-11
+2026-05-28 15:54:21,112 | INFO |    🆕 Release: 🆕 murzikovv/zapret-gui-remake v1.2.9e
+2026-05-28 15:54:24,288 | INFO |    🆕 Release: 🆕 murzikovv/zapret-gui-remake v1.2.9d
+2026-05-28 15:54:27,458 | INFO |    🆕 Release: 🆕 murzikovv/zapret-gui-remake v1.2.9c
+2026-05-28 15:54:41,988 | INFO |    🆕 Release: 🆕 Freezonplay070/0bx0d v4.7
+2026-05-28 15:55:10,649 | INFO | 
+🔄 Checking commits of tracked projects...
+2026-05-28 15:55:11,150 | INFO |    🆕 Commit: 🛠 Zapret 2
+2026-05-28 15:55:15,493 | INFO |    🆕 Commit: 🛡 Amnezia Client
+2026-05-28 15:55:19,214 | INFO |    🆕 Commit: ⚡ Xray-core
+2026-05-28 15:55:22,658 | INFO |    🆕 Commit: 📦 Sing-Box
+2026-05-28 15:55:27,068 | INFO |    🆕 Commit: 📡 Outline Client
+2026-05-28 15:55:30,670 | INFO |    🆕 Commit: 🎛 3X-UI
+2026-05-28 15:55:34,508 | INFO |    🆕 Commit: 🎛 Hiddify Manager
+2026-05-28 15:55:38,126 | INFO |    🆕 Commit: 💻 V2RayN
+2026-05-28 15:55:41,540 | INFO |    🆕 Commit: 📱 V2RayNG
+2026-05-28 15:55:47,876 | INFO |    🆕 Commit: 🆕 Eljaja/BibaVPN
+2026-05-28 15:55:55,548 | INFO |    🆕 Commit: 🆕 medvedeff-true/ru-gaming-blocklist
+2026-05-28 15:55:59,040 | INFO |    🆕 Commit: 🆕 sormas/sormas
+2026-05-28 15:56:10,385 | INFO |    🆕 Commit: 🆕 throneproj/Throne
+2026-05-28 15:56:13,833 | INFO |    🆕 Commit: 🆕 jesusmedrandam/miniature-octo-palm-tree
+2026-05-28 15:56:17,296 | INFO |    🆕 Commit: 🆕 LuisF-92/Freedom-V2Ray
+2026-05-28 15:56:20,691 | INFO |    🆕 Commit: 🆕 VOID-Anonymity/V.O.I.D-VPN_Bypass
+2026-05-28 15:56:24,150 | INFO |    🆕 Commit: 🆕 bucissss/Xray-VPN-OneClick
+2026-05-28 15:56:27,605 | INFO |    🆕 Commit: 🆕 matrixsy/cf_ech_worker
+2026-05-28 15:56:31,093 | INFO |    🆕 Commit: 🆕 Karenfsi188/xray
+2026-05-28 15:56:35,337 | INFO |    🆕 Commit: 🆕 MaskaBOG/clash-vless-auto
+2026-05-28 15:56:40,771 | INFO |    🆕 Commit: 🆕 therealaleph/MasterHttpRelayVPN-RUST
+2026-05-28 15:56:45,914 | INFO |    🆕 Commit: 🆕 nekorro/amneziawg-config-helper
+2026-05-28 15:56:53,781 | INFO |    🆕 Commit: 🆕 agentram/ovpn
+2026-05-28 15:56:59,248 | INFO |    🆕 Commit: 🆕 sacoq/xray-reality-installer
+2026-05-28 15:57:03,672 | INFO |    🆕 Commit: 🆕 Chonsoku/ZapretDPI-PowerNet-Linux-Windows-
+2026-05-28 15:57:13,376 | INFO |    🆕 Commit: 🆕 batonogov/terraform-provider-threexui
+2026-05-28 15:57:17,501 | INFO |    🆕 Commit: 🆕 adeshra5646/VLESS-XTLS-Reality-VPN
+2026-05-28 15:57:22,511 | INFO |    🆕 Commit: 🆕 eiler2005/ghostroute
+2026-05-28 15:57:27,149 | INFO |    🆕 Commit: 🆕 Wakotu/vless-reality-agent-
+2026-05-28 15:57:31,543 | INFO |    🆕 Commit: 🆕 elly5490/telegram-proxy
+2026-05-28 15:57:35,549 | INFO |    🆕 Commit: 🆕 YawStar/Proxy-Hunter
+2026-05-28 15:57:39,474 | INFO |    🆕 Commit: 🆕 MustafaBaqer/VestraNet-Nodes
+2026-05-28 15:57:42,657 | INFO | 
+📡 Checking config aggregators...
+2026-05-28 15:57:42,658 | INFO | 
+🔍 Searching for new repositories...
+2026-05-28 15:57:42,658 | INFO | 
+🌐 Discovering new config sources...
+2026-05-28 15:57:42,859 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-28 15:57:42,860 | INFO |    🔍 Searching configs for query: v2ray configs free
+2026-05-28 15:57:43,494 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-28 15:57:43,495 | INFO |    🔍 Searching configs for query: vless reality subscription
+2026-05-28 15:57:44,434 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-28 15:57:44,435 | INFO |    🔍 Searching configs for query: vless reality v2ray
+2026-05-28 15:57:45,173 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-28 15:57:45,174 | INFO |    🔍 Searching configs for query: v2ray subscription link
+2026-05-28 15:57:45,854 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-28 15:57:45,855 | INFO |    🔍 Searching configs for query: free vless configs
+2026-05-28 15:57:46,597 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-28 15:57:46,598 | INFO |    🔍 Searching configs for query: vpn configs russia vless
+2026-05-28 15:57:47,376 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-28 15:57:47,377 | INFO |    🔍 Searching configs for query: hysteria2 reality config
+2026-05-28 15:57:48,043 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-28 15:57:48,044 | INFO |    🔍 Searching configs for query: clash reality subscription
+2026-05-28 15:57:48,674 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-28 15:57:48,675 | INFO |    🔍 Searching configs for query: subconverter subscription
+2026-05-28 15:57:49,353 | INFO | 📊 GitHub API: 4705/5000 calls remaining
+2026-05-28 15:57:49,354 | INFO |    🔍 Searching configs for query: xray reality vless config
+2026-05-28 15:57:49,906 | INFO | ℹ️ No new config sources found
+2026-05-28 15:57:49,911 | INFO | 💾 State saved (posted=1295, commits=123, releases=357, dynamic_tracked=256)
+2026-05-28 15:57:49,911 | INFO | 
+============================================================
+2026-05-28 15:57:49,911 | INFO | 🏁 Completed! Published: 50 posts
+2026-05-28 15:57:49,911 | INFO | ============================================================
