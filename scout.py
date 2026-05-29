@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import json
 import asyncio
@@ -32,7 +33,7 @@ STATE_FILE = "scout_history.json"
 CONFIG_SOURCES_FILE = "config_sources.json"
 
 MAX_AGE_DAYS = 3
-MAX_POSTS_PER_RUN = 50
+MAX_POSTS_PER_RUN = 100      # увеличено, чтобы хватало на поиск нового
 GROQ_DELAY = 2
 MESSAGE_DELAY = 3
 MIN_STARS = 0
@@ -46,6 +47,9 @@ API_HEADERS = {
 bot = Bot(token=TELEGRAM_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 groq_client = Groq(api_key=GROQ_API_KEY)
 
+# ------------------------------------------------------------
+# Списки отслеживаемых проектов (из вашего исходного кода)
+# ------------------------------------------------------------
 TRACKED_PROJECTS = [
     {"owner": "bol-van", "repo": "zapret", "name": "🛠 Zapret (original)", "priority": "high"},
     {"owner": "bol-van", "repo": "zapret2", "name": "🛠 Zapret 2", "priority": "high"},
@@ -149,7 +153,9 @@ CONFIG_URL_PATTERNS = [
     r"https?://[^\s\"']*(?:vless|vmess|hysteria2|reality)[^\s\"']*",
 ]
 
-
+# ------------------------------------------------------------
+# ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ (без изменений)
+# ------------------------------------------------------------
 def validate_env():
     required = {
         "GROQ_API_KEY": GROQ_API_KEY,
@@ -157,16 +163,12 @@ def validate_env():
         "CHANNEL_ID": TARGET_CHANNEL_ID,
         "GITHUB_TOKEN": GITHUB_TOKEN
     }
-
     missing = [k for k, v in required.items() if not v]
-
     if missing:
         logger.error(f"❌ Missing environment variables: {', '.join(missing)}")
         return False
-
     logger.info("✅ All environment variables validated")
     return True
-
 
 def check_rate_limit():
     try:
@@ -175,9 +177,7 @@ def check_rate_limit():
             data = resp.json()
             remaining = data['rate']['remaining']
             limit = data['rate']['limit']
-
             logger.info(f"📊 GitHub API: {remaining}/{limit} calls remaining")
-
             if remaining < MIN_API_CALLS_REMAINING:
                 logger.warning(f"⚠️ API limit low ({remaining} left)")
                 if remaining < 10:
@@ -186,7 +186,6 @@ def check_rate_limit():
     except Exception as e:
         logger.warning(f"⚠️ Could not check rate limit: {e}")
     return True
-
 
 def has_non_latin(text):
     if not text:
@@ -198,7 +197,6 @@ def has_non_latin(text):
     ]
     return any(re.search(p, text) for p in patterns)
 
-
 def get_age_hours(date_string):
     try:
         if not date_string:
@@ -207,7 +205,6 @@ def get_age_hours(date_string):
         return (datetime.now(timezone.utc) - dt).total_seconds() / 3600
     except:
         return 9999
-
 
 def get_freshness(date_string):
     hours = get_age_hours(date_string)
@@ -224,10 +221,8 @@ def get_freshness(date_string):
     else:
         return f"📅 {int(hours/24)}д назад"
 
-
 def is_fresh(date_string):
     return get_age_hours(date_string) <= (MAX_AGE_DAYS * 24)
-
 
 def safe_desc(desc, max_len=120):
     if desc is None:
@@ -236,17 +231,13 @@ def safe_desc(desc, max_len=120):
     desc = re.sub(r'[🔥⚡️✨🎉]{3,}', '', desc)
     return desc[:max_len] if desc else ""
 
-
 def quick_filter(name, desc, stars=0):
     text = f"{name} {desc or ''}".lower()
     full_text = f"{name} {desc or ''}"
-
     if has_non_latin(full_text):
         return False
-
     if stars < MIN_STARS:
         return False
-
     irrelevant_categories = [
         'vocabulary', 'trainer', 'learning', 'educational', 'course',
         'tutorial', 'lesson', 'homework', 'student', 'university',
@@ -262,7 +253,6 @@ def quick_filter(name, desc, stars=0):
     if any(cat in text for cat in irrelevant_categories):
         logger.debug(f"   ❌ Filtered by category: {name}")
         return False
-
     if 'russia' in text or 'russian' in text:
         vpn_context_required = [
             'vpn', 'proxy', 'bypass', 'dpi', 'censorship',
@@ -275,7 +265,6 @@ def quick_filter(name, desc, stars=0):
         if not any(ctx in text for ctx in vpn_context_required):
             logger.debug(f"   ❌ 'russia' without VPN context: {name}")
             return False
-
     whitelist = [
         'zapret', 'zapret2', 'antizapret', 'dpi-bypass', 'bypass-dpi', 'nodpi',
         'goodbyedpi', 'byedpi', 'spoofdpi', 'amnezia', 'amneziawg',
@@ -287,7 +276,6 @@ def quick_filter(name, desc, stars=0):
         'geosite', 'geoip', 'blocked-domains', 'block-list',
         'censorship', 'freedom', 'unblock', 'gfw'
     ]
-
     blacklist = [
         'china', 'chinese', 'cn-', 'iran', 'persian', 'vietnam',
         'vocabulary', 'trainer', 'flashcard', 'quiz', 'market',
@@ -299,16 +287,12 @@ def quick_filter(name, desc, stars=0):
         'video', 'stream', 'youtube-dl', 'pomodoro', 'meditation',
         'workout', 'fitness', 'mental-health'
     ]
-
     if any(k in text for k in blacklist):
         logger.debug(f"   ❌ Blacklisted: {name}")
         return False
-
     if any(w in text for w in whitelist):
         return True
-
     return False
-
 
 def is_likely_fork_spam(item):
     if not item.get('fork'):
@@ -316,7 +300,6 @@ def is_likely_fork_spam(item):
     if item.get('stargazers_count', 0) == 0 and item.get('forks_count', 0) == 0:
         return True
     return False
-
 
 async def get_default_branch(session, owner, repo):
     url = f"https://api.github.com/repos/{owner}/{repo}"
@@ -329,18 +312,15 @@ async def get_default_branch(session, owner, repo):
         logger.debug(f"Error getting default branch for {owner}/{repo}: {e}")
     return 'main'
 
-
 async def fetch_repo_text_async(owner, repo):
     try:
         async with aiohttp.ClientSession(headers=API_HEADERS) as session:
             branch = await get_default_branch(session, owner, repo)
-
             urls = [
                 f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/README.md",
                 f"https://raw.githubusercontent.com/{owner}/{repo}/main/README.md",
                 f"https://raw.githubusercontent.com/{owner}/{repo}/master/README.md",
             ]
-
             for url in urls:
                 try:
                     async with session.get(url, timeout=aiohttp.ClientTimeout(total=8)) as resp:
@@ -354,12 +334,9 @@ async def fetch_repo_text_async(owner, repo):
                 except Exception as e:
                     logger.debug(f"   ⚠️ Error loading {url}: {e}")
                     continue
-
     except Exception as e:
         logger.debug(f"Error fetching README for {owner}/{repo}: {e}")
-
     return ""
-
 
 def get_recent_releases(owner, repo, limit=5):
     url = f"https://api.github.com/repos/{owner}/{repo}/releases?per_page={limit}"
@@ -382,7 +359,6 @@ def get_recent_releases(owner, repo, limit=5):
         logger.debug(f"Error getting releases for {owner}/{repo}: {e}")
     return []
 
-
 def get_last_commit(owner, repo):
     url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=1"
     try:
@@ -390,10 +366,8 @@ def get_last_commit(owner, repo):
         if resp.status_code == 200 and resp.json():
             c = resp.json()[0]
             msg = c['commit']['message'].split('\n')[0][:60]
-
             if has_non_latin(msg):
                 return None
-
             return {
                 "sha": c['sha'][:7],
                 "date": c['commit']['committer']['date'],
@@ -404,24 +378,16 @@ def get_last_commit(owner, repo):
         logger.debug(f"Error getting commit for {owner}/{repo}: {e}")
     return None
 
-
 def search_fresh_repos(query, per_page=40):
     date_filter = (datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)).strftime('%Y-%m-%d')
-
     results = []
     seen_ids = set()
-
     strategies = [
         f"{query}+pushed:>{date_filter}+language:python+NOT+fork:true",
         f"{query}+created:>{date_filter}+language:python+NOT+fork:true",
     ]
-
     for strategy in strategies:
-        url = (
-            f"https://api.github.com/search/repositories"
-            f"?q={strategy}&sort=updated&order=desc&per_page={per_page}"
-        )
-
+        url = f"https://api.github.com/search/repositories?q={strategy}&sort=updated&order=desc&per_page={per_page}"
         try:
             resp = requests.get(url, headers=API_HEADERS, timeout=15)
             if resp.status_code == 200:
@@ -435,9 +401,7 @@ def search_fresh_repos(query, per_page=40):
                 break
         except Exception as e:
             logger.warning(f"⚠️ Search error: {e}")
-
     return results
-
 
 def load_state():
     if os.path.exists(STATE_FILE):
@@ -447,6 +411,10 @@ def load_state():
                 data['posted'] = data.get('posted', [])[-3000:]
                 if 'dynamic_tracked' not in data:
                     data['dynamic_tracked'] = {}
+                if 'releases_meta' not in data:
+                    data['releases_meta'] = {}
+                if 'config_urls' not in data:
+                    data['config_urls'] = {}
                 logger.info(
                     f"📂 Loaded: {len(data.get('posted', []))} posted, "
                     f"{len(data.get('releases', {}))} releases, "
@@ -462,8 +430,9 @@ def load_state():
         "repo_cache": {},
         "last_run": None,
         "dynamic_tracked": {},
+        "releases_meta": {},
+        "config_urls": {},
     }
-
 
 def save_state(state):
     state['last_run'] = datetime.now(timezone.utc).isoformat()
@@ -481,7 +450,6 @@ def save_state(state):
     except Exception as e:
         logger.error(f"❌ Could not save state: {e}")
 
-
 def load_config_sources():
     if os.path.exists(CONFIG_SOURCES_FILE):
         try:
@@ -491,7 +459,6 @@ def load_config_sources():
             logger.warning(f"Could not load config_sources: {e}")
     return []
 
-
 def save_config_sources(sources):
     try:
         with open(CONFIG_SOURCES_FILE, "w", encoding="utf-8") as f:
@@ -500,67 +467,73 @@ def save_config_sources(sources):
     except Exception as e:
         logger.error(f"❌ Could not save config_sources: {e}")
 
-
+# ------------------------------------------------------------
+# НОВЫЙ AI с поддержкой категорий и исправленным парсингом
+# ------------------------------------------------------------
 async def analyze_relevance(repos):
     if not repos:
         return {}
-
     text = "\n".join([
         f"{i+1}. {r['full_name']} | ⭐{r['stargazers_count']} | {safe_desc(r['description'], 80)}"
         for i, r in enumerate(repos)
     ])
+    prompt = f"""Оцени репозитории для канала про обход блокировок в РФ.
 
-    prompt = f"""Отфильтруй репозитории для канала про обход блокировок в РФ.
+Категории важности:
+- HIGH: новый инструмент/протокол/метод обхода (Zapret2, Hysteria2, Reality, AmneziaWG)
+- MEDIUM: обновлённые списки (whitelist, geoip, домены), генераторы конфигов, панели управления
+- LOW: учебные проекты, форки без изменений, не связанные с VPN/цензурой
 
-✅ Релевантные темы:
-- VPN, прокси, туннели (vless, vmess, hysteria, reality)
-- Обход DPI/блокировок (zapret, ByeDPI, GoodbyeDPI)
-- Панели управления (Marzban, 3x-ui, Hiddify)
-- Списки доменов/IP для обхода РКН
-- Инструменты обхода цензуры в России
-
-❌ Нерелевантные (всегда SKIP):
-- Обучение языку (vocabulary, language learning)
-- Бизнес/рынок (market, steel market, trading, ecommerce)
-- Примеры кода/учебные проекты без VPN-функций
-- Игры, боты, утилиты без тематики обхода блокировок
+❌ Нерелевантные темы (сразу LOW или SKIP):
+- Обучение языку, бизнес/рынок, игры, утилиты без тематики обхода блокировок
 - Любые проекты с "russia" БЕЗ VPN/DPI/цензуры-контекста
 
 Репозитории:
 {text}
 
-Ответь GOOD или SKIP для каждого:
-1: GOOD/SKIP
-2: GOOD/SKIP
-..."""
-
+Ответь строго в формате:
+1: HIGH/MEDIUM/LOW/SKIP
+2: HIGH/MEDIUM/LOW/SKIP
+...
+"""
     try:
         resp = groq_client.chat.completions.create(
             model="llama-3.1-8b-instant",
             messages=[{"role": "user", "content": prompt}],
-            max_tokens=200,
-            temperature=0.1
+            max_tokens=300,
+            temperature=0.3
         )
-
         res = {}
-        for line in resp.choices[0].message.content.split('\n'):
+        content = resp.choices[0].message.content
+        logger.debug(f"🤖 AI raw response: {content}")
+        for line in content.split('\n'):
             if ':' in line:
                 try:
                     idx, verdict = line.split(':', 1)
                     idx = int(idx.strip().replace('.', ''))
-                    res[idx] = 'GOOD' in verdict.upper()
+                    verdict = verdict.strip().upper()
+                    # Нормализация
+                    if verdict in ('GOOD', '1', 'HIGH', 'MEDIUM'):
+                        category = 'HIGH' if verdict in ('HIGH', 'GOOD', '1') else 'MEDIUM'
+                        res[idx] = {'publish': True, 'category': category}
+                    elif verdict in ('SKIP', '2', 'LOW'):
+                        res[idx] = {'publish': False, 'category': 'LOW'}
+                    else:
+                        res[idx] = {'publish': False, 'category': 'LOW'}
                 except:
                     pass
+        # Если ответ не распарсился, публикуем всё как MEDIUM (безопасно)
+        if not res:
+            logger.warning("⚠️ AI response parsing failed, fallback to publish all as MEDIUM")
+            return {i: {'publish': True, 'category': 'MEDIUM'} for i in range(1, len(repos) + 1)}
         return res
     except Exception as e:
-        logger.warning(f"⚠️ AI error: {e}")
-        return {i: True for i in range(1, len(repos) + 1)}
-
+        logger.warning(f"⚠️ AI error: {e}, fallback to publish all as MEDIUM")
+        return {i: {'publish': True, 'category': 'MEDIUM'} for i in range(1, len(repos) + 1)}
 
 async def generate_desc(name, desc):
     if desc and len(desc) > 25 and not has_non_latin(desc):
         return desc
-
     prompt = f"""Репозиторий: {name}
 Описание: {desc or 'нет'}
 
@@ -568,7 +541,6 @@ async def generate_desc(name, desc):
 Контекст: VPN, обход блокировок.
 
 Описание:"""
-
     try:
         resp = groq_client.chat.completions.create(
             model="llama-3.1-8b-instant",
@@ -581,23 +553,17 @@ async def generate_desc(name, desc):
             return generated
     except Exception as e:
         logger.debug(f"Error generating description: {e}")
-
     return "Инструмент для обхода блокировок"
-
 
 async def check_repo_relevance(owner: str, repo: str, repo_cache: dict) -> bool:
     cache_key = f"relevance:{owner}/{repo}"
-
     if cache_key in repo_cache:
         return repo_cache[cache_key]
-
     text = await fetch_repo_text_async(owner, repo)
     if not text:
         repo_cache[cache_key] = False
         return False
-
     low = text.lower()
-
     required_terms = [
         'vpn', 'proxy', 'bypass', 'censorship', 'dpi',
         'vless', 'vmess', 'xray', 'v2ray', 'shadowsocks',
@@ -608,7 +574,6 @@ async def check_repo_relevance(owner: str, repo: str, repo_cache: dict) -> bool:
         logger.debug(f"   ❌ No VPN/DPI terms in README: {owner}/{repo}")
         repo_cache[cache_key] = False
         return False
-
     bad_signs = [
         'vocabulary trainer', 'language learning', 'flashcard',
         'steel market', 'commodity market', 'stock market',
@@ -618,16 +583,13 @@ async def check_repo_relevance(owner: str, repo: str, repo_cache: dict) -> bool:
         logger.debug(f"   ❌ Irrelevant content in README: {owner}/{repo}")
         repo_cache[cache_key] = False
         return False
-
     repo_cache[cache_key] = True
     return True
-
 
 async def send_message_safe(chat_id, text):
     if has_non_latin(text):
         logger.warning("⚠️ Blocked message with hieroglyphs!")
         return False
-
     for attempt in range(3):
         try:
             await bot.send_message(chat_id, text, disable_web_page_preview=True)
@@ -643,31 +605,24 @@ async def send_message_safe(chat_id, text):
             await asyncio.sleep(2 ** attempt)
     return False
 
-
 def build_release_post(project_name, release, owner, repo):
     tag = release['tag']
     body = release['body']
-
     if body:
         body = re.sub(r'#{1,6}\s*', '', body)
         body = re.sub(r'\*{1,2}([^*]+)\*{1,2}', r'\1', body)
         body = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', body)
         body = body[:200] + ('...' if len(body) > 200 else '')
-
     text = (
         f"🚀 <b>Новый релиз: {html.escape(project_name)}</b>\n\n"
         f"📦 <code>{owner}/{repo}</code>\n"
         f"🏷 Версия: <b>{html.escape(tag)}</b>\n"
         f"⏰ {get_freshness(release['date'])}\n"
     )
-
     if body:
         text += f"\n📝 {html.escape(body)}\n"
-
     text += f"\n🔗 <a href='{release['url']}'>Скачать релиз</a>"
-
     return text
-
 
 def build_commit_post(project_name, commit, owner, repo):
     return (
@@ -678,7 +633,6 @@ def build_commit_post(project_name, commit, owner, repo):
         f"🔗 <a href='{commit['url']}'>Посмотреть коммит</a>"
     )
 
-
 def build_repo_post(title, repo_full_name, stars, freshness, description, url):
     return (
         f"<b>{title}</b>\n\n"
@@ -688,16 +642,13 @@ def build_repo_post(title, repo_full_name, stars, freshness, description, url):
         f"🔗 <a href='{url}'>Открыть на GitHub</a>"
     )
 
-
 def extract_config_urls(text: str):
     urls = set()
     if not text:
         return []
-
     for pattern in CONFIG_URL_PATTERNS:
         for m in re.findall(pattern, text):
             urls.add(m.strip())
-
     candidates = []
     for u in urls:
         low = u.lower()
@@ -705,81 +656,82 @@ def extract_config_urls(text: str):
             candidates.append(u)
     return candidates
 
-
 def filter_url_for_russia_and_vless(url: str) -> bool:
     low = url.lower()
-
     if not any(p in low for p in ["vless", "reality", "vmess", "xray", "v2ray", "clash", "sub", "subscription"]):
         return False
-
     bad_markers = ["iran", "/ir-", "iran-"]
     if any(b in low for b in bad_markers):
         return False
-
     if re.search(r'Sub\d+\.txt$', url):
         return False
-
     return True
 
-
-async def discover_config_sources():
-    logger.info("\n🌐 Discovering new config sources...")
-    existing_sources = set(load_config_sources())
-    new_sources = set()
-
-    max_repos = 40
-    repos_checked = 0
-
-    for q in CONFIG_SEARCH_QUERIES:
-        if repos_checked >= max_repos:
-            break
-
-        if not check_rate_limit():
-            break
-
-        logger.info(f"   🔍 Searching configs for query: {q}")
-        items = search_fresh_repos(q, per_page=20)
-        if not items:
+# ------------------------------------------------------------
+# НОВАЯ ФУНКЦИЯ: отслеживание новых конфигов в агрегаторах
+# ------------------------------------------------------------
+async def discover_new_config_urls(state):
+    new_global = []
+    config_urls_state = state.get('config_urls', {})
+    for agg in CONFIG_AGGREGATORS:
+        key = f"{agg['owner']}/{agg['repo']}"
+        old_urls = set(config_urls_state.get(key, []))
+        text = await fetch_repo_text_async(agg['owner'], agg['repo'])
+        if not text:
             continue
+        new_urls = set(extract_config_urls(text))
+        added = new_urls - old_urls
+        if added:
+            logger.info(f"🆕 Новые конфиги в {agg['name']}: {added}")
+            for url in added:
+                if filter_url_for_russia_and_vless(url):
+                    new_global.append(url)
+            config_urls_state[key] = list(new_urls)
+    if new_global:
+        existing = set(load_config_sources())
+        save_config_sources(list(existing | set(new_global)))
+    state['config_urls'] = config_urls_state
+    return new_global
 
-        for item in items:
-            if repos_checked >= max_repos:
-                break
+# ------------------------------------------------------------
+# ФИЛЬТРАЦИЯ КОММИТОВ И РЕЛИЗОВ
+# ------------------------------------------------------------
+def is_commit_worth_posting(commit_msg: str) -> bool:
+    msg_lower = commit_msg.lower()
+    trivial = ['typo', 'readme', 'update readme', 'fix readme', 'docs', 'chore', 'bump version', 'merge', 'ci']
+    if any(word in msg_lower for word in trivial):
+        return False
+    interesting = [
+        'new', 'feature', 'add', 'bypass', 'whitelist', 'blacklist', 'geoip',
+        'vless', 'reality', 'hysteria', 'trojan', 'config', 'subscription',
+        'fix block', 'unblock', 'rkn', 'dpi', 'zapret', 'release', 'version'
+    ]
+    return any(word in msg_lower for word in interesting)
 
-            full_name = item["full_name"]
-            owner, repo = full_name.split("/")
-            repos_checked += 1
+def is_release_worth_posting(release_tag: str, release_body: str, last_major_minor: tuple) -> bool:
+    try:
+        tag_clean = release_tag.lstrip('v')
+        parts = tag_clean.split('.')
+        if len(parts) >= 2:
+            current = (parts[0], parts[1])
+            if current != last_major_minor:
+                return True
+    except:
+        pass
+    body_lower = release_body.lower()
+    keywords = ['new feature', 'add', 'bypass', 'experimental', 'breaking change', 'critical', 'security']
+    return any(kw in body_lower for kw in keywords)
 
-            if not quick_filter(full_name, item.get("description"), item.get("stargazers_count", 0)):
-                continue
-
-            text = await fetch_repo_text_async(owner, repo)
-            if not text:
-                continue
-
-            urls = extract_config_urls(text)
-            for u in urls:
-                if not filter_url_for_russia_and_vless(u):
-                    continue
-                if u not in existing_sources:
-                    logger.info(f"   🆕 Config source: {u}")
-                    new_sources.add(u)
-
-    if new_sources:
-        merged = list(existing_sources | new_sources)
-        save_config_sources(merged)
-    else:
-        logger.info("ℹ️ No new config sources found")
-
-
+# ------------------------------------------------------------
+# ОСНОВНАЯ ФУНКЦИЯ
+# ------------------------------------------------------------
 async def main():
     logger.info("=" * 60)
-    logger.info("🕵️  SCOUT RADAR v8.4 (dynamic tracked)")
+    logger.info("🕵️  SCOUT RADAR v9.0 (intelligent filtering)")
     logger.info("=" * 60)
 
     if not validate_env():
         return
-
     if not check_rate_limit():
         logger.error("❌ Insufficient API calls. Exiting.")
         return
@@ -790,6 +742,7 @@ async def main():
     releases = state.get("releases", {})
     repo_cache = state.get("repo_cache", {})
     dynamic_tracked = state.get("dynamic_tracked", {})
+    releases_meta = state.get("releases_meta", {})
     count = 0
 
     all_tracked_projects = list(TRACKED_PROJECTS)
@@ -805,158 +758,144 @@ async def main():
             "priority": meta.get("priority", "medium"),
         })
 
-    logger.info(
-        f"📡 Tracked projects: static={len(TRACKED_PROJECTS)}, "
-        f"dynamic={len(dynamic_tracked)}, total={len(all_tracked_projects)}"
-    )
+    logger.info(f"📡 Tracked projects: static={len(TRACKED_PROJECTS)}, dynamic={len(dynamic_tracked)}")
 
-    logger.info("\n🚀 Checking releases of tracked projects...")
+    # 1. Релизы с фильтрацией
+    logger.info("\n🚀 Checking releases...")
     for project in all_tracked_projects:
         if count >= MAX_POSTS_PER_RUN:
             break
-
         owner = project['owner']
         repo = project['repo']
+        name = project['name']
         key = f"{owner}/{repo}"
-
         fresh_releases = get_recent_releases(owner, repo)
         if not fresh_releases:
             continue
-
+        last = releases_meta.get(key, ('0','0'))
         for rel in fresh_releases:
             if count >= MAX_POSTS_PER_RUN:
                 break
-
             release_key = f"{key}:{rel['tag']}"
             if release_key in releases:
                 continue
+            if is_release_worth_posting(rel['tag'], rel['body'], last):
+                logger.info(f"   🆕 Release: {name} {rel['tag']}")
+                success = await send_message_safe(
+                    TARGET_CHANNEL_ID,
+                    build_release_post(name, rel, owner, repo)
+                )
+                if success:
+                    releases[release_key] = rel['date']
+                    try:
+                        parts = rel['tag'].lstrip('v').split('.')
+                        if len(parts) >= 2:
+                            releases_meta[key] = (parts[0], parts[1])
+                    except:
+                        pass
+                    count += 1
+                    await asyncio.sleep(MESSAGE_DELAY)
+            else:
+                logger.debug(f"   ⏭ Skipped trivial release: {rel['tag']}")
 
-            logger.info(f"   🆕 Release: {project['name']} {rel['tag']}")
-            success = await send_message_safe(
-                TARGET_CHANNEL_ID,
-                build_release_post(project['name'], rel, owner, repo)
-            )
-
-            if success:
-                releases[release_key] = rel['date']
-                count += 1
-                await asyncio.sleep(MESSAGE_DELAY)
-
-    logger.info("\n🔄 Checking commits of tracked projects...")
+    # 2. Коммиты (только значимые)
+    logger.info("\n🔄 Checking commits...")
     for project in all_tracked_projects:
         if count >= MAX_POSTS_PER_RUN:
             break
-
         if project.get('priority') == 'low' and count > MAX_POSTS_PER_RUN // 2:
             continue
-
         owner = project['owner']
         repo = project['repo']
+        name = project['name']
         key = f"{owner}/{repo}"
-
-        commit = get_last_commit(owner, repo)
-        if not commit:
-            continue
-        if not is_fresh(commit['date']):
-            continue
-        if commits.get(key) == commit['sha']:
-            continue
-
-        logger.info(f"   🆕 Commit: {project['name']}")
-        success = await send_message_safe(
-            TARGET_CHANNEL_ID,
-            build_commit_post(project['name'], commit, owner, repo)
-        )
-
-        if success:
-            commits[key] = commit['sha']
-            count += 1
-            await asyncio.sleep(MESSAGE_DELAY)
-
-    logger.info("\n📡 Checking config aggregators...")
-    for agg in CONFIG_AGGREGATORS:
-        if count >= MAX_POSTS_PER_RUN:
-            break
-
-        owner = agg['owner']
-        repo = agg['repo']
-        key = f"{owner}/{repo}"
-
         commit = get_last_commit(owner, repo)
         if not commit or not is_fresh(commit['date']):
             continue
         if commits.get(key) == commit['sha']:
             continue
-
-        logger.info(f"   🆕 {agg['name']}")
+        if not is_commit_worth_posting(commit['msg']):
+            logger.debug(f"   ⏭ Trivial commit: {commit['msg']}")
+            commits[key] = commit['sha']
+            continue
+        logger.info(f"   🆕 Commit: {name}")
         success = await send_message_safe(
             TARGET_CHANNEL_ID,
-            build_commit_post(agg['name'], commit, owner, repo)
+            build_commit_post(name, commit, owner, repo)
         )
-
         if success:
             commits[key] = commit['sha']
             count += 1
             await asyncio.sleep(MESSAGE_DELAY)
 
+    # 3. Новые конфиги в агрегаторах
+    logger.info("\n📡 Checking config aggregators for new URLs...")
+    new_urls = await discover_new_config_urls(state)
+    for url in new_urls:
+        if count >= MAX_POSTS_PER_RUN:
+            break
+        await send_message_safe(
+            TARGET_CHANNEL_ID,
+            f"📡 <b>Новый источник подписки</b>\n\n<code>{html.escape(url)}</code>"
+        )
+        count += 1
+        await asyncio.sleep(MESSAGE_DELAY)
+
+    # 4. Поиск новых репозиториев с AI-категоризацией
     logger.info("\n🔍 Searching for new repositories...")
     for s in FRESH_SEARCHES:
         if count >= MAX_POSTS_PER_RUN:
             break
-
         if not check_rate_limit():
             break
-
         logger.info(f"\n🔍 {s['name']}...")
         items = search_fresh_repos(s['query'])
         if not items:
             continue
-
         candidates = []
         for i in items:
             repo_id = str(i['id'])
-
             if repo_id in posted:
                 continue
             if not quick_filter(i.get('full_name'), i.get('description'), i.get('stargazers_count', 0)):
                 continue
             if is_likely_fork_spam(i):
                 continue
-
+            # Пропускаем пустые репозитории без README
+            if i.get('stargazers_count', 0) == 0 and not i.get('description'):
+                owner, repo = i['full_name'].split('/')
+                readme = await fetch_repo_text_async(owner, repo)
+                if not readme or len(readme) < 100:
+                    logger.debug(f"   ⏭ Empty/trivial repo: {i['full_name']}")
+                    continue
             candidates.append(i)
-
         if not candidates:
             continue
-
         batch_size = 10
         for batch_start in range(0, len(candidates), batch_size):
             if count >= MAX_POSTS_PER_RUN:
                 break
-
             batch = candidates[batch_start:batch_start + batch_size]
             decisions = await analyze_relevance(batch)
-
             for local_idx, item in enumerate(batch, start=1):
                 if count >= MAX_POSTS_PER_RUN:
                     break
-
-                if not decisions.get(local_idx, False):
-                    logger.debug(f"   ⏭ AI filtered: {item['full_name']}")
+                dec = decisions.get(local_idx, {'publish': False, 'category': 'LOW'})
+                if not dec['publish']:
+                    logger.debug(f"   ⏭ AI skipped ({dec['category']}): {item['full_name']}")
                     continue
-
                 owner, repo = item['full_name'].split('/')
-
                 is_relevant = await check_repo_relevance(owner, repo, repo_cache)
                 if not is_relevant:
                     logger.info(f"   ⏭ Skipped (irrelevant README): {item['full_name']}")
                     continue
-
                 final_desc = await generate_desc(item['full_name'], item['description'])
-
+                cat_emoji = "🔥" if dec['category'] == 'HIGH' else "📌"
+                title = f"{cat_emoji} {s.get('title', s['name'])}"
                 success = await send_message_safe(
                     TARGET_CHANNEL_ID,
                     build_repo_post(
-                        s.get('title', s['name']),
+                        title,
                         item['full_name'],
                         item['stargazers_count'],
                         get_freshness(item['pushed_at']),
@@ -964,27 +903,27 @@ async def main():
                         item['html_url']
                     )
                 )
-
                 if success:
                     posted.add(str(item['id']))
                     dynamic_tracked[item['full_name']] = {
                         "first_seen": datetime.now(timezone.utc).isoformat(),
                         "priority": "medium",
+                        "ai_category": dec['category']
                     }
-                    logger.info(f"   ✅ {item['full_name']} added to dynamic_tracked")
+                    logger.info(f"   ✅ {item['full_name']} (category {dec['category']}) added")
                     count += 1
                     await asyncio.sleep(MESSAGE_DELAY)
-
             await asyncio.sleep(GROQ_DELAY)
 
-    await discover_config_sources()
-
+    # Финальное сохранение
     save_state({
         "posted": list(posted),
         "commits": commits,
         "releases": releases,
         "repo_cache": repo_cache,
         "dynamic_tracked": dynamic_tracked,
+        "releases_meta": releases_meta,
+        "config_urls": state.get('config_urls', {})
     })
 
     logger.info(f"\n{'=' * 60}")
@@ -992,7 +931,6 @@ async def main():
     logger.info(f"{'=' * 60}")
 
     await bot.session.close()
-
 
 if __name__ == "__main__":
     try:
