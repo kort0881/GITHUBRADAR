@@ -27,6 +27,7 @@ logger = logging.getLogger(__name__)
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TARGET_CHANNEL_ID = os.getenv("CHANNEL_ID")
+CONFIG_CHANNEL_ID = os.getenv("CONFIG_CHANNEL_ID")   # ← новый канал для подписок
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
 STATE_FILE = "scout_history.json"
@@ -163,10 +164,15 @@ def validate_env():
         "CHANNEL_ID": TARGET_CHANNEL_ID,
         "GITHUB_TOKEN": GITHUB_TOKEN
     }
+    # CONFIG_CHANNEL_ID опционален
     missing = [k for k, v in required.items() if not v]
     if missing:
         logger.error(f"❌ Missing environment variables: {', '.join(missing)}")
         return False
+    if CONFIG_CHANNEL_ID:
+        logger.info(f"✅ Second channel enabled: {CONFIG_CHANNEL_ID}")
+    else:
+        logger.info("ℹ️ Second channel not set (CONFIG_CHANNEL_ID) – config URLs will go only to main channel")
     logger.info("✅ All environment variables validated")
     return True
 
@@ -760,7 +766,7 @@ async def main():
 
     logger.info(f"📡 Tracked projects: static={len(TRACKED_PROJECTS)}, dynamic={len(dynamic_tracked)}")
 
-    # 1. Релизы с фильтрацией
+    # 1. Релизы с фильтрацией (только в основной канал)
     logger.info("\n🚀 Checking releases...")
     for project in all_tracked_projects:
         if count >= MAX_POSTS_PER_RUN:
@@ -798,7 +804,7 @@ async def main():
             else:
                 logger.debug(f"   ⏭ Skipped trivial release: {rel['tag']}")
 
-    # 2. Коммиты (только значимые)
+    # 2. Коммиты (только значимые, только в основной канал)
     logger.info("\n🔄 Checking commits...")
     for project in all_tracked_projects:
         if count >= MAX_POSTS_PER_RUN:
@@ -828,20 +834,25 @@ async def main():
             count += 1
             await asyncio.sleep(MESSAGE_DELAY)
 
-    # 3. Новые конфиги в агрегаторах
+    # 3. Новые конфиги в агрегаторах – публикуем в ОБА канала (основной и дополнительный)
     logger.info("\n📡 Checking config aggregators for new URLs...")
     new_urls = await discover_new_config_urls(state)
-    for url in new_urls:
-        if count >= MAX_POSTS_PER_RUN:
-            break
-        await send_message_safe(
-            TARGET_CHANNEL_ID,
-            f"📡 <b>Новый источник подписки</b>\n\n<code>{html.escape(url)}</code>"
-        )
-        count += 1
-        await asyncio.sleep(MESSAGE_DELAY)
+    if new_urls:
+        message_template = "📡 <b>Новый источник подписки</b>\n\n<code>{}</code>"
+        for url in new_urls:
+            if count >= MAX_POSTS_PER_RUN:
+                break
+            text = message_template.format(html.escape(url))
+            # Отправляем в основной канал
+            success_main = await send_message_safe(TARGET_CHANNEL_ID, text)
+            # Если задан второй канал – отправляем и туда
+            if CONFIG_CHANNEL_ID:
+                await send_message_safe(CONFIG_CHANNEL_ID, text)
+            if success_main:
+                count += 1
+            await asyncio.sleep(MESSAGE_DELAY)
 
-    # 4. Поиск новых репозиториев с AI-категоризацией
+    # 4. Поиск новых репозиториев с AI-категоризацией (только в основной канал)
     logger.info("\n🔍 Searching for new repositories...")
     for s in FRESH_SEARCHES:
         if count >= MAX_POSTS_PER_RUN:
