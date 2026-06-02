@@ -2,8 +2,8 @@ name: GITHUB RADAR SCOUT
 
 on:
   schedule:
-    - cron: '0 12 * * *'   # каждый день 12:00 UTC (проверка раз в день)
-  workflow_dispatch:        # ручной запуск
+    - cron: '0 12 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -20,14 +20,24 @@ jobs:
         id: guard
         shell: bash
         run: |
-          # ✅ Ручной запуск — ВСЕГДА выполняем
+          # Инициализация файла истории, если его нет
+          if [ ! -f scout_history.json ]; then
+            echo '{"posted":[],"commits":{},"releases":{},"repo_cache":{},"last_run":null,"dynamic_tracked":{},"releases_meta":{},"config_urls":{}}' > scout_history.json
+            git config --local user.email "radar@bot.com"
+            git config --local user.name "Radar Bot"
+            git add scout_history.json
+            git commit -m "Initialize scout_history.json" || true
+            git push || true
+          fi
+
+          # Ручной запуск — всегда выполняем
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             echo "run=true" >> $GITHUB_OUTPUT
             echo "🚀 Manual trigger — running immediately!"
             exit 0
           fi
           
-          # ⏰ Автоматический (schedule) — проверяем 3 дня
+          # Автоматический запуск — проверяем 3 дня
           last=$(git log -1 --format=%ct -- scout_history.json 2>/dev/null || echo 0)
           now=$(date +%s)
           diff_sec=$((now - last))
@@ -35,7 +45,6 @@ jobs:
           
           echo "📊 Debug: Now=$now, Last=$last, DiffSec=$diff_sec, DiffHours=$diff_hours"
           
-          # 70 часов = ~3 дня = 252000 секунд
           if [ $diff_sec -lt 252000 ]; then
             echo "run=false" >> $GITHUB_OUTPUT
             echo "⏸️ Skip: last run was ${diff_hours}h ago (need > 70h)"
@@ -59,6 +68,7 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+          CONFIG_CHANNEL_ID: ${{ secrets.CONFIG_CHANNEL_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scout.py
 
