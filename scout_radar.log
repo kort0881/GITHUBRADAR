@@ -36613,3 +36613,129 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-06-05 14:54:07,933 | INFO | 🏁 Completed! Published: 11 posts
 2026-06-05 14:54:07,933 | INFO | ============================================================
+2026-06-08 15:50:49,351 | INFO | ============================================================
+2026-06-08 15:50:49,351 | INFO | 🕵️  SCOUT RADAR v9.0 (intelligent filtering)
+2026-06-08 15:50:49,351 | INFO | ============================================================
+2026-06-08 15:50:49,351 | INFO | ✅ Second channel enabled: -1002926041814
+2026-06-08 15:50:49,351 | INFO | ✅ All environment variables validated
+2026-06-08 15:50:49,480 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-06-08 15:50:49,482 | INFO | 📂 Loaded: 1295 posted, 377 releases, 256 dynamic tracked
+2026-06-08 15:50:49,483 | INFO | 📡 Tracked projects: static=27, dynamic=256
+2026-06-08 15:50:49,483 | INFO | 
+🚀 Checking releases...
+2026-06-08 15:50:50,160 | INFO |    🆕 Release: 🛠 Zapret 2 v1.0.1
+2026-06-08 15:50:53,549 | INFO |    🆕 Release: 🛠 Zapret 2 v1.0
+2026-06-08 15:51:03,244 | INFO |    🆕 Release: 💻 V2RayN 7.22.6
+2026-06-08 15:51:03,244 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-06-08 15:51:04,394 | INFO |    🆕 Release: ⚔️ Mihomo v1.19.27
+2026-06-08 15:51:21,522 | INFO |    🆕 Release: 🆕 GrimbirdUsers/ru-routing-dat v2026.06.07
+2026-06-08 15:51:25,519 | INFO |    🆕 Release: 🆕 throneproj/Throne 1.1.5
+2026-06-08 15:51:32,162 | INFO |    🆕 Release: 🆕 elev1e1nSure/zapret-gui v1.5.1
+2026-06-08 15:51:42,137 | INFO |    🆕 Release: 🆕 agentram/ovpn 1.6.1
+2026-06-08 15:51:45,444 | INFO |    🆕 Release: 🆕 agentram/ovpn 1.6.0
+2026-06-08 15:51:58,241 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.9.0
+2026-06-08 15:52:01,459 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.8.0
+2026-06-08 15:52:04,683 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.7.1
+2026-06-08 15:52:11,267 | INFO |    🆕 Release: 🆕 SIPC/H2O v2026.06.06.02
+2026-06-08 15:52:11,267 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-06-08 15:52:27,267 | INFO |    🆕 Release: 🆕 MaksimSamarin/AntiGoblin v1.0.2
+2026-06-08 15:52:30,733 | INFO |    🆕 Release: 🆕 MaksimSamarin/AntiGoblin v1.0.1
+2026-06-08 15:52:54,306 | INFO | 
+🔄 Checking commits...
+2026-06-08 15:52:59,530 | INFO |    🆕 Commit: 💻 V2RayN
+2026-06-08 15:53:19,279 | INFO |    🆕 Commit: 🆕 GrimbirdUsers/ru-routing-dat
+2026-06-08 15:53:26,695 | INFO |    🆕 Commit: 🆕 elev1e1nSure/zapret-gui
+2026-06-08 15:53:37,638 | INFO |    🆕 Commit: 🆕 agentram/ovpn
+2026-06-08 15:53:51,890 | INFO |    🆕 Commit: 🆕 tao-t356/vless-xhttp-reality-self
+2026-06-08 15:53:58,753 | INFO |    🆕 Commit: 🆕 YawStar/Proxy-Hunter
+2026-06-08 15:54:44,034 | INFO | 
+📡 Checking config aggregators for new URLs...
+2026-06-08 15:54:45,622 | INFO | 
+🔍 Searching for new repositories...
+2026-06-08 15:54:45,751 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:45,752 | INFO | 
+🔍 Zapret Tools...
+2026-06-08 15:54:46,371 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:46,372 | INFO | 
+🔍 DPI Bypass...
+2026-06-08 15:54:47,085 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:47,086 | INFO | 
+🔍 RKN Block...
+2026-06-08 15:54:47,732 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:47,733 | INFO | 
+🔍 AntiZapret...
+2026-06-08 15:54:48,484 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:48,485 | INFO | 
+🔍 TSPU...
+2026-06-08 15:54:49,131 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:49,132 | INFO | 
+🔍 RU VPN Configs...
+2026-06-08 15:54:49,882 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:49,884 | INFO | 
+🔍 Amnezia...
+2026-06-08 15:54:50,545 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:50,546 | INFO | 
+🔍 Russia VPN Tools...
+2026-06-08 15:54:51,191 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:51,192 | INFO | 
+🔍 VLESS Reality...
+2026-06-08 15:54:51,866 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:51,867 | INFO | 
+🔍 Hysteria2...
+2026-06-08 15:54:52,452 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:52,453 | INFO | 
+🔍 Marzban...
+2026-06-08 15:54:53,084 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:53,085 | INFO | 
+🔍 XRay Config...
+2026-06-08 15:54:53,674 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:53,675 | INFO | 
+🔍 Geosite RU...
+2026-06-08 15:54:54,312 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:54,313 | INFO | 
+🔍 Domain List RU...
+2026-06-08 15:54:55,014 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:55,015 | INFO | 
+🔍 Sing-Box RU...
+2026-06-08 15:54:55,347 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-08 15:54:55,531 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:55,532 | INFO | 
+🔍 Censorship...
+2026-06-08 15:54:55,579 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-08 15:54:55,717 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:55,718 | INFO | 
+🔍 Reality Extra...
+2026-06-08 15:54:55,761 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-08 15:54:55,893 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:55,894 | INFO | 
+🔍 Hysteria2 Extra...
+2026-06-08 15:54:55,938 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-08 15:54:56,068 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:56,069 | INFO | 
+🔍 Proxy Configs...
+2026-06-08 15:54:56,113 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-08 15:54:56,237 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:56,238 | INFO | 
+🔍 Clash Rules...
+2026-06-08 15:54:56,282 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-08 15:54:56,412 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:56,413 | INFO | 
+🔍 Shadowsocks...
+2026-06-08 15:54:56,463 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-08 15:54:56,579 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:56,580 | INFO | 
+🔍 WireGuard RU...
+2026-06-08 15:54:56,649 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-08 15:54:56,772 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:56,773 | INFO | 
+🔍 Outline...
+2026-06-08 15:54:56,820 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-08 15:54:56,966 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-08 15:54:56,967 | INFO | 
+🔍 Subconverter...
+2026-06-08 15:54:57,034 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-08 15:54:57,040 | INFO | 💾 State saved (posted=1295, commits=126, releases=390, dynamic_tracked=256)
+2026-06-08 15:54:57,040 | INFO | 
+============================================================
+2026-06-08 15:54:57,040 | INFO | 🏁 Completed! Published: 19 posts
+2026-06-08 15:54:57,040 | INFO | ============================================================
