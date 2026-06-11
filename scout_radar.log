@@ -36739,3 +36739,128 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-06-08 15:54:57,040 | INFO | 🏁 Completed! Published: 19 posts
 2026-06-08 15:54:57,040 | INFO | ============================================================
+2026-06-11 15:59:10,604 | INFO | ============================================================
+2026-06-11 15:59:10,604 | INFO | 🕵️  SCOUT RADAR v9.0 (intelligent filtering)
+2026-06-11 15:59:10,604 | INFO | ============================================================
+2026-06-11 15:59:10,604 | INFO | ✅ Second channel enabled: -1002926041814
+2026-06-11 15:59:10,604 | INFO | ✅ All environment variables validated
+2026-06-11 15:59:10,810 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-06-11 15:59:10,813 | INFO | 📂 Loaded: 1295 posted, 390 releases, 256 dynamic tracked
+2026-06-11 15:59:10,813 | INFO | 📡 Tracked projects: static=27, dynamic=256
+2026-06-11 15:59:10,813 | INFO | 
+🚀 Checking releases...
+2026-06-11 15:59:13,283 | INFO |    🆕 Release: 🛡 Amnezia Client 4.8.18.0
+2026-06-11 15:59:18,562 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-alpha.29
+2026-06-11 15:59:24,460 | INFO |    🆕 Release: 🎛 3X-UI v3.3.0
+2026-06-11 15:59:34,300 | INFO |    🆕 Release: 🆕 Eljaja/BibaVPN v1.2.4
+2026-06-11 15:59:51,930 | INFO |    🆕 Release: 🆕 throneproj/Throne 1.1.6
+2026-06-11 16:00:08,211 | INFO |    🆕 Release: 🆕 agentram/ovpn 1.7.0
+2026-06-11 16:00:23,951 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.12.0
+2026-06-11 16:00:27,411 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.11.1
+2026-06-11 16:00:30,604 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.11.0
+2026-06-11 16:00:33,792 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.10.0
+2026-06-11 16:00:41,117 | INFO |    🆕 Release: 🆕 SIPC/H2O v2026.06.09.03
+2026-06-11 16:00:41,118 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-06-11 16:00:41,118 | INFO |    🆕 Release: 🆕 SIPC/H2O v2026.06.09.02
+2026-06-11 16:00:41,118 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-06-11 16:00:41,118 | INFO |    🆕 Release: 🆕 SIPC/H2O v2026.06.09.01
+2026-06-11 16:00:41,118 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-06-11 16:01:09,379 | INFO |    🆕 Release: 🆕 ajavadinezhad/zyrln v2.0-pre-3
+2026-06-11 16:01:31,774 | INFO | 
+🔄 Checking commits...
+2026-06-11 16:01:34,616 | INFO |    🆕 Commit: 📦 Sing-Box
+2026-06-11 16:02:15,315 | INFO |    🆕 Commit: 🆕 agentram/ovpn
+2026-06-11 16:02:32,713 | INFO |    🆕 Commit: 🆕 tao-t356/vless-xhttp-reality-self
+2026-06-11 16:02:38,019 | INFO |    🆕 Commit: 🆕 eiler2005/ghostroute
+2026-06-11 16:02:44,105 | INFO |    🆕 Commit: 🆕 YawStar/Proxy-Hunter
+2026-06-11 16:03:36,190 | INFO | 
+📡 Checking config aggregators for new URLs...
+2026-06-11 16:03:39,162 | INFO | 
+🔍 Searching for new repositories...
+2026-06-11 16:03:39,397 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:39,398 | INFO | 
+🔍 Zapret Tools...
+2026-06-11 16:03:40,325 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:40,327 | INFO | 
+🔍 DPI Bypass...
+2026-06-11 16:03:41,197 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:41,198 | INFO | 
+🔍 RKN Block...
+2026-06-11 16:03:42,104 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:42,105 | INFO | 
+🔍 AntiZapret...
+2026-06-11 16:03:43,051 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:43,052 | INFO | 
+🔍 TSPU...
+2026-06-11 16:03:43,981 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:43,983 | INFO | 
+🔍 RU VPN Configs...
+2026-06-11 16:03:44,878 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:44,879 | INFO | 
+🔍 Amnezia...
+2026-06-11 16:03:45,784 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:45,786 | INFO | 
+🔍 Russia VPN Tools...
+2026-06-11 16:03:46,687 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:46,688 | INFO | 
+🔍 VLESS Reality...
+2026-06-11 16:03:47,603 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:47,604 | INFO | 
+🔍 Hysteria2...
+2026-06-11 16:03:48,532 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:48,533 | INFO | 
+🔍 Marzban...
+2026-06-11 16:03:49,392 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:49,393 | INFO | 
+🔍 XRay Config...
+2026-06-11 16:03:50,263 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:50,264 | INFO | 
+🔍 Geosite RU...
+2026-06-11 16:03:51,180 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:51,181 | INFO | 
+🔍 Domain List RU...
+2026-06-11 16:03:52,065 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:52,066 | INFO | 
+🔍 Sing-Box RU...
+2026-06-11 16:03:52,505 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-11 16:03:52,704 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:52,705 | INFO | 
+🔍 Censorship...
+2026-06-11 16:03:52,838 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-11 16:03:53,587 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:53,588 | INFO | 
+🔍 Reality Extra...
+2026-06-11 16:03:53,726 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-11 16:03:53,944 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:53,945 | INFO | 
+🔍 Hysteria2 Extra...
+2026-06-11 16:03:54,063 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-11 16:03:54,253 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:54,254 | INFO | 
+🔍 Proxy Configs...
+2026-06-11 16:03:54,375 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-11 16:03:54,584 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:54,585 | INFO | 
+🔍 Clash Rules...
+2026-06-11 16:03:54,736 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-11 16:03:54,946 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:54,947 | INFO | 
+🔍 Shadowsocks...
+2026-06-11 16:03:55,065 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-11 16:03:55,286 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:55,287 | INFO | 
+🔍 WireGuard RU...
+2026-06-11 16:03:55,406 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-11 16:03:55,622 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:55,623 | INFO | 
+🔍 Outline...
+2026-06-11 16:03:55,740 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-11 16:03:55,944 | INFO | 📊 GitHub API: 4697/5000 calls remaining
+2026-06-11 16:03:55,945 | INFO | 
+🔍 Subconverter...
+2026-06-11 16:03:56,074 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-11 16:03:56,080 | INFO | 💾 State saved (posted=1295, commits=127, releases=401, dynamic_tracked=256)
+2026-06-11 16:03:56,080 | INFO | 
+============================================================
+2026-06-11 16:03:56,080 | INFO | 🏁 Completed! Published: 16 posts
+2026-06-11 16:03:56,080 | INFO | ============================================================
