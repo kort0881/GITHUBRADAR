@@ -34,7 +34,7 @@ STATE_FILE = "scout_history.json"
 CONFIG_SOURCES_FILE = "config_sources.json"
 
 MAX_AGE_DAYS = 3
-MAX_POSTS_PER_RUN = 100      # увеличено, чтобы хватало на поиск нового
+MAX_POSTS_PER_RUN = 150      # увеличено, чтобы хватало на поиск нового
 GROQ_DELAY = 2
 MESSAGE_DELAY = 3
 MIN_STARS = 0
@@ -318,9 +318,23 @@ async def get_default_branch(session, owner, repo):
         logger.debug(f"Error getting default branch for {owner}/{repo}: {e}")
     return 'main'
 
-async def fetch_repo_text_async(owner, repo):
+# CHANGED: расширена для получения списка файлов и их содержимого
+async def fetch_repo_text_async(owner, repo, file_path=None):
+    """Если file_path задан, скачивает конкретный файл; иначе пытается скачать README."""
     try:
         async with aiohttp.ClientSession(headers=API_HEADERS) as session:
+            if file_path:
+                url = f"https://raw.githubusercontent.com/{owner}/{repo}/main/{file_path}"
+                async with session.get(url, timeout=aiohttp.ClientTimeout(total=8)) as resp:
+                    if resp.status == 200:
+                        return await resp.text()
+                # fallback на master
+                url = f"https://raw.githubusercontent.com/{owner}/{repo}/master/{file_path}"
+                async with session.get(url, timeout=aiohttp.ClientTimeout(total=8)) as resp:
+                    if resp.status == 200:
+                        return await resp.text()
+                return ""
+            # иначе README
             branch = await get_default_branch(session, owner, repo)
             urls = [
                 f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/README.md",
@@ -341,8 +355,28 @@ async def fetch_repo_text_async(owner, repo):
                     logger.debug(f"   ⚠️ Error loading {url}: {e}")
                     continue
     except Exception as e:
-        logger.debug(f"Error fetching README for {owner}/{repo}: {e}")
+        logger.debug(f"Error fetching file for {owner}/{repo}: {e}")
     return ""
+
+# НОВАЯ функция: получить список файлов в репозитории (не рекурсивно, только корень)
+async def get_repo_files(owner, repo):
+    """Возвращает список имён файлов в корне репозитория."""
+    files = []
+    try:
+        async with aiohttp.ClientSession(headers=API_HEADERS) as session:
+            branch = await get_default_branch(session, owner, repo)
+            url = f"https://api.github.com/repos/{owner}/{repo}/contents?ref={branch}"
+            async with session.get(url, timeout=aiohttp.ClientTimeout(total=10)) as resp:
+                if resp.status == 200:
+                    data = await resp.json()
+                    for item in data:
+                        if item['type'] == 'file':
+                            files.append(item['name'])
+                else:
+                    logger.debug(f"   Could not get file list for {owner}/{repo}: status {resp.status}")
+    except Exception as e:
+        logger.debug(f"Error getting file list: {e}")
+    return files
 
 def get_recent_releases(owner, repo, limit=5):
     url = f"https://api.github.com/repos/{owner}/{repo}/releases?per_page={limit}"
@@ -662,30 +696,46 @@ def extract_config_urls(text: str):
             candidates.append(u)
     return candidates
 
+# CHANGED: убраны жёсткие фильтры, теперь пропускаем больше ссылок
 def filter_url_for_russia_and_vless(url: str) -> bool:
     low = url.lower()
     if not any(p in low for p in ["vless", "reality", "vmess", "xray", "v2ray", "clash", "sub", "subscription"]):
         return False
-    bad_markers = ["iran", "/ir-", "iran-"]
-    if any(b in low for b in bad_markers):
-        return False
-    if re.search(r'Sub\d+\.txt$', url):
-        return False
+    # убрали проверку на iran и Sub*.txt, чтобы не отсеивать
+    # bad_markers = ["iran", "/ir-", "iran-"]
+    # if any(b in low for b in bad_markers):
+    #     return False
+    # if re.search(r'Sub\d+\.txt$', url):
+    #     return False
     return True
 
 # ------------------------------------------------------------
-# НОВАЯ ФУНКЦИЯ: отслеживание новых конфигов в агрегаторах
+# НОВАЯ ФУНКЦИЯ: отслеживание новых конфигов в агрегаторах (расширенная)
 # ------------------------------------------------------------
 async def discover_new_config_urls(state):
     new_global = []
     config_urls_state = state.get('config_urls', {})
+    # Файлы, которые могут содержать ссылки (расширения)
+    config_extensions = ('.txt', '.json', '.yaml', '.yml', '.conf', '.config', '.sub', '.list')
     for agg in CONFIG_AGGREGATORS:
         key = f"{agg['owner']}/{agg['repo']}"
         old_urls = set(config_urls_state.get(key, []))
-        text = await fetch_repo_text_async(agg['owner'], agg['repo'])
-        if not text:
-            continue
-        new_urls = set(extract_config_urls(text))
+        # Получаем список файлов в корне репозитория
+        files = await get_repo_files(agg['owner'], agg['repo'])
+        all_text = ""
+        # Сначала читаем README (если есть)
+        readme = await fetch_repo_text_async(agg['owner'], agg['repo'])
+        if readme:
+            all_text += "\n" + readme
+        # Читаем каждый файл с подходящим расширением
+        for fname in files:
+            if fname.lower().endswith(config_extensions):
+                content = await fetch_repo_text_async(agg['owner'], agg['repo'], file_path=fname)
+                if content:
+                    all_text += "\n" + content
+                    logger.debug(f"   📄 Read {fname} from {agg['name']}")
+        # Извлекаем URL
+        new_urls = set(extract_config_urls(all_text))
         added = new_urls - old_urls
         if added:
             logger.info(f"🆕 Новые конфиги в {agg['name']}: {added}")
@@ -698,6 +748,49 @@ async def discover_new_config_urls(state):
         save_config_sources(list(existing | set(new_global)))
     state['config_urls'] = config_urls_state
     return new_global
+
+# ------------------------------------------------------------
+# НОВАЯ ФУНКЦИЯ: поиск конфигов по запросам GitHub
+# ------------------------------------------------------------
+async def search_configs_github(state):
+    """Ищет новые репозитории по запросам из CONFIG_SEARCH_QUERIES и извлекает ссылки."""
+    new_urls = []
+    config_urls_state = state.get('config_urls', {})
+    for query in CONFIG_SEARCH_QUERIES:
+        logger.info(f"🔍 GitHub search for configs: {query}")
+        repos = search_fresh_repos(query, per_page=30)
+        if not repos:
+            continue
+        for repo in repos:
+            owner = repo['owner']['login']
+            repo_name = repo['name']
+            key = f"{owner}/{repo_name}"
+            old_urls = set(config_urls_state.get(key, []))
+            # Получаем файлы и содержимое
+            files = await get_repo_files(owner, repo_name)
+            all_text = ""
+            readme = await fetch_repo_text_async(owner, repo_name)
+            if readme:
+                all_text += "\n" + readme
+            config_extensions = ('.txt', '.json', '.yaml', '.yml', '.conf', '.config', '.sub', '.list')
+            for fname in files:
+                if fname.lower().endswith(config_extensions):
+                    content = await fetch_repo_text_async(owner, repo_name, file_path=fname)
+                    if content:
+                        all_text += "\n" + content
+            urls = set(extract_config_urls(all_text))
+            added = urls - old_urls
+            if added:
+                logger.info(f"🆕 Новые конфиги из {key}: {added}")
+                for url in added:
+                    if filter_url_for_russia_and_vless(url):
+                        new_urls.append(url)
+                config_urls_state[key] = list(urls)
+    if new_urls:
+        existing = set(load_config_sources())
+        save_config_sources(list(existing | set(new_urls)))
+    state['config_urls'] = config_urls_state
+    return new_urls
 
 # ------------------------------------------------------------
 # ФИЛЬТРАЦИЯ КОММИТОВ И РЕЛИЗОВ
@@ -836,23 +929,37 @@ async def main():
 
     # 3. Новые конфиги в агрегаторах – публикуем в ОБА канала (основной и дополнительный)
     logger.info("\n📡 Checking config aggregators for new URLs...")
-    new_urls = await discover_new_config_urls(state)
-    if new_urls:
-        message_template = "📡 <b>Новый источник подписки</b>\n\n<code>{}</code>"
-        for url in new_urls:
+    new_urls_agg = await discover_new_config_urls(state)
+    if new_urls_agg:
+        message_template = "📡 <b>Новый источник подписки (агрегатор)</b>\n\n<code>{}</code>"
+        for url in new_urls_agg:
             if count >= MAX_POSTS_PER_RUN:
                 break
             text = message_template.format(html.escape(url))
-            # Отправляем в основной канал
             success_main = await send_message_safe(TARGET_CHANNEL_ID, text)
-            # Если задан второй канал – отправляем и туда
             if CONFIG_CHANNEL_ID:
                 await send_message_safe(CONFIG_CHANNEL_ID, text)
             if success_main:
                 count += 1
             await asyncio.sleep(MESSAGE_DELAY)
 
-    # 4. Поиск новых репозиториев с AI-категоризацией (только в основной канал)
+    # 4. НОВЫЙ БЛОК: поиск конфигов через GitHub Search
+    logger.info("\n🔍 Searching GitHub for config repositories...")
+    new_urls_search = await search_configs_github(state)
+    if new_urls_search:
+        message_template = "📡 <b>Новый источник подписки (найден через поиск)</b>\n\n<code>{}</code>"
+        for url in new_urls_search:
+            if count >= MAX_POSTS_PER_RUN:
+                break
+            text = message_template.format(html.escape(url))
+            success_main = await send_message_safe(TARGET_CHANNEL_ID, text)
+            if CONFIG_CHANNEL_ID:
+                await send_message_safe(CONFIG_CHANNEL_ID, text)
+            if success_main:
+                count += 1
+            await asyncio.sleep(MESSAGE_DELAY)
+
+    # 5. Поиск новых репозиториев с AI-категоризацией (только в основной канал)
     logger.info("\n🔍 Searching for new repositories...")
     for s in FRESH_SEARCHES:
         if count >= MAX_POSTS_PER_RUN:
