@@ -36991,3 +36991,146 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-06-15 17:17:04,296 | INFO | 🏁 Completed! Published: 14 posts
 2026-06-15 17:17:04,296 | INFO | ============================================================
+2026-06-17 18:35:43,268 | INFO | ============================================================
+2026-06-17 18:35:43,268 | INFO | 🕵️  SCOUT RADAR v9.0 (intelligent filtering)
+2026-06-17 18:35:43,268 | INFO | ============================================================
+2026-06-17 18:35:43,268 | INFO | ✅ Second channel enabled: -1002926041814
+2026-06-17 18:35:43,269 | INFO | ✅ All environment variables validated
+2026-06-17 18:35:43,440 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-06-17 18:35:43,444 | INFO | 📂 Loaded: 1295 posted, 408 releases, 256 dynamic tracked
+2026-06-17 18:35:43,444 | INFO | 📡 Tracked projects: static=27, dynamic=256
+2026-06-17 18:35:43,444 | INFO | 
+🚀 Checking releases...
+2026-06-17 18:35:44,217 | INFO |    🆕 Release: 🛠 Zapret 2 v1.0.2
+2026-06-17 18:35:51,194 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-alpha.32
+2026-06-17 18:36:01,656 | INFO |    🆕 Release: 🆕 larrriiin/zapret-ui v26.6.4
+2026-06-17 18:36:04,802 | INFO |    🆕 Release: 🆕 larrriiin/zapret-ui v26.6.3
+2026-06-17 18:36:23,133 | INFO |    🆕 Release: 🆕 throneproj/Throne 1.2.0-beta.2
+2026-06-17 18:36:46,745 | INFO |    🆕 Release: 🆕 Flirexa/flirexa v1.9.97
+2026-06-17 18:36:50,103 | INFO |    🆕 Release: 🆕 Flirexa/flirexa v1.9.95
+2026-06-17 18:36:55,833 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.14.2
+2026-06-17 18:36:59,012 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.14.1
+2026-06-17 18:37:02,190 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.14.0
+2026-06-17 18:37:32,885 | INFO |    🆕 Release: 🆕 ajavadinezhad/zyrln v2.0-pre-4
+2026-06-17 18:37:52,122 | INFO | 
+🔄 Checking commits...
+2026-06-17 18:37:59,941 | INFO |    🆕 Commit: 🆕 larrriiin/zapret-ui
+2026-06-17 18:38:36,918 | INFO |    🆕 Commit: 🆕 Flirexa/flirexa
+2026-06-17 18:38:44,179 | INFO |    🆕 Commit: 🆕 shekelstrong/nemo-landing
+2026-06-17 18:38:48,583 | INFO |    🆕 Commit: 🆕 eiler2005/ghostroute
+2026-06-17 18:38:54,228 | INFO |    🆕 Commit: 🆕 YawStar/Proxy-Hunter
+2026-06-17 18:39:38,627 | INFO | 
+📡 Checking config aggregators for new URLs...
+2026-06-17 18:39:41,528 | INFO | 🆕 Новые конфиги в 📡 NoMoreWalls: {'https://raw.githubusercontent.com/Junely/clash/main/clash_near.txt', 'https://raw.githubusercontent.com/beck-8/sub-urls/refs/heads/main/%E5%B0%8F%E8%80%8C%E7%BE%8E.txt', 'https://raw.githubusercontent.com/Alvin9999/pac2/master/clash.meta2/15/config.yaml#max=100', 'https://raw.githubusercontent.com/moneyfly1/sublist/main/clash.yml', 'https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash', 'https://raw.githubusercontent.com/Alvin9999/pac2/master/clash.meta2/13/config.yaml#max=100', 'https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml', 'https://raw.githubusercontent.com/cxr9912/cxr2022/main/vmess.yaml', 'https://raw.githubusercontent.com/Alvin9999/pac2/master/clash.meta2/2/config.yaml#max=100', 'https://raw.githubusercontent.com/Rokate/Proxy-Sub/main/clash/clash_v2ray.yml', 'https://raw.githubusercontent.com/hkaa0/permalink/main/proxy/clash', 'https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml#ignore=vmess,ss,ssr', 'https://sub.sharecentre.online/sub', 'https://raw.githubusercontent.com/Alvin9999/pac2/master/clash.meta2/config.yaml#max=100', 'https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub', 'https://raw.githubusercontent.com/Misaka-blog/chromego_merge/refs/heads/main/sub/merged_proxies_new.yaml#ignore=vmess,ss,ssr,trojan', 'https://raw.githubusercontent.com/Alvin9999/pac2/master/clash.meta2/1/config.yaml#max=100', 'https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml', 'https://raw.githubusercontent.com/mlabalabala/v2ray-node/main/nodefree4clash.txt', 'https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/python/hysteria2', 'https://raw.githubusercontent.com/Alvin9999/pac2/master/clash.meta2/3/config.yaml#max=100', 'https://raw.githubusercontent.com/Huibq/TrojanLinks/master/links/vmess#ignore=vmess', 'https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub', 'https://raw.githubusercontent.com/Junely/clash/main/template3.yaml', 'https://raw.githubusercontent.com/learnhard-cn/free_proxy_ss/main/clash/clash.provider.yaml', 'https://sub.nicevpn.top/long', 'https://raw.githubusercontent.com/Rokate/Proxy-Sub/main/clash/clash_trojan.yml', 'https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription_num', 'https://raw.githubusercontent.com/AzadNetCH/Clash/main/AzadNet_META_IRAN-Direct.yml', 'https://sub.nicevpn.top/Clash.yaml', 'https://raw.githubusercontent.com/RenaLio/Mux2sub/main/urllist'}
+2026-06-17 18:39:45,282 | INFO | 💾 Config sources saved: 31 urls
+2026-06-17 18:41:29,572 | INFO | 
+🔍 Searching GitHub for config repositories...
+2026-06-17 18:41:29,572 | INFO | 🔍 GitHub search for configs: v2ray configs free
+2026-06-17 18:41:30,140 | INFO | 🔍 GitHub search for configs: vless reality subscription
+2026-06-17 18:41:30,704 | INFO | 🔍 GitHub search for configs: vless reality v2ray
+2026-06-17 18:41:31,266 | INFO | 🔍 GitHub search for configs: v2ray subscription link
+2026-06-17 18:41:31,860 | INFO | 🔍 GitHub search for configs: free vless configs
+2026-06-17 18:41:32,387 | INFO | 🔍 GitHub search for configs: vpn configs russia vless
+2026-06-17 18:41:32,907 | INFO | 🔍 GitHub search for configs: hysteria2 reality config
+2026-06-17 18:41:33,458 | INFO | 🔍 GitHub search for configs: clash reality subscription
+2026-06-17 18:41:34,024 | INFO | 🔍 GitHub search for configs: subconverter subscription
+2026-06-17 18:41:34,846 | INFO | 🔍 GitHub search for configs: xray reality vless config
+2026-06-17 18:41:35,390 | INFO | 
+🔍 Searching for new repositories...
+2026-06-17 18:41:35,528 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:35,529 | INFO | 
+🔍 Zapret Tools...
+2026-06-17 18:41:36,156 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:36,157 | INFO | 
+🔍 DPI Bypass...
+2026-06-17 18:41:36,796 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:36,797 | INFO | 
+🔍 RKN Block...
+2026-06-17 18:41:37,435 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:37,437 | INFO | 
+🔍 AntiZapret...
+2026-06-17 18:41:38,129 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:38,130 | INFO | 
+🔍 TSPU...
+2026-06-17 18:41:38,423 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:38,608 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:38,609 | INFO | 
+🔍 RU VPN Configs...
+2026-06-17 18:41:38,677 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:38,828 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:38,829 | INFO | 
+🔍 Amnezia...
+2026-06-17 18:41:38,893 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:39,017 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:39,018 | INFO | 
+🔍 Russia VPN Tools...
+2026-06-17 18:41:39,086 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:39,213 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:39,214 | INFO | 
+🔍 VLESS Reality...
+2026-06-17 18:41:39,276 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:39,418 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:39,419 | INFO | 
+🔍 Hysteria2...
+2026-06-17 18:41:39,482 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:39,633 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:39,634 | INFO | 
+🔍 Marzban...
+2026-06-17 18:41:39,696 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:39,859 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:39,860 | INFO | 
+🔍 XRay Config...
+2026-06-17 18:41:39,923 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:40,084 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:40,085 | INFO | 
+🔍 Geosite RU...
+2026-06-17 18:41:40,144 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:40,283 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:40,284 | INFO | 
+🔍 Domain List RU...
+2026-06-17 18:41:40,345 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:40,470 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:40,471 | INFO | 
+🔍 Sing-Box RU...
+2026-06-17 18:41:40,535 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:40,708 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:40,709 | INFO | 
+🔍 Censorship...
+2026-06-17 18:41:40,768 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:40,907 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:40,908 | INFO | 
+🔍 Reality Extra...
+2026-06-17 18:41:40,967 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:41,106 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:41,108 | INFO | 
+🔍 Hysteria2 Extra...
+2026-06-17 18:41:41,173 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:41,307 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:41,308 | INFO | 
+🔍 Proxy Configs...
+2026-06-17 18:41:41,371 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:41,513 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:41,514 | INFO | 
+🔍 Clash Rules...
+2026-06-17 18:41:41,581 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:41,731 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:41,732 | INFO | 
+🔍 Shadowsocks...
+2026-06-17 18:41:41,789 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:41,956 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:41,957 | INFO | 
+🔍 WireGuard RU...
+2026-06-17 18:41:42,019 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:42,162 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:42,163 | INFO | 
+🔍 Outline...
+2026-06-17 18:41:42,223 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:42,355 | INFO | 📊 GitHub API: 4683/5000 calls remaining
+2026-06-17 18:41:42,356 | INFO | 
+🔍 Subconverter...
+2026-06-17 18:41:42,415 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-17 18:41:42,422 | INFO | 💾 State saved (posted=1295, commits=130, releases=419, dynamic_tracked=256)
+2026-06-17 18:41:42,422 | INFO | 
+============================================================
+2026-06-17 18:41:42,422 | INFO | 🏁 Completed! Published: 47 posts
+2026-06-17 18:41:42,422 | INFO | ============================================================
