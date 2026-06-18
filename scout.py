@@ -33,8 +33,9 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 STATE_FILE = "scout_history.json"
 CONFIG_SOURCES_FILE = "config_sources.json"
 
-MAX_AGE_DAYS = 3
-MAX_POSTS_PER_RUN = 150      # увеличено, чтобы хватало на поиск нового
+MAX_AGE_DAYS = 3                # для поиска новых инструментов
+MAX_CONFIG_AGE_DAYS = 60        # для поиска подписных ссылок (2 месяца)
+MAX_POSTS_PER_RUN = 150
 GROQ_DELAY = 2
 MESSAGE_DELAY = 3
 MIN_STARS = 0
@@ -155,7 +156,7 @@ CONFIG_URL_PATTERNS = [
 ]
 
 # ------------------------------------------------------------
-# ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ (без изменений)
+# ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
 # ------------------------------------------------------------
 def validate_env():
     required = {
@@ -164,7 +165,6 @@ def validate_env():
         "CHANNEL_ID": TARGET_CHANNEL_ID,
         "GITHUB_TOKEN": GITHUB_TOKEN
     }
-    # CONFIG_CHANNEL_ID опционален
     missing = [k for k, v in required.items() if not v]
     if missing:
         logger.error(f"❌ Missing environment variables: {', '.join(missing)}")
@@ -227,8 +227,8 @@ def get_freshness(date_string):
     else:
         return f"📅 {int(hours/24)}д назад"
 
-def is_fresh(date_string):
-    return get_age_hours(date_string) <= (MAX_AGE_DAYS * 24)
+def is_fresh(date_string, max_days=MAX_AGE_DAYS):
+    return get_age_hours(date_string) <= (max_days * 24)
 
 def safe_desc(desc, max_len=120):
     if desc is None:
@@ -318,7 +318,6 @@ async def get_default_branch(session, owner, repo):
         logger.debug(f"Error getting default branch for {owner}/{repo}: {e}")
     return 'main'
 
-# CHANGED: расширена для получения списка файлов и их содержимого
 async def fetch_repo_text_async(owner, repo, file_path=None):
     """Если file_path задан, скачивает конкретный файл; иначе пытается скачать README."""
     try:
@@ -328,13 +327,11 @@ async def fetch_repo_text_async(owner, repo, file_path=None):
                 async with session.get(url, timeout=aiohttp.ClientTimeout(total=8)) as resp:
                     if resp.status == 200:
                         return await resp.text()
-                # fallback на master
                 url = f"https://raw.githubusercontent.com/{owner}/{repo}/master/{file_path}"
                 async with session.get(url, timeout=aiohttp.ClientTimeout(total=8)) as resp:
                     if resp.status == 200:
                         return await resp.text()
                 return ""
-            # иначе README
             branch = await get_default_branch(session, owner, repo)
             urls = [
                 f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/README.md",
@@ -358,7 +355,6 @@ async def fetch_repo_text_async(owner, repo, file_path=None):
         logger.debug(f"Error fetching file for {owner}/{repo}: {e}")
     return ""
 
-# НОВАЯ функция: получить список файлов в репозитории (не рекурсивно, только корень)
 async def get_repo_files(owner, repo):
     """Возвращает список имён файлов в корне репозитория."""
     files = []
@@ -418,8 +414,8 @@ def get_last_commit(owner, repo):
         logger.debug(f"Error getting commit for {owner}/{repo}: {e}")
     return None
 
-def search_fresh_repos(query, per_page=40):
-    date_filter = (datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)).strftime('%Y-%m-%d')
+def search_fresh_repos(query, per_page=40, max_age_days=MAX_AGE_DAYS):
+    date_filter = (datetime.now(timezone.utc) - timedelta(days=max_age_days)).strftime('%Y-%m-%d')
     results = []
     seen_ids = set()
     strategies = [
@@ -434,7 +430,7 @@ def search_fresh_repos(query, per_page=40):
                 for item in resp.json().get('items', []):
                     if item['id'] not in seen_ids:
                         seen_ids.add(item['id'])
-                        if is_fresh(item.get('pushed_at')) or is_fresh(item.get('updated_at')):
+                        if is_fresh(item.get('pushed_at'), max_age_days):
                             results.append(item)
             elif resp.status_code == 403:
                 logger.warning("⚠️ GitHub API rate limit!")
@@ -442,6 +438,27 @@ def search_fresh_repos(query, per_page=40):
         except Exception as e:
             logger.warning(f"⚠️ Search error: {e}")
     return results
+
+# ========== НОВАЯ ФУНКЦИЯ: проверка свежести репозитория (не старше N дней) ==========
+async def is_repo_recently_updated(owner, repo, max_age_days=MAX_CONFIG_AGE_DAYS):
+    """
+    Проверяет, был ли репозиторий обновлён (push) за последние max_age_days дней.
+    Возвращает True, если свежий.
+    """
+    try:
+        async with aiohttp.ClientSession(headers=API_HEADERS) as session:
+            url = f"https://api.github.com/repos/{owner}/{repo}"
+            async with session.get(url, timeout=aiohttp.ClientTimeout(total=10)) as resp:
+                if resp.status == 200:
+                    data = await resp.json()
+                    pushed_at = data.get('pushed_at')
+                    if pushed_at:
+                        return is_fresh(pushed_at, max_age_days)
+                else:
+                    logger.debug(f"   Could not get repo info for {owner}/{repo}: status {resp.status}")
+    except Exception as e:
+        logger.debug(f"Error checking repo freshness: {e}")
+    return False  # если не удалось проверить, лучше пропустить
 
 def load_state():
     if os.path.exists(STATE_FILE):
@@ -508,7 +525,7 @@ def save_config_sources(sources):
         logger.error(f"❌ Could not save config_sources: {e}")
 
 # ------------------------------------------------------------
-# НОВЫЙ AI с поддержкой категорий и исправленным парсингом
+# AI-анализ и генерация
 # ------------------------------------------------------------
 async def analyze_relevance(repos):
     if not repos:
@@ -552,7 +569,6 @@ async def analyze_relevance(repos):
                     idx, verdict = line.split(':', 1)
                     idx = int(idx.strip().replace('.', ''))
                     verdict = verdict.strip().upper()
-                    # Нормализация
                     if verdict in ('GOOD', '1', 'HIGH', 'MEDIUM'):
                         category = 'HIGH' if verdict in ('HIGH', 'GOOD', '1') else 'MEDIUM'
                         res[idx] = {'publish': True, 'category': category}
@@ -562,7 +578,6 @@ async def analyze_relevance(repos):
                         res[idx] = {'publish': False, 'category': 'LOW'}
                 except:
                     pass
-        # Если ответ не распарсился, публикуем всё как MEDIUM (безопасно)
         if not res:
             logger.warning("⚠️ AI response parsing failed, fallback to publish all as MEDIUM")
             return {i: {'publish': True, 'category': 'MEDIUM'} for i in range(1, len(repos) + 1)}
@@ -696,45 +711,39 @@ def extract_config_urls(text: str):
             candidates.append(u)
     return candidates
 
-# CHANGED: убраны жёсткие фильтры, теперь пропускаем больше ссылок
 def filter_url_for_russia_and_vless(url: str) -> bool:
     low = url.lower()
     if not any(p in low for p in ["vless", "reality", "vmess", "xray", "v2ray", "clash", "sub", "subscription"]):
         return False
-    # убрали проверку на iran и Sub*.txt, чтобы не отсеивать
-    # bad_markers = ["iran", "/ir-", "iran-"]
-    # if any(b in low for b in bad_markers):
-    #     return False
-    # if re.search(r'Sub\d+\.txt$', url):
-    #     return False
     return True
 
 # ------------------------------------------------------------
-# НОВАЯ ФУНКЦИЯ: отслеживание новых конфигов в агрегаторах (расширенная)
+# НОВАЯ ФУНКЦИЯ: отслеживание новых конфигов в агрегаторах (с проверкой возраста)
 # ------------------------------------------------------------
 async def discover_new_config_urls(state):
     new_global = []
     config_urls_state = state.get('config_urls', {})
-    # Файлы, которые могут содержать ссылки (расширения)
     config_extensions = ('.txt', '.json', '.yaml', '.yml', '.conf', '.config', '.sub', '.list')
+
     for agg in CONFIG_AGGREGATORS:
+        # Проверяем, обновлялся ли репозиторий за последние 2 месяца
+        if not await is_repo_recently_updated(agg['owner'], agg['repo'], MAX_CONFIG_AGE_DAYS):
+            logger.info(f"⏭ Skipping old aggregator: {agg['name']} (not updated in {MAX_CONFIG_AGE_DAYS} days)")
+            continue
+
         key = f"{agg['owner']}/{agg['repo']}"
         old_urls = set(config_urls_state.get(key, []))
-        # Получаем список файлов в корне репозитория
         files = await get_repo_files(agg['owner'], agg['repo'])
         all_text = ""
-        # Сначала читаем README (если есть)
         readme = await fetch_repo_text_async(agg['owner'], agg['repo'])
         if readme:
             all_text += "\n" + readme
-        # Читаем каждый файл с подходящим расширением
         for fname in files:
             if fname.lower().endswith(config_extensions):
                 content = await fetch_repo_text_async(agg['owner'], agg['repo'], file_path=fname)
                 if content:
                     all_text += "\n" + content
                     logger.debug(f"   📄 Read {fname} from {agg['name']}")
-        # Извлекаем URL
         new_urls = set(extract_config_urls(all_text))
         added = new_urls - old_urls
         if added:
@@ -750,15 +759,18 @@ async def discover_new_config_urls(state):
     return new_global
 
 # ------------------------------------------------------------
-# НОВАЯ ФУНКЦИЯ: поиск конфигов по запросам GitHub
+# НОВАЯ ФУНКЦИЯ: поиск конфигов по запросам GitHub (с учётом возраста 60 дней)
 # ------------------------------------------------------------
 async def search_configs_github(state):
-    """Ищет новые репозитории по запросам из CONFIG_SEARCH_QUERIES и извлекает ссылки."""
+    """Ищет новые репозитории по запросам из CONFIG_SEARCH_QUERIES и извлекает ссылки.
+       Учитываются только репозитории, обновлённые за последние MAX_CONFIG_AGE_DAYS дней.
+    """
     new_urls = []
     config_urls_state = state.get('config_urls', {})
     for query in CONFIG_SEARCH_QUERIES:
         logger.info(f"🔍 GitHub search for configs: {query}")
-        repos = search_fresh_repos(query, per_page=30)
+        # Используем max_age_days=MAX_CONFIG_AGE_DAYS (60 дней)
+        repos = search_fresh_repos(query, per_page=30, max_age_days=MAX_CONFIG_AGE_DAYS)
         if not repos:
             continue
         for repo in repos:
@@ -766,7 +778,6 @@ async def search_configs_github(state):
             repo_name = repo['name']
             key = f"{owner}/{repo_name}"
             old_urls = set(config_urls_state.get(key, []))
-            # Получаем файлы и содержимое
             files = await get_repo_files(owner, repo_name)
             all_text = ""
             readme = await fetch_repo_text_async(owner, repo_name)
@@ -826,7 +837,7 @@ def is_release_worth_posting(release_tag: str, release_body: str, last_major_min
 # ------------------------------------------------------------
 async def main():
     logger.info("=" * 60)
-    logger.info("🕵️  SCOUT RADAR v9.0 (intelligent filtering)")
+    logger.info("🕵️  SCOUT RADAR v9.1 (config age filtering)")
     logger.info("=" * 60)
 
     if not validate_env():
@@ -859,7 +870,7 @@ async def main():
 
     logger.info(f"📡 Tracked projects: static={len(TRACKED_PROJECTS)}, dynamic={len(dynamic_tracked)}")
 
-    # 1. Релизы с фильтрацией (только в основной канал)
+    # 1. Релизы
     logger.info("\n🚀 Checking releases...")
     for project in all_tracked_projects:
         if count >= MAX_POSTS_PER_RUN:
@@ -897,7 +908,7 @@ async def main():
             else:
                 logger.debug(f"   ⏭ Skipped trivial release: {rel['tag']}")
 
-    # 2. Коммиты (только значимые, только в основной канал)
+    # 2. Коммиты
     logger.info("\n🔄 Checking commits...")
     for project in all_tracked_projects:
         if count >= MAX_POSTS_PER_RUN:
@@ -927,8 +938,8 @@ async def main():
             count += 1
             await asyncio.sleep(MESSAGE_DELAY)
 
-    # 3. Новые конфиги в агрегаторах – публикуем в ОБА канала (основной и дополнительный)
-    logger.info("\n📡 Checking config aggregators for new URLs...")
+    # 3. Новые конфиги в агрегаторах (с проверкой возраста)
+    logger.info("\n📡 Checking config aggregators for new URLs (age ≤ 60 days)...")
     new_urls_agg = await discover_new_config_urls(state)
     if new_urls_agg:
         message_template = "📡 <b>Новый источник подписки (агрегатор)</b>\n\n<code>{}</code>"
@@ -943,8 +954,8 @@ async def main():
                 count += 1
             await asyncio.sleep(MESSAGE_DELAY)
 
-    # 4. НОВЫЙ БЛОК: поиск конфигов через GitHub Search
-    logger.info("\n🔍 Searching GitHub for config repositories...")
+    # 4. Поиск конфигов через GitHub Search (с возрастом 60 дней)
+    logger.info("\n🔍 Searching GitHub for config repositories (updated within 60 days)...")
     new_urls_search = await search_configs_github(state)
     if new_urls_search:
         message_template = "📡 <b>Новый источник подписки (найден через поиск)</b>\n\n<code>{}</code>"
@@ -959,15 +970,15 @@ async def main():
                 count += 1
             await asyncio.sleep(MESSAGE_DELAY)
 
-    # 5. Поиск новых репозиториев с AI-категоризацией (только в основной канал)
-    logger.info("\n🔍 Searching for new repositories...")
+    # 5. Поиск новых репозиториев (инструменты, только свежие 3 дня)
+    logger.info("\n🔍 Searching for new repositories (latest 3 days)...")
     for s in FRESH_SEARCHES:
         if count >= MAX_POSTS_PER_RUN:
             break
         if not check_rate_limit():
             break
         logger.info(f"\n🔍 {s['name']}...")
-        items = search_fresh_repos(s['query'])
+        items = search_fresh_repos(s['query'], max_age_days=MAX_AGE_DAYS)
         if not items:
             continue
         candidates = []
@@ -979,7 +990,6 @@ async def main():
                 continue
             if is_likely_fork_spam(i):
                 continue
-            # Пропускаем пустые репозитории без README
             if i.get('stargazers_count', 0) == 0 and not i.get('description'):
                 owner, repo = i['full_name'].split('/')
                 readme = await fetch_repo_text_async(owner, repo)
