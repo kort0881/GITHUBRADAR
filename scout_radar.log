@@ -37281,3 +37281,141 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-06-21 14:12:54,067 | INFO | 🏁 Completed! Published: 17 posts
 2026-06-21 14:12:54,067 | INFO | ============================================================
+2026-06-24 14:27:12,141 | INFO | ============================================================
+2026-06-24 14:27:12,141 | INFO | 🕵️  SCOUT RADAR v9.1 (config age filtering)
+2026-06-24 14:27:12,141 | INFO | ============================================================
+2026-06-24 14:27:12,141 | INFO | ✅ Second channel enabled: -1002926041814
+2026-06-24 14:27:12,141 | INFO | ✅ All environment variables validated
+2026-06-24 14:27:12,299 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-06-24 14:27:12,303 | INFO | 📂 Loaded: 1295 posted, 431 releases, 256 dynamic tracked
+2026-06-24 14:27:12,304 | INFO | 📡 Tracked projects: static=27, dynamic=256
+2026-06-24 14:27:12,304 | INFO | 
+🚀 Checking releases...
+2026-06-24 14:27:15,339 | INFO |    🆕 Release: ⚡ Xray-core v26.6.22
+2026-06-24 14:27:19,413 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-alpha.34
+2026-06-24 14:27:24,689 | INFO |    🆕 Release: 🎛 3X-UI v3.4.0
+2026-06-24 14:27:56,093 | INFO |    🆕 Release: 🆕 agentram/ovpn 1.7.2
+2026-06-24 14:27:59,445 | INFO |    🆕 Release: 🆕 agentram/ovpn 1.7.1
+2026-06-24 14:28:09,562 | INFO |    🆕 Release: 🆕 Flirexa/flirexa v1.9.99
+2026-06-24 14:28:12,728 | INFO |    🆕 Release: 🆕 Flirexa/flirexa v1.9.98
+2026-06-24 14:28:25,618 | INFO |    🆕 Release: 🆕 werteksjobs-pixel/Dpi-Dashboard v1.2.2
+2026-06-24 14:29:01,535 | INFO | 
+🔄 Checking commits...
+2026-06-24 14:29:03,457 | INFO |    🆕 Commit: ⚡ Xray-core
+2026-06-24 14:29:44,153 | INFO |    🆕 Commit: 🆕 Flirexa/flirexa
+2026-06-24 14:29:49,896 | INFO |    🆕 Commit: 🆕 batonogov/terraform-provider-threexui
+2026-06-24 14:29:58,552 | INFO |    🆕 Commit: 🆕 YawStar/Proxy-Hunter
+2026-06-24 14:30:42,121 | INFO | 
+📡 Checking config aggregators for new URLs (age ≤ 60 days)...
+2026-06-24 14:30:45,247 | INFO | ⏭ Skipping old aggregator: 📡 V2ray-Configs (not updated in 60 days)
+2026-06-24 14:30:49,238 | INFO | 
+🔍 Searching GitHub for config repositories (updated within 60 days)...
+2026-06-24 14:30:49,238 | INFO | 🔍 GitHub search for configs: v2ray configs free
+2026-06-24 14:30:49,711 | INFO | 🔍 GitHub search for configs: vless reality subscription
+2026-06-24 14:30:50,304 | INFO | 🔍 GitHub search for configs: vless reality v2ray
+2026-06-24 14:30:50,814 | INFO | 🔍 GitHub search for configs: v2ray subscription link
+2026-06-24 14:30:51,305 | INFO | 🔍 GitHub search for configs: free vless configs
+2026-06-24 14:30:51,806 | INFO | 🔍 GitHub search for configs: vpn configs russia vless
+2026-06-24 14:30:52,342 | INFO | 🔍 GitHub search for configs: hysteria2 reality config
+2026-06-24 14:30:52,841 | INFO | 🔍 GitHub search for configs: clash reality subscription
+2026-06-24 14:30:53,323 | INFO | 🔍 GitHub search for configs: subconverter subscription
+2026-06-24 14:30:53,865 | INFO | 🔍 GitHub search for configs: xray reality vless config
+2026-06-24 14:30:54,353 | INFO | 
+🔍 Searching for new repositories (latest 3 days)...
+2026-06-24 14:30:54,492 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:54,493 | INFO | 
+🔍 Zapret Tools...
+2026-06-24 14:30:55,137 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:55,138 | INFO | 
+🔍 DPI Bypass...
+2026-06-24 14:30:55,795 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:55,796 | INFO | 
+🔍 RKN Block...
+2026-06-24 14:30:56,469 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:56,470 | INFO | 
+🔍 AntiZapret...
+2026-06-24 14:30:57,123 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:57,124 | INFO | 
+🔍 TSPU...
+2026-06-24 14:30:57,412 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:30:57,535 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:57,536 | INFO | 
+🔍 RU VPN Configs...
+2026-06-24 14:30:57,601 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:30:57,740 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:57,741 | INFO | 
+🔍 Amnezia...
+2026-06-24 14:30:57,792 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:30:57,930 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:57,932 | INFO | 
+🔍 Russia VPN Tools...
+2026-06-24 14:30:57,982 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:30:58,120 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:58,121 | INFO | 
+🔍 VLESS Reality...
+2026-06-24 14:30:58,172 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:30:58,304 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:58,305 | INFO | 
+🔍 Hysteria2...
+2026-06-24 14:30:58,372 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:30:58,496 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:58,497 | INFO | 
+🔍 Marzban...
+2026-06-24 14:30:58,548 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:30:58,686 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:58,687 | INFO | 
+🔍 XRay Config...
+2026-06-24 14:30:58,736 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:30:58,856 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:58,857 | INFO | 
+🔍 Geosite RU...
+2026-06-24 14:30:58,917 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:30:59,074 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:59,075 | INFO | 
+🔍 Domain List RU...
+2026-06-24 14:30:59,126 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:30:59,261 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:59,262 | INFO | 
+🔍 Sing-Box RU...
+2026-06-24 14:30:59,320 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:30:59,429 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:59,430 | INFO | 
+🔍 Censorship...
+2026-06-24 14:30:59,479 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:30:59,623 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:59,624 | INFO | 
+🔍 Reality Extra...
+2026-06-24 14:30:59,670 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:30:59,807 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:30:59,808 | INFO | 
+🔍 Hysteria2 Extra...
+2026-06-24 14:30:59,872 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:31:00,022 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:31:00,023 | INFO | 
+🔍 Proxy Configs...
+2026-06-24 14:31:00,073 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:31:00,190 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:31:00,191 | INFO | 
+🔍 Clash Rules...
+2026-06-24 14:31:00,244 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:31:00,398 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:31:00,399 | INFO | 
+🔍 Shadowsocks...
+2026-06-24 14:31:00,448 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:31:00,592 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:31:00,593 | INFO | 
+🔍 WireGuard RU...
+2026-06-24 14:31:00,641 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:31:00,775 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:31:00,776 | INFO | 
+🔍 Outline...
+2026-06-24 14:31:00,830 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:31:00,964 | INFO | 📊 GitHub API: 4682/5000 calls remaining
+2026-06-24 14:31:00,964 | INFO | 
+🔍 Subconverter...
+2026-06-24 14:31:01,014 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-24 14:31:01,020 | INFO | 💾 State saved (posted=1295, commits=130, releases=439, dynamic_tracked=256)
+2026-06-24 14:31:01,020 | INFO | 
+============================================================
+2026-06-24 14:31:01,020 | INFO | 🏁 Completed! Published: 12 posts
+2026-06-24 14:31:01,020 | INFO | ============================================================
