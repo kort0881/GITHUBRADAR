@@ -37419,3 +37419,145 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-06-24 14:31:01,020 | INFO | 🏁 Completed! Published: 12 posts
 2026-06-24 14:31:01,020 | INFO | ============================================================
+2026-06-27 13:40:55,283 | INFO | ============================================================
+2026-06-27 13:40:55,283 | INFO | 🕵️  SCOUT RADAR v9.1 (config age filtering)
+2026-06-27 13:40:55,283 | INFO | ============================================================
+2026-06-27 13:40:55,283 | INFO | ✅ Second channel enabled: -1002926041814
+2026-06-27 13:40:55,283 | INFO | ✅ All environment variables validated
+2026-06-27 13:40:55,514 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-06-27 13:40:55,517 | INFO | 📂 Loaded: 1295 posted, 439 releases, 256 dynamic tracked
+2026-06-27 13:40:55,517 | INFO | 📡 Tracked projects: static=27, dynamic=256
+2026-06-27 13:40:55,517 | INFO | 
+🚀 Checking releases...
+2026-06-27 13:40:59,117 | INFO |    🆕 Release: ⚡ Xray-core v26.6.27
+2026-06-27 13:41:03,831 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-alpha.35
+2026-06-27 13:41:07,038 | INFO |    🆕 Release: 📦 Sing-Box v1.13.14
+2026-06-27 13:41:10,757 | INFO |    🆕 Release: 🚀 Hysteria app/v2.9.3
+2026-06-27 13:41:15,973 | INFO |    🆕 Release: 🎛 3X-UI v3.4.1
+2026-06-27 13:41:21,271 | INFO |    🆕 Release: 💻 V2RayN 7.23.1
+2026-06-27 13:41:21,272 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-06-27 13:41:41,114 | INFO |    🆕 Release: 🆕 throneproj/Throne 1.2.0-beta.3
+2026-06-27 13:41:57,464 | INFO |    🆕 Release: 🆕 agentram/ovpn 1.7.3
+2026-06-27 13:42:09,601 | INFO |    🆕 Release: 🆕 Flirexa/flirexa v1.9.102
+2026-06-27 13:42:12,818 | INFO |    🆕 Release: 🆕 Flirexa/flirexa v1.9.101
+2026-06-27 13:42:18,777 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.16.0
+2026-06-27 13:42:22,293 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.15.0
+2026-06-27 13:42:51,257 | INFO |    🆕 Release: 🆕 MaksimSamarin/AntiGoblin v1.1.0
+2026-06-27 13:43:20,786 | INFO | 
+🔄 Checking commits...
+2026-06-27 13:44:15,712 | INFO |    🆕 Commit: 🆕 Flirexa/flirexa
+2026-06-27 13:44:29,317 | INFO |    🆕 Commit: 🆕 YawStar/Proxy-Hunter
+2026-06-27 13:45:26,947 | INFO | 
+📡 Checking config aggregators for new URLs (age ≤ 60 days)...
+2026-06-27 13:45:32,978 | INFO | ⏭ Skipping old aggregator: 📡 V2ray-Configs (not updated in 60 days)
+2026-06-27 13:45:40,930 | INFO | 
+🔍 Searching GitHub for config repositories (updated within 60 days)...
+2026-06-27 13:45:40,931 | INFO | 🔍 GitHub search for configs: v2ray configs free
+2026-06-27 13:45:41,610 | INFO | 🔍 GitHub search for configs: vless reality subscription
+2026-06-27 13:45:42,293 | INFO | 🔍 GitHub search for configs: vless reality v2ray
+2026-06-27 13:45:43,027 | INFO | 🔍 GitHub search for configs: v2ray subscription link
+2026-06-27 13:45:43,708 | INFO | 🔍 GitHub search for configs: free vless configs
+2026-06-27 13:45:44,420 | INFO | 🔍 GitHub search for configs: vpn configs russia vless
+2026-06-27 13:45:45,108 | INFO | 🔍 GitHub search for configs: hysteria2 reality config
+2026-06-27 13:45:45,820 | INFO | 🔍 GitHub search for configs: clash reality subscription
+2026-06-27 13:45:46,550 | INFO | 🔍 GitHub search for configs: subconverter subscription
+2026-06-27 13:45:47,450 | INFO | 🔍 GitHub search for configs: xray reality vless config
+2026-06-27 13:45:48,159 | INFO | 
+🔍 Searching for new repositories (latest 3 days)...
+2026-06-27 13:45:48,408 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:48,409 | INFO | 
+🔍 Zapret Tools...
+2026-06-27 13:45:49,360 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:49,361 | INFO | 
+🔍 DPI Bypass...
+2026-06-27 13:45:50,277 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:50,278 | INFO | 
+🔍 RKN Block...
+2026-06-27 13:45:51,232 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:51,233 | INFO | 
+🔍 AntiZapret...
+2026-06-27 13:45:52,102 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:52,103 | INFO | 
+🔍 TSPU...
+2026-06-27 13:45:52,647 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:52,885 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:52,886 | INFO | 
+🔍 RU VPN Configs...
+2026-06-27 13:45:53,048 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:53,297 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:53,298 | INFO | 
+🔍 Amnezia...
+2026-06-27 13:45:53,459 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:53,869 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:53,870 | INFO | 
+🔍 Russia VPN Tools...
+2026-06-27 13:45:54,045 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:54,278 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:54,279 | INFO | 
+🔍 VLESS Reality...
+2026-06-27 13:45:54,438 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:54,659 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:54,660 | INFO | 
+🔍 Hysteria2...
+2026-06-27 13:45:54,840 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:55,105 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:55,106 | INFO | 
+🔍 Marzban...
+2026-06-27 13:45:55,461 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:55,684 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:55,685 | INFO | 
+🔍 XRay Config...
+2026-06-27 13:45:55,871 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:56,085 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:56,086 | INFO | 
+🔍 Geosite RU...
+2026-06-27 13:45:56,248 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:56,498 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:56,499 | INFO | 
+🔍 Domain List RU...
+2026-06-27 13:45:56,661 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:56,923 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:56,924 | INFO | 
+🔍 Sing-Box RU...
+2026-06-27 13:45:57,103 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:57,349 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:57,350 | INFO | 
+🔍 Censorship...
+2026-06-27 13:45:57,530 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:57,783 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:57,784 | INFO | 
+🔍 Reality Extra...
+2026-06-27 13:45:57,948 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:58,179 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:58,180 | INFO | 
+🔍 Hysteria2 Extra...
+2026-06-27 13:45:58,345 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:58,575 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:58,576 | INFO | 
+🔍 Proxy Configs...
+2026-06-27 13:45:58,741 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:58,977 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:58,978 | INFO | 
+🔍 Clash Rules...
+2026-06-27 13:45:59,156 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:59,407 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:59,408 | INFO | 
+🔍 Shadowsocks...
+2026-06-27 13:45:59,586 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:45:59,839 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:45:59,840 | INFO | 
+🔍 WireGuard RU...
+2026-06-27 13:46:00,002 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:46:00,242 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:46:00,243 | INFO | 
+🔍 Outline...
+2026-06-27 13:46:00,422 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:46:00,652 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-06-27 13:46:00,653 | INFO | 
+🔍 Subconverter...
+2026-06-27 13:46:01,008 | WARNING | ⚠️ GitHub API rate limit!
+2026-06-27 13:46:01,013 | INFO | 💾 State saved (posted=1295, commits=130, releases=451, dynamic_tracked=256)
+2026-06-27 13:46:01,013 | INFO | 
+============================================================
+2026-06-27 13:46:01,013 | INFO | 🏁 Completed! Published: 14 posts
+2026-06-27 13:46:01,013 | INFO | ============================================================
