@@ -6,6 +6,7 @@ import requests
 import html
 import re
 import logging
+import time
 from datetime import datetime, timedelta, timezone
 from aiogram import Bot
 from aiogram.client.default import DefaultBotProperties
@@ -414,17 +415,28 @@ def get_last_commit(owner, repo):
         logger.debug(f"Error getting commit for {owner}/{repo}: {e}")
     return None
 
+# ============================================================
+# ИСПРАВЛЕННАЯ ФУНКЦИЯ ПОИСКА (одна стратегия + обработка 403)
+# ============================================================
 def search_fresh_repos(query, per_page=40, max_age_days=MAX_AGE_DAYS):
     date_filter = (datetime.now(timezone.utc) - timedelta(days=max_age_days)).strftime('%Y-%m-%d')
     results = []
     seen_ids = set()
-    strategies = [
-        f"{query}+pushed:>{date_filter}+language:python+NOT+fork:true",
-        f"{query}+created:>{date_filter}+language:python+NOT+fork:true",
-    ]
-    for strategy in strategies:
-        url = f"https://api.github.com/search/repositories?q={strategy}&sort=updated&order=desc&per_page={per_page}"
-        try:
+    # Используем только одну стратегию (pushed) – это вдвое сокращает число запросов
+    strategy = f"{query}+pushed:>{date_filter}+language:python+NOT+fork:true"
+    url = f"https://api.github.com/search/repositories?q={strategy}&sort=updated&order=desc&per_page={per_page}"
+    try:
+        resp = requests.get(url, headers=API_HEADERS, timeout=15)
+        if resp.status_code == 200:
+            for item in resp.json().get('items', []):
+                if item['id'] not in seen_ids:
+                    seen_ids.add(item['id'])
+                    if is_fresh(item.get('pushed_at'), max_age_days):
+                        results.append(item)
+        elif resp.status_code == 403:
+            logger.warning("⚠️ GitHub Search rate limit! Waiting 60s...")
+            time.sleep(60)
+            # Повторяем запрос один раз
             resp = requests.get(url, headers=API_HEADERS, timeout=15)
             if resp.status_code == 200:
                 for item in resp.json().get('items', []):
@@ -432,33 +444,9 @@ def search_fresh_repos(query, per_page=40, max_age_days=MAX_AGE_DAYS):
                         seen_ids.add(item['id'])
                         if is_fresh(item.get('pushed_at'), max_age_days):
                             results.append(item)
-            elif resp.status_code == 403:
-                logger.warning("⚠️ GitHub API rate limit!")
-                break
-        except Exception as e:
-            logger.warning(f"⚠️ Search error: {e}")
-    return results
-
-# ========== НОВАЯ ФУНКЦИЯ: проверка свежести репозитория (не старше N дней) ==========
-async def is_repo_recently_updated(owner, repo, max_age_days=MAX_CONFIG_AGE_DAYS):
-    """
-    Проверяет, был ли репозиторий обновлён (push) за последние max_age_days дней.
-    Возвращает True, если свежий.
-    """
-    try:
-        async with aiohttp.ClientSession(headers=API_HEADERS) as session:
-            url = f"https://api.github.com/repos/{owner}/{repo}"
-            async with session.get(url, timeout=aiohttp.ClientTimeout(total=10)) as resp:
-                if resp.status == 200:
-                    data = await resp.json()
-                    pushed_at = data.get('pushed_at')
-                    if pushed_at:
-                        return is_fresh(pushed_at, max_age_days)
-                else:
-                    logger.debug(f"   Could not get repo info for {owner}/{repo}: status {resp.status}")
     except Exception as e:
-        logger.debug(f"Error checking repo freshness: {e}")
-    return False  # если не удалось проверить, лучше пропустить
+        logger.warning(f"⚠️ Search error: {e}")
+    return results
 
 def load_state():
     if os.path.exists(STATE_FILE):
@@ -759,7 +747,7 @@ async def discover_new_config_urls(state):
     return new_global
 
 # ------------------------------------------------------------
-# НОВАЯ ФУНКЦИЯ: поиск конфигов по запросам GitHub (с учётом возраста 60 дней)
+# ИСПРАВЛЕННАЯ ФУНКЦИЯ: поиск конфигов с задержкой
 # ------------------------------------------------------------
 async def search_configs_github(state):
     """Ищет новые репозитории по запросам из CONFIG_SEARCH_QUERIES и извлекает ссылки.
@@ -769,8 +757,8 @@ async def search_configs_github(state):
     config_urls_state = state.get('config_urls', {})
     for query in CONFIG_SEARCH_QUERIES:
         logger.info(f"🔍 GitHub search for configs: {query}")
-        # Используем max_age_days=MAX_CONFIG_AGE_DAYS (60 дней)
         repos = search_fresh_repos(query, per_page=30, max_age_days=MAX_CONFIG_AGE_DAYS)
+        await asyncio.sleep(3)   # <-- ЗАДЕРЖКА ДЛЯ ЗАЩИТЫ ОТ ЛИМИТА
         if not repos:
             continue
         for repo in repos:
@@ -802,6 +790,25 @@ async def search_configs_github(state):
         save_config_sources(list(existing | set(new_urls)))
     state['config_urls'] = config_urls_state
     return new_urls
+
+# ------------------------------------------------------------
+# ДОПОЛНИТЕЛЬНАЯ ФУНКЦИЯ: проверка свежести репозитория
+# ------------------------------------------------------------
+async def is_repo_recently_updated(owner, repo, max_age_days=MAX_CONFIG_AGE_DAYS):
+    try:
+        async with aiohttp.ClientSession(headers=API_HEADERS) as session:
+            url = f"https://api.github.com/repos/{owner}/{repo}"
+            async with session.get(url, timeout=aiohttp.ClientTimeout(total=10)) as resp:
+                if resp.status == 200:
+                    data = await resp.json()
+                    pushed_at = data.get('pushed_at')
+                    if pushed_at:
+                        return is_fresh(pushed_at, max_age_days)
+                else:
+                    logger.debug(f"   Could not get repo info for {owner}/{repo}: status {resp.status}")
+    except Exception as e:
+        logger.debug(f"Error checking repo freshness: {e}")
+    return False
 
 # ------------------------------------------------------------
 # ФИЛЬТРАЦИЯ КОММИТОВ И РЕЛИЗОВ
@@ -837,7 +844,7 @@ def is_release_worth_posting(release_tag: str, release_body: str, last_major_min
 # ------------------------------------------------------------
 async def main():
     logger.info("=" * 60)
-    logger.info("🕵️  SCOUT RADAR v9.1 (config age filtering)")
+    logger.info("🕵️  SCOUT RADAR v9.2 (fixed rate limits)")
     logger.info("=" * 60)
 
     if not validate_env():
@@ -970,7 +977,7 @@ async def main():
                 count += 1
             await asyncio.sleep(MESSAGE_DELAY)
 
-    # 5. Поиск новых репозиториев (инструменты, только свежие 3 дня)
+    # 5. Поиск новых репозиториев (инструменты, только свежие 3 дня) - С ЗАДЕРЖКОЙ
     logger.info("\n🔍 Searching for new repositories (latest 3 days)...")
     for s in FRESH_SEARCHES:
         if count >= MAX_POSTS_PER_RUN:
@@ -979,6 +986,7 @@ async def main():
             break
         logger.info(f"\n🔍 {s['name']}...")
         items = search_fresh_repos(s['query'], max_age_days=MAX_AGE_DAYS)
+        await asyncio.sleep(3)   # <-- ЗАДЕРЖКА ДЛЯ ЗАЩИТЫ ОТ ЛИМИТА
         if not items:
             continue
         candidates = []
