@@ -37703,3 +37703,119 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-06-30 14:20:25,063 | INFO | 🏁 Completed! Published: 16 posts
 2026-06-30 14:20:25,063 | INFO | ============================================================
+2026-07-03 14:01:42,746 | INFO | ============================================================
+2026-07-03 14:01:42,746 | INFO | 🕵️  SCOUT RADAR v9.2 (fixed rate limits)
+2026-07-03 14:01:42,746 | INFO | ============================================================
+2026-07-03 14:01:42,746 | INFO | ✅ Second channel enabled: -1002926041814
+2026-07-03 14:01:42,746 | INFO | ✅ All environment variables validated
+2026-07-03 14:01:42,899 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-07-03 14:01:42,901 | INFO | 📂 Loaded: 1295 posted, 463 releases, 256 dynamic tracked
+2026-07-03 14:01:42,901 | INFO | 📡 Tracked projects: static=27, dynamic=256
+2026-07-03 14:01:42,901 | INFO | 
+🚀 Checking releases...
+2026-07-03 14:02:07,163 | INFO |    🆕 Release: 🆕 Ezrea7/ReaLity v1.2
+2026-07-03 14:02:23,668 | INFO |    🆕 Release: 🆕 luluwux/Vane v2.0.2
+2026-07-03 14:02:27,086 | INFO |    🆕 Release: 🆕 luluwux/Vane v2.0.1
+2026-07-03 14:02:30,456 | INFO |    🆕 Release: 🆕 luluwux/Vane v2.0.0
+2026-07-03 14:02:33,673 | INFO |    🆕 Release: 🆕 luluwux/Vane v1.1.4
+2026-07-03 14:02:36,841 | INFO |    🆕 Release: 🆕 luluwux/Vane v1.1.3
+2026-07-03 14:03:25,305 | INFO | 
+🔄 Checking commits...
+2026-07-03 14:03:51,840 | INFO |    🆕 Commit: 🆕 throneproj/Throne
+2026-07-03 14:04:14,606 | INFO |    🆕 Commit: 🆕 luluwux/Vane
+2026-07-03 14:04:28,151 | INFO |    🆕 Commit: 🆕 movingcursor/clearway
+2026-07-03 14:04:32,498 | INFO |    🆕 Commit: 🆕 YawStar/Proxy-Hunter
+2026-07-03 14:05:20,715 | INFO | 
+📡 Checking config aggregators for new URLs (age ≤ 60 days)...
+2026-07-03 14:05:25,092 | INFO | ⏭ Skipping old aggregator: 📡 V2ray-Configs (not updated in 60 days)
+2026-07-03 14:05:30,407 | INFO | 
+🔍 Searching GitHub for config repositories (updated within 60 days)...
+2026-07-03 14:05:30,407 | INFO | 🔍 GitHub search for configs: v2ray configs free
+2026-07-03 14:05:33,705 | INFO | 🔍 GitHub search for configs: vless reality subscription
+2026-07-03 14:05:37,017 | INFO | 🔍 GitHub search for configs: vless reality v2ray
+2026-07-03 14:05:40,326 | INFO | 🔍 GitHub search for configs: v2ray subscription link
+2026-07-03 14:05:43,642 | INFO | 🔍 GitHub search for configs: free vless configs
+2026-07-03 14:05:46,931 | INFO | 🔍 GitHub search for configs: vpn configs russia vless
+2026-07-03 14:05:50,228 | INFO | 🔍 GitHub search for configs: hysteria2 reality config
+2026-07-03 14:05:53,534 | INFO | 🔍 GitHub search for configs: clash reality subscription
+2026-07-03 14:05:56,826 | INFO | 🔍 GitHub search for configs: subconverter subscription
+2026-07-03 14:06:00,196 | INFO | 🔍 GitHub search for configs: xray reality vless config
+2026-07-03 14:06:03,481 | INFO | 
+🔍 Searching for new repositories (latest 3 days)...
+2026-07-03 14:06:03,643 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:03,643 | INFO | 
+🔍 Zapret Tools...
+2026-07-03 14:06:07,121 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:07,121 | INFO | 
+🔍 DPI Bypass...
+2026-07-03 14:06:10,631 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:10,632 | INFO | 
+🔍 RKN Block...
+2026-07-03 14:06:14,077 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:14,078 | INFO | 
+🔍 AntiZapret...
+2026-07-03 14:06:17,558 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:17,559 | INFO | 
+🔍 TSPU...
+2026-07-03 14:06:21,009 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:21,010 | INFO | 
+🔍 RU VPN Configs...
+2026-07-03 14:06:24,487 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:24,488 | INFO | 
+🔍 Amnezia...
+2026-07-03 14:06:27,931 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:27,931 | INFO | 
+🔍 Russia VPN Tools...
+2026-07-03 14:06:31,403 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:31,404 | INFO | 
+🔍 VLESS Reality...
+2026-07-03 14:06:34,858 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:34,859 | INFO | 
+🔍 Hysteria2...
+2026-07-03 14:06:38,310 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:38,311 | INFO | 
+🔍 Marzban...
+2026-07-03 14:06:41,792 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:41,793 | INFO | 
+🔍 XRay Config...
+2026-07-03 14:06:45,278 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:45,279 | INFO | 
+🔍 Geosite RU...
+2026-07-03 14:06:48,758 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:48,758 | INFO | 
+🔍 Domain List RU...
+2026-07-03 14:06:52,206 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:52,207 | INFO | 
+🔍 Sing-Box RU...
+2026-07-03 14:06:55,662 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:55,662 | INFO | 
+🔍 Censorship...
+2026-07-03 14:06:59,150 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:06:59,150 | INFO | 
+🔍 Reality Extra...
+2026-07-03 14:07:02,638 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:07:02,638 | INFO | 
+🔍 Hysteria2 Extra...
+2026-07-03 14:07:06,128 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:07:06,128 | INFO | 
+🔍 Proxy Configs...
+2026-07-03 14:07:09,720 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:07:09,721 | INFO | 
+🔍 Clash Rules...
+2026-07-03 14:07:13,180 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:07:13,181 | INFO | 
+🔍 Shadowsocks...
+2026-07-03 14:07:16,618 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:07:16,619 | INFO | 
+🔍 WireGuard RU...
+2026-07-03 14:07:20,114 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:07:20,114 | INFO | 
+🔍 Outline...
+2026-07-03 14:07:23,543 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-03 14:07:23,544 | INFO | 
+🔍 Subconverter...
+2026-07-03 14:07:26,811 | INFO | 💾 State saved (posted=1295, commits=131, releases=469, dynamic_tracked=256)
+2026-07-03 14:07:26,811 | INFO | 
+============================================================
+2026-07-03 14:07:26,811 | INFO | 🏁 Completed! Published: 10 posts
+2026-07-03 14:07:26,811 | INFO | ============================================================
