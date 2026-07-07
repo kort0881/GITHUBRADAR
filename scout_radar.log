@@ -37944,3 +37944,114 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-07-06 15:35:56,449 | INFO | 🏁 Completed! Published: 15 posts
 2026-07-06 15:35:56,449 | INFO | ============================================================
+2026-07-07 17:13:20,972 | INFO | ============================================================
+2026-07-07 17:13:20,972 | INFO | СЂСџвЂўВµРїС‘РЏ  SCOUT RADAR v9.2 (fixed rate limits)
+2026-07-07 17:13:20,972 | INFO | ============================================================
+2026-07-07 17:13:20,972 | INFO | РІСљвЂ¦ Second channel enabled: -1002926041814
+2026-07-07 17:13:20,972 | INFO | РІСљвЂ¦ All environment variables validated
+2026-07-07 17:13:21,131 | INFO | СЂСџвЂњР‰ GitHub API: 5000/5000 calls remaining
+2026-07-07 17:13:21,134 | INFO | СЂСџвЂњвЂљ Loaded: 1295 posted, 480 releases, 256 dynamic tracked
+2026-07-07 17:13:21,134 | INFO | СЂСџвЂњРЋ Tracked projects: static=27, dynamic=256
+2026-07-07 17:13:21,134 | INFO | 
+СЂСџС™Р‚ Checking releases...
+2026-07-07 17:13:28,422 | INFO |    СЂСџвЂ вЂў Release: СЂСџвЂњВ± V2RayNG 2.2.6
+2026-07-07 17:13:28,426 | WARNING | РІС™ РїС‘РЏ Blocked message with hieroglyphs!
+2026-07-07 17:14:38,139 | INFO | 
+СЂСџвЂќвЂћ Checking commits...
+2026-07-07 17:14:39,549 | INFO |    СЂСџвЂ вЂў Commit: СЂСџвЂєРЋ Amnezia Client
+2026-07-07 17:14:45,304 | INFO |    СЂСџвЂ вЂў Commit: СЂСџР‹вЂє 3X-UI
+2026-07-07 17:15:32,651 | INFO |    СЂСџвЂ вЂў Commit: СЂСџвЂ вЂў YawStar/Proxy-Hunter
+2026-07-07 17:16:15,983 | INFO | 
+СЂСџвЂњРЋ Checking config aggregators for new URLs (age РІвЂ°В¤ 60 days)...
+2026-07-07 17:16:19,788 | INFO | РІРЏВ­ Skipping old aggregator: СЂСџвЂњРЋ V2ray-Configs (not updated in 60 days)
+2026-07-07 17:16:24,576 | INFO | 
+СЂСџвЂќРЊ Searching GitHub for config repositories (updated within 60 days)...
+2026-07-07 17:16:24,576 | INFO | СЂСџвЂќРЊ GitHub search for configs: v2ray configs free
+2026-07-07 17:16:27,863 | INFO | СЂСџвЂќРЊ GitHub search for configs: vless reality subscription
+2026-07-07 17:16:31,139 | INFO | СЂСџвЂќРЊ GitHub search for configs: vless reality v2ray
+2026-07-07 17:16:34,429 | INFO | СЂСџвЂќРЊ GitHub search for configs: v2ray subscription link
+2026-07-07 17:16:37,669 | INFO | СЂСџвЂќРЊ GitHub search for configs: free vless configs
+2026-07-07 17:16:40,907 | INFO | СЂСџвЂќРЊ GitHub search for configs: vpn configs russia vless
+2026-07-07 17:16:44,232 | INFO | СЂСџвЂќРЊ GitHub search for configs: hysteria2 reality config
+2026-07-07 17:16:47,489 | INFO | СЂСџвЂќРЊ GitHub search for configs: clash reality subscription
+2026-07-07 17:16:50,705 | INFO | СЂСџвЂќРЊ GitHub search for configs: subconverter subscription
+2026-07-07 17:16:53,939 | INFO | СЂСџвЂќРЊ GitHub search for configs: xray reality vless config
+2026-07-07 17:16:57,249 | INFO | 
+СЂСџвЂќРЊ Searching for new repositories (latest 3 days)...
+2026-07-07 17:16:57,386 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:16:57,386 | INFO | 
+СЂСџвЂќРЊ Zapret Tools...
+2026-07-07 17:17:00,753 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:00,754 | INFO | 
+СЂСџвЂќРЊ DPI Bypass...
+2026-07-07 17:17:04,141 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:04,142 | INFO | 
+СЂСџвЂќРЊ RKN Block...
+2026-07-07 17:17:07,528 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:07,529 | INFO | 
+СЂСџвЂќРЊ AntiZapret...
+2026-07-07 17:17:10,883 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:10,883 | INFO | 
+СЂСџвЂќРЊ TSPU...
+2026-07-07 17:17:14,279 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:14,280 | INFO | 
+СЂСџвЂќРЊ RU VPN Configs...
+2026-07-07 17:17:17,633 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:17,634 | INFO | 
+СЂСџвЂќРЊ Amnezia...
+2026-07-07 17:17:21,077 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:21,078 | INFO | 
+СЂСџвЂќРЊ Russia VPN Tools...
+2026-07-07 17:17:24,461 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:24,461 | INFO | 
+СЂСџвЂќРЊ VLESS Reality...
+2026-07-07 17:17:27,858 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:27,858 | INFO | 
+СЂСџвЂќРЊ Hysteria2...
+2026-07-07 17:17:31,230 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:31,231 | INFO | 
+СЂСџвЂќРЊ Marzban...
+2026-07-07 17:17:34,639 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:34,640 | INFO | 
+СЂСџвЂќРЊ XRay Config...
+2026-07-07 17:17:38,003 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:38,003 | INFO | 
+СЂСџвЂќРЊ Geosite RU...
+2026-07-07 17:17:41,395 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:41,396 | INFO | 
+СЂСџвЂќРЊ Domain List RU...
+2026-07-07 17:17:44,757 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:44,758 | INFO | 
+СЂСџвЂќРЊ Sing-Box RU...
+2026-07-07 17:17:48,145 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:48,146 | INFO | 
+СЂСџвЂќРЊ Censorship...
+2026-07-07 17:17:51,503 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:51,504 | INFO | 
+СЂСџвЂќРЊ Reality Extra...
+2026-07-07 17:17:54,924 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:54,925 | INFO | 
+СЂСџвЂќРЊ Hysteria2 Extra...
+2026-07-07 17:17:58,301 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:17:58,302 | INFO | 
+СЂСџвЂќРЊ Proxy Configs...
+2026-07-07 17:18:01,708 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:18:01,709 | INFO | 
+СЂСџвЂќРЊ Clash Rules...
+2026-07-07 17:18:05,086 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:18:05,087 | INFO | 
+СЂСџвЂќРЊ Shadowsocks...
+2026-07-07 17:18:08,480 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:18:08,480 | INFO | 
+СЂСџвЂќРЊ WireGuard RU...
+2026-07-07 17:18:11,922 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:18:11,923 | INFO | 
+СЂСџвЂќРЊ Outline...
+2026-07-07 17:18:15,286 | INFO | СЂСџвЂњР‰ GitHub API: 4698/5000 calls remaining
+2026-07-07 17:18:15,287 | INFO | 
+СЂСџвЂќРЊ Subconverter...
+2026-07-07 17:18:18,521 | INFO | СЂСџвЂ™С• State saved (posted=1295, commits=131, releases=480, dynamic_tracked=256)
+2026-07-07 17:18:18,522 | INFO | 
+============================================================
+2026-07-07 17:18:18,522 | INFO | СЂСџРЏРѓ Completed! Published: 3 posts
+2026-07-07 17:18:18,522 | INFO | ============================================================
