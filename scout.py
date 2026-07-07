@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 import os
 import json
 import asyncio
@@ -35,10 +34,8 @@ TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TARGET_CHANNEL_ID = os.getenv("CHANNEL_ID")
 CONFIG_CHANNEL_ID = os.getenv("CONFIG_CHANNEL_ID")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-
 STATE_FILE = "scout_history.json"
 CONFIG_SOURCES_FILE = "config_sources.json"
-
 MAX_AGE_DAYS = 3
 MAX_CONFIG_AGE_DAYS = 60
 MAX_POSTS_PER_RUN = 150
@@ -46,7 +43,6 @@ GROQ_DELAY = 2
 MESSAGE_DELAY = 3
 MIN_STARS = 0
 MIN_API_CALLS_REMAINING = 50
-
 API_HEADERS = {
     "Authorization": f"Bearer {GITHUB_TOKEN}",
     "Accept": "application/vnd.github.v3+json"
@@ -62,7 +58,6 @@ TRACKED_PROJECTS = [
     {"owner": "ValdikSS", "repo": "GoodbyeDPI", "name": "🛠 GoodbyeDPI", "priority": "high"},
     {"owner": "hufrea", "repo": "byedpi", "name": "🛠 ByeDPI", "priority": "high"},
     {"owner": "xvzc", "repo": "SpoofDPI", "name": "🛠 SpoofDPI", "priority": "high"},
-
     {"owner": "amnezia-vpn", "repo": "amnezia-client", "name": "🛡 Amnezia Client", "priority": "high"},
     {"owner": "amnezia-vpn", "repo": "amneziawg-linux-kernel-module", "name": "🛡 AmneziaWG Kernel", "priority": "medium"},
     {"owner": "XTLS", "repo": "Xray-core", "name": "⚡ Xray-core", "priority": "high"},
@@ -70,23 +65,19 @@ TRACKED_PROJECTS = [
     {"owner": "apernet", "repo": "hysteria", "name": "🚀 Hysteria", "priority": "high"},
     {"owner": "Jigsaw-Code", "repo": "outline-server", "name": "📡 Outline Server", "priority": "medium"},
     {"owner": "Jigsaw-Code", "repo": "outline-client", "name": "📡 Outline Client", "priority": "medium"},
-
     {"owner": "Gozargah", "repo": "Marzban", "name": "🎛 Marzban", "priority": "high"},
     {"owner": "MHSanaei", "repo": "3x-ui", "name": "🎛 3X-UI", "priority": "high"},
     {"owner": "hiddify", "repo": "hiddify-next", "name": "🎛 Hiddify Next", "priority": "high"},
     {"owner": "hiddify", "repo": "Hiddify-Manager", "name": "🎛 Hiddify Manager", "priority": "medium"},
-
     {"owner": "MatsuriDayo", "repo": "nekoray", "name": "🐱 Nekoray", "priority": "high"},
     {"owner": "2dust", "repo": "v2rayN", "name": "💻 V2RayN", "priority": "high"},
     {"owner": "2dust", "repo": "v2rayNG", "name": "📱 V2RayNG", "priority": "high"},
     {"owner": "metacubex", "repo": "ClashMeta", "name": "⚔️ Clash Meta", "priority": "medium"},
     {"owner": "metacubex", "repo": "mihomo", "name": "⚔️ Mihomo", "priority": "medium"},
-
     {"owner": "AntiZapret", "repo": "antizapret", "name": "🛡 AntiZapret", "priority": "high"},
     {"owner": "AntiZapret", "repo": "antizapret-pac-generator-light", "name": "🛡 AntiZapret PAC", "priority": "medium"},
     {"owner": "zapret-info", "repo": "z-i", "name": "📋 Zapret-Info", "priority": "medium"},
     {"owner": "C24Be", "repo": "AS_REG", "name": "📋 AS Registry RU", "priority": "medium"},
-
     {"owner": "roskomsvoboda", "repo": "censortracker", "name": "📢 CensorTracker", "priority": "high"},
     {"owner": "roskomsvoboda", "repo": "moscow_covid_queues", "name": "📢 RKS Tools", "priority": "low"},
 ]
@@ -121,7 +112,6 @@ FRESH_SEARCHES = [
     {"name": "Subconverter", "title": "🔧 Subconverter", "query": "subconverter OR subscription-converter", "priority": 5},
     {"name": "Censorship Tracker", "title": "📢 CensorTracker", "query": "censortracker OR rkn-block", "priority": 8},
 ]
-
 FRESH_SEARCHES.sort(key=lambda x: x.get('priority', 5), reverse=True)
 
 CONFIG_SEARCH_QUERIES = [
@@ -147,7 +137,6 @@ CONFIG_URL_PATTERNS = [
 ]
 
 # ===================== НОВЫЕ ФУНКЦИИ ДЛЯ ДЕДУПЛИКАЦИИ =====================
-
 def canonicalize_url(url: str) -> str:
     if not url:
         return ""
@@ -255,6 +244,7 @@ def score_candidate(candidate: dict, state: dict) -> dict:
     score = 0
     breakdown = {}
     item_type = candidate.get('type', 'repo')
+    
     if item_type == 'repo':
         full_name = candidate.get('full_name', '')
         if '/' not in full_name:
@@ -264,42 +254,50 @@ def score_candidate(candidate: dict, state: dict) -> dict:
         stars = candidate.get('stargazers_count', 0)
         pushed_at = candidate.get('pushed_at', '')
         family = classify_repo_family(repo, description)
-        # Плюсы
+        
         if owner and owner not in state.get('seen_repo_owners', {}):
             score += 5
             breakdown['new_owner'] = '+5'
-        # Минусы
+            
         if owner in state.get('owner_last_seen', {}):
             last_seen = state['owner_last_seen'][owner]
             hours_ago = (datetime.now(timezone.utc) - datetime.fromisoformat(last_seen)).total_seconds() / 3600
             if hours_ago < 48:
                 score -= 3
                 breakdown['recent_owner'] = '-3'
+                
         if is_family_overheated(family, state, window_hours=48, max_hits=3):
             score -= 5
             breakdown['overheated_family'] = '-5'
+            
         if stars == 0 and not description:
             score -= 3
             breakdown['empty_repo'] = '-3'
+            
         if candidate.get('fork', False) and candidate.get('forks_count', 0) == 0 and stars == 0:
             score -= 4
             breakdown['dead_fork'] = '-4'
+            
         name_low = repo.lower()
         if any(word in name_low for word in ['wrapper', 'launcher', 'repack', 'clone', 'mirror']):
             score -= 3
             breakdown['wrapper_mirror'] = '-3'
+            
         if 'vpn' in name_low or 'proxy' in name_low:
             if not any(p in description.lower() for p in ['vless', 'reality', 'hysteria', 'xray', 'sing-box']):
                 score -= 2
                 breakdown['generic_vpn'] = '-2'
+                
         if str(candidate.get('id', '')) in state.get('posted', []):
             score = -100
             breakdown['already_posted'] = '-100'
+            
         if owner in state.get('recent_publication_owners', {}):
             last_pub = state['recent_publication_owners'][owner]
             if (datetime.now(timezone.utc) - datetime.fromisoformat(last_pub)).total_seconds() < 86400:
                 score -= 2
                 breakdown['owner_published_recently'] = '-2'
+                
         if pushed_at:
             hours = get_age_hours(pushed_at)
             if hours < 6:
@@ -308,7 +306,7 @@ def score_candidate(candidate: dict, state: dict) -> dict:
             elif hours < 24:
                 score += 1
                 breakdown['fresh'] = '+1'
-    else:  # config_url
+    else:
         url = candidate.get('url', '')
         domain = extract_domain(url)
         if domain and domain not in state.get('seen_source_domains', {}):
@@ -326,6 +324,12 @@ def score_candidate(candidate: dict, state: dict) -> dict:
         if any(agg in url.lower() for agg in ['subcrawler', 'nomorewalls', 'v2rayaggregator']):
             score -= 2
             breakdown['common_aggregator'] = '-2'
+            
+    content_hash = candidate.get('content_hash')
+    if content_hash and content_hash in state.get('seen_content_hashes', {}):
+        score = -100
+        breakdown['duplicate_content'] = '-100'
+        
     return {
         'score': score,
         'breakdown': breakdown,
@@ -333,7 +337,6 @@ def score_candidate(candidate: dict, state: dict) -> dict:
     }
 
 # ===================== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ =====================
-
 def validate_env():
     required = {
         "GROQ_API_KEY": GROQ_API_KEY,
@@ -362,8 +365,8 @@ def check_rate_limit():
             logger.info(f"📊 GitHub API: {remaining}/{limit} calls remaining")
             if remaining < MIN_API_CALLS_REMAINING:
                 logger.warning(f"⚠️ API limit low ({remaining} left)")
-                if remaining < 10:
-                    return False
+            if remaining < 10:
+                return False
             return True
     except Exception as e:
         logger.warning(f"⚠️ Could not check rate limit: {e}")
@@ -624,7 +627,6 @@ def search_fresh_repos(query, per_page=40, max_age_days=MAX_AGE_DAYS, sort_by='u
     return results
 
 # ===================== РАБОТА СО STATE =====================
-
 def migrate_state(state: dict) -> dict:
     new_fields = {
         'seen_url_signatures': {},
@@ -652,20 +654,20 @@ def load_state():
         try:
             with open(STATE_FILE, "r", encoding='utf-8') as f:
                 data = json.load(f)
-                data['posted'] = data.get('posted', [])[-3000:]
-                if 'dynamic_tracked' not in data:
-                    data['dynamic_tracked'] = {}
-                if 'releases_meta' not in data:
-                    data['releases_meta'] = {}
-                if 'config_urls' not in data:
-                    data['config_urls'] = {}
-                data = migrate_state(data)
-                logger.info(
-                    f"📂 Loaded: {len(data.get('posted', []))} posted, "
-                    f"{len(data.get('releases', {}))} releases, "
-                    f"{len(data.get('dynamic_tracked', {}))} dynamic tracked"
-                )
-                return data
+            data['posted'] = data.get('posted', [])[-3000:]
+            if 'dynamic_tracked' not in data:
+                data['dynamic_tracked'] = {}
+            if 'releases_meta' not in data:
+                data['releases_meta'] = {}
+            if 'config_urls' not in data:
+                data['config_urls'] = {}
+            data = migrate_state(data)
+            logger.info(
+                f"📂 Loaded: {len(data.get('posted', []))} posted, "
+                f"{len(data.get('releases', {}))} releases, "
+                f"{len(data.get('dynamic_tracked', {}))} dynamic tracked"
+            )
+            return data
         except Exception as e:
             logger.warning(f"Could not load state: {e}")
     default = {
@@ -717,7 +719,6 @@ def save_config_sources(sources):
         logger.error(f"❌ Could not save config_sources: {e}")
 
 # ===================== AI И ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ =====================
-
 async def analyze_relevance(repos):
     if not repos:
         return {}
@@ -726,19 +727,15 @@ async def analyze_relevance(repos):
         for i, r in enumerate(repos)
     ])
     prompt = f"""Оцени репозитории для канала про обход блокировок в РФ.
-
 Категории важности:
 - HIGH: новый инструмент/протокол/метод обхода (Zapret2, Hysteria2, Reality, AmneziaWG)
 - MEDIUM: обновлённые списки (whitelist, geoip, домены), генераторы конфигов, панели управления
 - LOW: учебные проекты, форки без изменений, не связанные с VPN/цензурой
-
 ❌ Нерелевантные темы (сразу LOW или SKIP):
 - Обучение языку, бизнес/рынок, игры, утилиты без тематики обхода блокировок
 - Любые проекты с "russia" БЕЗ VPN/DPI/цензуры-контекста
-
 Репозитории:
 {text}
-
 Ответь строго в формате:
 1: HIGH/MEDIUM/LOW/SKIP
 2: HIGH/MEDIUM/LOW/SKIP
@@ -782,10 +779,8 @@ async def generate_desc(name, desc):
         return desc
     prompt = f"""Репозиторий: {name}
 Описание: {desc or 'нет'}
-
 Напиши краткое описание (1 предложение, до 80 символов) на русском.
 Контекст: VPN, обход блокировок.
-
 Описание:"""
     try:
         resp = groq_client.chat.completions.create(
@@ -852,7 +847,6 @@ async def send_message_safe(chat_id, text):
     return False
 
 # ===================== ПОСТРОЕНИЕ СООБЩЕНИЙ =====================
-
 def build_release_post(project_name, release, owner, repo):
     tag = release['tag']
     body = release['body']
@@ -862,7 +856,7 @@ def build_release_post(project_name, release, owner, repo):
         body = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', body)
         body = body[:200] + ('...' if len(body) > 200 else '')
     text = (
-        f"🚀 <b>Новый релиз: {html.escape(project_name)}</b>\n\n"
+        f"🚀 <b>Новый релиз: {html.escape(project_name)}</b>\n"
         f"📦 <code>{owner}/{repo}</code>\n"
         f"🏷 Версия: <b>{html.escape(tag)}</b>\n"
         f"⏰ {get_freshness(release['date'])}\n"
@@ -874,24 +868,23 @@ def build_release_post(project_name, release, owner, repo):
 
 def build_commit_post(project_name, commit, owner, repo):
     return (
-        f"🔄 <b>{html.escape(project_name)}</b>\n\n"
+        f"🔄 <b>{html.escape(project_name)}</b>\n"
         f"📦 <code>{owner}/{repo}</code>\n"
         f"⏰ {get_freshness(commit['date'])}\n"
-        f"📝 <code>{html.escape(commit['msg'])}</code>\n\n"
+        f"📝 <code>{html.escape(commit['msg'])}</code>\n"
         f"🔗 <a href='{commit['url']}'>Посмотреть коммит</a>"
     )
 
 def build_repo_post(title, repo_full_name, stars, freshness, description, url):
     return (
-        f"<b>{title}</b>\n\n"
+        f"<b>{title}</b>\n"
         f"📦 <code>{html.escape(repo_full_name)}</code>\n"
         f"⭐️ {stars} | ⏰ {freshness}\n"
-        f"💡 {html.escape(description)}\n\n"
+        f"💡 {html.escape(description)}\n"
         f"🔗 <a href='{url}'>Открыть на GitHub</a>"
     )
 
 # ===================== КОНФИГИ И ПОДПИСКИ =====================
-
 def extract_config_urls(text: str):
     urls = set()
     if not text:
@@ -932,8 +925,8 @@ async def is_repo_recently_updated(owner, repo, max_age_days=MAX_CONFIG_AGE_DAYS
                     pushed_at = data.get('pushed_at')
                     if pushed_at:
                         return is_fresh(pushed_at, max_age_days)
-                else:
-                    logger.debug(f"   Could not get repo info for {owner}/{repo}: status {resp.status}")
+                    else:
+                        logger.debug(f"   Could not get repo info for {owner}/{repo}: status {resp.status}")
     except Exception as e:
         logger.debug(f"Error checking repo freshness: {e}")
     return False
@@ -942,12 +935,10 @@ async def discover_new_config_urls(state):
     new_global = []
     config_urls_state = state.get('config_urls', {})
     config_extensions = ('.txt', '.json', '.yaml', '.yml', '.conf', '.config', '.sub', '.list')
-
     for agg in CONFIG_AGGREGATORS:
         if not await is_repo_recently_updated(agg['owner'], agg['repo'], MAX_CONFIG_AGE_DAYS):
             logger.info(f"⏭ Skipping old aggregator: {agg['name']} (not updated in {MAX_CONFIG_AGE_DAYS} days)")
             continue
-
         key = f"{agg['owner']}/{agg['repo']}"
         old_urls = set(config_urls_state.get(key, []))
         files = await get_repo_files(agg['owner'], agg['repo'])
@@ -960,7 +951,7 @@ async def discover_new_config_urls(state):
                 content = await fetch_repo_text_async(agg['owner'], agg['repo'], file_path=fname)
                 if content:
                     all_text += "\n" + content
-                    logger.debug(f"   📄 Read {fname} from {agg['name']}")
+                logger.debug(f"   📄 Read {fname} from {agg['name']}")
         raw_urls = set(extract_config_urls(all_text))
         canonical_to_raw = {}
         for url in raw_urls:
@@ -970,11 +961,12 @@ async def discover_new_config_urls(state):
         added = []
         for canon, raw in canonical_to_raw.items():
             content = await fetch_content_from_url(raw)
+            content_hash = None
             if content:
-                h = compute_content_hash(content)
-                if h in state.get('seen_content_hashes', {}):
-                    logger.debug(f"   ⏭ Duplicate content for {raw}")
-                    continue
+                content_hash = compute_content_hash(content)
+            if content_hash in state.get('seen_content_hashes', {}):
+                logger.debug(f"   ⏭ Duplicate content for {raw}")
+                continue
             sig = url_signature(raw)
             if sig in state.get('seen_url_signatures', {}):
                 logger.debug(f"   ⏭ Duplicate URL signature for {raw}")
@@ -982,14 +974,15 @@ async def discover_new_config_urls(state):
             if raw not in old_urls:
                 added.append(raw)
                 state.setdefault('seen_url_signatures', {})[sig] = True
-                if content:
-                    state.setdefault('seen_content_hashes', {})[h] = True
-
+                if content_hash:
+                    state.setdefault('seen_content_hashes', {})[content_hash] = True
         if added:
             logger.info(f"🆕 Новые конфиги в {agg['name']}: {added}")
             for url in added:
                 if filter_url_for_russia_and_vless(url):
-                    candidate = {'type': 'config_url', 'url': url}
+                    content = await fetch_content_from_url(url)
+                    content_hash = compute_content_hash(content) if content else None
+                    candidate = {'type': 'config_url', 'url': url, 'content_hash': content_hash}
                     score_result = score_candidate(candidate, state)
                     if score_result['should_publish']:
                         new_global.append(url)
@@ -998,11 +991,11 @@ async def discover_new_config_urls(state):
                         state.setdefault('seen_source_domains', {})[domain] = True
                     else:
                         logger.debug(f"   ⏭ Skipped {url} due to score {score_result['score']}")
-            config_urls_state[key] = list(raw_urls)
+        config_urls_state[key] = list(raw_urls)
     if new_global:
         existing = set(load_config_sources())
         save_config_sources(list(existing | set(new_global)))
-    state['config_urls'] = config_urls_state
+        state['config_urls'] = config_urls_state
     return new_global
 
 async def search_configs_github(state):
@@ -1039,38 +1032,40 @@ async def search_configs_github(state):
             added = []
             for canon, raw in canonical_to_raw.items():
                 content = await fetch_content_from_url(raw)
+                content_hash = None
                 if content:
-                    h = compute_content_hash(content)
-                    if h in state.get('seen_content_hashes', {}):
-                        continue
+                    content_hash = compute_content_hash(content)
+                if content_hash in state.get('seen_content_hashes', {}):
+                    continue
                 sig = url_signature(raw)
                 if sig in state.get('seen_url_signatures', {}):
                     continue
                 if raw not in old_urls:
                     added.append(raw)
                     state.setdefault('seen_url_signatures', {})[sig] = True
-                    if content:
-                        state.setdefault('seen_content_hashes', {})[h] = True
+                    if content_hash:
+                        state.setdefault('seen_content_hashes', {})[content_hash] = True
             if added:
                 logger.info(f"🆕 Новые конфиги из {key}: {added}")
                 for url in added:
                     if filter_url_for_russia_and_vless(url):
-                        candidate = {'type': 'config_url', 'url': url}
+                        content = await fetch_content_from_url(url)
+                        content_hash = compute_content_hash(content) if content else None
+                        candidate = {'type': 'config_url', 'url': url, 'content_hash': content_hash}
                         score_result = score_candidate(candidate, state)
                         if score_result['should_publish']:
                             new_urls.append(url)
                             domain = extract_domain(url)
                             state['domain_last_seen'][domain] = datetime.now(timezone.utc).isoformat()
                             state.setdefault('seen_source_domains', {})[domain] = True
-                config_urls_state[key] = list(raw_urls)
+            config_urls_state[key] = list(raw_urls)
     if new_urls:
         existing = set(load_config_sources())
         save_config_sources(list(existing | set(new_urls)))
-    state['config_urls'] = config_urls_state
+        state['config_urls'] = config_urls_state
     return new_urls
 
 # ===================== ФИЛЬТРАЦИЯ КОММИТОВ/РЕЛИЗОВ =====================
-
 def is_commit_worth_posting(commit_msg: str) -> bool:
     msg_lower = commit_msg.lower()
     trivial = ['typo', 'readme', 'update readme', 'fix readme', 'docs', 'chore', 'bump version', 'merge', 'ci']
@@ -1098,18 +1093,15 @@ def is_release_worth_posting(release_tag: str, release_body: str, last_major_min
     return any(kw in body_lower for kw in keywords)
 
 # ===================== ОСНОВНАЯ ФУНКЦИЯ MAIN =====================
-
 async def main():
     logger.info("=" * 60)
     logger.info("🕵️  SCOUT RADAR v9.2 (fixed rate limits + advanced dedup)")
     logger.info("=" * 60)
-
     if not validate_env():
         return
     if not check_rate_limit():
         logger.error("❌ Insufficient API calls. Exiting.")
         return
-
     state = load_state()
     posted = set(state.get("posted", []))
     commits = state.get("commits", {})
@@ -1118,7 +1110,7 @@ async def main():
     dynamic_tracked = state.get("dynamic_tracked", {})
     releases_meta = state.get("releases_meta", {})
     count = 0
-
+    
     all_tracked_projects = list(TRACKED_PROJECTS)
     for full_name, meta in dynamic_tracked.items():
         try:
@@ -1131,9 +1123,8 @@ async def main():
             "name": f"🆕 {full_name}",
             "priority": meta.get("priority", "medium"),
         })
-
     logger.info(f"📡 Tracked projects: static={len(TRACKED_PROJECTS)}, dynamic={len(dynamic_tracked)}")
-
+    
     # ---- РЕЛИЗЫ ----
     logger.info("\n🚀 Checking releases...")
     for project in all_tracked_projects:
@@ -1171,7 +1162,7 @@ async def main():
                     await asyncio.sleep(MESSAGE_DELAY)
             else:
                 logger.debug(f"   ⏭ Skipped trivial release: {rel['tag']}")
-
+                
     # ---- КОММИТЫ ----
     logger.info("\n🔄 Checking commits...")
     for project in all_tracked_projects:
@@ -1201,12 +1192,12 @@ async def main():
             commits[key] = commit['sha']
             count += 1
             await asyncio.sleep(MESSAGE_DELAY)
-
+            
     # ---- КОНФИГИ ИЗ АГРЕГАТОРОВ ----
     logger.info("\n📡 Checking config aggregators for new URLs (age ≤ 60 days)...")
     new_urls_agg = await discover_new_config_urls(state)
     if new_urls_agg:
-        message_template = "📡 <b>Новый источник подписки (агрегатор)</b>\n\n<code>{}</code>"
+        message_template = "📡 <b>Новый источник подписки (агрегатор)</b>\n<code>{}</code>"
         for url in new_urls_agg:
             if count >= MAX_POSTS_PER_RUN:
                 break
@@ -1216,13 +1207,13 @@ async def main():
                 await send_message_safe(CONFIG_CHANNEL_ID, text)
             if success_main:
                 count += 1
-            await asyncio.sleep(MESSAGE_DELAY)
-
+                await asyncio.sleep(MESSAGE_DELAY)
+                
     # ---- КОНФИГИ ИЗ ПОИСКА ----
     logger.info("\n🔍 Searching GitHub for config repositories (updated within 60 days)...")
     new_urls_search = await search_configs_github(state)
     if new_urls_search:
-        message_template = "📡 <b>Новый источник подписки (найден через поиск)</b>\n\n<code>{}</code>"
+        message_template = "📡 <b>Новый источник подписки (найден через поиск)</b>\n<code>{}</code>"
         for url in new_urls_search:
             if count >= MAX_POSTS_PER_RUN:
                 break
@@ -1232,8 +1223,8 @@ async def main():
                 await send_message_safe(CONFIG_CHANNEL_ID, text)
             if success_main:
                 count += 1
-            await asyncio.sleep(MESSAGE_DELAY)
-
+                await asyncio.sleep(MESSAGE_DELAY)
+                
     # ---- ПОИСК НОВЫХ РЕПОЗИТОРИЕВ ----
     logger.info("\n🔍 Searching for new repositories (latest 3 days)...")
     for s in FRESH_SEARCHES:
@@ -1282,12 +1273,13 @@ async def main():
                 if not is_relevant:
                     logger.info(f"   ⏭ Skipped (irrelevant README): {item['full_name']}")
                     continue
-
+                    
                 # ---- НОВАЯ ЛОГИКА СКОРИНГА И ДЕДУПА ----
                 family = classify_repo_family(repo, item.get('description', ''))
                 if is_family_overheated(family, state, window_hours=48, max_hits=3):
                     logger.info(f"   ⏭ Skipped due to overheated family {family}: {item['full_name']}")
                     continue
+                    
                 cand = {
                     'type': 'repo',
                     'full_name': item['full_name'],
@@ -1303,7 +1295,7 @@ async def main():
                     logger.info(f"   ⏭ Skipped by scoring ({score_result['score']}): {item['full_name']} - {score_result['breakdown']}")
                     state.setdefault('rejected_repos', []).append(item['full_name'])
                     continue
-
+                    
                 # ---- ПУБЛИКАЦИЯ ----
                 final_desc = await generate_desc(item['full_name'], item['description'])
                 cat_emoji = "🔥" if dec['category'] == 'HIGH' else "📌"
@@ -1338,8 +1330,8 @@ async def main():
                     count += 1
                     await asyncio.sleep(MESSAGE_DELAY)
             await asyncio.sleep(GROQ_DELAY)
-
-    # ---- СОХРАНЕНИЕ (ИСПРАВЛЕНО) ----
+            
+    # ---- СОХРАНЕНИЕ ----
     state['posted'] = list(posted)
     state['commits'] = commits
     state['releases'] = releases
@@ -1347,11 +1339,9 @@ async def main():
     state['dynamic_tracked'] = dynamic_tracked
     state['releases_meta'] = releases_meta
     save_state(state)
-
     logger.info(f"\n{'=' * 60}")
     logger.info(f"🏁 Completed! Published: {count} posts")
     logger.info(f"{'=' * 60}")
-
     await bot.session.close()
 
 if __name__ == "__main__":
