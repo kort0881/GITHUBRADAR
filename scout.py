@@ -828,9 +828,6 @@ async def check_repo_relevance(owner: str, repo: str, repo_cache: dict) -> bool:
     return True
 
 async def send_message_safe(chat_id, text):
-    if has_non_latin(text):
-        logger.warning("⚠️ Blocked message with hieroglyphs!")
-        return False
     for attempt in range(3):
         try:
             await bot.send_message(chat_id, text, disable_web_page_preview=True)
