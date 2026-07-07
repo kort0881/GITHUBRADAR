@@ -232,7 +232,14 @@ def is_family_overheated(family: str, state: dict, window_hours=48, max_hits=3) 
     hits = state['family_hits'].get(family, [])
     now = datetime.now(timezone.utc)
     cutoff = now - timedelta(hours=window_hours)
-    recent = [ts for ts in hits if datetime.fromisoformat(ts) > cutoff]
+    recent = []
+    for ts in hits:
+        try:
+            dt = datetime.fromisoformat(ts)
+            if dt > cutoff:
+                recent.append(ts)
+        except ValueError:
+            continue
     return len(recent) >= max_hits
 
 def update_family_hits(family: str, state: dict):
@@ -319,10 +326,6 @@ def score_candidate(candidate: dict, state: dict) -> dict:
         if any(agg in url.lower() for agg in ['subcrawler', 'nomorewalls', 'v2rayaggregator']):
             score -= 2
             breakdown['common_aggregator'] = '-2'
-        content_hash = candidate.get('content_hash')
-        if content_hash and content_hash in state.get('seen_content_hashes', {}):
-            score = -100
-            breakdown['duplicate_content'] = '-100'
     return {
         'score': score,
         'breakdown': breakdown,
@@ -1336,30 +1339,14 @@ async def main():
                     await asyncio.sleep(MESSAGE_DELAY)
             await asyncio.sleep(GROQ_DELAY)
 
-    # ---- СОХРАНЕНИЕ ----
-    save_state({
-        "posted": list(posted),
-        "commits": commits,
-        "releases": releases,
-        "repo_cache": repo_cache,
-        "dynamic_tracked": dynamic_tracked,
-        "releases_meta": releases_meta,
-        "config_urls": state.get('config_urls', {}),
-        "seen_url_signatures": state.get('seen_url_signatures', {}),
-        "seen_content_hashes": state.get('seen_content_hashes', {}),
-        "seen_repo_families": state.get('seen_repo_families', {}),
-        "family_hits": state.get('family_hits', {}),
-        "rejected_urls": state.get('rejected_urls', []),
-        "rejected_repos": state.get('rejected_repos', []),
-        "recent_publication_families": state.get('recent_publication_families', {}),
-        "owner_last_seen": state.get('owner_last_seen', {}),
-        "domain_last_seen": state.get('domain_last_seen', {}),
-        "family_last_seen": state.get('family_last_seen', {}),
-        "query_rotation_state": state.get('query_rotation_state', {}),
-        "recent_publication_owners": state.get('recent_publication_owners', {}),
-        "seen_repo_owners": state.get('seen_repo_owners', {}),
-        "seen_source_domains": state.get('seen_source_domains', {}),
-    })
+    # ---- СОХРАНЕНИЕ (ИСПРАВЛЕНО) ----
+    state['posted'] = list(posted)
+    state['commits'] = commits
+    state['releases'] = releases
+    state['repo_cache'] = repo_cache
+    state['dynamic_tracked'] = dynamic_tracked
+    state['releases_meta'] = releases_meta
+    save_state(state)
 
     logger.info(f"\n{'=' * 60}")
     logger.info(f"🏁 Completed! Published: {count} posts")
