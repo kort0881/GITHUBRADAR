@@ -38055,3 +38055,97 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-07-07 17:18:18,522 | INFO | СЂСџРЏРѓ Completed! Published: 3 posts
 2026-07-07 17:18:18,522 | INFO | ============================================================
+2026-07-07 18:56:03,465 | INFO | ============================================================
+2026-07-07 18:56:03,465 | INFO | 🕵️  SCOUT RADAR v9.2 (fixed rate limits + advanced dedup)
+2026-07-07 18:56:03,465 | INFO | ============================================================
+2026-07-07 18:56:03,466 | INFO | ✅ Second channel enabled: -1002926041814
+2026-07-07 18:56:03,466 | INFO | ✅ All environment variables validated
+2026-07-07 18:56:03,665 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-07-07 18:56:03,667 | INFO | 📂 Loaded: 1295 posted, 480 releases, 256 dynamic tracked
+2026-07-07 18:56:03,667 | INFO | 📡 Tracked projects: static=27, dynamic=256
+2026-07-07 18:56:03,667 | INFO | 
+🚀 Checking releases...
+2026-07-07 18:56:07,869 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-alpha.40
+2026-07-07 18:56:16,512 | INFO |    🆕 Release: 📱 V2RayNG 2.2.6
+2026-07-07 18:56:16,512 | WARNING | ⚠️ Blocked message with hieroglyphs!
+2026-07-07 18:57:41,314 | INFO | 
+🔄 Checking commits...
+2026-07-07 18:59:31,267 | INFO | 
+📡 Checking config aggregators for new URLs (age ≤ 60 days)...
+2026-07-07 18:59:43,765 | INFO | ⏭ Skipping old aggregator: 📡 V2ray-Configs (not updated in 60 days)
+2026-07-07 18:59:53,180 | INFO | 
+🔍 Searching GitHub for config repositories (updated within 60 days)...
+2026-07-07 18:59:53,181 | INFO | 🔍 GitHub search for configs: vless reality subscription
+2026-07-07 18:59:56,482 | INFO | 🔍 GitHub search for configs: vless reality v2ray
+2026-07-07 18:59:59,793 | INFO | 🔍 GitHub search for configs: hysteria2 reality config
+2026-07-07 19:00:03,129 | INFO | 🔍 GitHub search for configs: clash reality subscription
+2026-07-07 19:00:06,490 | INFO | 🔍 GitHub search for configs: xray reality vless config
+2026-07-07 19:00:09,803 | INFO | 🔍 GitHub search for configs: sing-box reality config
+2026-07-07 19:00:13,109 | INFO | 🔍 GitHub search for configs: subscription link vless
+2026-07-07 19:00:16,424 | INFO | 🔍 GitHub search for configs: v2ray subscription free
+2026-07-07 19:00:19,743 | INFO | 🔍 GitHub search for configs: proxy config russia vless
+2026-07-07 19:00:23,086 | INFO | 🔍 GitHub search for configs: amneziawg config
+2026-07-07 19:00:26,622 | INFO | 
+🔍 Searching for new repositories (latest 3 days)...
+2026-07-07 19:00:26,818 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:00:26,819 | INFO | 
+🔍 Zapret Tools...
+2026-07-07 19:00:30,357 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:00:30,358 | INFO | 
+🔍 DPI Bypass...
+2026-07-07 19:00:33,928 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:00:33,929 | INFO | 
+🔍 AntiZapret...
+2026-07-07 19:00:37,423 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:00:37,424 | INFO | 
+🔍 AmneziaWG...
+2026-07-07 19:00:41,016 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:00:41,017 | INFO | 
+🔍 Xray Reality...
+2026-07-07 19:00:44,560 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:00:44,561 | INFO | 
+🔍 Sing-Box...
+2026-07-07 19:00:48,090 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:00:48,091 | INFO | 
+🔍 Hysteria2...
+2026-07-07 19:00:51,650 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:00:51,651 | INFO | 
+🔍 Marzban Panel...
+2026-07-07 19:00:55,239 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:00:55,240 | INFO | 
+🔍 3x-UI Panel...
+2026-07-07 19:00:58,782 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:00:58,783 | INFO | 
+🔍 Hiddify...
+2026-07-07 19:01:02,299 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:01:02,300 | INFO | 
+🔍 Censorship Tracker...
+2026-07-07 19:01:05,805 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:01:05,805 | INFO | 
+🔍 Geosite Russia...
+2026-07-07 19:01:09,409 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:01:09,410 | INFO | 
+🔍 Blocked Domains RU...
+2026-07-07 19:01:12,938 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:01:12,939 | INFO | 
+🔍 Clash Meta Russia...
+2026-07-07 19:01:16,427 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:01:16,428 | INFO | 
+🔍 Outline VPN...
+2026-07-07 19:01:19,913 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:01:19,914 | INFO | 
+🔍 WireGuard RU...
+2026-07-07 19:01:23,448 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:01:23,449 | INFO | 
+🔍 Shadowsocks RU...
+2026-07-07 19:01:26,959 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:01:26,960 | INFO | 
+🔍 Proxy Configs...
+2026-07-07 19:01:30,513 | INFO | 📊 GitHub API: 4698/5000 calls remaining
+2026-07-07 19:01:30,514 | INFO | 
+🔍 Subconverter...
+2026-07-07 19:01:33,825 | INFO | 💾 State saved (posted=1295, commits=131, releases=481, dynamic_tracked=256)
+2026-07-07 19:01:33,825 | INFO | 
+============================================================
+2026-07-07 19:01:33,825 | INFO | 🏁 Completed! Published: 1 posts
+2026-07-07 19:01:33,825 | INFO | ============================================================
