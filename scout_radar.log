@@ -38755,3 +38755,109 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-07-23 14:01:13,184 | INFO | 🏁 Completed! Published: 11 posts
 2026-07-23 14:01:13,184 | INFO | ============================================================
+2026-07-26 13:19:07,105 | INFO | ============================================================
+2026-07-26 13:19:07,105 | INFO | 🕵️  SCOUT RADAR v9.2 (fixed rate limits + advanced dedup)
+2026-07-26 13:19:07,105 | INFO | ============================================================
+2026-07-26 13:19:07,105 | INFO | ✅ Second channel enabled: -1002926041814
+2026-07-26 13:19:07,105 | INFO | ✅ All environment variables validated
+2026-07-26 13:19:07,371 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-07-26 13:19:07,375 | INFO | 📂 Loaded: 1295 posted, 523 releases, 256 dynamic tracked
+2026-07-26 13:19:07,375 | INFO | 📡 Tracked projects: static=27, dynamic=256
+2026-07-26 13:19:07,375 | INFO | 
+🚀 Checking releases...
+2026-07-26 13:19:10,253 | INFO |    🆕 Release: 🛡 Amnezia Client 5.0.0.5
+2026-07-26 13:19:13,845 | INFO |    🆕 Release: 🛡 Amnezia Client 5.0.0.2
+2026-07-26 13:19:19,012 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-beta.2
+2026-07-26 13:19:22,225 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-beta.1
+2026-07-26 13:19:30,388 | INFO |    🆕 Release: 💻 V2RayN 7.24.2
+2026-07-26 13:19:37,728 | INFO |    🆕 Release: 🆕 larrriiin/zapret-ui v26.7.5
+2026-07-26 13:19:42,050 | INFO |    🆕 Release: 🆕 Eljaja/BibaVPN v1.3.0
+2026-07-26 13:20:00,131 | INFO |    🆕 Release: 🆕 GrimbirdUsers/ru-routing-dat v2026.07.26
+2026-07-26 13:20:15,799 | INFO |    🆕 Release: 🆕 Con-Benksl/v-swift v0.4.1
+2026-07-26 13:20:19,339 | INFO |    🆕 Release: 🆕 Con-Benksl/v-swift v0.4.0
+2026-07-26 13:20:34,470 | INFO |    🆕 Release: 🆕 Flirexa/flirexa v2.2.54
+2026-07-26 13:20:37,707 | INFO |    🆕 Release: 🆕 Flirexa/flirexa v2.2.52
+2026-07-26 13:21:31,642 | INFO | 
+🔄 Checking commits...
+2026-07-26 13:21:34,422 | INFO |    🆕 Commit: 🛡 AmneziaWG Kernel
+2026-07-26 13:22:30,985 | INFO |    🆕 Commit: 🆕 Flirexa/flirexa
+2026-07-26 13:22:44,634 | INFO |    🆕 Commit: 🆕 YawStar/Proxy-Hunter
+2026-07-26 13:23:35,206 | INFO | 
+📡 Checking config aggregators for new URLs (age ≤ 60 days)...
+2026-07-26 13:23:49,632 | INFO | ⏭ Skipping old aggregator: 📡 V2ray-Configs (not updated in 60 days)
+2026-07-26 13:24:00,535 | INFO | 
+🔍 Searching GitHub for config repositories (updated within 60 days)...
+2026-07-26 13:24:00,535 | INFO | 🔍 GitHub search for configs: vless reality subscription
+2026-07-26 13:24:03,863 | INFO | 🔍 GitHub search for configs: vless reality v2ray
+2026-07-26 13:24:07,247 | INFO | 🔍 GitHub search for configs: hysteria2 reality config
+2026-07-26 13:24:10,594 | INFO | 🔍 GitHub search for configs: clash reality subscription
+2026-07-26 13:24:13,951 | INFO | 🔍 GitHub search for configs: xray reality vless config
+2026-07-26 13:24:17,329 | INFO | 🔍 GitHub search for configs: sing-box reality config
+2026-07-26 13:24:20,679 | INFO | 🔍 GitHub search for configs: subscription link vless
+2026-07-26 13:24:24,058 | INFO | 🔍 GitHub search for configs: v2ray subscription free
+2026-07-26 13:24:27,437 | INFO | 🔍 GitHub search for configs: proxy config russia vless
+2026-07-26 13:24:30,795 | INFO | 🔍 GitHub search for configs: amneziawg config
+2026-07-26 13:24:34,170 | INFO | 
+🔍 Searching for new repositories (latest 3 days)...
+2026-07-26 13:24:34,416 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:24:34,418 | INFO | 
+🔍 Zapret Tools...
+2026-07-26 13:24:38,090 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:24:38,091 | INFO | 
+🔍 DPI Bypass...
+2026-07-26 13:24:41,731 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:24:41,732 | INFO | 
+🔍 AntiZapret...
+2026-07-26 13:24:45,330 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:24:45,331 | INFO | 
+🔍 AmneziaWG...
+2026-07-26 13:24:48,880 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:24:48,881 | INFO | 
+🔍 Xray Reality...
+2026-07-26 13:24:52,496 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:24:52,497 | INFO | 
+🔍 Sing-Box...
+2026-07-26 13:24:56,114 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:24:56,115 | INFO | 
+🔍 Hysteria2...
+2026-07-26 13:24:59,738 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:24:59,739 | INFO | 
+🔍 Marzban Panel...
+2026-07-26 13:25:03,376 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:25:03,377 | INFO | 
+🔍 3x-UI Panel...
+2026-07-26 13:25:06,994 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:25:06,995 | INFO | 
+🔍 Hiddify...
+2026-07-26 13:25:10,657 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:25:10,658 | INFO | 
+🔍 Censorship Tracker...
+2026-07-26 13:25:14,305 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:25:14,306 | INFO | 
+🔍 Geosite Russia...
+2026-07-26 13:25:17,942 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:25:17,944 | INFO | 
+🔍 Blocked Domains RU...
+2026-07-26 13:25:21,569 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:25:21,571 | INFO | 
+🔍 Clash Meta Russia...
+2026-07-26 13:25:25,209 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:25:25,211 | INFO | 
+🔍 Outline VPN...
+2026-07-26 13:25:28,823 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:25:28,825 | INFO | 
+🔍 WireGuard RU...
+2026-07-26 13:25:32,482 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:25:32,483 | INFO | 
+🔍 Shadowsocks RU...
+2026-07-26 13:25:36,082 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:25:36,084 | INFO | 
+🔍 Proxy Configs...
+2026-07-26 13:25:39,677 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-07-26 13:25:39,679 | INFO | 
+🔍 Subconverter...
+2026-07-26 13:25:43,045 | INFO | 💾 State saved (posted=1295, commits=131, releases=535, dynamic_tracked=256)
+2026-07-26 13:25:43,046 | INFO | 
+============================================================
+2026-07-26 13:25:43,046 | INFO | 🏁 Completed! Published: 15 posts
+2026-07-26 13:25:43,046 | INFO | ============================================================
