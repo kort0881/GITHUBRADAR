@@ -38964,3 +38964,112 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-07-29 14:12:06,603 | INFO | 🏁 Completed! Published: 11 posts
 2026-07-29 14:12:06,603 | INFO | ============================================================
+2026-08-01 13:17:50,055 | INFO | ============================================================
+2026-08-01 13:17:50,055 | INFO | 🕵️  SCOUT RADAR v9.2 (fixed rate limits + advanced dedup)
+2026-08-01 13:17:50,055 | INFO | ============================================================
+2026-08-01 13:17:50,055 | INFO | ✅ Second channel enabled: -1002926041814
+2026-08-01 13:17:50,055 | INFO | ✅ All environment variables validated
+2026-08-01 13:17:50,306 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-01 13:17:50,308 | INFO | 📂 Loaded: 1295 posted, 543 releases, 256 dynamic tracked
+2026-08-01 13:17:50,308 | INFO | 📡 Tracked projects: static=27, dynamic=256
+2026-08-01 13:17:50,309 | INFO | 
+🚀 Checking releases...
+2026-08-01 13:17:51,217 | INFO |    🆕 Release: 🛠 Zapret 2 v1.0.4
+2026-08-01 13:17:58,277 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-beta.4
+2026-08-01 13:18:02,020 | INFO |    🆕 Release: 🚀 Hysteria app/v2.11.0
+2026-08-01 13:18:07,304 | INFO |    🆕 Release: 🎛 3X-UI v3.6.0
+2026-08-01 13:18:12,529 | INFO |    🆕 Release: 💻 V2RayN 7.24.4
+2026-08-01 13:18:16,204 | INFO |    🆕 Release: 📱 V2RayNG 2.3.1
+2026-08-01 13:18:33,605 | INFO |    🆕 Release: 🆕 AYastrebov/docker-amneziawg v3.0.20260730
+2026-08-01 13:18:42,348 | INFO |    🆕 Release: 🆕 throneproj/Throne 1.2.2
+2026-08-01 13:18:59,185 | INFO |    🆕 Release: 🆕 agentram/ovpn 1.8.0
+2026-08-01 13:19:11,757 | INFO |    🆕 Release: 🆕 Flirexa/flirexa v2.2.82
+2026-08-01 13:19:14,946 | INFO |    🆕 Release: 🆕 Flirexa/flirexa v2.2.81
+2026-08-01 13:19:18,144 | INFO |    🆕 Release: 🆕 Flirexa/flirexa v2.2.80
+2026-08-01 13:19:24,641 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.22.0
+2026-08-01 13:19:59,760 | INFO |    🆕 Release: 🆕 ajavadinezhad/zyrln v2.0
+2026-08-01 13:20:19,302 | INFO | 
+🔄 Checking commits...
+2026-08-01 13:21:02,741 | INFO |    🆕 Commit: 🆕 agentram/ovpn
+2026-08-01 13:21:16,756 | INFO |    🆕 Commit: 🆕 Flirexa/flirexa
+2026-08-01 13:21:25,006 | INFO |    🆕 Commit: 🆕 tao-t356/vless-xhttp-reality-self
+2026-08-01 13:21:33,314 | INFO |    🆕 Commit: 🆕 YawStar/Proxy-Hunter
+2026-08-01 13:22:23,556 | INFO | 
+📡 Checking config aggregators for new URLs (age ≤ 60 days)...
+2026-08-01 13:22:49,959 | INFO | ⏭ Skipping old aggregator: 📡 V2ray-Configs (not updated in 60 days)
+2026-08-01 13:23:05,411 | INFO | 
+🔍 Searching GitHub for config repositories (updated within 60 days)...
+2026-08-01 13:23:05,411 | INFO | 🔍 GitHub search for configs: vless reality subscription
+2026-08-01 13:23:08,750 | INFO | 🔍 GitHub search for configs: vless reality v2ray
+2026-08-01 13:23:12,070 | INFO | 🔍 GitHub search for configs: hysteria2 reality config
+2026-08-01 13:23:15,482 | INFO | 🔍 GitHub search for configs: clash reality subscription
+2026-08-01 13:23:19,176 | INFO | 🔍 GitHub search for configs: xray reality vless config
+2026-08-01 13:23:22,574 | INFO | 🔍 GitHub search for configs: sing-box reality config
+2026-08-01 13:23:25,899 | INFO | 🔍 GitHub search for configs: subscription link vless
+2026-08-01 13:23:29,265 | INFO | 🔍 GitHub search for configs: v2ray subscription free
+2026-08-01 13:23:32,626 | INFO | 🔍 GitHub search for configs: proxy config russia vless
+2026-08-01 13:23:36,000 | INFO | 🔍 GitHub search for configs: amneziawg config
+2026-08-01 13:23:39,361 | INFO | 
+🔍 Searching for new repositories (latest 3 days)...
+2026-08-01 13:23:39,609 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:23:39,610 | INFO | 
+🔍 Zapret Tools...
+2026-08-01 13:23:43,270 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:23:43,271 | INFO | 
+🔍 DPI Bypass...
+2026-08-01 13:23:46,916 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:23:46,916 | INFO | 
+🔍 AntiZapret...
+2026-08-01 13:23:50,507 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:23:50,508 | INFO | 
+🔍 AmneziaWG...
+2026-08-01 13:23:54,073 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:23:54,074 | INFO | 
+🔍 Xray Reality...
+2026-08-01 13:23:57,654 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:23:57,655 | INFO | 
+🔍 Sing-Box...
+2026-08-01 13:24:01,285 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:24:01,286 | INFO | 
+🔍 Hysteria2...
+2026-08-01 13:24:04,864 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:24:04,865 | INFO | 
+🔍 Marzban Panel...
+2026-08-01 13:24:08,522 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:24:08,523 | INFO | 
+🔍 3x-UI Panel...
+2026-08-01 13:24:12,127 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:24:12,128 | INFO | 
+🔍 Hiddify...
+2026-08-01 13:24:15,781 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:24:15,782 | INFO | 
+🔍 Censorship Tracker...
+2026-08-01 13:24:19,397 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:24:19,398 | INFO | 
+🔍 Geosite Russia...
+2026-08-01 13:24:23,002 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:24:23,003 | INFO | 
+🔍 Blocked Domains RU...
+2026-08-01 13:24:26,590 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:24:26,591 | INFO | 
+🔍 Clash Meta Russia...
+2026-08-01 13:24:30,251 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:24:30,252 | INFO | 
+🔍 Outline VPN...
+2026-08-01 13:24:33,862 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:24:33,863 | INFO | 
+🔍 WireGuard RU...
+2026-08-01 13:24:37,510 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:24:37,511 | INFO | 
+🔍 Shadowsocks RU...
+2026-08-01 13:24:41,129 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:24:41,130 | INFO | 
+🔍 Proxy Configs...
+2026-08-01 13:24:44,735 | INFO | 📊 GitHub API: 4701/5000 calls remaining
+2026-08-01 13:24:44,736 | INFO | 
+🔍 Subconverter...
+2026-08-01 13:24:48,156 | INFO | 💾 State saved (posted=1295, commits=131, releases=557, dynamic_tracked=256)
+2026-08-01 13:24:48,156 | INFO | 
+============================================================
+2026-08-01 13:24:48,156 | INFO | 🏁 Completed! Published: 18 posts
+2026-08-01 13:24:48,156 | INFO | ============================================================
