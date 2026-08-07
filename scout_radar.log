@@ -39174,3 +39174,106 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-08-04 14:13:56,867 | INFO | 🏁 Completed! Published: 10 posts
 2026-08-04 14:13:56,867 | INFO | ============================================================
+2026-08-07 13:00:11,302 | INFO | ============================================================
+2026-08-07 13:00:11,302 | INFO | 🕵️  SCOUT RADAR v9.2 (fixed rate limits + advanced dedup)
+2026-08-07 13:00:11,302 | INFO | ============================================================
+2026-08-07 13:00:11,302 | INFO | ✅ Second channel enabled: -1002926041814
+2026-08-07 13:00:11,302 | INFO | ✅ All environment variables validated
+2026-08-07 13:00:11,529 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:00:11,532 | INFO | 📂 Loaded: 1295 posted, 563 releases, 256 dynamic tracked
+2026-08-07 13:00:11,532 | INFO | 📡 Tracked projects: static=27, dynamic=256
+2026-08-07 13:00:11,532 | INFO | 
+🚀 Checking releases...
+2026-08-07 13:00:15,496 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-beta.9
+2026-08-07 13:00:18,921 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-beta.8
+2026-08-07 13:00:22,093 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-beta.7
+2026-08-07 13:00:25,680 | INFO |    🆕 Release: 🚀 Hysteria app/v2.12.0
+2026-08-07 13:00:32,247 | INFO |    🆕 Release: 💻 V2RayN 7.24.5
+2026-08-07 13:00:35,789 | INFO |    🆕 Release: 📱 V2RayNG 2.3.3
+2026-08-07 13:01:12,579 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.22.2
+2026-08-07 13:01:15,984 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.22.1
+2026-08-07 13:01:59,863 | INFO | 
+🔄 Checking commits...
+2026-08-07 13:02:01,769 | INFO |    🆕 Commit: 🛡 AmneziaWG Kernel
+2026-08-07 13:02:08,421 | INFO |    🆕 Commit: 💻 V2RayN
+2026-08-07 13:02:56,325 | INFO |    🆕 Commit: 🆕 eiler2005/ghostroute
+2026-08-07 13:03:02,137 | INFO |    🆕 Commit: 🆕 YawStar/Proxy-Hunter
+2026-08-07 13:03:44,538 | INFO | 
+📡 Checking config aggregators for new URLs (age ≤ 60 days)...
+2026-08-07 13:04:03,780 | INFO | ⏭ Skipping old aggregator: 📡 V2ray-Configs (not updated in 60 days)
+2026-08-07 13:04:13,492 | INFO | 
+🔍 Searching GitHub for config repositories (updated within 60 days)...
+2026-08-07 13:04:13,492 | INFO | 🔍 GitHub search for configs: vless reality subscription
+2026-08-07 13:04:16,720 | INFO | 🔍 GitHub search for configs: vless reality v2ray
+2026-08-07 13:04:19,980 | INFO | 🔍 GitHub search for configs: hysteria2 reality config
+2026-08-07 13:04:23,279 | INFO | 🔍 GitHub search for configs: clash reality subscription
+2026-08-07 13:04:26,581 | INFO | 🔍 GitHub search for configs: xray reality vless config
+2026-08-07 13:04:29,907 | INFO | 🔍 GitHub search for configs: sing-box reality config
+2026-08-07 13:04:33,177 | INFO | 🔍 GitHub search for configs: subscription link vless
+2026-08-07 13:04:36,429 | INFO | 🔍 GitHub search for configs: v2ray subscription free
+2026-08-07 13:04:39,691 | INFO | 🔍 GitHub search for configs: proxy config russia vless
+2026-08-07 13:04:42,993 | INFO | 🔍 GitHub search for configs: amneziawg config
+2026-08-07 13:04:46,222 | INFO | 
+🔍 Searching for new repositories (latest 3 days)...
+2026-08-07 13:04:46,384 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:04:46,385 | INFO | 
+🔍 Zapret Tools...
+2026-08-07 13:04:49,832 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:04:49,833 | INFO | 
+🔍 DPI Bypass...
+2026-08-07 13:04:53,304 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:04:53,305 | INFO | 
+🔍 AntiZapret...
+2026-08-07 13:04:56,773 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:04:56,774 | INFO | 
+🔍 AmneziaWG...
+2026-08-07 13:05:00,201 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:05:00,202 | INFO | 
+🔍 Xray Reality...
+2026-08-07 13:05:03,621 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:05:03,622 | INFO | 
+🔍 Sing-Box...
+2026-08-07 13:05:07,110 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:05:07,111 | INFO | 
+🔍 Hysteria2...
+2026-08-07 13:05:10,677 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:05:10,678 | INFO | 
+🔍 Marzban Panel...
+2026-08-07 13:05:14,098 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:05:14,099 | INFO | 
+🔍 3x-UI Panel...
+2026-08-07 13:05:17,530 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:05:17,531 | INFO | 
+🔍 Hiddify...
+2026-08-07 13:05:20,997 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:05:20,998 | INFO | 
+🔍 Censorship Tracker...
+2026-08-07 13:05:24,459 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:05:24,460 | INFO | 
+🔍 Geosite Russia...
+2026-08-07 13:05:27,897 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:05:27,898 | INFO | 
+🔍 Blocked Domains RU...
+2026-08-07 13:05:31,324 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:05:31,325 | INFO | 
+🔍 Clash Meta Russia...
+2026-08-07 13:05:34,784 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:05:34,785 | INFO | 
+🔍 Outline VPN...
+2026-08-07 13:05:38,218 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:05:38,220 | INFO | 
+🔍 WireGuard RU...
+2026-08-07 13:05:41,699 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:05:41,700 | INFO | 
+🔍 Shadowsocks RU...
+2026-08-07 13:05:45,126 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:05:45,127 | INFO | 
+🔍 Proxy Configs...
+2026-08-07 13:05:48,519 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-07 13:05:48,520 | INFO | 
+🔍 Subconverter...
+2026-08-07 13:05:51,799 | INFO | 💾 State saved (posted=1295, commits=131, releases=571, dynamic_tracked=256)
+2026-08-07 13:05:51,799 | INFO | 
+============================================================
+2026-08-07 13:05:51,799 | INFO | 🏁 Completed! Published: 12 posts
+2026-08-07 13:05:51,800 | INFO | ============================================================
