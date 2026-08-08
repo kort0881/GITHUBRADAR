@@ -94,6 +94,7 @@ CONFIG_AGGREGATORS = [
 FRESH_SEARCHES = [
     {"name": "Zapret Tools", "title": "🛠 Zapret инструменты", "query": "zapret OR zapret-discord OR zapret-youtube", "priority": 10},
     {"name": "DPI Bypass", "title": "🛠 DPI Bypass", "query": "dpi-bypass OR bypass-dpi OR nodpi", "priority": 10},
+    {"name": "VPN DPI", "title": "🛠 VPN DPI", "query": "vpn dpi OR vpn-dpi", "priority": 8},   # <-- ДОБАВЛЕНО
     {"name": "AntiZapret", "title": "🛡 AntiZapret", "query": "antizapret OR anti-zapret", "priority": 10},
     {"name": "AmneziaWG", "title": "🛡 AmneziaWG", "query": "amneziawg OR amnezia-vpn", "priority": 10},
     {"name": "Xray Reality", "title": "⚡ Xray Reality", "query": "xray-reality OR vless-reality", "priority": 9},
@@ -125,6 +126,8 @@ CONFIG_SEARCH_QUERIES = [
     "v2ray subscription free",
     "proxy config russia vless",
     "amneziawg config",
+    "vpn dpi subscription",   # <-- ДОБАВЛЕНО (опционально)
+    "vpn dpi config",
 ]
 
 CONFIG_URL_PATTERNS = [
