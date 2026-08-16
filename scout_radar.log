@@ -39504,3 +39504,113 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-08-13 13:12:38,355 | INFO | 🏁 Completed! Published: 11 posts
 2026-08-13 13:12:38,355 | INFO | ============================================================
+2026-08-16 12:35:43,141 | INFO | ============================================================
+2026-08-16 12:35:43,141 | INFO | 🕵️  SCOUT RADAR v9.2 (fixed rate limits + advanced dedup)
+2026-08-16 12:35:43,141 | INFO | ============================================================
+2026-08-16 12:35:43,141 | INFO | ✅ Second channel enabled: -1002926041814
+2026-08-16 12:35:43,141 | INFO | ✅ All environment variables validated
+2026-08-16 12:35:43,348 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:35:43,352 | INFO | 📂 Loaded: 1295 posted, 594 releases, 256 dynamic tracked
+2026-08-16 12:35:43,352 | INFO | 📡 Tracked projects: static=27, dynamic=256
+2026-08-16 12:35:43,352 | INFO | 
+🚀 Checking releases...
+2026-08-16 12:35:47,167 | INFO |    🆕 Release: 📦 Sing-Box v1.14.0-beta.15
+2026-08-16 12:35:54,902 | INFO |    🆕 Release: 💻 V2RayN 7.24.7
+2026-08-16 12:35:58,541 | INFO |    🆕 Release: 📱 V2RayNG 2.3.4
+2026-08-16 12:36:02,554 | INFO |    🆕 Release: ⚔️ Mihomo v1.19.30
+2026-08-16 12:36:08,875 | INFO |    🆕 Release: 🆕 Eljaja/BibaVPN v1.3.2
+2026-08-16 12:36:23,751 | INFO |    🆕 Release: 🆕 GrimbirdUsers/ru-routing-dat v2026.08.16
+2026-08-16 12:36:29,183 | INFO |    🆕 Release: 🆕 Ezrea7/ReaLity v1.3
+2026-08-16 12:36:49,071 | INFO |    🆕 Release: 🆕 Flirexa/flirexa v2.2.110
+2026-08-16 12:36:52,620 | INFO |    🆕 Release: 🆕 Flirexa/flirexa v2.2.109
+2026-08-16 12:36:55,841 | INFO |    🆕 Release: 🆕 Flirexa/flirexa v2.2.108
+2026-08-16 12:37:01,716 | INFO |    🆕 Release: 🆕 batonogov/terraform-provider-threexui v3.22.3
+2026-08-16 12:37:44,401 | INFO | 
+🔄 Checking commits...
+2026-08-16 12:37:46,015 | INFO |    🆕 Commit: 🛡 Amnezia Client
+2026-08-16 12:37:57,126 | INFO |    🆕 Commit: 🆕 Eljaja/BibaVPN
+2026-08-16 12:38:43,982 | INFO |    🆕 Commit: 🆕 YawStar/Proxy-Hunter
+2026-08-16 12:39:25,149 | INFO | 
+📡 Checking config aggregators for new URLs (age ≤ 60 days)...
+2026-08-16 12:39:46,850 | INFO | ⏭ Skipping old aggregator: 📡 V2ray-Configs (not updated in 60 days)
+2026-08-16 12:39:59,418 | INFO | 
+🔍 Searching GitHub for config repositories (updated within 60 days)...
+2026-08-16 12:39:59,418 | INFO | 🔍 GitHub search for configs: vless reality subscription
+2026-08-16 12:40:02,711 | INFO | 🔍 GitHub search for configs: vless reality v2ray
+2026-08-16 12:40:06,025 | INFO | 🔍 GitHub search for configs: hysteria2 reality config
+2026-08-16 12:40:09,302 | INFO | 🔍 GitHub search for configs: clash reality subscription
+2026-08-16 12:40:12,619 | INFO | 🔍 GitHub search for configs: xray reality vless config
+2026-08-16 12:40:15,879 | INFO | 🔍 GitHub search for configs: sing-box reality config
+2026-08-16 12:40:19,194 | INFO | 🔍 GitHub search for configs: subscription link vless
+2026-08-16 12:40:22,502 | INFO | 🔍 GitHub search for configs: v2ray subscription free
+2026-08-16 12:40:25,781 | INFO | 🔍 GitHub search for configs: proxy config russia vless
+2026-08-16 12:40:29,053 | INFO | 🔍 GitHub search for configs: amneziawg config
+2026-08-16 12:40:32,503 | INFO | 🔍 GitHub search for configs: vpn dpi subscription
+2026-08-16 12:40:35,835 | INFO | 🔍 GitHub search for configs: vpn dpi config
+2026-08-16 12:40:39,143 | INFO | 
+🔍 Searching for new repositories (latest 3 days)...
+2026-08-16 12:40:39,341 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:40:39,342 | INFO | 
+🔍 Zapret Tools...
+2026-08-16 12:40:43,143 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:40:43,144 | INFO | 
+🔍 DPI Bypass...
+2026-08-16 12:40:46,723 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:40:46,724 | INFO | 
+🔍 AntiZapret...
+2026-08-16 12:40:50,339 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:40:50,340 | INFO | 
+🔍 AmneziaWG...
+2026-08-16 12:40:53,906 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:40:53,906 | INFO | 
+🔍 Xray Reality...
+2026-08-16 12:40:57,641 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:40:57,642 | INFO | 
+🔍 Sing-Box...
+2026-08-16 12:41:01,079 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:41:01,080 | INFO | 
+🔍 Hysteria2...
+2026-08-16 12:41:04,559 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:41:04,560 | INFO | 
+🔍 VPN DPI...
+2026-08-16 12:41:08,047 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:41:08,048 | INFO | 
+🔍 Marzban Panel...
+2026-08-16 12:41:11,559 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:41:11,560 | INFO | 
+🔍 3x-UI Panel...
+2026-08-16 12:41:15,031 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:41:15,032 | INFO | 
+🔍 Hiddify...
+2026-08-16 12:41:18,492 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:41:18,492 | INFO | 
+🔍 Censorship Tracker...
+2026-08-16 12:41:21,966 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:41:21,967 | INFO | 
+🔍 Geosite Russia...
+2026-08-16 12:41:25,458 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:41:25,459 | INFO | 
+🔍 Blocked Domains RU...
+2026-08-16 12:41:28,919 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:41:28,919 | INFO | 
+🔍 Clash Meta Russia...
+2026-08-16 12:41:32,538 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:41:32,539 | INFO | 
+🔍 Outline VPN...
+2026-08-16 12:41:36,111 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:41:36,112 | INFO | 
+🔍 WireGuard RU...
+2026-08-16 12:41:39,580 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:41:39,581 | INFO | 
+🔍 Shadowsocks RU...
+2026-08-16 12:41:43,095 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:41:43,096 | INFO | 
+🔍 Proxy Configs...
+2026-08-16 12:41:46,548 | INFO | 📊 GitHub API: 5000/5000 calls remaining
+2026-08-16 12:41:46,549 | INFO | 
+🔍 Subconverter...
+2026-08-16 12:41:49,838 | INFO | 💾 State saved (posted=1295, commits=132, releases=605, dynamic_tracked=256)
+2026-08-16 12:41:49,839 | INFO | 
+============================================================
+2026-08-16 12:41:49,839 | INFO | 🏁 Completed! Published: 14 posts
+2026-08-16 12:41:49,839 | INFO | ============================================================
