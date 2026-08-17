@@ -15,7 +15,7 @@ from aiogram import Bot
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.exceptions import TelegramRetryAfter, TelegramForbiddenError
-from groq import Groq
+from openai import OpenAI   # <--- заменили
 import aiohttp
 
 # ===================== НАСТРОЙКИ =====================
@@ -49,7 +49,7 @@ API_HEADERS = {
 }
 
 bot = Bot(token=TELEGRAM_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
-groq_client = Groq(api_key=GROQ_API_KEY)
+openai_client = OpenAI(api_key=GROQ_API_KEY, base_url="https://api.groq.com/openai/v1")   # <--- создан клиент
 
 # ===================== БАЗОВЫЕ СПИСКИ =====================
 TRACKED_PROJECTS = [
@@ -94,7 +94,7 @@ CONFIG_AGGREGATORS = [
 FRESH_SEARCHES = [
     {"name": "Zapret Tools", "title": "🛠 Zapret инструменты", "query": "zapret OR zapret-discord OR zapret-youtube", "priority": 10},
     {"name": "DPI Bypass", "title": "🛠 DPI Bypass", "query": "dpi-bypass OR bypass-dpi OR nodpi", "priority": 10},
-    {"name": "VPN DPI", "title": "🛠 VPN DPI", "query": "vpn dpi OR vpn-dpi", "priority": 8},   # <-- ДОБАВЛЕНО
+    {"name": "VPN DPI", "title": "🛠 VPN DPI", "query": "vpn dpi OR vpn-dpi", "priority": 8},
     {"name": "AntiZapret", "title": "🛡 AntiZapret", "query": "antizapret OR anti-zapret", "priority": 10},
     {"name": "AmneziaWG", "title": "🛡 AmneziaWG", "query": "amneziawg OR amnezia-vpn", "priority": 10},
     {"name": "Xray Reality", "title": "⚡ Xray Reality", "query": "xray-reality OR vless-reality", "priority": 9},
@@ -126,7 +126,7 @@ CONFIG_SEARCH_QUERIES = [
     "v2ray subscription free",
     "proxy config russia vless",
     "amneziawg config",
-    "vpn dpi subscription",   # <-- ДОБАВЛЕНО (опционально)
+    "vpn dpi subscription",
     "vpn dpi config",
 ]
 
@@ -745,8 +745,8 @@ async def analyze_relevance(repos):
 ...
 """
     try:
-        resp = groq_client.chat.completions.create(
-            model="llama-3.1-8b-instant",
+        resp = openai_client.chat.completions.create(   # <--- заменили
+            model="openai/gpt-oss-120b",
             messages=[{"role": "user", "content": prompt}],
             max_tokens=300,
             temperature=0.3
@@ -786,8 +786,8 @@ async def generate_desc(name, desc):
 Контекст: VPN, обход блокировок.
 Описание:"""
     try:
-        resp = groq_client.chat.completions.create(
-            model="llama-3.1-8b-instant",
+        resp = openai_client.chat.completions.create(   # <--- заменили
+            model="openai/gpt-oss-120b",
             messages=[{"role": "user", "content": prompt}],
             max_tokens=60,
             temperature=0.3
@@ -1095,7 +1095,7 @@ def is_release_worth_posting(release_tag: str, release_body: str, last_major_min
 # ===================== ОСНОВНАЯ ФУНКЦИЯ MAIN =====================
 async def main():
     logger.info("=" * 60)
-    logger.info("🕵️  SCOUT RADAR v9.2 (fixed rate limits + advanced dedup)")
+    logger.info("🕵️  SCOUT RADAR v9.2 (fixed rate limits + advanced dedup) — OpenAI-compatible Groq")
     logger.info("=" * 60)
     if not validate_env():
         return
@@ -1347,6 +1347,10 @@ async def main():
 if __name__ == "__main__":
     try:
         asyncio.run(main())
+    except KeyboardInterrupt:
+        logger.info("\n⏸ Interrupted by user")
+    except Exception as e:
+        logger.error(f"❌ Fatal error: {e}", exc_info=True)
     except KeyboardInterrupt:
         logger.info("\n⏸ Interrupted by user")
     except Exception as e:
