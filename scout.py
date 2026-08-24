@@ -15,7 +15,7 @@ from aiogram import Bot
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.exceptions import TelegramRetryAfter, TelegramForbiddenError
-from openai import OpenAI   # <--- заменили
+from groq import Groq   # <-- заменили на Groq
 import aiohttp
 
 # ===================== НАСТРОЙКИ =====================
@@ -49,7 +49,14 @@ API_HEADERS = {
 }
 
 bot = Bot(token=TELEGRAM_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
-openai_client = OpenAI(api_key=GROQ_API_KEY, base_url="https://api.groq.com/openai/v1")   # <--- создан клиент
+groq_client = Groq(api_key=GROQ_API_KEY)   # <-- оригинальный Groq клиент
+
+# ===== МОДЕЛИ (с резервом) =====
+GROQ_MODELS = [
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
+    "groq/compound",
+]
 
 # ===================== БАЗОВЫЕ СПИСКИ =====================
 TRACKED_PROJECTS = [
@@ -721,7 +728,7 @@ def save_config_sources(sources):
     except Exception as e:
         logger.error(f"❌ Could not save config_sources: {e}")
 
-# ===================== AI И ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ =====================
+# ===================== AI И ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ (с Groq) =====================
 async def analyze_relevance(repos):
     if not repos:
         return {}
@@ -744,38 +751,42 @@ async def analyze_relevance(repos):
 2: HIGH/MEDIUM/LOW/SKIP
 ...
 """
-    try:
-        resp = openai_client.chat.completions.create(   # <--- заменили
-            model="openai/gpt-oss-120b",
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=300,
-            temperature=0.3
-        )
-        res = {}
-        content = resp.choices[0].message.content
-        logger.debug(f"🤖 AI raw response: {content}")
-        for line in content.split('\n'):
-            if ':' in line:
-                try:
-                    idx, verdict = line.split(':', 1)
-                    idx = int(idx.strip().replace('.', ''))
-                    verdict = verdict.strip().upper()
-                    if verdict in ('GOOD', '1', 'HIGH', 'MEDIUM'):
-                        category = 'HIGH' if verdict in ('HIGH', 'GOOD', '1') else 'MEDIUM'
-                        res[idx] = {'publish': True, 'category': category}
-                    elif verdict in ('SKIP', '2', 'LOW'):
-                        res[idx] = {'publish': False, 'category': 'LOW'}
-                    else:
-                        res[idx] = {'publish': False, 'category': 'LOW'}
-                except:
-                    pass
-        if not res:
-            logger.warning("⚠️ AI response parsing failed, fallback to publish all as MEDIUM")
-            return {i: {'publish': True, 'category': 'MEDIUM'} for i in range(1, len(repos) + 1)}
-        return res
-    except Exception as e:
-        logger.warning(f"⚠️ AI error: {e}, fallback to publish all as MEDIUM")
-        return {i: {'publish': True, 'category': 'MEDIUM'} for i in range(1, len(repos) + 1)}
+    for model in GROQ_MODELS:
+        try:
+            resp = await asyncio.to_thread(
+                lambda: groq_client.chat.completions.create(
+                    model=model,
+                    messages=[{"role": "user", "content": prompt}],
+                    max_tokens=300,
+                    temperature=0.3
+                )
+            )
+            content = resp.choices[0].message.content
+            logger.debug(f"🤖 AI raw response: {content}")
+            res = {}
+            for line in content.split('\n'):
+                if ':' in line:
+                    try:
+                        idx, verdict = line.split(':', 1)
+                        idx = int(idx.strip().replace('.', ''))
+                        verdict = verdict.strip().upper()
+                        if verdict in ('GOOD', '1', 'HIGH', 'MEDIUM'):
+                            category = 'HIGH' if verdict in ('HIGH', 'GOOD', '1') else 'MEDIUM'
+                            res[idx] = {'publish': True, 'category': category}
+                        elif verdict in ('SKIP', '2', 'LOW'):
+                            res[idx] = {'publish': False, 'category': 'LOW'}
+                        else:
+                            res[idx] = {'publish': False, 'category': 'LOW'}
+                    except:
+                        pass
+            if res:
+                return res
+        except Exception as e:
+            logger.warning(f"⚠️ AI error with {model}: {e}")
+            continue
+    # Fallback
+    logger.warning("⚠️ All AI models failed, fallback to publish all as MEDIUM")
+    return {i: {'publish': True, 'category': 'MEDIUM'} for i in range(1, len(repos) + 1)}
 
 async def generate_desc(name, desc):
     if desc and len(desc) > 25 and not has_non_latin(desc):
@@ -785,18 +796,22 @@ async def generate_desc(name, desc):
 Напиши краткое описание (1 предложение, до 80 символов) на русском.
 Контекст: VPN, обход блокировок.
 Описание:"""
-    try:
-        resp = openai_client.chat.completions.create(   # <--- заменили
-            model="openai/gpt-oss-120b",
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=60,
-            temperature=0.3
-        )
-        generated = resp.choices[0].message.content.strip()
-        if generated and not has_non_latin(generated):
-            return generated
-    except Exception as e:
-        logger.debug(f"Error generating description: {e}")
+    for model in GROQ_MODELS:
+        try:
+            resp = await asyncio.to_thread(
+                lambda: groq_client.chat.completions.create(
+                    model=model,
+                    messages=[{"role": "user", "content": prompt}],
+                    max_tokens=60,
+                    temperature=0.3
+                )
+            )
+            generated = resp.choices[0].message.content.strip()
+            if generated and not has_non_latin(generated):
+                return generated
+        except Exception as e:
+            logger.debug(f"Error generating description with {model}: {e}")
+            continue
     return "Инструмент для обхода блокировок"
 
 async def check_repo_relevance(owner: str, repo: str, repo_cache: dict) -> bool:
@@ -1095,7 +1110,7 @@ def is_release_worth_posting(release_tag: str, release_body: str, last_major_min
 # ===================== ОСНОВНАЯ ФУНКЦИЯ MAIN =====================
 async def main():
     logger.info("=" * 60)
-    logger.info("🕵️  SCOUT RADAR v9.2 (fixed rate limits + advanced dedup) — OpenAI-compatible Groq")
+    logger.info("🕵️  SCOUT RADAR v9.2 (Groq SDK) — с резервными моделями")
     logger.info("=" * 60)
     if not validate_env():
         return
@@ -1347,10 +1362,6 @@ async def main():
 if __name__ == "__main__":
     try:
         asyncio.run(main())
-    except KeyboardInterrupt:
-        logger.info("\n⏸ Interrupted by user")
-    except Exception as e:
-        logger.error(f"❌ Fatal error: {e}", exc_info=True)
     except KeyboardInterrupt:
         logger.info("\n⏸ Interrupted by user")
     except Exception as e:
