@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""GITHUB RADAR v11.1 (Fixed Models & No-Fallback JSON)
+"""GITHUB RADAR v11.3 (Fixed models: openai/gpt-oss-120b, openai/gpt-oss-20b, groq/compound)
 
 Secrets:
   CHANNEL_ID
@@ -36,7 +36,7 @@ except ImportError:
 STATE_FILE = os.getenv("STATE_FILE", "radar_state.json")
 MAX_POSTS_PER_RUN = int(os.getenv("MAX_POSTS_PER_RUN", "15"))
 MESSAGE_DELAY = float(os.getenv("MESSAGE_DELAY", "2.0"))
-GROQ_DELAY = float(os.getenv("GROQ_DELAY", "1.5"))
+GROQ_DELAY = float(os.getenv("GROQ_DELAY", "1.0"))
 
 CHANNEL_ID = os.getenv("CHANNEL_ID", "").strip()
 CONFIG_CHANNEL_ID = os.getenv("CONFIG_CHANNEL_ID", "").strip()
@@ -51,13 +51,15 @@ API_HEADERS = {
 if GITHUB_TOKEN:
     API_HEADERS["Authorization"] = f"Bearer {GITHUB_TOKEN}"
 
-# Надежные production-модели Groq (быстрые, без 400 json_validate_failed)
+# ===== АКТУАЛЬНЫЕ МОДЕЛИ (без автоопределения, чтобы не было сюрпризов) =====
 GROQ_MODELS = [
-    "llama-3.3-70b-versatile",
-    "llama-3.1-8b-instant",
-    "gemma2-9b-it",
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
+    "groq/compound",
+    "qwen/qwen3.6-27b",
 ]
 
+# Ключевые флагманские проекты (постим ТОЛЬКО значимые релизы с чейнджлогом)
 CORE_PROJECTS = [
     {"owner": "bol-van", "repo": "zapret", "name": "Zapret", "icon": "🛡️"},
     {"owner": "bol-van", "repo": "zapret2", "name": "Zapret 2", "icon": "⚡"},
@@ -91,7 +93,7 @@ SEARCH_QUERIES = [
 BLACKLIST_WORDS = {
     "yemen", "iranian-protests", "flashcard", "quiz", "recipe", "shopping",
     "trading", "crypto", "nft", "crawler-bot", "course", "homework", "browser",
-    "evidence", "ooni-data", "measurement", "survey",
+    "evidence", "ooni-data", "measurement", "survey", "dataset",
 }
 
 logging.basicConfig(
@@ -238,7 +240,7 @@ class GitHubClient:
         return ""
 
 
-# =============================== ИИ КУРАТОР (GROQ) ===============================
+# =============================== ИИ КУРАТОР (GROQ) с фиксированными моделями ===============================
 
 class GroqCurator:
     def __init__(self):
@@ -246,7 +248,7 @@ class GroqCurator:
 
     async def evaluate_project(self, full_name: str, desc: str, readme: str) -> Optional[str]:
         if not self.client:
-            return None  # При отсутствии ИИ ничего сомнительного не пропускаем
+            return None
 
         prompt = f"""Ты строгий технический куратор русскоязычного канала о свободе интернета, VPN и обходе блокировок (DPI, ТСПУ, Xray, Sing-Box, Hysteria, Zapret).
 
@@ -254,7 +256,7 @@ class GroqCurator:
 Имя: {full_name}
 Описание: {desc}
 README:
-{readme[:3500]}
+{readme[:3000]}
 
 ТРЕБОВАНИЯ:
 1. Если это статистика, отчеты об интернет-блокировках в других странах (например Йемен, Иран), общие браузеры, списки серверов/конфигов без софта, не относящиеся к сетевому обходу темы или пустые форки — ОТВЕТЬ ТОЛЬКО СЛОВОМ: SKIP
@@ -265,6 +267,7 @@ README:
 
 Ответ (SKIP или краткий текст на русском):"""
 
+        # Используем только актуальные модели (цикл с fallback)
         for model in GROQ_MODELS:
             try:
                 resp = await asyncio.to_thread(
@@ -275,14 +278,14 @@ README:
                     max_tokens=250,
                 )
                 text = resp.choices[0].message.content.strip()
-                if not text or text.upper() == "SKIP" or text.startswith("SKIP"):
+                if not text or text.upper().startswith("SKIP"):
                     return None
+                logger.info(f"✅ Groq {model} одобрил: {full_name}")
                 return text
             except Exception as e:
                 logger.warning(f"Groq ({model}) failed: {e}")
             await asyncio.sleep(GROQ_DELAY)
         
-        # Если все попытки упали с ошибкой — отклоняем, чтобы не публиковать мусор
         return None
 
 
@@ -363,7 +366,6 @@ async def main() -> None:
             
             if last_tag != tag:
                 dt = parse_iso(published_at)
-                # Публикуем, если релиз вышел в последние 3 дня
                 if dt and (now_utc() - dt).total_seconds() < 3 * 86400:
                     body = rel.get("body") or ""
                     if is_meaningful_release(tag, body, last_tag):
