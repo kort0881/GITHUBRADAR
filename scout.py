@@ -265,6 +265,7 @@ README:
    - Что делает проект
    - Чем полезен для обхода блокировок или настройки сети.
 
+Ответ должен быть кратким (2–3 предложения на русском) и **обязательно законченным** — не обрывайте мысль на середине.
 Ответ (SKIP или краткий текст на русском):"""
 
         # Используем только актуальные модели (цикл с fallback)
@@ -275,7 +276,7 @@ README:
                     model=model,
                     messages=[{"role": "user", "content": prompt}],
                     temperature=0.2,
-                    max_tokens=250,
+                    max_tokens=400,          # ← Увеличено с 250 до 400, чтобы избежать обрывов
                 )
                 text = resp.choices[0].message.content.strip()
                 if not text or text.upper().startswith("SKIP"):
