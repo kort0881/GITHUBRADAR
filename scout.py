@@ -33,7 +33,7 @@ except ImportError:
 
 # =============================== КОНФИГУРАЦИЯ ===============================
 
-STATE_FILE = os.getenv("STATE_FILE", "radar_state.json")
+STATE_FILE = os.getenv("STATE_FILE", "scout_history.json")
 MAX_POSTS_PER_RUN = int(os.getenv("MAX_POSTS_PER_RUN", "15"))
 MESSAGE_DELAY = float(os.getenv("MESSAGE_DELAY", "2.0"))
 GROQ_DELAY = float(os.getenv("GROQ_DELAY", "1.0"))
@@ -99,6 +99,10 @@ BLACKLIST_WORDS = {
 logging.basicConfig(
     level=os.getenv("LOG_LEVEL", "INFO").upper(),
     format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler("scout_radar.log", encoding="utf-8"),
+        logging.StreamHandler(),
+    ],
 )
 logger = logging.getLogger("radar")
 
@@ -240,7 +244,7 @@ class GitHubClient:
         return ""
 
 
-# =============================== ИИ КУРАТОР (GROQ) с фиксированными моделями ===============================
+# =============================== ИИ КУРАТОР (GROQ) ===============================
 
 class GroqCurator:
     def __init__(self):
@@ -268,7 +272,6 @@ README:
 Ответ должен быть кратким (2–3 предложения на русском) и **обязательно законченным** — не обрывайте мысль на середине.
 Ответ (SKIP или краткий текст на русском):"""
 
-        # Используем только актуальные модели (цикл с fallback)
         for model in GROQ_MODELS:
             try:
                 resp = await asyncio.to_thread(
@@ -276,7 +279,7 @@ README:
                     model=model,
                     messages=[{"role": "user", "content": prompt}],
                     temperature=0.2,
-                    max_tokens=400,          # ← Увеличено с 250 до 400, чтобы избежать обрывов
+                    max_tokens=400,
                 )
                 text = resp.choices[0].message.content.strip()
                 if not text or text.upper().startswith("SKIP"):
@@ -409,13 +412,11 @@ async def main() -> None:
             lang = item.get("language") or ""
             url = item.get("html_url")
 
-            # Фильтр ключевых стоп-слов
             text_for_check = f"{repo_name} {desc}".lower()
             if any(w in text_for_check for w in BLACKLIST_WORDS):
                 state["posted_repos"][fn] = "skipped_blacklist"
                 continue
 
-            # Отсекаем мёртвые репозитории
             if stars == 0 and len(desc) < 20:
                 continue
 
@@ -423,14 +424,12 @@ async def main() -> None:
             if len(readme.strip()) < 100 and stars < 5:
                 continue
 
-            # ИИ-фильтр (Groq)
             summary = await curator.evaluate_project(fn, desc, readme)
             if not summary:
                 state["posted_repos"][fn] = "skipped_ai"
                 logger.info(f"ИИ отклонил: {fn}")
                 continue
 
-            # Проверяем, прорыв ли это (создан недавно + набрал звезды)
             created_dt = parse_iso(created_at)
             is_breakthrough = False
             if created_dt and (now_utc() - created_dt).total_seconds() < 7 * 86400 and stars >= 10:
