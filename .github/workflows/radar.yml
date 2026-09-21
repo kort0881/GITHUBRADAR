@@ -20,31 +20,26 @@ jobs:
         id: guard
         shell: bash
         run: |
-          # Инициализация файла истории, если его нет
-          if [ ! -f scout_history.json ]; then
-            echo '{"posted":[],"commits":{},"releases":{},"repo_cache":{},"last_run":null,"dynamic_tracked":{},"releases_meta":{},"config_urls":{}}' > scout_history.json
-            git config --local user.email "radar@bot.com"
-            git config --local user.name "Radar Bot"
-            git add scout_history.json
-            git commit -m "Initialize scout_history.json" || true
-            git push || true
-          fi
-
           # Ручной запуск — всегда выполняем
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             echo "run=true" >> $GITHUB_OUTPUT
             echo "🚀 Manual trigger — running immediately!"
             exit 0
           fi
-          
-          # Автоматический запуск — проверяем 3 дня
-          last=$(git log -1 --format=%ct -- scout_history.json 2>/dev/null || echo 0)
+
+          # Автоматический запуск — проверяем 3 дня по времени последнего коммита state-файла
+          if [ -f scout_history.json ]; then
+            last=$(git log -1 --format=%ct -- scout_history.json 2>/dev/null || echo 0)
+            last=${last:-0}
+          else
+            last=0
+          fi
           now=$(date +%s)
           diff_sec=$((now - last))
           diff_hours=$((diff_sec / 3600))
-          
+
           echo "📊 Debug: Now=$now, Last=$last, DiffSec=$diff_sec, DiffHours=$diff_hours"
-          
+
           if [ $diff_sec -lt 252000 ]; then
             echo "run=false" >> $GITHUB_OUTPUT
             echo "⏸️ Skip: last run was ${diff_hours}h ago (need > 70h)"
@@ -70,12 +65,20 @@ jobs:
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
           CONFIG_CHANNEL_ID: ${{ secrets.CONFIG_CHANNEL_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scout.py
+        run: |
+          echo "Starting scout.py..."
+          python scout.py
 
       - name: Save History
         if: steps.guard.outputs.run == 'true'
         run: |
           git config --local user.email "radar@bot.com"
           git config --local user.name "Radar Bot"
-          git add scout_history.json scout_radar.log 2>/dev/null || true
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update radar history" && git push)
+          git add scout_history.json 2>/dev/null || true
+          git add scout_radar.log 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update radar history"
+            git push
+          fi
