@@ -1,6 +1,38 @@
 {
-  "posted_releases": {},
-  "posted_repos": {},
+  "posted_releases": {
+    "bol-van/zapret": "v72.13",
+    "bol-van/zapret2": "v1.0.5.2",
+    "ValdikSS/GoodbyeDPI": "0.2.3rc3",
+    "hufrea/byedpi": "v0.17.3",
+    "xvzc/SpoofDPI": "v1.5.3",
+    "amnezia-vpn/amnezia-client": "5.0.3.0",
+    "XTLS/Xray-core": "v26.9.9",
+    "SagerNet/sing-box": "v1.15.0-alpha.6",
+    "apernet/hysteria": "app/v2.12.3",
+    "Gozargah/Marzban": "v0.8.4",
+    "MHSanaei/3x-ui": "dev-latest",
+    "hiddify/hiddify-next": "v4.1.1",
+    "MatsuriDayo/nekoray": "4.0.1",
+    "2dust/v2rayN": "7.25.2",
+    "2dust/v2rayNG": "2.3.8",
+    "MetaCubeX/mihomo": "Prerelease-Alpha"
+  },
+  "posted_repos": {
+    "Flowseal/zapret-discord-youtube": "2026-09-21T08:52:21.580417+00:00",
+    "bol-van/zapret": "2026-09-21T08:52:31.416399+00:00",
+    "romanvht/ByeByeDPI": "2026-09-21T08:52:42.049943+00:00",
+    "bol-van/zapret2": "2026-09-21T08:52:48.880345+00:00",
+    "sleep3r/mtproto.zig": "2026-09-21T08:52:56.852879+00:00",
+    "bol-van/zapret-win-bundle": "2026-09-21T08:53:07.578202+00:00",
+    "StressOzz/Zapret-Manager": "2026-09-21T08:53:14.943316+00:00",
+    "romanvht/ByeDPIManager": "2026-09-21T08:53:23.347546+00:00",
+    "GubernievS/AntiZapret-VPN": "2026-09-21T08:53:34.293820+00:00",
+    "cagritaskn/SplitWire-Turkey": "2026-09-21T08:53:41.857808+00:00",
+    "rupleide/NetFix": "2026-09-21T08:53:50.328276+00:00",
+    "medvedeff-true/Zapret-GUI": "2026-09-21T08:53:56.866253+00:00",
+    "necronicle/z2k": "2026-09-21T08:54:00.911197+00:00",
+    "Dushnilin/tachyon": "2026-09-21T08:54:04.304215+00:00"
+  },
   "repos_seen": {},
-  "last_run": null
+  "last_run": "2026-09-21T08:54:06.307104+00:00"
 }

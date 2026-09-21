@@ -39926,3 +39926,50 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 ============================================================
 2026-08-24 08:33:05,125 | INFO | 🏁 Completed! Published: 7 posts
 2026-08-24 08:33:05,125 | INFO | ============================================================
+2026-09-21 08:51:56,578 [INFO] Проверка ключевых проектов на новые релизы...
+2026-09-21 08:52:01,381 [INFO] Опубликован релиз: 2dust/v2rayN 7.25.2
+2026-09-21 08:52:03,959 [INFO] Поиск свежих репозиториев...
+2026-09-21 08:52:15,062 [INFO] Найдено 112 потенциальных проектов.
+2026-09-21 08:52:20,968 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-21 08:52:20,983 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Flowseal/zapret-discord-youtube
+2026-09-21 08:52:21,580 [INFO] Опубликована новинка: Flowseal/zapret-discord-youtube
+2026-09-21 08:52:31,189 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-21 08:52:31,190 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: bol-van/zapret
+2026-09-21 08:52:31,416 [INFO] Опубликована новинка: bol-van/zapret
+2026-09-21 08:52:41,677 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-21 08:52:41,679 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: romanvht/ByeByeDPI
+2026-09-21 08:52:42,049 [INFO] Опубликована новинка: romanvht/ByeByeDPI
+2026-09-21 08:52:48,652 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-21 08:52:48,654 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: bol-van/zapret2
+2026-09-21 08:52:48,880 [INFO] Опубликована новинка: bol-van/zapret2
+2026-09-21 08:52:56,624 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-21 08:52:56,625 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: sleep3r/mtproto.zig
+2026-09-21 08:52:56,852 [INFO] Опубликована новинка: sleep3r/mtproto.zig
+2026-09-21 08:53:07,364 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-21 08:53:07,365 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: bol-van/zapret-win-bundle
+2026-09-21 08:53:07,578 [INFO] Опубликована новинка: bol-van/zapret-win-bundle
+2026-09-21 08:53:14,711 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-21 08:53:14,712 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: StressOzz/Zapret-Manager
+2026-09-21 08:53:14,943 [INFO] Опубликована новинка: StressOzz/Zapret-Manager
+2026-09-21 08:53:23,009 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-21 08:53:23,010 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: romanvht/ByeDPIManager
+2026-09-21 08:53:23,347 [INFO] Опубликована новинка: romanvht/ByeDPIManager
+2026-09-21 08:53:34,014 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-21 08:53:34,015 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: GubernievS/AntiZapret-VPN
+2026-09-21 08:53:34,293 [INFO] Опубликована новинка: GubernievS/AntiZapret-VPN
+2026-09-21 08:53:41,550 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-21 08:53:41,551 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: cagritaskn/SplitWire-Turkey
+2026-09-21 08:53:41,857 [INFO] Опубликована новинка: cagritaskn/SplitWire-Turkey
+2026-09-21 08:53:50,111 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-21 08:53:50,112 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: rupleide/NetFix
+2026-09-21 08:53:50,328 [INFO] Опубликована новинка: rupleide/NetFix
+2026-09-21 08:53:56,649 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-21 08:53:56,650 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: medvedeff-true/Zapret-GUI
+2026-09-21 08:53:56,866 [INFO] Опубликована новинка: medvedeff-true/Zapret-GUI
+2026-09-21 08:54:00,705 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-21 08:54:00,706 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: necronicle/z2k
+2026-09-21 08:54:00,911 [INFO] Опубликована новинка: necronicle/z2k
+2026-09-21 08:54:04,067 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-21 08:54:04,068 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Dushnilin/tachyon
+2026-09-21 08:54:04,304 [INFO] Опубликована новинка: Dushnilin/tachyon
+2026-09-21 08:54:06,558 [INFO] Завершено. Всего опубликовано: 15
