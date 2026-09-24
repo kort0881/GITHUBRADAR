@@ -7,14 +7,14 @@
     "xvzc/SpoofDPI": "v1.5.3",
     "amnezia-vpn/amnezia-client": "5.0.3.0",
     "XTLS/Xray-core": "v26.9.9",
-    "SagerNet/sing-box": "v1.15.0-alpha.6",
+    "SagerNet/sing-box": "v1.15.0-alpha.8",
     "apernet/hysteria": "app/v2.12.3",
     "Gozargah/Marzban": "v0.8.4",
     "MHSanaei/3x-ui": "dev-latest",
     "hiddify/hiddify-next": "v4.1.1",
     "MatsuriDayo/nekoray": "4.0.1",
     "2dust/v2rayN": "7.25.2",
-    "2dust/v2rayNG": "2.3.8",
+    "2dust/v2rayNG": "2.3.9",
     "MetaCubeX/mihomo": "Prerelease-Alpha"
   },
   "posted_repos": {
@@ -31,8 +31,23 @@
     "rupleide/NetFix": "2026-09-21T08:53:50.328276+00:00",
     "medvedeff-true/Zapret-GUI": "2026-09-21T08:53:56.866253+00:00",
     "necronicle/z2k": "2026-09-21T08:54:00.911197+00:00",
-    "Dushnilin/tachyon": "2026-09-21T08:54:04.304215+00:00"
+    "Dushnilin/tachyon": "2026-09-21T08:54:04.304215+00:00",
+    "sevcator/zapret-pocket": "2026-09-24T16:33:43.538369+00:00",
+    "avatarDD/zapret-gui": "2026-09-24T16:33:46.756443+00:00",
+    "kutovoys/ru_gov_zapret": "skipped_ai",
+    "Medium1992/mihomo-proxy-ros": "2026-09-24T16:33:51.375171+00:00",
+    "Virenbar/ZapretControl": "2026-09-24T16:33:54.741403+00:00",
+    "alaaqutfa/Discord-Zapret": "2026-09-24T16:33:58.260125+00:00",
+    "RevolutionTR/keenetic-zapret2-manager": "2026-09-24T16:34:01.927122+00:00",
+    "erebe/wstunnel": "2026-09-24T16:34:05.431055+00:00",
+    "bivlked/amneziawg-installer": "2026-09-24T16:34:12.849761+00:00",
+    "mirarr-app/network-checker": "2026-09-24T16:34:24.588546+00:00",
+    "by-sonic/tglock": "2026-09-24T16:34:38.198449+00:00",
+    "DanielLavrushin/tspu-docs": "skipped_ai",
+    "Leadaxe/LxBox": "2026-09-24T16:34:59.997486+00:00",
+    "mbm110/MSN-GUARD": "2026-09-24T16:35:12.588141+00:00",
+    "by-sonic/unblock-pro": "2026-09-24T16:35:23.142815+00:00"
   },
   "repos_seen": {},
-  "last_run": "2026-09-21T08:54:06.307104+00:00"
+  "last_run": "2026-09-24T16:35:25.145722+00:00"
 }
