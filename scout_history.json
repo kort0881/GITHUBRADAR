@@ -7,7 +7,7 @@
     "xvzc/SpoofDPI": "v1.5.3",
     "amnezia-vpn/amnezia-client": "5.0.3.0",
     "XTLS/Xray-core": "v26.9.9",
-    "SagerNet/sing-box": "v1.15.0-alpha.8",
+    "SagerNet/sing-box": "v1.15.0-alpha.9",
     "apernet/hysteria": "app/v2.12.3",
     "Gozargah/Marzban": "v0.8.4",
     "MHSanaei/3x-ui": "dev-latest",
@@ -46,8 +46,23 @@
     "DanielLavrushin/tspu-docs": "skipped_ai",
     "Leadaxe/LxBox": "2026-09-24T16:34:59.997486+00:00",
     "mbm110/MSN-GUARD": "2026-09-24T16:35:12.588141+00:00",
-    "by-sonic/unblock-pro": "2026-09-24T16:35:23.142815+00:00"
+    "by-sonic/unblock-pro": "2026-09-24T16:35:23.142815+00:00",
+    "kartavkun/zapret-discord-youtube": "2026-09-27T16:27:34.187299+00:00",
+    "keift/zapret": "2026-09-27T16:27:37.396674+00:00",
+    "Eljaja/BibaVPN": "2026-09-27T16:27:40.979020+00:00",
+    "InvestorKnit/zapret-discord": "2026-09-27T16:27:44.268687+00:00",
+    "Asterlike/zapret2UI": "2026-09-27T16:27:47.482031+00:00",
+    "larrriiin/zapret-ui": "2026-09-27T16:27:50.876644+00:00",
+    "bpm500/zapret_pp": "2026-09-27T16:27:54.498782+00:00",
+    "boratanrikulu/gecit": "2026-09-27T16:27:58.123280+00:00",
+    "litvinovtd/qeli": "skipped_blacklist",
+    "joycecurcirt539-dot/Mirrly-TG-Proxy": "2026-09-27T16:28:11.698716+00:00",
+    "SnishaperTeam/SniShaper": "2026-09-27T16:28:26.644293+00:00",
+    "Iman/caspian": "2026-09-27T16:28:38.178786+00:00",
+    "NooBiToo/TrustTunnelOpenWrt": "2026-09-27T16:28:49.799336+00:00",
+    "yanisplugg/olcvpn-client": "2026-09-27T16:29:03.179870+00:00",
+    "po4yka/RIPDPI": "2026-09-27T16:29:13.486966+00:00"
   },
   "repos_seen": {},
-  "last_run": "2026-09-24T16:35:25.145722+00:00"
+  "last_run": "2026-09-27T16:29:15.489849+00:00"
 }

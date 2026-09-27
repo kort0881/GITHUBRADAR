@@ -40038,3 +40038,64 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-09-24 16:35:22,914 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: by-sonic/unblock-pro
 2026-09-24 16:35:23,142 [INFO] Опубликована новинка: by-sonic/unblock-pro
 2026-09-24 16:35:25,396 [INFO] Завершено. Всего опубликовано: 15
+2026-09-27 16:27:14,133 [INFO] Проверка ключевых проектов на новые релизы...
+2026-09-27 16:27:17,107 [INFO] Опубликован релиз: SagerNet/sing-box v1.15.0-alpha.9
+2026-09-27 16:27:21,529 [INFO] Поиск свежих репозиториев...
+2026-09-27 16:27:32,443 [INFO] Найдено 98 потенциальных проектов.
+2026-09-27 16:27:33,671 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-27 16:27:33,685 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: kartavkun/zapret-discord-youtube
+2026-09-27 16:27:34,187 [INFO] Опубликована новинка: kartavkun/zapret-discord-youtube
+2026-09-27 16:27:37,172 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-27 16:27:37,173 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: keift/zapret
+2026-09-27 16:27:37,396 [INFO] Опубликована новинка: keift/zapret
+2026-09-27 16:27:40,766 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-27 16:27:40,767 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Eljaja/BibaVPN
+2026-09-27 16:27:40,979 [INFO] Опубликована новинка: Eljaja/BibaVPN
+2026-09-27 16:27:44,058 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-27 16:27:44,059 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: InvestorKnit/zapret-discord
+2026-09-27 16:27:44,268 [INFO] Опубликована новинка: InvestorKnit/zapret-discord
+2026-09-27 16:27:47,270 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-27 16:27:47,271 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Asterlike/zapret2UI
+2026-09-27 16:27:47,482 [INFO] Опубликована новинка: Asterlike/zapret2UI
+2026-09-27 16:27:50,661 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-27 16:27:50,662 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: larrriiin/zapret-ui
+2026-09-27 16:27:50,876 [INFO] Опубликована новинка: larrriiin/zapret-ui
+2026-09-27 16:27:54,203 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-27 16:27:54,204 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: bpm500/zapret_pp
+2026-09-27 16:27:54,498 [INFO] Опубликована новинка: bpm500/zapret_pp
+2026-09-27 16:27:57,880 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-27 16:27:57,881 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: boratanrikulu/gecit
+2026-09-27 16:27:58,123 [INFO] Опубликована новинка: boratanrikulu/gecit
+2026-09-27 16:28:00,553 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-27 16:28:00,554 [INFO] Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2026-09-27 16:28:09,614 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-27 16:28:09,615 [INFO] Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2026-09-27 16:28:11,466 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-27 16:28:11,467 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: joycecurcirt539-dot/Mirrly-TG-Proxy
+2026-09-27 16:28:11,698 [INFO] Опубликована новинка: joycecurcirt539-dot/Mirrly-TG-Proxy
+2026-09-27 16:28:14,244 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-27 16:28:14,245 [INFO] Retrying request to /openai/v1/chat/completions in 11.000000 seconds
+2026-09-27 16:28:26,421 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-27 16:28:26,422 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: SnishaperTeam/SniShaper
+2026-09-27 16:28:26,644 [INFO] Опубликована новинка: SnishaperTeam/SniShaper
+2026-09-27 16:28:29,201 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-27 16:28:29,201 [INFO] Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-09-27 16:28:37,968 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-27 16:28:37,969 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Iman/caspian
+2026-09-27 16:28:38,178 [INFO] Опубликована новинка: Iman/caspian
+2026-09-27 16:28:40,780 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-27 16:28:40,780 [INFO] Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-09-27 16:28:49,569 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-27 16:28:49,570 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: NooBiToo/TrustTunnelOpenWrt
+2026-09-27 16:28:49,799 [INFO] Опубликована новинка: NooBiToo/TrustTunnelOpenWrt
+2026-09-27 16:28:52,192 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-27 16:28:52,193 [INFO] Retrying request to /openai/v1/chat/completions in 10.000000 seconds
+2026-09-27 16:29:02,947 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-27 16:29:02,948 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: yanisplugg/olcvpn-client
+2026-09-27 16:29:03,179 [INFO] Опубликована новинка: yanisplugg/olcvpn-client
+2026-09-27 16:29:05,720 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-27 16:29:05,721 [INFO] Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-09-27 16:29:13,262 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-27 16:29:13,263 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: po4yka/RIPDPI
+2026-09-27 16:29:13,486 [INFO] Опубликована новинка: po4yka/RIPDPI
+2026-09-27 16:29:15,740 [INFO] Завершено. Всего опубликовано: 15
