@@ -4,18 +4,18 @@
     "bol-van/zapret2": "v1.0.5.2",
     "ValdikSS/GoodbyeDPI": "0.2.3rc3",
     "hufrea/byedpi": "v0.17.3",
-    "xvzc/SpoofDPI": "v1.5.3",
+    "xvzc/SpoofDPI": "v1.5.4",
     "amnezia-vpn/amnezia-client": "5.0.3.0",
-    "XTLS/Xray-core": "v26.9.9",
+    "XTLS/Xray-core": "v26.9.30",
     "SagerNet/sing-box": "v1.15.0-alpha.9",
     "apernet/hysteria": "app/v2.12.3",
     "Gozargah/Marzban": "v0.8.4",
     "MHSanaei/3x-ui": "dev-latest",
     "hiddify/hiddify-next": "v4.1.1",
     "MatsuriDayo/nekoray": "4.0.1",
-    "2dust/v2rayN": "7.25.2",
+    "2dust/v2rayN": "7.25.4",
     "2dust/v2rayNG": "2.3.9",
-    "MetaCubeX/mihomo": "Prerelease-Alpha"
+    "MetaCubeX/mihomo": "v1.19.32"
   },
   "posted_repos": {
     "Flowseal/zapret-discord-youtube": "2026-09-21T08:52:21.580417+00:00",
@@ -61,8 +61,19 @@
     "Iman/caspian": "2026-09-27T16:28:38.178786+00:00",
     "NooBiToo/TrustTunnelOpenWrt": "2026-09-27T16:28:49.799336+00:00",
     "yanisplugg/olcvpn-client": "2026-09-27T16:29:03.179870+00:00",
-    "po4yka/RIPDPI": "2026-09-27T16:29:13.486966+00:00"
+    "po4yka/RIPDPI": "2026-09-27T16:29:13.486966+00:00",
+    "xvzc/spoofdpi": "2026-09-30T17:39:36.348842+00:00",
+    "WINGS-N/WINGSV": "2026-09-30T17:39:39.726255+00:00",
+    "CavernMothMinaret/zapret-discord": "2026-09-30T17:39:43.026736+00:00",
+    "I-layder-I/Easy_zapret": "2026-09-30T17:39:46.819340+00:00",
+    "enkinvsh/dropweb": "2026-09-30T17:39:50.506402+00:00",
+    "bropines/tailsocks": "2026-09-30T17:39:53.766876+00:00",
+    "stillya/wg-relay": "2026-09-30T17:39:57.339864+00:00",
+    "XTLS/Xray-core": "2026-09-30T17:40:03.692639+00:00",
+    "Loyalsoldier/v2ray-rules-dat": "2026-09-30T17:40:17.066151+00:00",
+    "v2rayA/v2rayA": "2026-09-30T17:40:27.448157+00:00",
+    "Loyalsoldier/geoip": "2026-09-30T17:40:40.846201+00:00"
   },
   "repos_seen": {},
-  "last_run": "2026-09-27T16:29:15.489849+00:00"
+  "last_run": "2026-09-30T17:40:42.849210+00:00"
 }
