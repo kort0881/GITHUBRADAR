@@ -40152,3 +40152,64 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-09-30 17:40:40,539 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Loyalsoldier/geoip
 2026-09-30 17:40:40,846 [INFO] Опубликована новинка: Loyalsoldier/geoip
 2026-09-30 17:40:43,100 [INFO] Завершено. Всего опубликовано: 15
+2026-10-03 15:45:29,418 [INFO] Проверка ключевых проектов на новые релизы...
+2026-10-03 15:45:31,981 [INFO] Опубликован релиз: SagerNet/sing-box v1.15.0-alpha.10
+2026-10-03 15:45:35,036 [INFO] Опубликован релиз: MHSanaei/3x-ui v3.9.0
+2026-10-03 15:45:38,286 [INFO] Опубликован релиз: 2dust/v2rayNG 2.3.10
+2026-10-03 15:45:40,686 [INFO] Поиск свежих репозиториев...
+2026-10-03 15:45:51,451 [INFO] Найдено 81 потенциальных проектов.
+2026-10-03 15:45:52,520 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-03 15:45:52,530 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Sergeydigl3/zapret-discord-youtube-rust
+2026-10-03 15:45:52,687 [INFO] Опубликована новинка: Sergeydigl3/zapret-discord-youtube-rust
+2026-10-03 15:45:55,592 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-03 15:45:55,593 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: SadeghHayeri/GreenTunnel
+2026-10-03 15:45:55,772 [INFO] Опубликована новинка: SadeghHayeri/GreenTunnel
+2026-10-03 15:45:59,091 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-03 15:45:59,092 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: MayersScott/rkn-block-checker
+2026-10-03 15:45:59,260 [INFO] Опубликована новинка: MayersScott/rkn-block-checker
+2026-10-03 15:46:02,281 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-03 15:46:02,282 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: pwnnex/ByeByeVPN
+2026-10-03 15:46:02,597 [INFO] Опубликована новинка: pwnnex/ByeByeVPN
+2026-10-03 15:46:06,133 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-03 15:46:06,134 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: behzadea12/Paqet-Tunnel-Manager
+2026-10-03 15:46:06,333 [INFO] Опубликована новинка: behzadea12/Paqet-Tunnel-Manager
+2026-10-03 15:46:09,174 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-03 15:46:09,175 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: 2dust/v2rayNG
+2026-10-03 15:46:09,320 [INFO] Опубликована новинка: 2dust/v2rayNG
+2026-10-03 15:46:12,345 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-03 15:46:12,345 [INFO] ИИ отклонил: Alvin9999-newpac/fanqiang
+2026-10-03 15:46:12,728 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-03 15:46:12,728 [INFO] Retrying request to /openai/v1/chat/completions in 11.000000 seconds
+2026-10-03 15:46:24,333 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-03 15:46:24,334 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: fscarmen/ArgoX
+2026-10-03 15:46:24,682 [INFO] Опубликована новинка: fscarmen/ArgoX
+2026-10-03 15:46:27,029 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-03 15:46:27,029 [INFO] Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-10-03 15:46:34,809 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-03 15:46:34,810 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: DanielLavrushin/b4
+2026-10-03 15:46:34,997 [INFO] Опубликована новинка: DanielLavrushin/b4
+2026-10-03 15:46:37,333 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-03 15:46:37,333 [INFO] Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-10-03 15:46:43,957 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-03 15:46:43,958 [INFO] ИИ отклонил: ebrasha/free-v2ray-public-list
+2026-10-03 15:46:44,341 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-03 15:46:44,341 [INFO] Retrying request to /openai/v1/chat/completions in 12.000000 seconds
+2026-10-03 15:46:57,311 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-03 15:46:57,312 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Aethersailor/SubConverter-Extended
+2026-10-03 15:46:57,647 [INFO] Опубликована новинка: Aethersailor/SubConverter-Extended
+2026-10-03 15:47:00,040 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-03 15:47:00,040 [INFO] Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-10-03 15:47:10,153 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-03 15:47:10,154 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: whoahaow/rjsxrd
+2026-10-03 15:47:10,550 [INFO] Опубликована новинка: whoahaow/rjsxrd
+2026-10-03 15:47:12,891 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-03 15:47:12,891 [INFO] Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-10-03 15:47:25,571 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-03 15:47:25,571 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: 0xRadikal/Free-v2ray-Configs
+2026-10-03 15:47:25,907 [INFO] Опубликована новинка: 0xRadikal/Free-v2ray-Configs
+2026-10-03 15:47:28,317 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-03 15:47:28,318 [INFO] Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-10-03 15:47:36,215 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-03 15:47:36,216 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: hello-yunshu/Xray_bash_onekey
+2026-10-03 15:47:36,443 [INFO] Опубликована новинка: hello-yunshu/Xray_bash_onekey
+2026-10-03 15:47:38,697 [INFO] Завершено. Всего опубликовано: 15

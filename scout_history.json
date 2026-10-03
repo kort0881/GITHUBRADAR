@@ -7,15 +7,15 @@
     "xvzc/SpoofDPI": "v1.5.4",
     "amnezia-vpn/amnezia-client": "5.0.3.0",
     "XTLS/Xray-core": "v26.9.30",
-    "SagerNet/sing-box": "v1.15.0-alpha.9",
+    "SagerNet/sing-box": "v1.15.0-alpha.10",
     "apernet/hysteria": "app/v2.12.3",
     "Gozargah/Marzban": "v0.8.4",
-    "MHSanaei/3x-ui": "dev-latest",
+    "MHSanaei/3x-ui": "v3.9.0",
     "hiddify/hiddify-next": "v4.1.1",
     "MatsuriDayo/nekoray": "4.0.1",
     "2dust/v2rayN": "7.25.4",
-    "2dust/v2rayNG": "2.3.9",
-    "MetaCubeX/mihomo": "v1.19.32"
+    "2dust/v2rayNG": "2.3.10",
+    "MetaCubeX/mihomo": "Prerelease-Alpha"
   },
   "posted_repos": {
     "Flowseal/zapret-discord-youtube": "2026-09-21T08:52:21.580417+00:00",
@@ -72,8 +72,22 @@
     "XTLS/Xray-core": "2026-09-30T17:40:03.692639+00:00",
     "Loyalsoldier/v2ray-rules-dat": "2026-09-30T17:40:17.066151+00:00",
     "v2rayA/v2rayA": "2026-09-30T17:40:27.448157+00:00",
-    "Loyalsoldier/geoip": "2026-09-30T17:40:40.846201+00:00"
+    "Loyalsoldier/geoip": "2026-09-30T17:40:40.846201+00:00",
+    "Sergeydigl3/zapret-discord-youtube-rust": "2026-10-03T15:45:52.687469+00:00",
+    "SadeghHayeri/GreenTunnel": "2026-10-03T15:45:55.772005+00:00",
+    "MayersScott/rkn-block-checker": "2026-10-03T15:45:59.260510+00:00",
+    "pwnnex/ByeByeVPN": "2026-10-03T15:46:02.597159+00:00",
+    "behzadea12/Paqet-Tunnel-Manager": "2026-10-03T15:46:06.333217+00:00",
+    "2dust/v2rayNG": "2026-10-03T15:46:09.320122+00:00",
+    "Alvin9999-newpac/fanqiang": "skipped_ai",
+    "fscarmen/ArgoX": "2026-10-03T15:46:24.682513+00:00",
+    "DanielLavrushin/b4": "2026-10-03T15:46:34.997735+00:00",
+    "ebrasha/free-v2ray-public-list": "skipped_ai",
+    "Aethersailor/SubConverter-Extended": "2026-10-03T15:46:57.647147+00:00",
+    "whoahaow/rjsxrd": "2026-10-03T15:47:10.550736+00:00",
+    "0xRadikal/Free-v2ray-Configs": "2026-10-03T15:47:25.907248+00:00",
+    "hello-yunshu/Xray_bash_onekey": "2026-10-03T15:47:36.443556+00:00"
   },
   "repos_seen": {},
-  "last_run": "2026-09-30T17:40:42.849210+00:00"
+  "last_run": "2026-10-03T15:47:38.446514+00:00"
 }
