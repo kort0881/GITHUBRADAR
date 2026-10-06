@@ -8,12 +8,12 @@
     "amnezia-vpn/amnezia-client": "5.0.3.0",
     "XTLS/Xray-core": "v26.9.30",
     "SagerNet/sing-box": "v1.15.0-alpha.10",
-    "apernet/hysteria": "app/v2.12.3",
+    "apernet/hysteria": "app/v2.13.0",
     "Gozargah/Marzban": "v0.8.4",
-    "MHSanaei/3x-ui": "v3.9.0",
-    "hiddify/hiddify-next": "v4.1.1",
+    "MHSanaei/3x-ui": "dev-latest",
+    "hiddify/hiddify-next": "draft",
     "MatsuriDayo/nekoray": "4.0.1",
-    "2dust/v2rayN": "7.25.4",
+    "2dust/v2rayN": "7.25.5",
     "2dust/v2rayNG": "2.3.10",
     "MetaCubeX/mihomo": "Prerelease-Alpha"
   },
@@ -86,8 +86,21 @@
     "Aethersailor/SubConverter-Extended": "2026-10-03T15:46:57.647147+00:00",
     "whoahaow/rjsxrd": "2026-10-03T15:47:10.550736+00:00",
     "0xRadikal/Free-v2ray-Configs": "2026-10-03T15:47:25.907248+00:00",
-    "hello-yunshu/Xray_bash_onekey": "2026-10-03T15:47:36.443556+00:00"
+    "hello-yunshu/Xray_bash_onekey": "2026-10-03T15:47:36.443556+00:00",
+    "klaymm/zapret-guide": "skipped_ai",
+    "yanisplugg/yptun": "2026-10-06T06:38:10.365139+00:00",
+    "yonggekkk/argosbx": "2026-10-06T06:38:13.755198+00:00",
+    "remnawave/panel": "2026-10-06T06:38:16.807053+00:00",
+    "PhoenixNil/XrayUI-dev": "2026-10-06T06:38:20.363101+00:00",
+    "OneXray/OneXray": "2026-10-06T06:38:23.494119+00:00",
+    "icubaby/SideRail": "2026-10-06T06:38:26.859007+00:00",
+    "SaeedDev94/Xray": "2026-10-06T06:38:33.974105+00:00",
+    "2dust/v2rayN": "2026-10-06T06:38:44.111008+00:00",
+    "MHSanaei/3x-ui": "2026-10-06T06:38:55.757031+00:00",
+    "SagerNet/sing-box": "2026-10-06T06:39:02.696112+00:00",
+    "hiddify/hiddify-app": "2026-10-06T06:39:13.929297+00:00",
+    "Z-Siqi/Clash-for-Windows_Chinese": "2026-10-06T06:39:27.303260+00:00"
   },
   "repos_seen": {},
-  "last_run": "2026-10-03T15:47:38.446514+00:00"
+  "last_run": "2026-10-06T06:39:29.306129+00:00"
 }
