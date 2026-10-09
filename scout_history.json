@@ -7,7 +7,7 @@
     "xvzc/SpoofDPI": "v1.5.4",
     "amnezia-vpn/amnezia-client": "5.0.3.0",
     "XTLS/Xray-core": "v26.9.30",
-    "SagerNet/sing-box": "v1.15.0-alpha.10",
+    "SagerNet/sing-box": "v1.15.0-alpha.11",
     "apernet/hysteria": "app/v2.13.0",
     "Gozargah/Marzban": "v0.8.4",
     "MHSanaei/3x-ui": "dev-latest",
@@ -99,8 +99,24 @@
     "MHSanaei/3x-ui": "2026-10-06T06:38:55.757031+00:00",
     "SagerNet/sing-box": "2026-10-06T06:39:02.696112+00:00",
     "hiddify/hiddify-app": "2026-10-06T06:39:13.929297+00:00",
-    "Z-Siqi/Clash-for-Windows_Chinese": "2026-10-06T06:39:27.303260+00:00"
+    "Z-Siqi/Clash-for-Windows_Chinese": "2026-10-06T06:39:27.303260+00:00",
+    "EwenLoy/ByeByeDPI-x-tg": "2026-10-09T17:59:50.202217+00:00",
+    "hashcott/ghostline": "2026-10-09T17:59:53.462825+00:00",
+    "nguyentandung123/Proximity-Fusion-Hub": "2026-10-09T17:59:57.012595+00:00",
+    "JuancaK20/Roblox-QuickLauncher": "skipped_ai",
+    "Ryanboy2023/keenetic-dpi-orchestrator": "2026-10-09T18:00:01.470842+00:00",
+    "RixyPow/netzapret": "2026-10-09T18:00:05.016288+00:00",
+    "ClusterM/wg-obfuscator": "2026-10-09T18:00:08.851289+00:00",
+    "LorenEteval/Furious": "2026-10-09T18:00:12.197889+00:00",
+    "tzmax/V2RayXS": "2026-10-09T18:00:20.519877+00:00",
+    "YuanDevTeam/OneXray": "2026-10-09T18:00:29.162151+00:00",
+    "DiningFactory/panda-vpn-pro": "skipped_ai",
+    "KaringX/karing": "2026-10-09T18:01:03.327646+00:00",
+    "juewuy/ShellCrash": "2026-10-09T18:01:11.793389+00:00",
+    "privacy-protection-tools/anti-AD": "2026-10-09T18:01:25.532364+00:00",
+    "yonggekkk/sing-box-yg": "2026-10-09T18:01:41.466364+00:00",
+    "alireza0/s-ui": "2026-10-09T18:01:52.258354+00:00"
   },
   "repos_seen": {},
-  "last_run": "2026-10-06T06:39:29.306129+00:00"
+  "last_run": "2026-10-09T18:01:54.261292+00:00"
 }
