@@ -40337,3 +40337,50 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-10-09 18:01:52,050 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: alireza0/s-ui
 2026-10-09 18:01:52,258 [INFO] Опубликована новинка: alireza0/s-ui
 2026-10-09 18:01:54,512 [INFO] Завершено. Всего опубликовано: 15
+2026-10-12 20:56:18,287 [INFO] Проверка ключевых проектов на новые релизы...
+2026-10-12 20:56:21,472 [INFO] Опубликован релиз: XTLS/Xray-core v26.10.10
+2026-10-12 20:56:23,981 [INFO] Опубликован релиз: SagerNet/sing-box v1.15.0-alpha.12
+2026-10-12 20:56:27,370 [INFO] Опубликован релиз: MHSanaei/3x-ui v3.10.0
+2026-10-12 20:56:30,794 [INFO] Опубликован релиз: 2dust/v2rayN 7.25.6
+2026-10-12 20:56:33,419 [INFO] Опубликован релиз: 2dust/v2rayNG 2.3.11
+2026-10-12 20:56:35,764 [INFO] Поиск свежих репозиториев...
+2026-10-12 20:56:47,342 [INFO] Найдено 60 потенциальных проектов.
+2026-10-12 20:56:48,725 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-12 20:56:48,738 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: CherretGit/zaprett-app
+2026-10-12 20:56:49,185 [INFO] Опубликована новинка: CherretGit/zaprett-app
+2026-10-12 20:56:52,406 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-12 20:56:52,407 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: egor-white/zaprett
+2026-10-12 20:56:52,721 [INFO] Опубликована новинка: egor-white/zaprett
+2026-10-12 20:56:55,883 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-12 20:56:55,885 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: umutxyp/Shroudly
+2026-10-12 20:56:56,077 [INFO] Опубликована новинка: umutxyp/Shroudly
+2026-10-12 20:56:59,274 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-12 20:56:59,275 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: FogWarriorEmbroider/zapret-discord
+2026-10-12 20:56:59,489 [INFO] Опубликована новинка: FogWarriorEmbroider/zapret-discord
+2026-10-12 20:57:02,836 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-12 20:57:02,837 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: echoillusionistcurl/zapret-discord
+2026-10-12 20:57:03,026 [INFO] Опубликована новинка: echoillusionistcurl/zapret-discord
+2026-10-12 20:57:06,190 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-12 20:57:06,191 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: ALFiX01/GoodbyeZapret
+2026-10-12 20:57:06,397 [INFO] Опубликована новинка: ALFiX01/GoodbyeZapret
+2026-10-12 20:57:09,741 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-12 20:57:09,742 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: therealaleph/MasterHttpRelayVPN-RUST
+2026-10-12 20:57:09,939 [INFO] Опубликована новинка: therealaleph/MasterHttpRelayVPN-RUST
+2026-10-12 20:57:13,235 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-12 20:57:13,236 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: ajavadinezhad/zyrln
+2026-10-12 20:57:13,420 [INFO] Опубликована новинка: ajavadinezhad/zyrln
+2026-10-12 20:57:15,951 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-12 20:57:15,951 [INFO] Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2026-10-12 20:57:21,086 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-12 20:57:21,086 [INFO] Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2026-10-12 20:57:23,296 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-12 20:57:23,297 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: 7Sageer/sublink-worker
+2026-10-12 20:57:23,484 [INFO] Опубликована новинка: 7Sageer/sublink-worker
+2026-10-12 20:57:25,956 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-12 20:57:25,956 [INFO] Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2026-10-12 20:57:35,095 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-12 20:57:35,096 [INFO] Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2026-10-12 20:57:36,826 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-12 20:57:36,827 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: hiddify/Hiddify-Manager
+2026-10-12 20:57:37,078 [INFO] Опубликована новинка: hiddify/Hiddify-Manager
+2026-10-12 20:57:39,332 [INFO] Завершено. Всего опубликовано: 15

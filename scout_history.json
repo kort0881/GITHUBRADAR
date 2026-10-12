@@ -6,15 +6,15 @@
     "hufrea/byedpi": "v0.17.3",
     "xvzc/SpoofDPI": "v1.5.4",
     "amnezia-vpn/amnezia-client": "5.0.3.0",
-    "XTLS/Xray-core": "v26.9.30",
-    "SagerNet/sing-box": "v1.15.0-alpha.11",
+    "XTLS/Xray-core": "v26.10.10",
+    "SagerNet/sing-box": "v1.15.0-alpha.12",
     "apernet/hysteria": "app/v2.13.0",
     "Gozargah/Marzban": "v0.8.4",
-    "MHSanaei/3x-ui": "dev-latest",
+    "MHSanaei/3x-ui": "v3.10.0",
     "hiddify/hiddify-next": "draft",
     "MatsuriDayo/nekoray": "4.0.1",
-    "2dust/v2rayN": "7.25.5",
-    "2dust/v2rayNG": "2.3.10",
+    "2dust/v2rayN": "7.25.6",
+    "2dust/v2rayNG": "2.3.11",
     "MetaCubeX/mihomo": "Prerelease-Alpha"
   },
   "posted_repos": {
@@ -115,8 +115,18 @@
     "juewuy/ShellCrash": "2026-10-09T18:01:11.793389+00:00",
     "privacy-protection-tools/anti-AD": "2026-10-09T18:01:25.532364+00:00",
     "yonggekkk/sing-box-yg": "2026-10-09T18:01:41.466364+00:00",
-    "alireza0/s-ui": "2026-10-09T18:01:52.258354+00:00"
+    "alireza0/s-ui": "2026-10-09T18:01:52.258354+00:00",
+    "CherretGit/zaprett-app": "2026-10-12T20:56:49.185001+00:00",
+    "egor-white/zaprett": "2026-10-12T20:56:52.721317+00:00",
+    "umutxyp/Shroudly": "2026-10-12T20:56:56.077034+00:00",
+    "FogWarriorEmbroider/zapret-discord": "2026-10-12T20:56:59.489025+00:00",
+    "echoillusionistcurl/zapret-discord": "2026-10-12T20:57:03.026872+00:00",
+    "ALFiX01/GoodbyeZapret": "2026-10-12T20:57:06.396990+00:00",
+    "therealaleph/MasterHttpRelayVPN-RUST": "2026-10-12T20:57:09.939441+00:00",
+    "ajavadinezhad/zyrln": "2026-10-12T20:57:13.420228+00:00",
+    "7Sageer/sublink-worker": "2026-10-12T20:57:23.484739+00:00",
+    "hiddify/Hiddify-Manager": "2026-10-12T20:57:37.078845+00:00"
   },
   "repos_seen": {},
-  "last_run": "2026-10-09T18:01:54.261292+00:00"
+  "last_run": "2026-10-12T20:57:39.081005+00:00"
 }
