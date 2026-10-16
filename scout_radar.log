@@ -40384,3 +40384,64 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-10-12 20:57:36,827 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: hiddify/Hiddify-Manager
 2026-10-12 20:57:37,078 [INFO] Опубликована новинка: hiddify/Hiddify-Manager
 2026-10-12 20:57:39,332 [INFO] Завершено. Всего опубликовано: 15
+2026-10-16 16:07:36,439 [INFO] Проверка ключевых проектов на новые релизы...
+2026-10-16 16:07:38,659 [INFO] Опубликован релиз: xvzc/SpoofDPI v1.5.5
+2026-10-16 16:07:43,230 [INFO] Опубликован релиз: MHSanaei/3x-ui v3.10.2
+2026-10-16 16:07:47,070 [INFO] Поиск свежих репозиториев...
+2026-10-16 16:07:59,158 [INFO] Найдено 56 потенциальных проектов.
+2026-10-16 16:08:00,577 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 16:08:00,591 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: roninreilly/darkware-zapret
+2026-10-16 16:08:01,118 [INFO] Опубликована новинка: roninreilly/darkware-zapret
+2026-10-16 16:08:04,378 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 16:08:04,379 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: wavepostmansteal/discord-zapret
+2026-10-16 16:08:04,568 [INFO] Опубликована новинка: wavepostmansteal/discord-zapret
+2026-10-16 16:08:07,697 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 16:08:07,698 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: rupleide/NetFixMobile
+2026-10-16 16:08:07,942 [INFO] Опубликована новинка: rupleide/NetFixMobile
+2026-10-16 16:08:11,117 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 16:08:11,118 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: fscarmen/sing-box
+2026-10-16 16:08:11,352 [INFO] Опубликована новинка: fscarmen/sing-box
+2026-10-16 16:08:15,193 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 16:08:15,194 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: yonggekkk/x-ui-yg
+2026-10-16 16:08:15,493 [INFO] Опубликована новинка: yonggekkk/x-ui-yg
+2026-10-16 16:08:18,897 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 16:08:18,898 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: GUI-for-Cores/GUI.for.SingBox
+2026-10-16 16:08:19,075 [INFO] Опубликована новинка: GUI-for-Cores/GUI.for.SingBox
+2026-10-16 16:08:21,942 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 16:08:21,943 [INFO] ИИ отклонил: 217heidai/adblockfilters
+2026-10-16 16:08:22,340 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 16:08:22,340 [INFO] Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-10-16 16:08:30,187 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 16:08:30,188 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: throneproj/Throne
+2026-10-16 16:08:30,386 [INFO] Опубликована новинка: throneproj/Throne
+2026-10-16 16:08:32,817 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 16:08:32,817 [INFO] Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-10-16 16:08:40,738 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 16:08:40,739 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: awesome-vpn/awesome-vpn
+2026-10-16 16:08:40,938 [INFO] Опубликована новинка: awesome-vpn/awesome-vpn
+2026-10-16 16:08:43,392 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 16:08:43,392 [INFO] Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-10-16 16:08:51,124 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 16:08:51,125 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: amnezia-vpn/amnezia-client
+2026-10-16 16:08:51,321 [INFO] Опубликована новинка: amnezia-vpn/amnezia-client
+2026-10-16 16:08:53,761 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 16:08:53,761 [INFO] Retrying request to /openai/v1/chat/completions in 10.000000 seconds
+2026-10-16 16:09:04,292 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 16:09:04,293 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: wgtunnel/android
+2026-10-16 16:09:04,507 [INFO] Опубликована новинка: wgtunnel/android
+2026-10-16 16:09:06,958 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 16:09:06,958 [INFO] Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-10-16 16:09:15,715 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 16:09:15,716 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: qr243vbi/nekobox
+2026-10-16 16:09:15,945 [INFO] Опубликована новинка: qr243vbi/nekobox
+2026-10-16 16:09:18,676 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 16:09:18,677 [INFO] Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-10-16 16:09:28,892 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 16:09:28,893 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: sinavm/sinavm
+2026-10-16 16:09:29,113 [INFO] Опубликована новинка: sinavm/sinavm
+2026-10-16 16:09:31,569 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 16:09:31,569 [INFO] Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-10-16 16:09:39,424 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 16:09:39,425 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: hoaxisr/awg-manager
+2026-10-16 16:09:39,630 [INFO] Опубликована новинка: hoaxisr/awg-manager
+2026-10-16 16:09:41,884 [INFO] Завершено. Всего опубликовано: 15
