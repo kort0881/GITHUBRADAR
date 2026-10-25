@@ -40585,3 +40585,71 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-10-22 16:43:18,701 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: urbnywrt/postern
 2026-10-22 16:43:19,218 [INFO] Опубликована новинка: urbnywrt/postern
 2026-10-22 16:43:21,472 [INFO] Завершено. Всего опубликовано: 15
+2026-10-25 15:35:51,109 [INFO] Проверка ключевых проектов на новые релизы...
+2026-10-25 15:35:53,967 [INFO] Опубликован релиз: SagerNet/sing-box v1.15.0-alpha.13
+2026-10-25 15:35:58,339 [INFO] Поиск свежих репозиториев...
+2026-10-25 15:36:09,381 [INFO] Найдено 16 потенциальных проектов.
+2026-10-25 15:36:10,480 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-25 15:36:10,496 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: zemidala/nfqws2-ui
+2026-10-25 15:36:10,816 [INFO] Опубликована новинка: zemidala/nfqws2-ui
+2026-10-25 15:36:13,981 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-25 15:36:13,982 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: F0RSES/zapret-muffin-gui
+2026-10-25 15:36:14,154 [INFO] Опубликована новинка: F0RSES/zapret-muffin-gui
+2026-10-25 15:36:17,111 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-25 15:36:17,114 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: GVCoder09/NoDPI
+2026-10-25 15:36:17,355 [INFO] Опубликована новинка: GVCoder09/NoDPI
+2026-10-25 15:36:20,735 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-25 15:36:20,736 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: xeefei/X-Panel
+2026-10-25 15:36:20,948 [INFO] Опубликована новинка: xeefei/X-Panel
+2026-10-25 15:36:23,803 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-25 15:36:23,804 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: censortracker/censortracker
+2026-10-25 15:36:24,040 [INFO] Опубликована новинка: censortracker/censortracker
+2026-10-25 15:36:27,171 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-25 15:36:27,172 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: RockBlack-VPN/ip-address
+2026-10-25 15:36:27,328 [INFO] Опубликована новинка: RockBlack-VPN/ip-address
+2026-10-25 15:36:29,604 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-25 15:36:29,604 [INFO] Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+2026-10-25 15:36:33,316 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-25 15:36:33,317 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: guardianproject/orbot-android
+2026-10-25 15:36:33,713 [INFO] Опубликована новинка: guardianproject/orbot-android
+2026-10-25 15:36:36,267 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-25 15:36:36,267 [INFO] Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2026-10-25 15:36:41,888 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-25 15:36:41,889 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: enfein/mieru
+2026-10-25 15:36:42,044 [INFO] Опубликована новинка: enfein/mieru
+2026-10-25 15:36:44,431 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-25 15:36:44,432 [INFO] Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-10-25 15:36:52,099 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-25 15:36:52,100 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Kkevsterrr/geneva
+2026-10-25 15:36:52,264 [INFO] Опубликована новинка: Kkevsterrr/geneva
+2026-10-25 15:36:54,647 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-25 15:36:54,647 [INFO] Retrying request to /openai/v1/chat/completions in 10.000000 seconds
+2026-10-25 15:37:05,136 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-25 15:37:05,137 [INFO] ИИ отклонил: ArchLinuxStudio/ArchLinuxTutorial
+2026-10-25 15:37:05,494 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-25 15:37:05,494 [INFO] Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-10-25 15:37:13,345 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-25 15:37:13,346 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Psiphon-Labs/psiphon-tunnel-core
+2026-10-25 15:37:13,693 [INFO] Опубликована новинка: Psiphon-Labs/psiphon-tunnel-core
+2026-10-25 15:37:16,044 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-25 15:37:16,045 [INFO] Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2026-10-25 15:37:25,098 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-25 15:37:25,098 [INFO] Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2026-10-25 15:37:26,913 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-25 15:37:26,914 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: bebasid/bebasid
+2026-10-25 15:37:27,141 [INFO] Опубликована новинка: bebasid/bebasid
+2026-10-25 15:37:29,550 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-25 15:37:29,550 [INFO] Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-10-25 15:37:38,269 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-25 15:37:38,270 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: hello-world-1989/cn-news
+2026-10-25 15:37:38,419 [INFO] Опубликована новинка: hello-world-1989/cn-news
+2026-10-25 15:37:40,816 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-25 15:37:40,816 [INFO] Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-10-25 15:37:49,642 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-25 15:37:49,643 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: markankamaransheogarat-sys/dpi-auto-desync
+2026-10-25 15:37:49,809 [INFO] Опубликована новинка: markankamaransheogarat-sys/dpi-auto-desync
+2026-10-25 15:37:52,351 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-25 15:37:52,351 [INFO] Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-10-25 15:38:00,867 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-25 15:38:00,868 [INFO] ИИ отклонил: JoooostB/alltrails-to-gpx
+2026-10-25 15:38:01,120 [INFO] Завершено. Всего опубликовано: 14
