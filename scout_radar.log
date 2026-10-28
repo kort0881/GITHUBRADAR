@@ -40653,3 +40653,23 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-10-25 15:38:00,867 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-10-25 15:38:00,868 [INFO] ИИ отклонил: JoooostB/alltrails-to-gpx
 2026-10-25 15:38:01,120 [INFO] Завершено. Всего опубликовано: 14
+2026-10-28 17:55:03,024 [INFO] Проверка ключевых проектов на новые релизы...
+2026-10-28 17:55:08,194 [INFO] Опубликован релиз: MHSanaei/3x-ui v3.11.0
+2026-10-28 17:55:12,107 [INFO] Опубликован релиз: 2dust/v2rayNG 2.3.14
+2026-10-28 17:55:14,560 [INFO] Поиск свежих репозиториев...
+2026-10-28 17:55:26,946 [INFO] Найдено 8 потенциальных проектов.
+2026-10-28 17:55:28,216 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-28 17:55:28,228 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Taygun86/zapret-gtk
+2026-10-28 17:55:28,699 [INFO] Опубликована новинка: Taygun86/zapret-gtk
+2026-10-28 17:55:31,916 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-28 17:55:31,917 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: ZeroTworu/anet
+2026-10-28 17:55:32,113 [INFO] Опубликована новинка: ZeroTworu/anet
+2026-10-28 17:55:35,460 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-28 17:55:35,461 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: luridlane-dev/PktSwerve
+2026-10-28 17:55:35,675 [INFO] Опубликована новинка: luridlane-dev/PktSwerve
+2026-10-28 17:55:39,358 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-28 17:55:39,359 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Riccardo030607/buzzheavier-parallel-downloader
+2026-10-28 17:55:39,590 [INFO] Опубликована новинка: Riccardo030607/buzzheavier-parallel-downloader
+2026-10-28 17:55:43,136 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-28 17:55:43,137 [INFO] ИИ отклонил: guidiguidi/depop-tls-scraper
+2026-10-28 17:55:43,389 [INFO] Завершено. Всего опубликовано: 6

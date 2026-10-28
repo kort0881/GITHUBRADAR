@@ -10,11 +10,11 @@
     "SagerNet/sing-box": "v1.15.0-alpha.13",
     "apernet/hysteria": "app/v2.13.0",
     "Gozargah/Marzban": "v0.8.4",
-    "MHSanaei/3x-ui": "dev-latest",
-    "hiddify/hiddify-next": "draft",
+    "MHSanaei/3x-ui": "v3.11.0",
+    "hiddify/hiddify-next": "v4.1.1",
     "MatsuriDayo/nekoray": "4.0.1",
     "2dust/v2rayN": "7.25.6",
-    "2dust/v2rayNG": "2.3.13",
+    "2dust/v2rayNG": "2.3.14",
     "MetaCubeX/mihomo": "Prerelease-Alpha"
   },
   "posted_repos": {
@@ -192,8 +192,15 @@
     "hello-world-1989/cn-news": "2026-10-25T15:37:38.419557+00:00",
     "zupolgec/curl-impersonate-service": "skipped_blacklist",
     "markankamaransheogarat-sys/dpi-auto-desync": "2026-10-25T15:37:49.809898+00:00",
-    "JoooostB/alltrails-to-gpx": "skipped_ai"
+    "JoooostB/alltrails-to-gpx": "skipped_ai",
+    "Taygun86/zapret-gtk": "2026-10-28T17:55:28.699173+00:00",
+    "ZeroTworu/anet": "2026-10-28T17:55:32.113359+00:00",
+    "enetx/surf": "skipped_blacklist",
+    "hamaadraza/php-impersonate": "skipped_blacklist",
+    "luridlane-dev/PktSwerve": "2026-10-28T17:55:35.675785+00:00",
+    "Riccardo030607/buzzheavier-parallel-downloader": "2026-10-28T17:55:39.590869+00:00",
+    "guidiguidi/depop-tls-scraper": "skipped_ai"
   },
   "repos_seen": {},
-  "last_run": "2026-10-25T15:38:00.868883+00:00"
+  "last_run": "2026-10-28T17:55:43.137899+00:00"
 }
