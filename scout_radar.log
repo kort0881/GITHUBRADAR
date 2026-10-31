@@ -40673,3 +40673,20 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-10-28 17:55:43,136 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-10-28 17:55:43,137 [INFO] ИИ отклонил: guidiguidi/depop-tls-scraper
 2026-10-28 17:55:43,389 [INFO] Завершено. Всего опубликовано: 6
+2026-10-31 16:51:26,938 [INFO] Проверка ключевых проектов на новые релизы...
+2026-10-31 16:51:29,783 [INFO] Опубликован релиз: XTLS/Xray-core v26.10.31
+2026-10-31 16:51:33,850 [INFO] Опубликован релиз: hiddify/hiddify-next v5.2.1
+2026-10-31 16:51:37,003 [INFO] Поиск свежих репозиториев...
+2026-10-31 16:51:48,363 [INFO] Найдено 5 потенциальных проектов.
+2026-10-31 16:51:49,541 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-31 16:51:49,556 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: GVCoder09/NoDPI4Android
+2026-10-31 16:51:49,985 [INFO] Опубликована новинка: GVCoder09/NoDPI4Android
+2026-10-31 16:51:53,149 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-31 16:51:53,150 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: openrung/openrung
+2026-10-31 16:51:53,340 [INFO] Опубликована новинка: openrung/openrung
+2026-10-31 16:51:56,469 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-31 16:51:56,470 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: getlantern/download
+2026-10-31 16:51:56,707 [INFO] Опубликована новинка: getlantern/download
+2026-10-31 16:51:59,481 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-31 16:51:59,482 [INFO] ИИ отклонил: darrylburke/CoolerBot32
+2026-10-31 16:51:59,733 [INFO] Завершено. Всего опубликовано: 5
