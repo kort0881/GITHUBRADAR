@@ -40690,3 +40690,42 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-10-31 16:51:59,481 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-10-31 16:51:59,482 [INFO] ИИ отклонил: darrylburke/CoolerBot32
 2026-10-31 16:51:59,733 [INFO] Завершено. Всего опубликовано: 5
+2026-11-03 19:05:40,136 [INFO] Проверка ключевых проектов на новые релизы...
+2026-11-03 19:05:42,713 [INFO] Опубликован релиз: amnezia-vpn/amnezia-client 5.1.0.6
+2026-11-03 19:05:47,754 [INFO] Опубликован релиз: hiddify/hiddify-next v5.5.1
+2026-11-03 19:05:51,058 [INFO] Опубликован релиз: 2dust/v2rayNG 2.3.15
+2026-11-03 19:05:53,573 [INFO] Поиск свежих репозиториев...
+2026-11-03 19:06:05,890 [INFO] Найдено 10 потенциальных проектов.
+2026-11-03 19:06:06,984 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 19:06:06,992 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: hufrea/byedpi
+2026-11-03 19:06:07,411 [INFO] Опубликована новинка: hufrea/byedpi
+2026-11-03 19:06:10,929 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 19:06:10,930 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: vernette/ss-zapret2
+2026-11-03 19:06:11,372 [INFO] Опубликована новинка: vernette/ss-zapret2
+2026-11-03 19:06:14,649 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 19:06:14,650 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: ImMALWARE/bash-warp-generator
+2026-11-03 19:06:14,870 [INFO] Опубликована новинка: ImMALWARE/bash-warp-generator
+2026-11-03 19:06:17,892 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 19:06:17,893 [INFO] ИИ отклонил: p-e-w/heretic
+2026-11-03 19:06:19,338 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 19:06:19,339 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: KNG7-P/Se7en-Pro
+2026-11-03 19:06:19,542 [INFO] Опубликована новинка: KNG7-P/Se7en-Pro
+2026-11-03 19:06:23,269 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 19:06:23,269 [INFO] ИИ отклонил: RobithYusuf/mcp-stealth-chrome
+2026-11-03 19:06:23,793 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-11-03 19:06:23,793 [INFO] Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2026-11-03 19:06:25,589 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 19:06:25,590 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: artuasova/zapret-discord
+2026-11-03 19:06:25,835 [INFO] Опубликована новинка: artuasova/zapret-discord
+2026-11-03 19:06:28,557 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-11-03 19:06:28,558 [INFO] Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+2026-11-03 19:06:42,669 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-11-03 19:06:42,670 [INFO] Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2026-11-03 19:06:44,505 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 19:06:44,506 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: wstimin/tg-relay
+2026-11-03 19:06:45,010 [INFO] Опубликована новинка: wstimin/tg-relay
+2026-11-03 19:06:47,706 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-11-03 19:06:47,706 [INFO] Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2026-11-03 19:06:53,255 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 19:06:53,257 [INFO] ИИ отклонил: Thynor/Verifirm
+2026-11-03 19:06:53,512 [INFO] Завершено. Всего опубликовано: 9
