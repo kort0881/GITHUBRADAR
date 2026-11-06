@@ -40729,3 +40729,20 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-11-03 19:06:53,255 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-11-03 19:06:53,257 [INFO] ИИ отклонил: Thynor/Verifirm
 2026-11-03 19:06:53,512 [INFO] Завершено. Всего опубликовано: 9
+2026-11-06 18:55:12,964 [INFO] Проверка ключевых проектов на новые релизы...
+2026-11-06 18:55:14,312 [INFO] Опубликован релиз: bol-van/zapret2 v1.0.7
+2026-11-06 18:55:19,774 [INFO] Опубликован релиз: hiddify/hiddify-next draft
+2026-11-06 18:55:22,941 [INFO] Поиск свежих репозиториев...
+2026-11-06 18:55:34,359 [INFO] Найдено 4 потенциальных проектов.
+2026-11-06 18:55:35,737 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-06 18:55:35,751 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: catesin/AmneziaWG-MikroTik
+2026-11-06 18:55:36,102 [INFO] Опубликована новинка: catesin/AmneziaWG-MikroTik
+2026-11-06 18:55:39,227 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-06 18:55:39,228 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: getmeridian/meridian
+2026-11-06 18:55:39,416 [INFO] Опубликована новинка: getmeridian/meridian
+2026-11-06 18:55:42,315 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-06 18:55:42,316 [INFO] ИИ отклонил: HannaBeshoy/esp32-network-node
+2026-11-06 18:55:43,722 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-06 18:55:43,723 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: MoserMartinChristian/encapsulation-calculator
+2026-11-06 18:55:43,941 [INFO] Опубликована новинка: MoserMartinChristian/encapsulation-calculator
+2026-11-06 18:55:46,195 [INFO] Завершено. Всего опубликовано: 5
