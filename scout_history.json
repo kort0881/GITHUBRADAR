@@ -6,12 +6,12 @@
     "hufrea/byedpi": "v0.17.3",
     "xvzc/SpoofDPI": "v1.5.5",
     "amnezia-vpn/amnezia-client": "5.1.0.6",
-    "XTLS/Xray-core": "v26.10.31",
+    "XTLS/Xray-core": "v26.11.9",
     "SagerNet/sing-box": "v1.15.0-alpha.13",
     "apernet/hysteria": "app/v2.13.0",
     "Gozargah/Marzban": "v0.8.4",
     "MHSanaei/3x-ui": "dev-latest",
-    "hiddify/hiddify-next": "draft",
+    "hiddify/hiddify-next": "v5.5.6.dev",
     "MatsuriDayo/nekoray": "4.0.1",
     "2dust/v2rayN": "7.25.6",
     "2dust/v2rayNG": "2.3.15",
@@ -217,8 +217,14 @@
     "catesin/AmneziaWG-MikroTik": "2026-11-06T18:55:36.102230+00:00",
     "getmeridian/meridian": "2026-11-06T18:55:39.416903+00:00",
     "HannaBeshoy/esp32-network-node": "skipped_ai",
-    "MoserMartinChristian/encapsulation-calculator": "2026-11-06T18:55:43.941947+00:00"
+    "MoserMartinChristian/encapsulation-calculator": "2026-11-06T18:55:43.941947+00:00",
+    "hedioum/Hedioum-Pool-Tunnel": "2026-11-09T21:57:34.972949+00:00",
+    "233boy/sing-box": "2026-11-09T21:57:38.508388+00:00",
+    "Therealwh/MTProtoSERVER": "2026-11-09T21:57:42.494616+00:00",
+    "ErfanBahramali/tping": "2026-11-09T21:57:45.890198+00:00",
+    "userv-one/uservone-mtproto": "2026-11-09T21:57:49.885684+00:00",
+    "UserZero075/tripadvisor-restaurant-scraper": "skipped_ai"
   },
   "repos_seen": {},
-  "last_run": "2026-11-06T18:55:45.943855+00:00"
+  "last_run": "2026-11-09T21:57:52.921884+00:00"
 }

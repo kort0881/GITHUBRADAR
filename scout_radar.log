@@ -40746,3 +40746,26 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-11-06 18:55:43,723 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: MoserMartinChristian/encapsulation-calculator
 2026-11-06 18:55:43,941 [INFO] Опубликована новинка: MoserMartinChristian/encapsulation-calculator
 2026-11-06 18:55:46,195 [INFO] Завершено. Всего опубликовано: 5
+2026-11-09 21:57:07,662 [INFO] Проверка ключевых проектов на новые релизы...
+2026-11-09 21:57:11,459 [INFO] Опубликован релиз: XTLS/Xray-core v26.11.9
+2026-11-09 21:57:16,403 [INFO] Опубликован релиз: hiddify/hiddify-next v5.5.6.dev
+2026-11-09 21:57:20,057 [INFO] Поиск свежих репозиториев...
+2026-11-09 21:57:33,063 [INFO] Найдено 6 потенциальных проектов.
+2026-11-09 21:57:34,552 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-09 21:57:34,562 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: hedioum/Hedioum-Pool-Tunnel
+2026-11-09 21:57:34,972 [INFO] Опубликована новинка: hedioum/Hedioum-Pool-Tunnel
+2026-11-09 21:57:38,330 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-09 21:57:38,331 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: 233boy/sing-box
+2026-11-09 21:57:38,508 [INFO] Опубликована новинка: 233boy/sing-box
+2026-11-09 21:57:42,257 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-09 21:57:42,258 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Therealwh/MTProtoSERVER
+2026-11-09 21:57:42,494 [INFO] Опубликована новинка: Therealwh/MTProtoSERVER
+2026-11-09 21:57:45,710 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-09 21:57:45,711 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: ErfanBahramali/tping
+2026-11-09 21:57:45,890 [INFO] Опубликована новинка: ErfanBahramali/tping
+2026-11-09 21:57:49,703 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-09 21:57:49,704 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: userv-one/uservone-mtproto
+2026-11-09 21:57:49,885 [INFO] Опубликована новинка: userv-one/uservone-mtproto
+2026-11-09 21:57:52,920 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-09 21:57:52,921 [INFO] ИИ отклонил: UserZero075/tripadvisor-restaurant-scraper
+2026-11-09 21:57:53,173 [INFO] Завершено. Всего опубликовано: 7
