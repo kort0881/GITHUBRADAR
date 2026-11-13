@@ -40769,3 +40769,29 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-11-09 21:57:52,920 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-11-09 21:57:52,921 [INFO] ИИ отклонил: UserZero075/tripadvisor-restaurant-scraper
 2026-11-09 21:57:53,173 [INFO] Завершено. Всего опубликовано: 7
+2026-11-13 19:14:27,670 [INFO] Проверка ключевых проектов на новые релизы...
+2026-11-13 19:14:33,135 [INFO] Опубликован релиз: hiddify/hiddify-next v5.9.1
+2026-11-13 19:14:36,379 [INFO] Опубликован релиз: 2dust/v2rayNG 2.4.0
+2026-11-13 19:14:38,820 [INFO] Поиск свежих репозиториев...
+2026-11-13 19:14:51,412 [INFO] Найдено 9 потенциальных проектов.
+2026-11-13 19:14:52,868 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-13 19:14:52,880 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: ks-tool/vpn-admin
+2026-11-13 19:14:53,317 [INFO] Опубликована новинка: ks-tool/vpn-admin
+2026-11-13 19:14:56,696 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-13 19:14:56,697 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: SukkaW/Surge
+2026-11-13 19:14:56,898 [INFO] Опубликована новинка: SukkaW/Surge
+2026-11-13 19:15:00,055 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-13 19:15:00,056 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Vadim-Khristenko/Any-Tech-ARCHITECT
+2026-11-13 19:15:00,245 [INFO] Опубликована новинка: Vadim-Khristenko/Any-Tech-ARCHITECT
+2026-11-13 19:15:03,182 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-13 19:15:03,184 [INFO] ИИ отклонил: MeshLive/meshlive-android
+2026-11-13 19:15:04,349 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-13 19:15:04,350 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: keelbismark/tg-ws-proxy-android
+2026-11-13 19:15:04,556 [INFO] Опубликована новинка: keelbismark/tg-ws-proxy-android
+2026-11-13 19:15:08,011 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-13 19:15:08,013 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Gewitter29/VoolDPI
+2026-11-13 19:15:08,203 [INFO] Опубликована новинка: Gewitter29/VoolDPI
+2026-11-13 19:15:12,015 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-13 19:15:12,016 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: yaoav/mtproto-onekey
+2026-11-13 19:15:12,221 [INFO] Опубликована новинка: yaoav/mtproto-onekey
+2026-11-13 19:15:14,476 [INFO] Завершено. Всего опубликовано: 8

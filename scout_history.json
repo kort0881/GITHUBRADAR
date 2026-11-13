@@ -11,10 +11,10 @@
     "apernet/hysteria": "app/v2.13.0",
     "Gozargah/Marzban": "v0.8.4",
     "MHSanaei/3x-ui": "dev-latest",
-    "hiddify/hiddify-next": "v5.5.6.dev",
+    "hiddify/hiddify-next": "v5.9.1",
     "MatsuriDayo/nekoray": "4.0.1",
     "2dust/v2rayN": "7.25.6",
-    "2dust/v2rayNG": "2.3.15",
+    "2dust/v2rayNG": "2.4.0",
     "MetaCubeX/mihomo": "Prerelease-Alpha"
   },
   "posted_repos": {
@@ -223,8 +223,17 @@
     "Therealwh/MTProtoSERVER": "2026-11-09T21:57:42.494616+00:00",
     "ErfanBahramali/tping": "2026-11-09T21:57:45.890198+00:00",
     "userv-one/uservone-mtproto": "2026-11-09T21:57:49.885684+00:00",
-    "UserZero075/tripadvisor-restaurant-scraper": "skipped_ai"
+    "UserZero075/tripadvisor-restaurant-scraper": "skipped_ai",
+    "ks-tool/vpn-admin": "2026-11-13T19:14:53.317230+00:00",
+    "SukkaW/Surge": "2026-11-13T19:14:56.898460+00:00",
+    "Vadim-Khristenko/Any-Tech-ARCHITECT": "2026-11-13T19:15:00.245945+00:00",
+    "MeshLive/meshlive-android": "skipped_ai",
+    "sardanioss/httpcloak": "skipped_blacklist",
+    "keelbismark/tg-ws-proxy-android": "2026-11-13T19:15:04.556686+00:00",
+    "Re13orn/BypassCloudflare": "skipped_blacklist",
+    "Gewitter29/VoolDPI": "2026-11-13T19:15:08.203588+00:00",
+    "yaoav/mtproto-onekey": "2026-11-13T19:15:12.221199+00:00"
   },
   "repos_seen": {},
-  "last_run": "2026-11-09T21:57:52.921884+00:00"
+  "last_run": "2026-11-13T19:15:14.224463+00:00"
 }
