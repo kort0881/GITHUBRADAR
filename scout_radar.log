@@ -40795,3 +40795,16 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-11-13 19:15:12,016 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: yaoav/mtproto-onekey
 2026-11-13 19:15:12,221 [INFO] Опубликована новинка: yaoav/mtproto-onekey
 2026-11-13 19:15:14,476 [INFO] Завершено. Всего опубликовано: 8
+2026-11-16 21:39:41,306 [INFO] Проверка ключевых проектов на новые релизы...
+2026-11-16 21:39:43,671 [INFO] Опубликован релиз: amnezia-vpn/amnezia-client 5.1.1.9
+2026-11-16 21:39:47,268 [INFO] Опубликован релиз: apernet/hysteria app/v2.14.0
+2026-11-16 21:39:50,403 [INFO] Опубликован релиз: hiddify/hiddify-next v5.9.8
+2026-11-16 21:39:53,784 [INFO] Поиск свежих репозиториев...
+2026-11-16 21:40:06,268 [INFO] Найдено 3 потенциальных проектов.
+2026-11-16 21:40:07,573 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-16 21:40:07,580 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: mIwr/SwByeDPI
+2026-11-16 21:40:07,949 [INFO] Опубликована новинка: mIwr/SwByeDPI
+2026-11-16 21:40:11,290 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-16 21:40:11,291 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: VAIPROG/Any-Tech-ARCHITECT
+2026-11-16 21:40:11,559 [INFO] Опубликована новинка: VAIPROG/Any-Tech-ARCHITECT
+2026-11-16 21:40:13,812 [INFO] Завершено. Всего опубликовано: 5
