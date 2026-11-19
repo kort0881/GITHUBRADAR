@@ -4,14 +4,14 @@
     "bol-van/zapret2": "v1.0.7",
     "ValdikSS/GoodbyeDPI": "0.2.3rc3",
     "hufrea/byedpi": "v0.17.3",
-    "xvzc/SpoofDPI": "v1.5.5",
-    "amnezia-vpn/amnezia-client": "5.1.1.9",
+    "xvzc/SpoofDPI": "v1.6.0",
+    "amnezia-vpn/amnezia-client": "5.1.1.10",
     "XTLS/Xray-core": "v26.11.9",
     "SagerNet/sing-box": "v1.15.0-alpha.13",
     "apernet/hysteria": "app/v2.14.0",
     "Gozargah/Marzban": "v0.8.4",
     "MHSanaei/3x-ui": "dev-latest",
-    "hiddify/hiddify-next": "v5.9.8",
+    "hiddify/hiddify-next": "v5.9.15",
     "MatsuriDayo/nekoray": "4.0.1",
     "2dust/v2rayN": "7.25.6",
     "2dust/v2rayNG": "2.4.0",
@@ -235,8 +235,14 @@
     "yaoav/mtproto-onekey": "2026-11-13T19:15:12.221199+00:00",
     "mIwr/SwByeDPI": "2026-11-16T21:40:07.949255+00:00",
     "VAIPROG/Any-Tech-ARCHITECT": "2026-11-16T21:40:11.558967+00:00",
-    "Mistgate/mistgate": "skipped_blacklist"
+    "Mistgate/mistgate": "skipped_blacklist",
+    "Bl00dLuna/Smart-Zapret-Launcher": "2026-11-19T19:58:59.168749+00:00",
+    "mycelium-mesh/amneziawg-ui": "2026-11-19T19:59:02.631885+00:00",
+    "Gewitter29/VoolDPI_0.2-rust": "2026-11-19T19:59:06.056005+00:00",
+    "manojm2004/mtu-path-discovery-tool": "2026-11-19T19:59:09.831009+00:00",
+    "kekoDev/EchoMTProxy": "2026-11-19T19:59:13.212305+00:00",
+    "Yareks/UwUvpn": "2026-11-19T19:59:17.879533+00:00"
   },
   "repos_seen": {},
-  "last_run": "2026-11-16T21:40:13.561126+00:00"
+  "last_run": "2026-11-19T19:59:19.882397+00:00"
 }

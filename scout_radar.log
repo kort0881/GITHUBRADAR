@@ -40808,3 +40808,28 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-11-16 21:40:11,291 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: VAIPROG/Any-Tech-ARCHITECT
 2026-11-16 21:40:11,559 [INFO] Опубликована новинка: VAIPROG/Any-Tech-ARCHITECT
 2026-11-16 21:40:13,812 [INFO] Завершено. Всего опубликовано: 5
+2026-11-19 19:58:31,940 [INFO] Проверка ключевых проектов на новые релизы...
+2026-11-19 19:58:34,042 [INFO] Опубликован релиз: xvzc/SpoofDPI v1.6.0
+2026-11-19 19:58:36,603 [INFO] Опубликован релиз: amnezia-vpn/amnezia-client 5.1.1.10
+2026-11-19 19:58:41,238 [INFO] Опубликован релиз: hiddify/hiddify-next v5.9.15
+2026-11-19 19:58:44,451 [INFO] Поиск свежих репозиториев...
+2026-11-19 19:58:57,280 [INFO] Найдено 6 потенциальных проектов.
+2026-11-19 19:58:58,583 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-19 19:58:58,588 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Bl00dLuna/Smart-Zapret-Launcher
+2026-11-19 19:58:59,168 [INFO] Опубликована новинка: Bl00dLuna/Smart-Zapret-Launcher
+2026-11-19 19:59:02,340 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-19 19:59:02,341 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: mycelium-mesh/amneziawg-ui
+2026-11-19 19:59:02,631 [INFO] Опубликована новинка: mycelium-mesh/amneziawg-ui
+2026-11-19 19:59:05,790 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-19 19:59:05,790 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Gewitter29/VoolDPI_0.2-rust
+2026-11-19 19:59:06,056 [INFO] Опубликована новинка: Gewitter29/VoolDPI_0.2-rust
+2026-11-19 19:59:09,573 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-19 19:59:09,574 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: manojm2004/mtu-path-discovery-tool
+2026-11-19 19:59:09,831 [INFO] Опубликована новинка: manojm2004/mtu-path-discovery-tool
+2026-11-19 19:59:12,951 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-19 19:59:12,952 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: kekoDev/EchoMTProxy
+2026-11-19 19:59:13,212 [INFO] Опубликована новинка: kekoDev/EchoMTProxy
+2026-11-19 19:59:16,581 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-19 19:59:16,581 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Yareks/UwUvpn
+2026-11-19 19:59:17,879 [INFO] Опубликована новинка: Yareks/UwUvpn
+2026-11-19 19:59:20,133 [INFO] Завершено. Всего опубликовано: 9
