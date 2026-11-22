@@ -40833,3 +40833,24 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-11-19 19:59:16,581 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Yareks/UwUvpn
 2026-11-19 19:59:17,879 [INFO] Опубликована новинка: Yareks/UwUvpn
 2026-11-19 19:59:20,133 [INFO] Завершено. Всего опубликовано: 9
+2026-11-22 19:03:54,525 [INFO] Проверка ключевых проектов на новые релизы...
+2026-11-22 19:03:59,288 [INFO] Опубликован релиз: 2dust/v2rayN 8.0.1
+2026-11-22 19:04:01,806 [INFO] Поиск свежих репозиториев...
+2026-11-22 19:04:13,109 [INFO] Найдено 6 потенциальных проектов.
+2026-11-22 19:04:14,011 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-22 19:04:14,017 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Jsnzkpg/Jsnzkpg
+2026-11-22 19:04:14,191 [INFO] Опубликована новинка: Jsnzkpg/Jsnzkpg
+2026-11-22 19:04:17,315 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-22 19:04:17,316 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: zenkdom/reverse-socks-python
+2026-11-22 19:04:17,476 [INFO] Опубликована новинка: zenkdom/reverse-socks-python
+2026-11-22 19:04:20,844 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-22 19:04:20,845 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: zenkdom/reverse-socks-go
+2026-11-22 19:04:21,004 [INFO] Опубликована новинка: zenkdom/reverse-socks-go
+2026-11-22 19:04:23,950 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-22 19:04:23,951 [INFO] ИИ отклонил: Sumukhhebbar-tech/CNS_Project
+2026-11-22 19:04:24,844 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-22 19:04:24,845 [INFO] ИИ отклонил: FzRsLLaSheR/NetLens
+2026-11-22 19:04:26,180 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-22 19:04:26,181 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: HLenu/LenuLane
+2026-11-22 19:04:26,387 [INFO] Опубликована новинка: HLenu/LenuLane
+2026-11-22 19:04:28,641 [INFO] Завершено. Всего опубликовано: 5

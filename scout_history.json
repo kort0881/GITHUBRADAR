@@ -13,7 +13,7 @@
     "MHSanaei/3x-ui": "dev-latest",
     "hiddify/hiddify-next": "v5.9.15",
     "MatsuriDayo/nekoray": "4.0.1",
-    "2dust/v2rayN": "7.25.6",
+    "2dust/v2rayN": "8.0.1",
     "2dust/v2rayNG": "2.4.0",
     "MetaCubeX/mihomo": "Prerelease-Alpha"
   },
@@ -241,8 +241,14 @@
     "Gewitter29/VoolDPI_0.2-rust": "2026-11-19T19:59:06.056005+00:00",
     "manojm2004/mtu-path-discovery-tool": "2026-11-19T19:59:09.831009+00:00",
     "kekoDev/EchoMTProxy": "2026-11-19T19:59:13.212305+00:00",
-    "Yareks/UwUvpn": "2026-11-19T19:59:17.879533+00:00"
+    "Yareks/UwUvpn": "2026-11-19T19:59:17.879533+00:00",
+    "Jsnzkpg/Jsnzkpg": "2026-11-22T19:04:14.191878+00:00",
+    "zenkdom/reverse-socks-python": "2026-11-22T19:04:17.476589+00:00",
+    "zenkdom/reverse-socks-go": "2026-11-22T19:04:21.004455+00:00",
+    "Sumukhhebbar-tech/CNS_Project": "skipped_ai",
+    "FzRsLLaSheR/NetLens": "skipped_ai",
+    "HLenu/LenuLane": "2026-11-22T19:04:26.387411+00:00"
   },
   "repos_seen": {},
-  "last_run": "2026-11-19T19:59:19.882397+00:00"
+  "last_run": "2026-11-22T19:04:28.390265+00:00"
 }
