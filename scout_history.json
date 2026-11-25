@@ -1,7 +1,7 @@
 {
   "posted_releases": {
     "bol-van/zapret": "v72.13",
-    "bol-van/zapret2": "v1.0.7",
+    "bol-van/zapret2": "v1.0.8",
     "ValdikSS/GoodbyeDPI": "0.2.3rc3",
     "hufrea/byedpi": "v0.17.3",
     "xvzc/SpoofDPI": "v1.6.0",
@@ -14,7 +14,7 @@
     "hiddify/hiddify-next": "v5.9.15",
     "MatsuriDayo/nekoray": "4.0.1",
     "2dust/v2rayN": "8.0.1",
-    "2dust/v2rayNG": "2.4.0",
+    "2dust/v2rayNG": "2.4.1",
     "MetaCubeX/mihomo": "Prerelease-Alpha"
   },
   "posted_repos": {
@@ -247,8 +247,10 @@
     "zenkdom/reverse-socks-go": "2026-11-22T19:04:21.004455+00:00",
     "Sumukhhebbar-tech/CNS_Project": "skipped_ai",
     "FzRsLLaSheR/NetLens": "skipped_ai",
-    "HLenu/LenuLane": "2026-11-22T19:04:26.387411+00:00"
+    "HLenu/LenuLane": "2026-11-22T19:04:26.387411+00:00",
+    "vpnhood/VpnHood": "2026-11-25T21:05:44.593159+00:00",
+    "Skyuzii/BypassTlsFingerprint": "2026-11-25T21:05:47.998410+00:00"
   },
   "repos_seen": {},
-  "last_run": "2026-11-22T19:04:28.390265+00:00"
+  "last_run": "2026-11-25T21:05:50.001255+00:00"
 }

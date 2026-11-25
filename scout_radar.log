@@ -40854,3 +40854,15 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-11-22 19:04:26,181 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: HLenu/LenuLane
 2026-11-22 19:04:26,387 [INFO] Опубликована новинка: HLenu/LenuLane
 2026-11-22 19:04:28,641 [INFO] Завершено. Всего опубликовано: 5
+2026-11-25 21:05:19,798 [INFO] Проверка ключевых проектов на новые релизы...
+2026-11-25 21:05:20,764 [INFO] Опубликован релиз: bol-van/zapret2 v1.0.8
+2026-11-25 21:05:27,839 [INFO] Опубликован релиз: 2dust/v2rayNG 2.4.1
+2026-11-25 21:05:30,312 [INFO] Поиск свежих репозиториев...
+2026-11-25 21:05:43,047 [INFO] Найдено 2 потенциальных проектов.
+2026-11-25 21:05:44,242 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-25 21:05:44,248 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: vpnhood/VpnHood
+2026-11-25 21:05:44,593 [INFO] Опубликована новинка: vpnhood/VpnHood
+2026-11-25 21:05:47,834 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-25 21:05:47,840 [INFO] ✅ Groq openai/gpt-oss-120b одобрил: Skyuzii/BypassTlsFingerprint
+2026-11-25 21:05:47,998 [INFO] Опубликована новинка: Skyuzii/BypassTlsFingerprint
+2026-11-25 21:05:50,252 [INFO] Завершено. Всего опубликовано: 4
